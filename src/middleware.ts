@@ -24,18 +24,8 @@ export async function middleware(request: NextRequest) {
     return NextResponse.next()
   }
 
-  // Check session
-  const response = NextResponse.next()
-  const session = await getIronSession<SessionShape>(request, response, sessionOptions)
-
-  if (!session.user) {
-    // Not logged in → redirect to login with the original path as redirect target
-    const loginUrl = new URL('/login', request.url)
-    loginUrl.searchParams.set('redirect', pathname)
-    return NextResponse.redirect(loginUrl)
-  }
-
-  return response
+  // Auth disabled — allow all routes through
+  return NextResponse.next()
 }
 
 export const config = {
