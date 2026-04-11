@@ -10,7 +10,7 @@ interface Lesson {
 }
 
 interface SidebarProps {
-  level: 0 | 1
+  level: 0 | 1 | 2
   currentLessonId: string
 }
 
@@ -31,9 +31,20 @@ const LEVEL_1_LESSONS: Lesson[] = [
   { number: 11, title: 'Responsible AI', href: '/level1/lesson11' },
 ]
 
+const LEVEL_2_LESSONS: Lesson[] = [
+  { number: 12, title: 'Deep Research', href: '/level2/lesson12' },
+  { number: 13, title: 'AI Writing Lab', href: '/level2/lesson13' },
+  { number: 14, title: 'AI + Data Analysis', href: '/level2/lesson14' },
+  { number: 15, title: 'Strategy & Decisions', href: '/level2/lesson15' },
+  { number: 16, title: 'Claude Knowledge Base', href: '/level2/lesson16' },
+  { number: 17, title: 'AI Automation', href: '/level2/lesson17' },
+  { number: 18, title: 'Your AI OS', href: '/level2/lesson18' },
+]
+
 const LESSONS: Record<number, Lesson[]> = {
   0: LEVEL_0_LESSONS,
   1: LEVEL_1_LESSONS,
+  2: LEVEL_2_LESSONS,
 }
 
 export default function Sidebar({ level, currentLessonId }: SidebarProps) {
@@ -68,7 +79,7 @@ export default function Sidebar({ level, currentLessonId }: SidebarProps) {
       <div className="sidebar-divider"></div>
 
       <Link
-        href={level === 0 ? '/level0/capstone' : '/level1/capstone'}
+        href={`/level${level}/capstone`}
         className={`sidebar-capstone ${currentLessonId.includes('capstone') ? 'active' : ''}`}
       >
         🏆 Capstone

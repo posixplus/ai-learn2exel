@@ -1,5 +1,5 @@
 interface LessonHeaderProps {
-  level: 0 | 1
+  level: 0 | 1 | 2
   lessonNumber: number | string
   duration: number
   title: string

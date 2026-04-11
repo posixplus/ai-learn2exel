@@ -24,6 +24,17 @@ const LEVEL_1_LESSONS = [
   { number: 'C', title: 'Capstone', href: '/level1/capstone' },
 ]
 
+const LEVEL_2_LESSONS = [
+  { number: 12, title: 'AI for Deep Research', href: '/level2/lesson12' },
+  { number: 13, title: 'AI Writing Lab', href: '/level2/lesson13' },
+  { number: 14, title: 'AI + Data Analysis', href: '/level2/lesson14' },
+  { number: 15, title: 'Strategy & Decisions', href: '/level2/lesson15' },
+  { number: 16, title: 'Claude Knowledge Base', href: '/level2/lesson16' },
+  { number: 17, title: 'AI Automation', href: '/level2/lesson17' },
+  { number: 18, title: 'Your AI OS', href: '/level2/lesson18' },
+  { number: 'C', title: 'Capstone', href: '/level2/capstone' },
+]
+
 const TOOLS = [
   { title: 'Quiz', href: '/tools/quiz' },
   { title: 'Prompt Library', href: '/tools/prompt-library' },
@@ -36,7 +47,7 @@ export default function Nav() {
   const [isMobileOpen, setIsMobileOpen] = useState(false)
 
   const completedCount = completed.length
-  const totalLessons = 11
+  const totalLessons = 18
 
   const handleLogout = () => {
     logout()
@@ -85,6 +96,28 @@ export default function Nav() {
             </span>
             <div className="nav-dropdown">
               {LEVEL_1_LESSONS.map((lesson) => (
+                <Link
+                  key={lesson.href}
+                  href={lesson.href}
+                  className="nav-dropdown-item"
+                >
+                  <span style={{ fontWeight: 600, marginRight: '0.5rem' }}>
+                    {lesson.number}
+                  </span>
+                  {lesson.title}
+                </Link>
+              ))}
+            </div>
+          </div>
+
+          {/* Level 2 Dropdown */}
+          <div className="nav-item">
+            <span className="nav-dd-title">
+              <span className="nav-dd-icon">🧠</span>
+              Level 2 — Applied AI
+            </span>
+            <div className="nav-dropdown">
+              {LEVEL_2_LESSONS.map((lesson) => (
                 <Link
                   key={lesson.href}
                   href={lesson.href}

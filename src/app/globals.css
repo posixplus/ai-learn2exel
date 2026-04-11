@@ -22,6 +22,7 @@
   --color-l1-border: #DDD6FE;
   --color-l2: #D97706;
   --color-l2-light: #FFFBEB;
+  --color-l2-border: #FDE68A;
   --color-success: #10B981;
   --color-warning: #F59E0B;
   --color-danger: #EF4444;
@@ -210,6 +211,7 @@ blockquote {
 }
 .lesson-level-tag.l0 { background: var(--color-l0-light); color: var(--color-l0); }
 .lesson-level-tag.l1 { background: var(--color-l1-light); color: var(--color-l1); }
+.lesson-level-tag.l2 { background: var(--color-l2-light); color: var(--color-l2); }
 .lesson-number { font-size: 0.82rem; color: var(--color-text-muted); font-weight: 500; }
 .lesson-duration { display: flex; align-items: center; gap: 0.3rem; font-size: 0.82rem; color: var(--color-text-muted); }
 .lesson-title { font-size: 2rem; margin-bottom: 0.5rem; }
@@ -422,6 +424,7 @@ footer { background: var(--color-surface); border-top: 1px solid var(--color-bor
 .capstone-hero { border-radius: var(--radius-xl); padding: 3rem 2rem; text-align: center; margin-bottom: 2.5rem; }
 .capstone-hero.l0 { background: linear-gradient(135deg, var(--color-l0-light), #ECFDF5); }
 .capstone-hero.l1 { background: linear-gradient(135deg, var(--color-l1-light), #EDE9FE); }
+.capstone-hero.l2 { background: linear-gradient(135deg, var(--color-l2-light), #FEF3C7); }
 .capstone-badge { display: inline-flex; align-items: center; gap: 0.4rem; font-size: 0.78rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.07em; padding: 0.3rem 0.8rem; border-radius: var(--radius-full); background: white; color: var(--color-warning); border: 1px solid #FDE68A; margin-bottom: 1rem; }
 
 /* ── Responsive ──────────────────────────────────────────── */
