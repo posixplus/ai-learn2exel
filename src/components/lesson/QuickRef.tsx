@@ -1,8 +1,11 @@
 import React from 'react'
 
 interface QuickRefItem {
-  heading: string
-  points: string[]
+  heading?: string
+  points?: string[]
+  // alternate format used by level 2 lessons
+  term?: string
+  definition?: string
 }
 
 interface QuickRefSection {
@@ -22,17 +25,30 @@ export default function QuickRef({ title = 'Quick Reference', items, sections }:
       {title && <div className="quick-ref-header">{title}</div>}
 
       <div className="quick-ref-grid">
-        {/* items format: {heading, points[]} */}
-        {items?.map((item, idx) => (
-          <div key={idx} className="quick-ref-item">
-            <strong>{item.heading}</strong>
-            <ul style={{ marginTop: '0.5rem', marginBottom: 0 }}>
-              {item.points.map((point, pidx) => (
-                <li key={pidx}>{point}</li>
-              ))}
-            </ul>
-          </div>
-        ))}
+        {items?.map((item, idx) => {
+          // term/definition format (level 2 lessons)
+          if (item.term !== undefined) {
+            return (
+              <div key={idx} className="quick-ref-item">
+                <strong>{item.term}</strong>
+                <p style={{ marginTop: '0.5rem', marginBottom: 0, fontSize: '0.9rem' }}>
+                  {item.definition}
+                </p>
+              </div>
+            )
+          }
+          // heading/points format (level 0/1 lessons)
+          return (
+            <div key={idx} className="quick-ref-item">
+              <strong>{item.heading}</strong>
+              <ul style={{ marginTop: '0.5rem', marginBottom: 0 }}>
+                {item.points?.map((point, pidx) => (
+                  <li key={pidx}>{point}</li>
+                ))}
+              </ul>
+            </div>
+          )
+        })}
 
         {/* sections format: {title, content} */}
         {sections?.map((section, idx) => (

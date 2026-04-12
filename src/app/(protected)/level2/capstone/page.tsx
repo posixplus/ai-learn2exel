@@ -3,6 +3,7 @@ import Footer from '@/components/layout/Footer'
 import PromptBox from '@/components/lesson/PromptBox'
 import HandsOn from '@/components/lesson/HandsOn'
 import Callout from '@/components/lesson/Callout'
+import LevelFeedback from '@/components/lesson/LevelFeedback'
 
 export default function Level2Capstone() {
   return (
@@ -280,6 +281,7 @@ COMMON ISSUES: [What goes wrong and how to fix it]`}
             </Link>
           </div>
 
+        <LevelFeedback level={2} levelTitle="Applied AI — Research, Writing & Automation" />
           <Footer />
         </div>
       </main>

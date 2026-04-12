@@ -493,7 +493,7 @@ Output: One sentence that captures the main point. Avoid "things changed" or "it
                 },
                 {
                   term: 'Spot Outliers',
-                  definition: 'What's unusual or surprising in this data? What's the best and worst performer?'
+                  definition: "What's unusual or surprising in this data? What's the best and worst performer?"
                 },
                 {
                   term: 'Calculate Stats',

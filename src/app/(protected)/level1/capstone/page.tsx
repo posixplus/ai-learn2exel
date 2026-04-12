@@ -3,6 +3,7 @@ import Footer from '@/components/layout/Footer'
 import PromptBox from '@/components/lesson/PromptBox'
 import HandsOn from '@/components/lesson/HandsOn'
 import Callout from '@/components/lesson/Callout'
+import LevelFeedback from '@/components/lesson/LevelFeedback'
 
 export default function Level1Capstone() {
   return (
@@ -452,6 +453,7 @@ GUARDRAILS:
             </p>
           </section>
         </div>
+        <LevelFeedback level={1} levelTitle="Going Deeper — Agents, MCP & Claude Code" />
       </main>
       <Footer />
     </div>

@@ -1,5 +1,6 @@
+'use client'
 interface LessonHeaderProps {
-  level: 0 | 1 | 2
+  level: 0 | 1 | 2 | 3 | 4 | 5
   lessonNumber: number | string
   duration: number
   title: string

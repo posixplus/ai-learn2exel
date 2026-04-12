@@ -4,6 +4,7 @@ import {
   createContext, useContext, useState, useCallback,
   useEffect, type ReactNode,
 } from 'react'
+import { track } from '@vercel/analytics'
 
 export type ProgressMap = Record<string, boolean>
 
@@ -17,44 +18,48 @@ interface ProgressContextValue {
   percentComplete: number
 }
 
-const TOTAL_LESSONS = 11  // Lessons 1–11 (capstones not counted)
+const TOTAL_LESSONS = 25  // Lessons 1–25 (capstones not counted)
+const STORAGE_KEY = 'ai-course-progress'
 
 const ProgressContext = createContext<ProgressContextValue | null>(null)
 
-export function ProgressProvider({ children, initialProgress }: {
-  children: ReactNode
-  initialProgress?: ProgressMap
-}) {
-  const [progress, setProgress] = useState<ProgressMap>(initialProgress ?? {})
+function loadFromStorage(): ProgressMap {
+  try {
+    const raw = localStorage.getItem(STORAGE_KEY)
+    if (!raw) return {}
+    return JSON.parse(raw) as ProgressMap
+  } catch {
+    return {}
+  }
+}
 
-  // Fetch progress from server on mount (in case initialProgress is stale)
+function saveToStorage(progress: ProgressMap) {
+  try {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(progress))
+  } catch {
+    // Storage unavailable — silently ignore
+  }
+}
+
+export function ProgressProvider({ children }: { children: ReactNode }) {
+  const [progress, setProgress] = useState<ProgressMap>({})
+
+  // Load from localStorage on mount (client-only)
   useEffect(() => {
-    fetch('/api/progress')
-      .then(r => r.json())
-      .then(data => { if (data.progress) setProgress(data.progress) })
-      .catch(() => {/* silently fail — use initialProgress */})
+    setProgress(loadFromStorage())
   }, [])
 
   const isComplete = useCallback((lessonId: string) => !!progress[lessonId], [progress])
 
   const toggleComplete = useCallback(async (lessonId: string) => {
     const newValue = !progress[lessonId]
-
-    // Optimistic update
-    setProgress(prev => ({ ...prev, [lessonId]: newValue }))
-
-    try {
-      const res = await fetch('/api/progress', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ lessonId, completed: newValue }),
-      })
-      const data = await res.json()
-      // Sync with server response
-      if (data.progress) setProgress(data.progress)
-    } catch {
-      // Revert on failure
-      setProgress(prev => ({ ...prev, [lessonId]: !newValue }))
+    setProgress(prev => {
+      const updated = { ...prev, [lessonId]: newValue }
+      saveToStorage(updated)
+      return updated
+    })
+    if (newValue) {
+      track('lesson_complete', { lessonId, level: lessonId.split('-')[0] })
     }
   }, [progress])
 

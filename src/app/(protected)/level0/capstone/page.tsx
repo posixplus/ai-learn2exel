@@ -3,6 +3,7 @@ import Footer from '@/components/layout/Footer'
 import PromptBox from '@/components/lesson/PromptBox'
 import HandsOn from '@/components/lesson/HandsOn'
 import Callout from '@/components/lesson/Callout'
+import LevelFeedback from '@/components/lesson/LevelFeedback'
 
 export default function Level0Capstone() {
   return (
@@ -254,6 +255,9 @@ When I ask you to do any of these, use the corresponding prompt above.`}
               </div>
             </div>
           </section>
+
+          {/* Feedback */}
+          <LevelFeedback level={0} levelTitle="Foundations — AI Basics & Prompt Engineering" />
 
           {/* Level 0 Complete */}
           <section className="l0-section" style={{ textAlign: 'center', marginTop: '3rem', paddingTop: '2rem', borderTop: '2px solid #ddd' }}>

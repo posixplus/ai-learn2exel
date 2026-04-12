@@ -19,9 +19,9 @@ export default function Lesson5() {
           <LessonHeader
             level={0}
             lessonNumber={5}
-            duration={55}
+            duration={65}
             title="Prompt Engineering 101"
-            subtitle="Advanced prompting techniques that dramatically improve results"
+            subtitle="Advanced prompting techniques, privacy rules, and what never to share with AI"
             professions={['👩‍🏫 Teacher', '👨‍⚕️ Healthcare', '🎓 Student', '⚙️ Engineer', '💻 Developer', '💼 Business']}
           />
 
@@ -407,7 +407,180 @@ When uncertain: ask me which direction I'd prefer`}
             </p>
           </section>
 
-          {/* SECTION 9: QUICK REFERENCE */}
+          {/* SECTION 9: WHAT NOT TO DO — AI PRIVACY & SAFETY */}
+          <section className="lesson-section">
+            <h2>Section 9: What NOT to Share with AI — Protecting Your Privacy</h2>
+
+            <p>
+              AI tools are powerful — but they are not a safe place for sensitive personal or financial information. Before you paste something into an AI chat, it is worth understanding what happens to that data and what you should never share.
+            </p>
+
+            <Callout type="warning" title="The Core Rule">
+              Treat every AI chat window like a public forum. If you would not post it on a notice board, do not paste it into a chat. This applies to all AI tools — Claude, ChatGPT, Gemini, Copilot, and others — unless you are on a verified enterprise plan with explicit data privacy guarantees.
+            </Callout>
+
+            <h3 style={{ marginTop: '2rem' }}>Never Paste These Into an AI Chat</h3>
+
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1rem', margin: '1.25rem 0' }}>
+              {[
+                {
+                  icon: '🪪',
+                  category: 'Identity Documents',
+                  items: [
+                    'Social Security Number (SSN) or National ID',
+                    'Passport number or Driver\'s license number',
+                    'Date of birth combined with name and address',
+                    'Immigration or visa document numbers',
+                  ],
+                },
+                {
+                  icon: '🏦',
+                  category: 'Financial Information',
+                  items: [
+                    'Bank account numbers or routing numbers',
+                    'Full credit card or debit card numbers',
+                    'Tax returns, W-2s, or income statements',
+                    'Brokerage or investment account details',
+                  ],
+                },
+                {
+                  icon: '🔐',
+                  category: 'Passwords & Access',
+                  items: [
+                    'Passwords or PINs of any kind',
+                    'API keys or secret tokens',
+                    'Recovery phrases or two-factor backup codes',
+                    'Corporate VPN or system credentials',
+                  ],
+                },
+                {
+                  icon: '🏥',
+                  category: 'Medical & Personal',
+                  items: [
+                    'Full medical records or diagnostic reports',
+                    'Insurance policy numbers and claim details',
+                    'Mental health history or therapy notes',
+                    'Genetic test results',
+                  ],
+                },
+                {
+                  icon: '👤',
+                  category: 'Other People\'s Data',
+                  items: [
+                    'Customer lists with names, emails, or phone numbers',
+                    'Employee salary or HR records',
+                    'Student records or grades (FERPA)',
+                    'Anyone\'s private messages without their consent',
+                  ],
+                },
+                {
+                  icon: '🏢',
+                  category: 'Confidential Business Data',
+                  items: [
+                    'Unreleased product roadmaps or financials',
+                    'M&A details, contracts, or legal strategy',
+                    'Proprietary source code (in consumer tools)',
+                    'Client or patient data covered by NDA/HIPAA',
+                  ],
+                },
+              ].map(cat => (
+                <div key={cat.category} style={{ background: '#FFF7ED', border: '1px solid #FED7AA', borderRadius: 10, padding: '1.25rem' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '.5rem', marginBottom: '.75rem' }}>
+                    <span style={{ fontSize: '1.5rem' }}>{cat.icon}</span>
+                    <span style={{ fontWeight: 700, color: '#92400E', fontSize: '.95rem' }}>{cat.category}</span>
+                  </div>
+                  <ul style={{ margin: 0, paddingLeft: '1.1rem', color: '#78350F', fontSize: '.875rem', lineHeight: 1.8 }}>
+                    {cat.items.map(item => <li key={item}>{item}</li>)}
+                  </ul>
+                </div>
+              ))}
+            </div>
+
+            <h3 style={{ marginTop: '2rem' }}>Why Does This Matter? How AI Data Works</h3>
+            <p>
+              When you type something into most AI chat interfaces, that text is sent to a cloud server and processed there. Depending on the provider and plan:
+            </p>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '.75rem', margin: '1rem 0' }}>
+              {[
+                { icon: '📤', text: 'Your message is transmitted to a third-party server (Anthropic, OpenAI, Google, etc.) over the internet.' },
+                { icon: '📝', text: 'It may be logged for safety monitoring, abuse detection, or service improvement — even with privacy settings on.' },
+                { icon: '🤖', text: 'Some providers may use inputs to improve future models unless you explicitly opt out (check your account settings).' },
+                { icon: '🔓', text: 'In the event of a data breach at the provider, anything you shared could be exposed.' },
+                { icon: '👀', text: 'Human reviewers at AI companies may read samples of conversations as part of quality review processes.' },
+              ].map(r => (
+                <div key={r.text} style={{ display: 'flex', gap: '.75rem', padding: '.75rem 1rem', background: '#F0F9FF', border: '1px solid #BAE6FD', borderRadius: 8 }}>
+                  <span style={{ fontSize: '1.25rem', flexShrink: 0 }}>{r.icon}</span>
+                  <span style={{ color: '#0C4A6E', fontSize: '.9rem', lineHeight: 1.6 }}>{r.text}</span>
+                </div>
+              ))}
+            </div>
+
+            <h3 style={{ marginTop: '2rem' }}>Safe Ways to Use AI with Sensitive Context</h3>
+            <p>You can still get value from AI for sensitive topics — just anonymize or generalize the data first:</p>
+            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', margin: '1rem 0' }}>
+              <div style={{ background: '#FEF2F2', border: '1px solid #FECACA', borderRadius: 8, padding: '1rem' }}>
+                <div style={{ fontWeight: 700, color: '#DC2626', marginBottom: '.6rem', fontSize: '.9rem' }}>❌ Instead of this...</div>
+                <p style={{ margin: 0, fontSize: '.85rem', color: '#7F1D1D', lineHeight: 1.6 }}>
+                  "Here is my W-2 from 2024. My SSN is 123-45-6789. Can you help me file my taxes?"
+                </p>
+              </div>
+              <div style={{ background: '#F0FDF4', border: '1px solid #BBF7D0', borderRadius: 8, padding: '1rem' }}>
+                <div style={{ fontWeight: 700, color: '#16A34A', marginBottom: '.6rem', fontSize: '.9rem' }}>✅ Do this instead</div>
+                <p style={{ margin: 0, fontSize: '.85rem', color: '#14532D', lineHeight: 1.6 }}>
+                  "I earned $75,000 in salary and $3,000 in freelance income last year. What deductions should I look into?"
+                </p>
+              </div>
+              <div style={{ background: '#FEF2F2', border: '1px solid #FECACA', borderRadius: 8, padding: '1rem' }}>
+                <div style={{ fontWeight: 700, color: '#DC2626', marginBottom: '.6rem', fontSize: '.9rem' }}>❌ Instead of this...</div>
+                <p style={{ margin: 0, fontSize: '.85rem', color: '#7F1D1D', lineHeight: 1.6 }}>
+                  "Here is our customer database export. Can you find patterns in the purchase history?" [pastes real names + emails]
+                </p>
+              </div>
+              <div style={{ background: '#F0FDF4', border: '1px solid #BBF7D0', borderRadius: 8, padding: '1rem' }}>
+                <div style={{ fontWeight: 700, color: '#16A34A', marginBottom: '.6rem', fontSize: '.9rem' }}>✅ Do this instead</div>
+                <p style={{ margin: 0, fontSize: '.85rem', color: '#14532D', lineHeight: 1.6 }}>
+                  "I have purchase data: 3,200 customers, avg order $47, 22% repeat buyers. What patterns should I analyze?"
+                </p>
+              </div>
+            </div>
+
+            <h3 style={{ marginTop: '2rem' }}>When It IS Safe: Enterprise & Privacy Plans</h3>
+            <div style={{ background: '#F0F9FF', border: '1px solid #BAE6FD', borderRadius: 10, padding: '1.25rem', margin: '1rem 0' }}>
+              <p style={{ margin: '0 0 .75rem', color: '#0C4A6E', fontSize: '.9rem', lineHeight: 1.7 }}>
+                If your organization uses an <strong>enterprise plan</strong> from Anthropic (Claude for Work/Enterprise), OpenAI (ChatGPT Enterprise), or Microsoft (Copilot for M365), your data typically has stronger protections:
+              </p>
+              <ul style={{ margin: 0, paddingLeft: '1.25rem', color: '#0C4A6E', fontSize: '.875rem', lineHeight: 2 }}>
+                <li>Data is not used to train models</li>
+                <li>No human review of your conversations</li>
+                <li>Data stays within your organization's contracted region</li>
+                <li>Business associate agreements (BAA) available for HIPAA contexts</li>
+              </ul>
+              <p style={{ margin: '.75rem 0 0', color: '#0369A1', fontSize: '.85rem' }}>
+                <strong>Still check:</strong> Even on enterprise plans, verify the specific data handling terms before processing data covered by regulations like HIPAA, GDPR, or FERPA.
+              </p>
+            </div>
+
+            <h3 style={{ marginTop: '2rem' }}>The 3-Second Privacy Check</h3>
+            <div style={{ background: '#F5F3FF', border: '2px solid #DDD6FE', borderRadius: 10, padding: '1.25rem' }}>
+              <p style={{ margin: '0 0 .75rem', fontWeight: 700, color: '#5B21B6' }}>Before pasting anything into AI, ask yourself:</p>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '.5rem' }}>
+                {[
+                  'Would I be comfortable if this appeared in a news story?',
+                  'Does this include real names, ID numbers, or financial data?',
+                  'Is this data owned by someone else (customers, patients, clients)?',
+                  'Would my employer or a regulator have concerns about this?',
+                ].map((q, i) => (
+                  <div key={i} style={{ display: 'flex', gap: '.75rem', padding: '.5rem .75rem', background: 'white', borderRadius: 6, border: '1px solid #DDD6FE' }}>
+                    <span style={{ color: '#7C3AED', fontWeight: 700, fontSize: '1rem', flexShrink: 0 }}>{i + 1}.</span>
+                    <span style={{ color: '#374151', fontSize: '.9rem' }}>{q}</span>
+                  </div>
+                ))}
+              </div>
+              <p style={{ margin: '.75rem 0 0', color: '#5B21B6', fontSize: '.875rem', fontWeight: 600 }}>If the answer to any of these is "yes" — anonymize before sharing, or don't share at all.</p>
+            </div>
+          </section>
+
+          {/* SECTION 10: QUICK REFERENCE */}
           <section className="lesson-section">
             <QuickRef
               title="Lesson 5 — Quick Reference"
@@ -453,6 +626,27 @@ When uncertain: ask me which direction I'd prefer`}
                     'Complex reasoning? → Chain-of-thought (think step-by-step)',
                     'Want different perspective? → Role prompting (be a [role])',
                     'Same preferences every time? → System prompt (set once, use forever)',
+                  ],
+                },
+                {
+                  heading: '🔒 Never Share with AI (Privacy)',
+                  points: [
+                    'Identity: SSN, passport number, driver\'s license number',
+                    'Financial: bank accounts, card numbers, tax returns',
+                    'Passwords, API keys, or 2FA recovery codes',
+                    'Medical records, insurance numbers, health history',
+                    'Other people\'s personal data without their consent',
+                    'Confidential business data: M&A, unreleased financials, client lists',
+                  ],
+                },
+                {
+                  heading: 'Safe Anonymization Patterns',
+                  points: [
+                    'Replace names with "[Customer A]" or "[Employee 1]"',
+                    'Use ranges instead of exact figures: "$70K–80K" not "$76,234"',
+                    'Describe what the data looks like rather than pasting it',
+                    'Ask your question with hypothetical numbers, not real ones',
+                    '3-second check: "Would I be OK if this appeared in a news story?"',
                   ],
                 },
               ]}

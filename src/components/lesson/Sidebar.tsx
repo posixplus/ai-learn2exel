@@ -10,7 +10,7 @@ interface Lesson {
 }
 
 interface SidebarProps {
-  level: 0 | 1 | 2
+  level: 0 | 1 | 2 | 3 | 4 | 5
   currentLessonId: string
 }
 
@@ -41,10 +41,52 @@ const LEVEL_2_LESSONS: Lesson[] = [
   { number: 18, title: 'Your AI OS', href: '/level2/lesson18' },
 ]
 
+const LEVEL_3_LESSONS: Lesson[] = [
+  { number: 19, title: 'Models, Memory & Mindset', href: '/level3/lesson19' },
+  { number: 20, title: 'Advanced Prompt Engineering', href: '/level3/lesson20' },
+  { number: 21, title: 'CLAUDE.md & Memory', href: '/level3/lesson21' },
+  { number: 22, title: 'MCP Deep Dive', href: '/level3/lesson22' },
+  { number: 23, title: 'Claude Code Superuser', href: '/level3/lesson23' },
+  { number: 24, title: 'Cowork + Skills Mastery', href: '/level3/lesson24' },
+  { number: 25, title: 'Agentic Workflows', href: '/level3/lesson25' },
+  { number: 26, title: "Don'ts & Beware", href: '/level3/lesson26' },
+  { number: 27, title: 'Ecosystem + Free Stack', href: '/level3/lesson27' },
+  { number: 28, title: 'Claude Settings', href: '/level3/lesson28' },
+]
+
+
+const LEVEL_4_LESSONS: Lesson[] = [
+  { number: 29, title: 'The Claude API', href: '/level4/lesson29' },
+  { number: 30, title: 'Structured Outputs & Tool Use', href: '/level4/lesson30' },
+  { number: 31, title: 'Building RAG Systems', href: '/level4/lesson31' },
+  { number: 32, title: 'Multi-Agent Architectures', href: '/level4/lesson32' },
+  { number: 33, title: 'Claude for Teams & Orgs', href: '/level4/lesson33' },
+  { number: 34, title: 'Multi-Modal: Vision & Docs', href: '/level4/lesson34' },
+  { number: 35, title: 'Production AI Systems', href: '/level4/lesson35' },
+  { number: 36, title: 'Responsible AI for Builders', href: '/level4/lesson36' },
+  { number: 37, title: 'Advanced Prompt Evaluation', href: '/level4/lesson37' },
+]
+
+const LEVEL_5_LESSONS: Lesson[] = [
+  { number: 38, title: 'AI Tools for Devs — The Landscape', href: '/level5/lesson38' },
+  { number: 39, title: 'Inline Code Completion Mastery', href: '/level5/lesson39' },
+  { number: 40, title: 'AI Chat for Development', href: '/level5/lesson40' },
+  { number: 41, title: 'Documenting Code with AI', href: '/level5/lesson41' },
+  { number: 42, title: 'Debugging with AI', href: '/level5/lesson42' },
+  { number: 43, title: 'Writing Tests with AI', href: '/level5/lesson43' },
+  { number: 44, title: 'Refactoring & Code Review', href: '/level5/lesson44' },
+  { number: 45, title: 'Git Workflow with AI', href: '/level5/lesson45' },
+  { number: 46, title: 'Agentic Coding', href: '/level5/lesson46' },
+  { number: 47, title: 'Custom AI Extensions & Agents', href: '/level5/lesson47' },
+]
+
 const LESSONS: Record<number, Lesson[]> = {
   0: LEVEL_0_LESSONS,
   1: LEVEL_1_LESSONS,
   2: LEVEL_2_LESSONS,
+  3: LEVEL_3_LESSONS,
+  4: LEVEL_4_LESSONS,
+  5: LEVEL_5_LESSONS,
 }
 
 export default function Sidebar({ level, currentLessonId }: SidebarProps) {

@@ -2,8 +2,9 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
-import { useAuth } from '@/contexts/AuthContext'
 import { useProgress } from '@/contexts/ProgressContext'
+import { useVisitorName } from './WelcomeModal'
+import WelcomeModal from './WelcomeModal'
 
 const LEVEL_0_LESSONS = [
   { number: 1, title: 'What is AI, ML & LLMs?', href: '/level0/lesson1' },
@@ -35,89 +36,147 @@ const LEVEL_2_LESSONS = [
   { number: 'C', title: 'Capstone', href: '/level2/capstone' },
 ]
 
-const TOOLS = [
-  { title: 'Quiz', href: '/tools/quiz' },
-  { title: 'Prompt Library', href: '/tools/prompt-library' },
-  { title: 'Glossary', href: '/tools/glossary' },
+const LEVEL_3_LESSONS = [
+  { number: 19, title: 'Models, Memory & Mindset', href: '/level3/lesson19' },
+  { number: 20, title: 'Advanced Prompt Engineering', href: '/level3/lesson20' },
+  { number: 21, title: 'CLAUDE.md & Memory', href: '/level3/lesson21' },
+  { number: 22, title: 'MCP Deep Dive', href: '/level3/lesson22' },
+  { number: 23, title: 'Claude Code Superuser', href: '/level3/lesson23' },
+  { number: 24, title: 'Cowork + Skills Mastery', href: '/level3/lesson24' },
+  { number: 25, title: 'Agentic Workflows', href: '/level3/lesson25' },
+  { number: 'C', title: 'Capstone', href: '/level3/capstone' },
+]
+
+const TOOL_GROUPS = [
+  {
+    label: 'Course Tools',
+    items: [
+      { title: '📝 Quiz', href: '/tools/quiz' },
+      { title: '📚 Prompt Library', href: '/tools/prompt-library' },
+      { title: '🔤 Glossary', href: '/tools/glossary' },
+      { title: '⌨️ Claude Code Cheat Sheet', href: '/tools/claude-cheatsheet' },
+    ],
+  },
+  {
+    label: 'AI Coding Tools — Setup Guide',
+    items: [
+      { title: '🌊 Windsurf', href: '/tools/windsurf' },
+      { title: '🖱️ Cursor', href: '/tools/cursor' },
+      { title: '💻 VS Code + AI Extensions', href: '/tools/vscode-ai' },
+      { title: '🤖 GitHub Copilot', href: '/tools/github-copilot' },
+      { title: '⌨️ Claude Code CLI', href: '/tools/claude-code-cli' },
+    ],
+  },
+  {
+    label: 'Local & Open-Source AI',
+    items: [
+      { title: '🦙 Ollama', href: '/tools/ollama' },
+      { title: '🤗 Hugging Face', href: '/tools/huggingface' },
+      { title: '🆓 Free Local AI — 1-Pager', href: '/tools/local-ai' },
+    ],
+  },
+  {
+    label: 'Hardware & Buying Guides',
+    items: [
+      { title: '🖥️ Mac vs Windows for AI', href: '/tools/ai-hardware' },
+      { title: '🔌 AI APIs Comparison', href: '/tools/ai-apis' },
+    ],
+  },
 ]
 
 export default function Nav() {
-  const { user, logout } = useAuth()
   const { completed } = useProgress()
+  const { name } = useVisitorName()
   const [isMobileOpen, setIsMobileOpen] = useState(false)
 
   const completedCount = completed.length
-  const totalLessons = 18
-
-  const handleLogout = () => {
-    logout()
-  }
-
-  const toggleMobile = () => {
-    setIsMobileOpen(!isMobileOpen)
-  }
+  const totalLessons = 25
 
   return (
-    <nav className="nav">
-      <div className="nav-inner">
-        <Link href="/" className="nav-logo">
-          <span className="nav-logo-icon">🤖</span>
-          <span>AI for Everyone</span>
-        </Link>
+    <>
+      <WelcomeModal />
+      <nav className="nav">
+        <div className="nav-inner">
+          <Link href="/" className="nav-logo">
+            <span className="nav-logo-icon">🤖</span>
+            <span>AI for Everyone</span>
+          </Link>
 
-        <div className={`nav-links ${isMobileOpen ? 'mobile-open' : ''}`}>
-          {/* Level 0 Dropdown */}
-          <div className="nav-item">
-            <span className="nav-dd-title">
-              <span className="nav-dd-icon">📚</span>
-              Level 0 — Foundations
-            </span>
-            <div className="nav-dropdown">
-              {LEVEL_0_LESSONS.map((lesson) => (
-                <Link
-                  key={lesson.href}
-                  href={lesson.href}
-                  className="nav-dropdown-item"
-                >
-                  <span style={{ fontWeight: 600, marginRight: '0.5rem' }}>
-                    {lesson.number}
-                  </span>
-                  {lesson.title}
-                </Link>
-              ))}
+          <div className={`nav-links ${isMobileOpen ? 'mobile-open' : ''}`}>
+            {/* Level 0 Dropdown */}
+            <div className="nav-item">
+              <span className="nav-dd-title">
+                <span className="nav-dd-icon">📚</span>
+                Level 0 — Foundations
+              </span>
+              <div className="nav-dropdown">
+                {LEVEL_0_LESSONS.map((lesson) => (
+                  <Link
+                    key={lesson.href}
+                    href={lesson.href}
+                    className="nav-dropdown-item"
+                  >
+                    <span style={{ fontWeight: 600, marginRight: '0.5rem' }}>
+                      {lesson.number}
+                    </span>
+                    {lesson.title}
+                  </Link>
+                ))}
+              </div>
             </div>
-          </div>
 
-          {/* Level 1 Dropdown */}
-          <div className="nav-item">
-            <span className="nav-dd-title">
-              <span className="nav-dd-icon">🚀</span>
-              Level 1 — Going Deeper
-            </span>
-            <div className="nav-dropdown">
-              {LEVEL_1_LESSONS.map((lesson) => (
-                <Link
-                  key={lesson.href}
-                  href={lesson.href}
-                  className="nav-dropdown-item"
-                >
-                  <span style={{ fontWeight: 600, marginRight: '0.5rem' }}>
-                    {lesson.number}
-                  </span>
-                  {lesson.title}
-                </Link>
-              ))}
+            {/* Level 1 Dropdown */}
+            <div className="nav-item">
+              <span className="nav-dd-title">
+                <span className="nav-dd-icon">🚀</span>
+                Level 1 — Going Deeper
+              </span>
+              <div className="nav-dropdown">
+                {LEVEL_1_LESSONS.map((lesson) => (
+                  <Link
+                    key={lesson.href}
+                    href={lesson.href}
+                    className="nav-dropdown-item"
+                  >
+                    <span style={{ fontWeight: 600, marginRight: '0.5rem' }}>
+                      {lesson.number}
+                    </span>
+                    {lesson.title}
+                  </Link>
+                ))}
+              </div>
             </div>
-          </div>
 
-          {/* Level 2 Dropdown */}
+            {/* Level 2 Dropdown */}
+            <div className="nav-item">
+              <span className="nav-dd-title">
+                <span className="nav-dd-icon">🧠</span>
+                Level 2 — Applied AI
+              </span>
+              <div className="nav-dropdown">
+                {LEVEL_2_LESSONS.map((lesson) => (
+                  <Link
+                    key={lesson.href}
+                    href={lesson.href}
+                    className="nav-dropdown-item"
+                  >
+                    <span style={{ fontWeight: 600, marginRight: '0.5rem' }}>
+                      {lesson.number}
+                    </span>
+                    {lesson.title}
+                  </Link>
+                ))}
+              </div>
+            </div>
+
+            {/* Level 3 Dropdown */}
           <div className="nav-item">
             <span className="nav-dd-title">
-              <span className="nav-dd-icon">🧠</span>
-              Level 2 — Applied AI
+              <span className="nav-dd-icon">🔮</span>
+              Level 3 — Master Claude
             </span>
             <div className="nav-dropdown">
-              {LEVEL_2_LESSONS.map((lesson) => (
+              {LEVEL_3_LESSONS.map((lesson) => (
                 <Link
                   key={lesson.href}
                   href={lesson.href}
@@ -133,53 +192,53 @@ export default function Nav() {
           </div>
 
           {/* Tools Dropdown */}
-          <div className="nav-item">
-            <span className="nav-dd-title">
-              <span className="nav-dd-icon">🛠️</span>
-              Tools
-            </span>
-            <div className="nav-dropdown">
-              {TOOLS.map((tool) => (
-                <Link
-                  key={tool.href}
-                  href={tool.href}
-                  className="nav-dropdown-item"
-                >
-                  {tool.title}
-                </Link>
-              ))}
+            <div className="nav-item">
+              <span className="nav-dd-title">
+                <span className="nav-dd-icon">🛠️</span>
+                Tools
+              </span>
+              <div className="nav-dropdown nav-dropdown-wide">
+                {TOOL_GROUPS.map((group, gi) => (
+                  <div key={group.label}>
+                    {gi > 0 && <div className="nav-dd-divider" />}
+                    <div className="nav-dd-label">{group.label}</div>
+                    {group.items.map((tool) => (
+                      <Link
+                        key={tool.href}
+                        href={tool.href}
+                        className="nav-dropdown-item"
+                      >
+                        {tool.title}
+                      </Link>
+                    ))}
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
-        </div>
 
-        <div className="nav-right">
-          <div className="nav-progress-badge">
-            <span className="nav-dot"></span>
-            {completedCount}/{totalLessons} done
+          <div className="nav-right">
+            <div className="nav-progress-badge">
+              <span className="nav-dot"></span>
+              {completedCount}/{totalLessons} done
+            </div>
+
+            {name && (
+              <span style={{ marginLeft: '1.25rem', fontSize: '0.9rem', color: '#6b7280', fontWeight: 500 }}>
+                👋 {name}
+              </span>
+            )}
           </div>
 
-          <div className="nav-item" style={{ marginLeft: '1.5rem' }}>
-            <span style={{ marginRight: '1rem', fontSize: '0.95rem' }}>
-              Hi, {user?.displayName || 'there'}
-            </span>
-            <button
-              onClick={handleLogout}
-              className="nav-btn"
-              style={{ fontSize: '0.85rem' }}
-            >
-              Logout
-            </button>
-          </div>
+          <button
+            className="nav-hamburger"
+            onClick={() => setIsMobileOpen(!isMobileOpen)}
+            aria-label="Toggle menu"
+          >
+            ☰
+          </button>
         </div>
-
-        <button
-          className="nav-hamburger"
-          onClick={toggleMobile}
-          style={{ display: 'none' }}
-        >
-          ☰
-        </button>
-      </div>
-    </nav>
+      </nav>
+    </>
   )
 }
