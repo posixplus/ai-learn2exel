@@ -133,137 +133,39 @@ export default function Nav() {
           </Link>
 
           <div className={`nav-links ${isMobileOpen ? 'mobile-open' : ''}`}>
-            {/* Level 0 Dropdown */}
+
+            {/* Courses mega-dropdown */}
             <div className="nav-item">
               <span className="nav-dd-title">
-                <span className="nav-dd-icon">📚</span>
-                Level 0 — Foundations
+                <span className="nav-dd-icon">🎓</span>
+                Courses
               </span>
-              <div className="nav-dropdown">
-                {LEVEL_0_LESSONS.map((lesson) => (
-                  <Link
-                    key={lesson.href}
-                    href={lesson.href}
-                    className="nav-dropdown-item"
-                  >
-                    <span style={{ fontWeight: 600, marginRight: '0.5rem' }}>
-                      {lesson.number}
-                    </span>
-                    {lesson.title}
-                  </Link>
+              <div className="nav-dropdown nav-mega">
+                {[
+                  { icon: '📚', label: 'Level 0 — Foundations',        lessons: LEVEL_0_LESSONS },
+                  { icon: '🚀', label: 'Level 1 — Going Deeper',        lessons: LEVEL_1_LESSONS },
+                  { icon: '🧠', label: 'Level 2 — Applied AI',          lessons: LEVEL_2_LESSONS },
+                  { icon: '🔮', label: 'Level 3 — Master Claude',        lessons: LEVEL_3_LESSONS },
+                  { icon: '🔧', label: 'Level 4 — Claude for Builders',  lessons: LEVEL_4_LESSONS },
+                  { icon: '⌨️', label: 'Level 5 — AI Coding Tools',     lessons: LEVEL_5_LESSONS },
+                ].map((lvl, li) => (
+                  <div key={lvl.label} className="nav-mega-col">
+                    <div className="nav-dd-label" style={{ display: 'flex', alignItems: 'center', gap: '0.3rem' }}>
+                      <span>{lvl.icon}</span>{lvl.label}
+                    </div>
+                    {lvl.lessons.map((lesson) => (
+                      <Link key={lesson.href} href={lesson.href} className="nav-dropdown-item">
+                        <span style={{ fontWeight: 600, marginRight: '0.4rem', minWidth: '1.4rem', display: 'inline-block' }}>
+                          {lesson.number}
+                        </span>
+                        {lesson.title}
+                      </Link>
+                    ))}
+                    {li < 5 && <div className="nav-dd-divider" />}
+                  </div>
                 ))}
               </div>
             </div>
-
-            {/* Level 1 Dropdown */}
-            <div className="nav-item">
-              <span className="nav-dd-title">
-                <span className="nav-dd-icon">🚀</span>
-                Level 1 — Going Deeper
-              </span>
-              <div className="nav-dropdown">
-                {LEVEL_1_LESSONS.map((lesson) => (
-                  <Link
-                    key={lesson.href}
-                    href={lesson.href}
-                    className="nav-dropdown-item"
-                  >
-                    <span style={{ fontWeight: 600, marginRight: '0.5rem' }}>
-                      {lesson.number}
-                    </span>
-                    {lesson.title}
-                  </Link>
-                ))}
-              </div>
-            </div>
-
-            {/* Level 2 Dropdown */}
-            <div className="nav-item">
-              <span className="nav-dd-title">
-                <span className="nav-dd-icon">🧠</span>
-                Level 2 — Applied AI
-              </span>
-              <div className="nav-dropdown">
-                {LEVEL_2_LESSONS.map((lesson) => (
-                  <Link
-                    key={lesson.href}
-                    href={lesson.href}
-                    className="nav-dropdown-item"
-                  >
-                    <span style={{ fontWeight: 600, marginRight: '0.5rem' }}>
-                      {lesson.number}
-                    </span>
-                    {lesson.title}
-                  </Link>
-                ))}
-              </div>
-            </div>
-
-            {/* Level 3 Dropdown */}
-          <div className="nav-item">
-            <span className="nav-dd-title">
-              <span className="nav-dd-icon">🔮</span>
-              Level 3 — Master Claude
-            </span>
-            <div className="nav-dropdown">
-              {LEVEL_3_LESSONS.map((lesson) => (
-                <Link
-                  key={lesson.href}
-                  href={lesson.href}
-                  className="nav-dropdown-item"
-                >
-                  <span style={{ fontWeight: 600, marginRight: '0.5rem' }}>
-                    {lesson.number}
-                  </span>
-                  {lesson.title}
-                </Link>
-              ))}
-            </div>
-          </div>
-
-          {/* Level 4 Dropdown */}
-          <div className="nav-item">
-            <span className="nav-dd-title">
-              <span className="nav-dd-icon">🔧</span>
-              Level 4 — Claude for Builders
-            </span>
-            <div className="nav-dropdown">
-              {LEVEL_4_LESSONS.map((lesson) => (
-                <Link
-                  key={lesson.href}
-                  href={lesson.href}
-                  className="nav-dropdown-item"
-                >
-                  <span style={{ fontWeight: 600, marginRight: '0.5rem' }}>
-                    {lesson.number}
-                  </span>
-                  {lesson.title}
-                </Link>
-              ))}
-            </div>
-          </div>
-
-          {/* Level 5 Dropdown */}
-          <div className="nav-item">
-            <span className="nav-dd-title">
-              <span className="nav-dd-icon">⌨️</span>
-              Level 5 — AI Coding Tools
-            </span>
-            <div className="nav-dropdown">
-              {LEVEL_5_LESSONS.map((lesson) => (
-                <Link
-                  key={lesson.href}
-                  href={lesson.href}
-                  className="nav-dropdown-item"
-                >
-                  <span style={{ fontWeight: 600, marginRight: '0.5rem' }}>
-                    {lesson.number}
-                  </span>
-                  {lesson.title}
-                </Link>
-              ))}
-            </div>
-          </div>
 
           {/* Tools Dropdown */}
             <div className="nav-item">
