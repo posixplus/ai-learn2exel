@@ -44,7 +44,37 @@ const LEVEL_3_LESSONS = [
   { number: 23, title: 'Claude Code Superuser', href: '/level3/lesson23' },
   { number: 24, title: 'Cowork + Skills Mastery', href: '/level3/lesson24' },
   { number: 25, title: 'Agentic Workflows', href: '/level3/lesson25' },
+  { number: 26, title: "Don'ts & Beware", href: '/level3/lesson26' },
+  { number: 27, title: 'Ecosystem + Free Stack', href: '/level3/lesson27' },
+  { number: 28, title: 'Claude Settings', href: '/level3/lesson28' },
   { number: 'C', title: 'Capstone', href: '/level3/capstone' },
+]
+
+const LEVEL_4_LESSONS = [
+  { number: 29, title: 'The Claude API', href: '/level4/lesson29' },
+  { number: 30, title: 'Structured Outputs & Tool Use', href: '/level4/lesson30' },
+  { number: 31, title: 'Building RAG Systems', href: '/level4/lesson31' },
+  { number: 32, title: 'Multi-Agent Architectures', href: '/level4/lesson32' },
+  { number: 33, title: 'Claude for Teams & Orgs', href: '/level4/lesson33' },
+  { number: 34, title: 'Multi-Modal: Vision & Docs', href: '/level4/lesson34' },
+  { number: 35, title: 'Production AI Systems', href: '/level4/lesson35' },
+  { number: 36, title: 'Responsible AI for Builders', href: '/level4/lesson36' },
+  { number: 37, title: 'Advanced Prompt Evaluation', href: '/level4/lesson37' },
+  { number: 'C', title: 'Capstone', href: '/level4/capstone' },
+]
+
+const LEVEL_5_LESSONS = [
+  { number: 38, title: 'AI Tools for Devs — The Landscape', href: '/level5/lesson38' },
+  { number: 39, title: 'Inline Code Completion Mastery', href: '/level5/lesson39' },
+  { number: 40, title: 'AI Chat for Development', href: '/level5/lesson40' },
+  { number: 41, title: 'Documenting Code with AI', href: '/level5/lesson41' },
+  { number: 42, title: 'Debugging with AI', href: '/level5/lesson42' },
+  { number: 43, title: 'Writing Tests with AI', href: '/level5/lesson43' },
+  { number: 44, title: 'Refactoring & Code Review', href: '/level5/lesson44' },
+  { number: 45, title: 'Git Workflow with AI', href: '/level5/lesson45' },
+  { number: 46, title: 'Agentic Coding', href: '/level5/lesson46' },
+  { number: 47, title: 'Custom AI Extensions & Agents', href: '/level5/lesson47' },
+  { number: 'C', title: 'Capstone', href: '/level5/capstone' },
 ]
 
 const TOOL_GROUPS = [
@@ -90,7 +120,7 @@ export default function Nav() {
   const [isMobileOpen, setIsMobileOpen] = useState(false)
 
   const completedCount = completed.length
-  const totalLessons = 25
+  const totalLessons = 47
 
   return (
     <>
@@ -177,6 +207,50 @@ export default function Nav() {
             </span>
             <div className="nav-dropdown">
               {LEVEL_3_LESSONS.map((lesson) => (
+                <Link
+                  key={lesson.href}
+                  href={lesson.href}
+                  className="nav-dropdown-item"
+                >
+                  <span style={{ fontWeight: 600, marginRight: '0.5rem' }}>
+                    {lesson.number}
+                  </span>
+                  {lesson.title}
+                </Link>
+              ))}
+            </div>
+          </div>
+
+          {/* Level 4 Dropdown */}
+          <div className="nav-item">
+            <span className="nav-dd-title">
+              <span className="nav-dd-icon">🔧</span>
+              Level 4 — Claude for Builders
+            </span>
+            <div className="nav-dropdown">
+              {LEVEL_4_LESSONS.map((lesson) => (
+                <Link
+                  key={lesson.href}
+                  href={lesson.href}
+                  className="nav-dropdown-item"
+                >
+                  <span style={{ fontWeight: 600, marginRight: '0.5rem' }}>
+                    {lesson.number}
+                  </span>
+                  {lesson.title}
+                </Link>
+              ))}
+            </div>
+          </div>
+
+          {/* Level 5 Dropdown */}
+          <div className="nav-item">
+            <span className="nav-dd-title">
+              <span className="nav-dd-icon">⌨️</span>
+              Level 5 — AI Coding Tools
+            </span>
+            <div className="nav-dropdown">
+              {LEVEL_5_LESSONS.map((lesson) => (
                 <Link
                   key={lesson.href}
                   href={lesson.href}
