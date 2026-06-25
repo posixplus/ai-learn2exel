@@ -2,6 +2,7 @@ import LessonHeader from '@/components/lesson/LessonHeader'
 import Sidebar from '@/components/lesson/Sidebar'
 import LessonNav from '@/components/lesson/LessonNav'
 import LevelFeedback from '@/components/lesson/LevelFeedback'
+import LevelQuiz from '@/components/lesson/LevelQuiz'
 
 export default function Level4Capstone() {
   return (
@@ -13,7 +14,7 @@ export default function Level4Capstone() {
           lessonNumber={0}
           duration={0}
           title="Level 4 Capstone: Ship Your AI Product"
-          subtitle="Everything you've learned — API, RAG, agents, vision, production, evals — comes together in one real project."
+          subtitle="Everything you've learned - API, RAG, agents, vision, production, evals - comes together in one real project."
         />
 
         <section className="capstone-hero l4">
@@ -51,12 +52,12 @@ Stack: TypeScript, Tailwind, Supabase, Anthropic SDK.
 Features:
 1. Supabase table: tickets (id, subject, body, status, category, priority, created_at)
 2. Supabase table: knowledge_base (id, content, metadata, embedding vector(1536))
-3. POST /api/ingest — chunk and embed a text document into knowledge_base
-4. POST /api/triage — given a ticket body, return {category, priority} using
+3. POST /api/ingest - chunk and embed a text document into knowledge_base
+4. POST /api/triage - given a ticket body, return {category, priority} using
    Claude claude-haiku-4-5 with structured JSON output
-5. POST /api/draft-reply — RAG over knowledge_base, return a draft reply
-   using claude-opus-4-5 with prompt caching on the system prompt
-6. GET /api/tickets — list all tickets
+5. POST /api/draft-reply - RAG over knowledge_base, return a draft reply
+   using claude-opus-4-8 with prompt caching on the system prompt
+6. GET /api/tickets - list all tickets
 7. UI: /inbox page with ticket list; click opens detail with:
    - Ticket body
    - AI triage badge (category + priority)
@@ -72,7 +73,7 @@ Add per-request cost logging to console.`}</pre>
           <h2>Option B: Multi-Agent Research Assistant</h2>
           <p>
             Build a pipeline that takes a research question and returns a structured
-            report — with parallel sub-agents, a critic loop, and source citations.
+            report - with parallel sub-agents, a critic loop, and source citations.
           </p>
           <div className="info-box">
             <strong>What to build:</strong>
@@ -93,7 +94,7 @@ Architecture:
 - researcher(sub_question) -> findings (bullet points)
   Use claude-haiku-4-5 for researchers (cheap + parallel)
 - synthesiser(all_findings, original_question) -> 600-word report
-  Use claude-opus-4-5 for synthesis
+  Use claude-opus-4-8 for synthesis
 - critic(report) -> {"score": 1-10, "improvements": [...]}
   Loop max 3 times; stop if score >= 8 or "APPROVED" in output
 - reviser(report, critique) -> improved report
@@ -114,7 +115,7 @@ against ideal answers you write manually.`}</pre>
           <h2>Option C: Vision Document Processor</h2>
           <p>
             Build a document intelligence app that accepts uploaded images or PDFs and
-            extracts structured data — receipts, invoices, forms, or contracts.
+            extracts structured data - receipts, invoices, forms, or contracts.
           </p>
           <div className="info-box">
             <strong>What to build:</strong>
@@ -137,7 +138,7 @@ Features:
 2. POST /api/extract:
    - Accept file as FormData
    - Convert to base64 (image) or base64 pdf document block
-   - Send to claude-opus-4-5 with this system prompt:
+   - Send to claude-opus-4-8 with this system prompt:
      "Extract all data from this document. Return JSON:
       {type: 'receipt'|'invoice'|'form'|'contract'|'other',
        vendor: string|null, date: string|null,
@@ -159,27 +160,27 @@ Add output safety check: if extracted total > 100000, flag for manual review.`}<
           <div className="steps-list">
             <div className="step">
               <div className="step-number">1</div>
-              <div><strong>Uses the Claude API directly</strong> — no UI wrappers, raw SDK calls</div>
+              <div><strong>Uses the Claude API directly</strong> - no UI wrappers, raw SDK calls</div>
             </div>
             <div className="step">
               <div className="step-number">2</div>
-              <div><strong>Structured outputs</strong> — at least one feature returns validated JSON</div>
+              <div><strong>Structured outputs</strong> - at least one feature returns validated JSON</div>
             </div>
             <div className="step">
               <div className="step-number">3</div>
-              <div><strong>Production-ready</strong> — retry logic, error handling, cost logging</div>
+              <div><strong>Production-ready</strong> - retry logic, error handling, cost logging</div>
             </div>
             <div className="step">
               <div className="step-number">4</div>
-              <div><strong>Eval suite</strong> — 10+ test cases with a measurable pass/fail score</div>
+              <div><strong>Eval suite</strong> - 10+ test cases with a measurable pass/fail score</div>
             </div>
             <div className="step">
               <div className="step-number">5</div>
-              <div><strong>Deployed</strong> — live on Vercel or Railway with a shareable URL</div>
+              <div><strong>Deployed</strong> - live on Vercel or Railway with a shareable URL</div>
             </div>
             <div className="step">
               <div className="step-number">6</div>
-              <div><strong>Responsible</strong> — input sanitisation, output safety check, AI disclosure in UI</div>
+              <div><strong>Responsible</strong> - input sanitisation, output safety check, AI disclosure in UI</div>
             </div>
           </div>
         </section>
@@ -194,14 +195,15 @@ Add output safety check: if extracted total > 100000, flag for manual review.`}<
               <li>Build RAG systems over your own data with Supabase pgvector</li>
               <li>Orchestrate multiple Claude agents in parallel and critic-reviser loops</li>
               <li>Deploy Claude into production with caching, rate limiting, and observability</li>
-              <li>Build responsibly — prompt injection defence, output filtering, transparency</li>
+              <li>Build responsibly - prompt injection defence, output filtering, transparency</li>
               <li>Measure and improve prompt quality with systematic evals</li>
             </ul>
             <p><strong>You're not a Claude user anymore. You're a Claude builder.</strong></p>
           </div>
         </section>
 
-        <LevelFeedback level={4} levelTitle="Claude for Builders — API & Production" />
+        <LevelQuiz level={4} />
+        <LevelFeedback level={4} levelTitle="Claude for Builders - API & Production" />
         <LessonNav
           level={4}
           prev={{ href: '/level4/lesson37', label: 'L37: Advanced Prompt Evaluation' }}

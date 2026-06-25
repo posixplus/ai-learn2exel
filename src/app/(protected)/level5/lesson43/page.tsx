@@ -11,16 +11,16 @@ export default function Lesson43() {
       <main className="lesson-main">
         <LessonHeader level={5} lessonNumber={43} duration={90}
           title="Writing Tests with AI"
-          subtitle="AI writes the tests you never had time to write. Unit tests, edge cases, mocks, integration tests — in seconds." />
+          subtitle="AI writes the tests you never had time to write. Unit tests, edge cases, mocks, integration tests - in seconds." />
 
         <section className="section-card">
           <h2>Why AI + Testing is a Force Multiplier</h2>
-          <p>Testing is the developer task most likely to be skipped under deadline pressure. AI reverses this — generating a solid test suite takes minutes, not hours. The bottleneck shifts from writing to reviewing.</p>
+          <p>Testing is the developer task most likely to be skipped under deadline pressure. AI reverses this - generating a solid test suite takes minutes, not hours. The bottleneck shifts from writing to reviewing.</p>
           <div className="info-box">
             <strong>What AI generates well:</strong>
             <ul>
               <li>Unit tests for pure functions (deterministic, no side effects)</li>
-              <li>Edge case discovery — null, empty, boundary, invalid input</li>
+              <li>Edge case discovery - null, empty, boundary, invalid input</li>
               <li>Mock setup for external dependencies (DB, APIs, timers)</li>
               <li>Integration test scaffolding</li>
               <li>Test data builders and factory functions</li>
@@ -74,10 +74,10 @@ describe('parseAmount', () => {
 
         <section className="section-card">
           <h2>Edge Case Discovery Prompt</h2>
-          <pre className="code-block">{`// Dedicated edge case prompt — gets you cases you'd never think of:
+          <pre className="code-block">{`// Dedicated edge case prompt - gets you cases you'd never think of:
 
 "List every edge case and boundary condition that should be
-tested for this function. Be exhaustive — include:
+tested for this function. Be exhaustive - include:
 - Empty/null/undefined inputs
 - Boundary values (min, max, zero, negative)
 - Type coercion surprises
@@ -155,16 +155,16 @@ describe('UserService.registerUser', () => {
               <div>Describe the function you want in plain English to AI</div>
             </div>
             <div className="step"><div className="step-number">2</div>
-              <div>Ask: "Write the failing tests first — no implementation yet"</div>
+              <div>Ask: "Write the failing tests first - no implementation yet"</div>
             </div>
             <div className="step"><div className="step-number">3</div>
-              <div>Run the tests — confirm they all fail (red)</div>
+              <div>Run the tests - confirm they all fail (red)</div>
             </div>
             <div className="step"><div className="step-number">4</div>
               <div>Ask: "Now write the minimal implementation to pass these tests"</div>
             </div>
             <div className="step"><div className="step-number">5</div>
-              <div>Run tests — confirm they pass (green), then ask: "Refactor this while keeping tests green"</div>
+              <div>Run tests - confirm they pass (green), then ask: "Refactor this while keeping tests green"</div>
             </div>
           </div>
           <pre className="code-block">{`// TDD prompt:
@@ -193,11 +193,11 @@ Write the tests first (Jest + TypeScript). No implementation."`}</pre>
         </section>
 
         <QuickRef title="Lesson 43 Quick Reference" items={[
-          { term: '/tests (Copilot)', definition: 'Select a function, run /tests — generates full unit test suite' },
-          { term: 'Edge case prompt', definition: '"List every edge case: null, boundary, Unicode, error paths" — then write tests' },
+          { term: '/tests (Copilot)', definition: 'Select a function, run /tests - generates full unit test suite' },
+          { term: 'Edge case prompt', definition: '"List every edge case: null, boundary, Unicode, error paths" - then write tests' },
           { term: 'Mock setup', definition: '"Write tests mocking the DB and email service using jest.mock()"' },
-          { term: 'TDD with AI', definition: '"Write failing tests first — no implementation" then "pass these tests minimally"' },
-          { term: 'Coverage gaps', definition: '"Read the test file and the source — what code paths are missing?"' },
+          { term: 'TDD with AI', definition: '"Write failing tests first - no implementation" then "pass these tests minimally"' },
+          { term: 'Coverage gaps', definition: '"Read the test file and the source - what code paths are missing?"' },
           { term: 'Test data builders', definition: 'Ask: "Write a factory function that creates test User objects with sensible defaults"' },
         ]} />
 

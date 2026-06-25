@@ -2,6 +2,7 @@ import LessonHeader from '@/components/lesson/LessonHeader'
 import Sidebar from '@/components/lesson/Sidebar'
 import LessonNav from '@/components/lesson/LessonNav'
 import LevelFeedback from '@/components/lesson/LevelFeedback'
+import LevelQuiz from '@/components/lesson/LevelQuiz'
 
 export default function Level3Capstone() {
   return (
@@ -10,26 +11,26 @@ export default function Level3Capstone() {
       <main className="lesson-main">
         <LessonHeader level={3} lessonNumber={0} duration={240}
           title="Capstone: Build a Real Application"
-          subtitle="Put everything together — pick an app idea, build it end-to-end with Claude, and deploy it to the real internet for free" />
+          subtitle="Put everything together - pick an app idea, build it end-to-end with Claude, and deploy it to the real internet for free" />
 
         <section className="section-card">
           <h2>What This Capstone Tests</h2>
           <p>
-            This is not a quiz — it is a build. You will use everything from all four levels:
+            This is not a quiz - it is a build. You will use everything from all four levels:
             effective prompting (Level 0), understanding Claude&apos;s capabilities (Level 1),
             real-world tools (Level 2), and advanced techniques (Level 3). By the end you will
             have a live application at a real URL, built entirely by directing Claude.
           </p>
           <div className="info-box">
-            <strong>Time estimate:</strong> 3–5 hours for a first-time builder, 1–2 hours if you have built a Next.js app before.
-            Pace yourself — the goal is a working MVP, not perfection.
+            <strong>Time estimate:</strong> 3-5 hours for a first-time builder, 1-2 hours if you have built a Next.js app before.
+            Pace yourself - the goal is a working MVP, not perfection.
           </div>
         </section>
 
         <section className="section-card">
           <h2>Pick Your App</h2>
           <p>
-            Choose one of the three ideas below — each uses the full free-tier stack from Lesson 27 and showcases real
+            Choose one of the three ideas below - each uses the full free-tier stack from Lesson 27 and showcases real
             Claude capabilities. Or bring your own idea and use these as a template for how to structure your approach.
           </p>
         </section>
@@ -48,10 +49,10 @@ export default function Level3Capstone() {
 
           <h3 style={{marginTop:'1.5rem', marginBottom:'0.75rem'}}>Key Features</h3>
           <div className="steps-list">
-            <div className="step"><strong>Note input</strong> — Paste text or a URL; Claude extracts and summarises key content automatically</div>
-            <div className="step"><strong>Semantic search</strong> — Supabase pgvector + Anthropic embeddings so queries find relevant notes even without exact keywords</div>
-            <div className="step"><strong>Q&amp;A interface</strong> — Ask &ldquo;What did I save about prompt engineering?&rdquo; and Claude answers using your actual notes as context</div>
-            <div className="step"><strong>Auto-tagging</strong> — Claude assigns topic tags to every note on save</div>
+            <div className="step"><strong>Note input</strong> - Paste text or a URL; Claude extracts and summarises key content automatically</div>
+            <div className="step"><strong>Semantic search</strong> - Supabase pgvector + Anthropic embeddings so queries find relevant notes even without exact keywords</div>
+            <div className="step"><strong>Q&amp;A interface</strong> - Ask &ldquo;What did I save about prompt engineering?&rdquo; and Claude answers using your actual notes as context</div>
+            <div className="step"><strong>Auto-tagging</strong> - Claude assigns topic tags to every note on save</div>
           </div>
 
           <div className="hands-on-box">
@@ -59,7 +60,7 @@ export default function Level3Capstone() {
             <pre>{`Build a personal knowledge base app called "Second Brain" 
 with Next.js and Supabase.
 
-1. Auth: Supabase email auth — only I can sign in
+1. Auth: Supabase email auth - only I can sign in
 2. Note entry: textarea for pasting text. On save:
    - Claude (Haiku) generates a 2-sentence summary and 3 tags
    - Store in: notes(id, content, summary, tags, embedding, created_at)
@@ -90,10 +91,10 @@ Start with the database schema, then the note entry UI.`}</pre>
 
           <h3 style={{marginTop:'1.5rem', marginBottom:'0.75rem'}}>Key Features</h3>
           <div className="steps-list">
-            <div className="step"><strong>Habit setup</strong> — Create up to 10 habits (name, target days/week, category: health/work/personal)</div>
-            <div className="step"><strong>Daily check-in</strong> — Simple tick-box UI, one tap per habit</div>
-            <div className="step"><strong>Streak visualiser</strong> — GitHub-style contribution grid for the last 12 weeks</div>
-            <div className="step"><strong>Sunday AI coach</strong> — Vercel Cron pulls week data, sends to Claude, gets a 3-paragraph coaching message, emails via Resend</div>
+            <div className="step"><strong>Habit setup</strong> - Create up to 10 habits (name, target days/week, category: health/work/personal)</div>
+            <div className="step"><strong>Daily check-in</strong> - Simple tick-box UI, one tap per habit</div>
+            <div className="step"><strong>Streak visualiser</strong> - GitHub-style contribution grid for the last 12 weeks</div>
+            <div className="step"><strong>Sunday AI coach</strong> - Vercel Cron pulls week data, sends to Claude, gets a 3-paragraph coaching message, emails via Resend</div>
           </div>
 
           <div className="hands-on-box">
@@ -106,9 +107,9 @@ Database:
 - habit_logs(id, habit_id, user_id, completed_date, created_at)
 
 Pages:
-1. /dashboard — today's habits as a checklist (tap to complete)
-2. /habits — manage habits (add/edit/delete)  
-3. /stats — 12-week grid per habit (GitHub contribution style)
+1. /dashboard - today's habits as a checklist (tap to complete)
+2. /habits - manage habits (add/edit/delete)  
+3. /stats - 12-week grid per habit (GitHub contribution style)
 
 Weekly coaching (Vercel Cron, every Sunday 8am UTC):
 - API route POST /api/weekly-coach
@@ -123,7 +124,7 @@ Start with database schema, then the dashboard.`}</pre>
 
         <section className="section-card" style={{border:'2px solid #8b5cf6', borderRadius:'var(--radius-lg)', padding:'1.5rem'}}>
           <h2>&#128161; App Idea 3: AI Meeting Prep &amp; Follow-Up Tool</h2>
-          <p><strong>What it does:</strong> Before a meeting, paste the agenda and attendees — Claude drafts talking points. After the meeting, paste your notes — Claude extracts action items, decisions, and drafts a follow-up email.</p>
+          <p><strong>What it does:</strong> Before a meeting, paste the agenda and attendees - Claude drafts talking points. After the meeting, paste your notes - Claude extracts action items, decisions, and drafts a follow-up email.</p>
 
           <h3 style={{marginTop:'1.5rem', marginBottom:'0.75rem'}}>Stack</h3>
           <ul style={{marginLeft:'1.5rem', lineHeight:'1.8'}}>
@@ -135,10 +136,10 @@ Start with database schema, then the dashboard.`}</pre>
 
           <h3 style={{marginTop:'1.5rem', marginBottom:'0.75rem'}}>Key Features</h3>
           <div className="steps-list">
-            <div className="step"><strong>Meeting prep</strong> — Input title, attendees, agenda. Claude drafts talking points and questions for each agenda item</div>
-            <div className="step"><strong>Notes processing</strong> — Paste raw notes; Claude structures into decisions, action items (with owner), and open questions</div>
-            <div className="step"><strong>Follow-up email draft</strong> — Claude writes a professional follow-up from structured notes, ready to copy-paste</div>
-            <div className="step"><strong>Meeting history</strong> — All meetings saved in Supabase, searchable by topic or attendee</div>
+            <div className="step"><strong>Meeting prep</strong> - Input title, attendees, agenda. Claude drafts talking points and questions for each agenda item</div>
+            <div className="step"><strong>Notes processing</strong> - Paste raw notes; Claude structures into decisions, action items (with owner), and open questions</div>
+            <div className="step"><strong>Follow-up email draft</strong> - Claude writes a professional follow-up from structured notes, ready to copy-paste</div>
+            <div className="step"><strong>Meeting history</strong> - All meetings saved in Supabase, searchable by topic or attendee</div>
           </div>
 
           <div className="hands-on-box">
@@ -150,13 +151,13 @@ meetings(id, user_id, title, meeting_date, attendees jsonb,
          agenda text, prep_output text, notes text,
          structured_output jsonb, followup_email text, created_at)
 
-Flow 1 — Pre-meeting prep:
+Flow 1 - Pre-meeting prep:
 - Form: title, date, attendees (name + company), agenda topics
 - Call Anthropic API: generate 3 talking points + 2 questions per
   agenda topic, and what each attendee likely cares about
 - Display and save to database
 
-Flow 2 — Post-meeting follow-up:
+Flow 2 - Post-meeting follow-up:
 - Textarea for raw notes
 - Extract: decisions[], action_items[{task, owner, due}], open_questions[]
 - Draft follow-up email (3 paragraphs, professional tone)
@@ -194,20 +195,20 @@ Generate a project CLAUDE.md covering:
 - Patterns to keep consistent across the codebase`}</pre>
             </div>
             <div className="step">
-              <strong>Phase 3: Build with Claude (2–3 hours)</strong>
+              <strong>Phase 3: Build with Claude (2-3 hours)</strong>
               <p>Use the starter prompt for your chosen app. Work in this order:</p>
               <ol style={{marginLeft:'1.5rem', marginTop:'0.5rem', lineHeight:'2'}}>
                 <li>Database schema (run SQL in Supabase editor)</li>
                 <li>Core data layer (Supabase client, TypeScript types)</li>
                 <li>Main UI pages (Claude builds component by component)</li>
                 <li>API routes (Claude handles the AI integration)</li>
-                <li>Auth (last — once you know what needs protecting)</li>
+                <li>Auth (last - once you know what needs protecting)</li>
               </ol>
             </div>
             <div className="step">
               <strong>Phase 4: Deploy &amp; Test (30 min)</strong>
               <ol style={{marginLeft:'1.5rem', marginTop:'0.5rem', lineHeight:'2'}}>
-                <li>Push to GitHub — Vercel auto-deploys on every push</li>
+                <li>Push to GitHub - Vercel auto-deploys on every push</li>
                 <li>Add all env vars in Vercel dashboard → Settings</li>
                 <li>Test the live URL end-to-end</li>
                 <li>Run the Lesson 26 security checklist before sharing</li>
@@ -245,17 +246,18 @@ Show me the minimal code to wire these together.`}</pre>
           <h2>Course Complete &#127881;</h2>
           <p>
             If you have built and deployed your capstone, you have done something most daily Claude users have never done.
-            You understand the full stack — from writing a precise prompt to shipping a production application.
+            You understand the full stack - from writing a precise prompt to shipping a production application.
             You know the pitfalls, the tools, the ecosystem, and the techniques.
           </p>
           <div className="info-box">
             <strong>What is next:</strong> Keep your CLAUDE.md updated as you learn your preferences. Watch for new MCPs and model
-            releases — Claude&apos;s capabilities grow every few months. The best way to deepen your skills is to keep building.
+            releases - Claude&apos;s capabilities grow every few months. The best way to deepen your skills is to keep building.
             Use Claude for every repeated task, and turn each workflow into a skill.
           </div>
         </section>
 
-        <LevelFeedback level={3} levelTitle="Master Claude — Advanced Techniques" />
+        <LevelQuiz level={3} />
+        <LevelFeedback level={3} levelTitle="Master Claude - Advanced Techniques" />
         <LessonNav
           level={3}
           prev={{ href: '/level3/lesson28', label: 'Lesson 28: Claude Settings' }}

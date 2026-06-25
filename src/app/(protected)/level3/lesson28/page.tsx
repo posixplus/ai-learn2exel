@@ -11,7 +11,7 @@ export default function Lesson28() {
       <main className="lesson-main">
         <LessonHeader level={3} lessonNumber={28} duration={75}
           title="Claude Settings: The Complete Guide"
-          subtitle="Every setting that shapes how Claude behaves — what each one does, best practices, and ready-to-use examples" />
+          subtitle="Every setting that shapes how Claude behaves - what each one does, best practices, and ready-to-use examples" />
 
         <section className="section-card">
           <h2>Why Settings Matter</h2>
@@ -22,8 +22,8 @@ export default function Lesson28() {
             Spending 30 minutes on your settings is one of the highest-leverage things you can do.
           </p>
           <div className="info-box">
-            <strong>Two places to configure Claude:</strong> (1) <code>~/.claude/settings.json</code> for Claude Code / Cowork — this controls tools, permissions, hooks, and MCPs.
-            (2) Claude.ai web settings — controls memory, custom instructions, appearance, and integrations.
+            <strong>Two places to configure Claude:</strong> (1) <code>~/.claude/settings.json</code> for Claude Code / Cowork - this controls tools, permissions, hooks, and MCPs.
+            (2) Claude.ai web settings - controls memory, custom instructions, appearance, and integrations.
             This lesson covers both exhaustively.
           </div>
         </section>
@@ -105,10 +105,10 @@ export default function Lesson28() {
 
           <div className="steps-list">
             <div className="step">
-              <strong><code>model</code> — Primary model</strong>
+              <strong><code>model</code> - Primary model</strong>
               <p>Used for all main tasks: code writing, analysis, planning, complex reasoning.</p>
               <pre>{`"model": "claude-sonnet-4-6"   // Best balance: speed + quality
-"model": "claude-opus-4-6"    // Maximum capability (slower, higher cost)
+"model": "claude-opus-4-8"    // Maximum capability (slower, higher cost)
 "model": "claude-haiku-4-5-20251001"  // Fastest, cheapest (simple tasks only)`}</pre>
               <div className="info-box" style={{marginTop:'0.75rem'}}>
                 <strong>Best practice:</strong> Use Sonnet as your default. Switch to Opus only for complex architectural decisions,
@@ -116,7 +116,7 @@ export default function Lesson28() {
               </div>
             </div>
             <div className="step">
-              <strong><code>smallFastModel</code> — Sub-task model</strong>
+              <strong><code>smallFastModel</code> - Sub-task model</strong>
               <p>Used automatically for lightweight operations: summarisation, quick lookups, tool call routing.
               Keeping this as Haiku saves tokens without sacrificing quality on your main work.</p>
               <pre>{`"smallFastModel": "claude-haiku-4-5-20251001"`}</pre>
@@ -135,7 +135,7 @@ export default function Lesson28() {
           <div className="steps-list">
             <div className="step">
               <strong>Without permissions configured</strong>
-              <p>Claude asks for approval before every tool call — every file edit, every bash command. Safe but slow and disruptive.</p>
+              <p>Claude asks for approval before every tool call - every file edit, every bash command. Safe but slow and disruptive.</p>
             </div>
             <div className="step">
               <strong>With <code>allow</code> rules</strong>
@@ -143,7 +143,7 @@ export default function Lesson28() {
             </div>
             <div className="step">
               <strong>With <code>deny</code> rules</strong>
-              <p>Commands matching deny patterns are blocked entirely — Claude cannot run them even if you ask. Your last line of defence.</p>
+              <p>Commands matching deny patterns are blocked entirely - Claude cannot run them even if you ask. Your last line of defence.</p>
             </div>
           </div>
 
@@ -161,7 +161,7 @@ export default function Lesson28() {
           <h3 style={{marginTop:'1.5rem', marginBottom:'0.75rem'}}>Recommended Permission Profiles</h3>
           <div className="steps-list">
             <div className="step">
-              <strong>Developer (most permissive — for trusted workflows)</strong>
+              <strong>Developer (most permissive - for trusted workflows)</strong>
               <pre>{`"permissions": {
   "allow": [
     "bash(git:*)", "bash(npm:*)", "bash(npx:*)",
@@ -177,7 +177,7 @@ export default function Lesson28() {
 }`}</pre>
             </div>
             <div className="step">
-              <strong>Knowledge Worker (conservative — for document/email work)</strong>
+              <strong>Knowledge Worker (conservative - for document/email work)</strong>
               <pre>{`"permissions": {
   "allow": [
     "bash(ls:*)", "bash(cat:*)", "bash(echo:*)",
@@ -211,9 +211,9 @@ export default function Lesson28() {
             <strong>Best practices for permissions:</strong>
             <ul style={{marginLeft:'1.5rem', marginTop:'0.5rem', lineHeight:'1.8'}}>
               <li>Always have a <code>deny</code> list even if your <code>allow</code> list is broad</li>
-              <li>Never allow <code>sudo</code> — Claude should never need root access</li>
+              <li>Never allow <code>sudo</code> - Claude should never need root access</li>
               <li>Scope <code>edit</code> permissions to specific directories, not <code>edit(*)</code></li>
-              <li>Block <code>curl * | bash</code> patterns — these can download and execute arbitrary code</li>
+              <li>Block <code>curl * | bash</code> patterns - these can download and execute arbitrary code</li>
               <li>Start conservative and loosen as you understand what you actually need</li>
             </ul>
           </div>
@@ -223,27 +223,27 @@ export default function Lesson28() {
           <h2>Hooks: Automations on Every Action</h2>
           <p>
             Hooks run shell commands automatically at key points in Claude&apos;s workflow.
-            They are the most underused setting — and one of the most powerful.
+            They are the most underused setting - and one of the most powerful.
           </p>
 
           <h3 style={{marginTop:'1.5rem', marginBottom:'0.75rem'}}>The Four Hook Types</h3>
           <div className="steps-list">
             <div className="step">
-              <strong><code>pre_tool_call</code></strong> — Runs before Claude uses any tool
+              <strong><code>pre_tool_call</code></strong> - Runs before Claude uses any tool
               <p>Environment variables available: <code>$TOOL_NAME</code>, <code>$TOOL_INPUT_PATH</code> (JSON file with tool args)</p>
               <p><strong>Use for:</strong> approval gates, audit logging, rate limiting, validating file paths before edits</p>
             </div>
             <div className="step">
-              <strong><code>post_tool_call</code></strong> — Runs after every tool call completes
+              <strong><code>post_tool_call</code></strong> - Runs after every tool call completes
               <p>Additional env var: <code>$TOOL_OUTPUT_PATH</code> (JSON file with result)</p>
               <p><strong>Use for:</strong> auto-running tests after code changes, committing after edits, notifying on completion</p>
             </div>
             <div className="step">
-              <strong><code>notification</code></strong> — Runs when Claude needs human input
-              <p><strong>Use for:</strong> desktop notifications, Slack alerts, sound cues — so you can walk away and come back</p>
+              <strong><code>notification</code></strong> - Runs when Claude needs human input
+              <p><strong>Use for:</strong> desktop notifications, Slack alerts, sound cues - so you can walk away and come back</p>
             </div>
             <div className="step">
-              <strong><code>stop</code></strong> — Runs when a Claude session ends
+              <strong><code>stop</code></strong> - Runs when a Claude session ends
               <p><strong>Use for:</strong> session summaries, cleanup tasks, end-of-session logs</p>
             </div>
           </div>
@@ -355,7 +355,7 @@ export ANTHROPIC_API_KEY="sk-ant-..."`}</pre>
           <h2>Custom Instructions (System Prompt)</h2>
           <p>
             Found under <strong>Settings → Profile</strong>. This is text injected as a system prompt at the start of every
-            conversation — Claude.ai&apos;s equivalent of a global CLAUDE.md.
+            conversation - Claude.ai&apos;s equivalent of a global CLAUDE.md.
           </p>
 
           <div className="steps-list">
@@ -363,7 +363,7 @@ export ANTHROPIC_API_KEY="sk-ant-..."`}</pre>
               <strong>&#10060; Weak custom instructions</strong>
               <pre>{`I am a software developer. Please be helpful and concise.`}</pre>
               <p style={{fontSize:'0.9rem', color:'var(--color-muted)', marginTop:'0.5rem'}}>
-                Adds no real value — Claude already tries to be helpful and concise.
+                Adds no real value - Claude already tries to be helpful and concise.
               </p>
             </div>
             <div className="step">
@@ -372,8 +372,8 @@ export ANTHROPIC_API_KEY="sk-ant-..."`}</pre>
 
 Context:
 - Stack: Python 3.12, FastAPI, PostgreSQL, SQLAlchemy, pytest
-- We use async/await throughout — never suggest synchronous patterns
-- Our API follows OpenAPI 3.1 — always include type hints and docstrings
+- We use async/await throughout - never suggest synchronous patterns
+- Our API follows OpenAPI 3.1 - always include type hints and docstrings
 - We run Ruff for linting (pyproject.toml config)
 
 Communication preferences:
@@ -391,9 +391,9 @@ What to avoid:
           <div className="info-box" style={{marginTop:'1.5rem'}}>
             <strong>Best practices for Custom Instructions:</strong>
             <ul style={{marginLeft:'1.5rem', marginTop:'0.5rem', lineHeight:'1.8'}}>
-              <li>Keep it under 500 words — it&apos;s loaded on every conversation</li>
+              <li>Keep it under 500 words - it&apos;s loaded on every conversation</li>
               <li>Include your tech stack versions (not just &ldquo;Python developer&rdquo; but &ldquo;Python 3.12 + FastAPI&rdquo;)</li>
-              <li>Add &ldquo;what to avoid&rdquo; — Claude takes prohibitions very seriously</li>
+              <li>Add &ldquo;what to avoid&rdquo; - Claude takes prohibitions very seriously</li>
               <li>Specify communication style (lead with answer, bullet vs prose, spelling preferences)</li>
               <li>Revisit quarterly and compress as you learn what&apos;s actually helping</li>
             </ul>
@@ -404,7 +404,7 @@ What to avoid:
           <h2>Memory Settings</h2>
           <p>
             Found under <strong>Settings → Memory</strong>. Claude.ai can remember facts across conversations.
-            This is distinct from CLAUDE.md — it&apos;s a summary Claude builds automatically, not something you write.
+            This is distinct from CLAUDE.md - it&apos;s a summary Claude builds automatically, not something you write.
           </p>
 
           <div className="steps-list">
@@ -422,7 +422,7 @@ What to avoid:
 should use synthetic/fake patient data, never real examples."
 
 # Tell Claude to forget something:
-"Please forget that you remembered my old company name —
+"Please forget that you remembered my old company name -
 I changed jobs in January 2026."`}</pre>
             </div>
             <div className="step">
@@ -446,7 +446,7 @@ I changed jobs in January 2026."`}</pre>
           <div className="steps-list">
             <div className="step">
               <strong>Extended thinking</strong>
-              <p>Enables Claude to &ldquo;think out loud&rdquo; before responding — visible reasoning chain.
+              <p>Enables Claude to &ldquo;think out loud&rdquo; before responding - visible reasoning chain.
               Best for: complex decisions, multi-step planning, math-heavy tasks. Slower and higher cost per message.
               <strong> Best practice:</strong> Leave enabled. You can request it per-message: <em>&ldquo;Think step by step before answering.&rdquo;</em></p>
             </div>
@@ -454,7 +454,7 @@ I changed jobs in January 2026."`}</pre>
               <strong>Suggested prompts</strong>
               <p>Claude suggests follow-up questions at the end of responses. Useful when you are exploring a topic.
               Can be distracting in focused coding workflows.
-              <strong> Best practice:</strong> Turn off if you find yourself ignoring them — they consume UI space.</p>
+              <strong> Best practice:</strong> Turn off if you find yourself ignoring them - they consume UI space.</p>
             </div>
             <div className="step">
               <strong>Web search</strong>
@@ -470,17 +470,17 @@ I changed jobs in January 2026."`}</pre>
             <h3>&#128272; 15-Minute Settings Setup</h3>
             <div className="steps-list">
               <div className="step">
-                <strong>Step 1 — Open your settings file</strong>
+                <strong>Step 1 - Open your settings file</strong>
                 <pre>{`cat ~/.claude/settings.json
 # If it doesn't exist yet:
 mkdir -p ~/.claude && touch ~/.claude/settings.json`}</pre>
               </div>
               <div className="step">
-                <strong>Step 2 — Ask Claude to audit your current settings</strong>
+                <strong>Step 2 - Ask Claude to audit your current settings</strong>
                 <pre>{`Here is my current ~/.claude/settings.json:
 [paste contents]
 
-My workflow: [describe what you use Claude for — coding / writing / research / etc]
+My workflow: [describe what you use Claude for - coding / writing / research / etc]
 
 Review my settings and:
 1. Flag any security issues (especially in permissions or env)
@@ -489,7 +489,7 @@ Review my settings and:
 4. Identify anything missing that experienced Claude users typically have`}</pre>
               </div>
               <div className="step">
-                <strong>Step 3 — Set up custom instructions</strong>
+                <strong>Step 3 - Set up custom instructions</strong>
                 <p>Go to claude.ai → Settings → Profile → Custom Instructions. Paste this template and fill it in:</p>
                 <pre>{`I am a [role] at [company/context].
 
@@ -510,11 +510,11 @@ Do not:
 - [suggestions you keep rejecting]`}</pre>
               </div>
               <div className="step">
-                <strong>Step 4 — Review your Memory</strong>
+                <strong>Step 4 - Review your Memory</strong>
                 <p>Go to claude.ai → Settings → Memory. Delete anything outdated. Add anything important Claude should always know.</p>
               </div>
               <div className="step">
-                <strong>Step 5 — Verify your MCPs are minimal</strong>
+                <strong>Step 5 - Verify your MCPs are minimal</strong>
                 <pre>{`# In Claude Code, run:
 /mcp
 

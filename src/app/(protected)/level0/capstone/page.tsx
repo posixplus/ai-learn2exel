@@ -4,6 +4,7 @@ import PromptBox from '@/components/lesson/PromptBox'
 import HandsOn from '@/components/lesson/HandsOn'
 import Callout from '@/components/lesson/Callout'
 import LevelFeedback from '@/components/lesson/LevelFeedback'
+import LevelQuiz from '@/components/lesson/LevelQuiz'
 
 export default function Level0Capstone() {
   return (
@@ -40,7 +41,7 @@ export default function Level0Capstone() {
           <section className="l0-section">
             <h2>What You'll Build</h2>
             <p>
-              Your <strong>Personal AI Starter Pack</strong> is a collection of 5 high-quality prompts customized for YOUR specific job. By the end, you'll have prompts you can paste into Claude, ChatGPT, or Gemini immediately. These aren't generic templates — they're built from your actual work.
+              Your <strong>Personal AI Starter Pack</strong> is a collection of 5 high-quality prompts customized for YOUR specific job. By the end, you'll have prompts you can paste into Claude, ChatGPT, or Gemini immediately. These aren't generic templates - they're built from your actual work.
             </p>
             <p>
               Think of it like having a pocket guide of the best questions to ask an AI expert in your field, written specifically for what you do every day.
@@ -87,7 +88,7 @@ export default function Level0Capstone() {
           {/* 5-Step Challenge */}
           <section className="l0-section">
             <h2>The 5-Step Challenge</h2>
-            <p>Work through these 5 steps in one sitting. If you get stuck, ask the AI for help — that's the whole point.</p>
+            <p>Work through these 5 steps in one sitting. If you get stuck, ask the AI for help - that's the whole point.</p>
 
             <HandsOn
               stepNumber={1}
@@ -184,8 +185,8 @@ export default function Level0Capstone() {
               duration="10 min"
               steps={[
                 "Choose ONE of these three options (or do all three for redundancy):",
-                "Option A: In Claude — create a new Project and paste your 5 prompts into the Project Instructions.",
-                "Option B: In ChatGPT — go to Settings > Personalization > Custom Instructions and add your context there.",
+                "Option A: In Claude - create a new Project and paste your 5 prompts into the Project Instructions.",
+                "Option B: In ChatGPT - go to Settings > Personalization > Custom Instructions and add your context there.",
                 "Option C: Create a simple text file called 'My AI Prompts.txt' and save it to your Documents or cloud storage."
               ]}
             >
@@ -257,7 +258,8 @@ When I ask you to do any of these, use the corresponding prompt above.`}
           </section>
 
           {/* Feedback */}
-          <LevelFeedback level={0} levelTitle="Foundations — AI Basics & Prompt Engineering" />
+          <LevelQuiz level={0} />
+          <LevelFeedback level={0} levelTitle="Foundations - AI Basics & Prompt Engineering" />
 
           {/* Level 0 Complete */}
           <section className="l0-section" style={{ textAlign: 'center', marginTop: '3rem', paddingTop: '2rem', borderTop: '2px solid #ddd' }}>

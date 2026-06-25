@@ -36,7 +36,7 @@ const glossaryTerms: GlossaryTerm[] = [
   {
     term: 'Benchmark',
     definition:
-      'A standardized test used to measure how well an AI system performs. Think of it like a school test—different benchmarks test different skills, and researchers use them to compare models fairly.',
+      'A standardized test used to measure how well an AI system performs. Think of it like a school test-different benchmarks test different skills, and researchers use them to compare models fairly.',
     seeAlso: ['Evaluation'],
   },
   {
@@ -102,7 +102,7 @@ const glossaryTerms: GlossaryTerm[] = [
   {
     term: 'Diffusion Model',
     definition:
-      'A type of AI that generates images by starting with random noise and gradually refining it into an image. It\'s like reversing the process of adding noise to a photo—working backward to create new images.',
+      'A type of AI that generates images by starting with random noise and gradually refining it into an image. It\'s like reversing the process of adding noise to a photo-working backward to create new images.',
     seeAlso: ['Deep Learning', 'Emergent Capability'],
   },
   {
@@ -138,7 +138,7 @@ const glossaryTerms: GlossaryTerm[] = [
   {
     term: 'Fine-Tuning',
     definition:
-      'Taking a pre-trained AI model and further training it on new, specific data. Think of it as specialized education—the model already knows a lot, then you teach it your domain-specific expertise.',
+      'Taking a pre-trained AI model and further training it on new, specific data. Think of it as specialized education-the model already knows a lot, then you teach it your domain-specific expertise.',
     seeAlso: ['Training Data', 'Foundation Model'],
   },
   {
@@ -180,7 +180,7 @@ const glossaryTerms: GlossaryTerm[] = [
   {
     term: 'Inference',
     definition:
-      'Using a trained AI model to make predictions or generate outputs on new data. Inference is the opposite of training—it\'s when the model is in "working mode," answering questions or processing text.',
+      'Using a trained AI model to make predictions or generate outputs on new data. Inference is the opposite of training-it\'s when the model is in "working mode," answering questions or processing text.',
     seeAlso: ['Training Data', 'Parameter'],
   },
   {
@@ -258,7 +258,7 @@ const glossaryTerms: GlossaryTerm[] = [
   {
     term: 'Orchestration',
     definition:
-      'Coordinating multiple AI systems or steps to solve complex problems. It\'s like conducting an orchestra—different instruments (different AI tools) play together to create a complete solution.',
+      'Coordinating multiple AI systems or steps to solve complex problems. It\'s like conducting an orchestra-different instruments (different AI tools) play together to create a complete solution.',
     seeAlso: ['Agent', 'MCP'],
   },
   {
@@ -360,7 +360,7 @@ const glossaryTerms: GlossaryTerm[] = [
   {
     term: 'Unsupervised Learning',
     definition:
-      'Training an AI on unlabeled data where the model finds patterns on its own. Unlike supervised learning, no one tells the AI what\'s correct—it discovers structure in the data.',
+      'Training an AI on unlabeled data where the model finds patterns on its own. Unlike supervised learning, no one tells the AI what\'s correct-it discovers structure in the data.',
     seeAlso: ['Machine Learning', 'Supervised Learning'],
   },
   {

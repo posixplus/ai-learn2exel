@@ -45,7 +45,7 @@ export default function Lesson12() {
             </ul>
 
             <Callout type="warning">
-              <strong>Hallucination Risk:</strong> Claude can invent facts. Always verify claims using real sources—Google Scholar, academic databases, news archives, or expert websites. Claude is a thinking partner, not a primary source.
+              <strong>Hallucination Risk:</strong> Claude can invent facts. Always verify claims using real sources-Google Scholar, academic databases, news archives, or expert websites. Claude is a thinking partner, not a primary source.
             </Callout>
 
             <p style={{ fontSize: '1rem', lineHeight: '1.6', marginBottom: '1rem', color: '#333' }}>
@@ -337,7 +337,7 @@ Now tell me:
                 'Use Perplexity.ai or Google Scholar to find 3-5 credible sources.',
                 'Paste the key excerpts into Claude and ask it to synthesize them.',
                 'Ask Claude for counterarguments and the strongest case against your initial assumption.',
-                'Ask Claude what it doesn\'t know—what gaps exist?',
+                'Ask Claude what it doesn\'t know-what gaps exist?',
                 'Verify one key claim using Google Scholar or a fact-checking site.',
                 'Write a 1-paragraph summary of what you learned and what you still need to know.'
               ]}

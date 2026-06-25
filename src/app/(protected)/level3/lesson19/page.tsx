@@ -11,27 +11,27 @@ export default function Lesson19() {
         <main className="lesson-main">
           <LessonHeader level={3} lessonNumber={19} duration={90}
             title="How Claude Actually Works: Models, Memory & Mindset"
-            subtitle="Understand the engine — so you can get dramatically better results every time" />
+            subtitle="Understand the engine - so you can get dramatically better results every time" />
 
           <section className="section-card">
             <h2>Why Most People Get Mediocre Results</h2>
             <p>Most users treat Claude like a search engine. Experts treat it like a brilliant colleague who needs the right context. That mental model gap produces wildly different results from the same tool.</p>
-            <p>This lesson gives you the foundation — model selection, tokens, system prompts, and how Claude thinks — that makes every advanced technique in the rest of Level 3 work better.</p>
+            <p>This lesson gives you the foundation - model selection, tokens, system prompts, and how Claude thinks - that makes every advanced technique in the rest of Level 3 work better.</p>
           </section>
 
           <section className="section-card">
             <h2>The Model Lineup</h2>
             <div className="steps-list">
               <div className="step">
-                <strong>Claude Opus 4.5 — The Thinker</strong>
+                <strong>Claude Opus 4.5 - The Thinker</strong>
                 <p>Most intelligent. Use for: complex reasoning, long document analysis, research synthesis, difficult architecture decisions. Slower, higher cost. Best when quality matters more than speed.</p>
               </div>
               <div className="step">
-                <strong>Claude Sonnet 4.5 — The Daily Driver</strong>
+                <strong>Claude Sonnet 4.5 - The Daily Driver</strong>
                 <p>Best balance of intelligence and speed. Handles 90% of real tasks with high quality. Default choice unless you have a specific reason to switch.</p>
               </div>
               <div className="step">
-                <strong>Claude Haiku 4.5 — The Sprinter</strong>
+                <strong>Claude Haiku 4.5 - The Sprinter</strong>
                 <p>Fastest, lowest cost. Best for high-volume automation, simple classification, quick structured extraction. Use in pipelines where you need thousands of calls.</p>
               </div>
             </div>
@@ -56,7 +56,7 @@ security risks. Auth0 handles OAuth, MFA, session management, and
 compliance (SOC 2, GDPR). For a 5-person team 6 months from launch, 
 your engineering time is better spent on your core product. 
 
-Auth0 free tier covers up to 7,500 monthly active users — enough 
+Auth0 free tier covers up to 7,500 monthly active users - enough 
 to launch. Switch to paid ($240/month) at scale if needed.`}</pre>
               </div>
               <div className="step">
@@ -68,12 +68,12 @@ Why Auth0 wins for your situation:
   password reset, session management, token rotation) takes 3-5 weeks 
   to build correctly and 2-3 weeks to harden. That's 20%+ of your runway.
 - Auth0 is SOC 2 Type II certified. Your custom solution won't be for years.
-- You get social login (Google, GitHub) out of the box — typically +15-25% 
+- You get social login (Google, GitHub) out of the box - typically +15-25% 
   in signup conversion.
 
 The hidden cost of DIY auth:
 Every auth bug that reaches production is a reputational event. 
-Session fixation, token leakage, password hashing mistakes — 
+Session fixation, token leakage, password hashing mistakes - 
 these are career-defining incidents at a startup.
 
 Exit strategy (when to consider leaving Auth0):
@@ -108,7 +108,7 @@ The one scenario where I'd reconsider:
 If your target customer is enterprise, and you expect SOC 2 Type II 
 requirements within 18 months, Auth0's enterprise tier pricing 
 ($2/MAU above 7,500) can become expensive fast. In that case, 
-evaluate Stytch or Clerk — similar capabilities, more predictable 
+evaluate Stytch or Clerk - similar capabilities, more predictable 
 pricing at enterprise scale...`}</pre>
                 <p><em>Notice: Opus proactively identifies an edge case (enterprise customers) that Sonnet and Haiku both missed. That's when Opus earns its cost.</em></p>
               </div>
@@ -117,14 +117,14 @@ pricing at enterprise scale...`}</pre>
 
           <section className="section-card">
             <h2>Context Windows and Tokens</h2>
-            <p>A <strong>token</strong> is roughly 0.75 words (~4 characters). Claude processes your entire conversation in a single context window. Claude Sonnet and newer support <strong>200,000 tokens</strong> — approximately 150,000 words.</p>
+            <p>A <strong>token</strong> is roughly 0.75 words (~4 characters). Claude processes your entire conversation in a single context window. Claude Sonnet and newer support <strong>200,000 tokens</strong> - approximately 150,000 words.</p>
             <div className="steps-list">
               <div className="step">
                 <strong>What this means in practice</strong>
                 <ul>
-                  <li><strong>Paste whole documents</strong> — a 60-page PDF, an entire codebase, 200 emails. Claude handles it. No need to chunk manually.</li>
-                  <li><strong>Long sessions accumulate context</strong> — in a 4-hour session, Claude is reading everything you've said. Run <code>/compact</code> when switching tasks to free space.</li>
-                  <li><strong>Irrelevant context hurts</strong> — pasting 50 unrelated files dilutes focus. Be intentional about what you include.</li>
+                  <li><strong>Paste whole documents</strong> - a 60-page PDF, an entire codebase, 200 emails. Claude handles it. No need to chunk manually.</li>
+                  <li><strong>Long sessions accumulate context</strong> - in a 4-hour session, Claude is reading everything you've said. Run <code>/compact</code> when switching tasks to free space.</li>
+                  <li><strong>Irrelevant context hurts</strong> - pasting 50 unrelated files dilutes focus. Be intentional about what you include.</li>
                 </ul>
               </div>
               <div className="step">
@@ -144,16 +144,16 @@ rarely exceed 40,000 tokens even with large file pastes.`}</pre>
           </section>
 
           <section className="section-card">
-            <h2>System Prompts — The Hidden Layer</h2>
-            <p>A <strong>system prompt</strong> is a set of instructions Claude reads before your conversation starts. It shapes tone, behavior, focus, and constraints — invisibly from the user's perspective.</p>
+            <h2>System Prompts - The Hidden Layer</h2>
+            <p>A <strong>system prompt</strong> is a set of instructions Claude reads before your conversation starts. It shapes tone, behavior, focus, and constraints - invisibly from the user's perspective.</p>
             <div className="steps-list">
               <div className="step">
                 <strong>Where system prompts appear</strong>
                 <ul>
-                  <li><strong>Claude Projects</strong> — "Project instructions" field = your system prompt. Every chat starts with it.</li>
-                  <li><strong>Claude Code</strong> — Reads CLAUDE.md as a system prompt at session start.</li>
-                  <li><strong>Cowork Skills</strong> — Each SKILL.md becomes part of the prompt when the skill runs.</li>
-                  <li><strong>API calls</strong> — The <code>system</code> parameter in every API request.</li>
+                  <li><strong>Claude Projects</strong> - "Project instructions" field = your system prompt. Every chat starts with it.</li>
+                  <li><strong>Claude Code</strong> - Reads CLAUDE.md as a system prompt at session start.</li>
+                  <li><strong>Cowork Skills</strong> - Each SKILL.md becomes part of the prompt when the skill runs.</li>
+                  <li><strong>API calls</strong> - The <code>system</code> parameter in every API request.</li>
                 </ul>
               </div>
               <div className="step">
@@ -172,7 +172,7 @@ not HR boilerplate. Flag if something is legally sensitive."
 "Direct answer: how long and in what ways are they underperforming?
 If <3 months, this is a management problem (unclear expectations, 
 wrong fit for current work). If >6 months with documented feedback, 
-this is a PIP conversation — talk to HR first to understand your 
+this is a PIP conversation - talk to HR first to understand your 
 company's process because wrongful termination risk is real even 
 at startups. What specifically is not meeting the bar?"
 
@@ -183,12 +183,12 @@ The second response is actionable. The first is useless.`}</pre>
 
           <section className="section-card">
             <h2>How Claude "Thinks": Constitutional AI</h2>
-            <p>Claude was trained with <strong>Constitutional AI (CAI)</strong> — a process where Claude learned to evaluate its own responses against principles: be helpful, be harmless, be honest. Claude isn't just pattern-matching; it reasons about whether its responses are actually good.</p>
+            <p>Claude was trained with <strong>Constitutional AI (CAI)</strong> - a process where Claude learned to evaluate its own responses against principles: be helpful, be harmless, be honest. Claude isn't just pattern-matching; it reasons about whether its responses are actually good.</p>
             <p>What this means for you:</p>
             <ul>
               <li><strong>Tell Claude your intent.</strong> "I'm building a product for healthcare professionals" gives Claude context to calibrate helpfulness vs. caution appropriately.</li>
-              <li><strong>Claude can push back.</strong> If you ask for something that conflicts with its values, it will say so — and often offer an alternative approach.</li>
-              <li><strong>Be direct.</strong> Claude wants to help. Vague requests get vague results — not because Claude can't, but because it doesn't know what "excellent" looks like for your specific situation.</li>
+              <li><strong>Claude can push back.</strong> If you ask for something that conflicts with its values, it will say so - and often offer an alternative approach.</li>
+              <li><strong>Be direct.</strong> Claude wants to help. Vague requests get vague results - not because Claude can't, but because it doesn't know what "excellent" looks like for your specific situation.</li>
             </ul>
           </section>
 

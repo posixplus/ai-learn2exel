@@ -11,11 +11,11 @@ export default function Lesson41() {
       <main className="lesson-main">
         <LessonHeader level={5} lessonNumber={41} duration={60}
           title="Documenting Code with AI"
-          subtitle="Docs that never get written are useless. AI removes the friction — learn to generate, maintain, and sync docs at speed." />
+          subtitle="Docs that never get written are useless. AI removes the friction - learn to generate, maintain, and sync docs at speed." />
 
         <section className="section-card">
           <h2>Why Documentation is an AI Superpower</h2>
-          <p>Documentation is the task developers most reliably skip. It's tedious, it goes stale, and it feels disconnected from "real work." AI removes every excuse — it writes faster than you and never complains about boring tasks.</p>
+          <p>Documentation is the task developers most reliably skip. It's tedious, it goes stale, and it feels disconnected from "real work." AI removes every excuse - it writes faster than you and never complains about boring tasks.</p>
           <div className="info-box">
             <strong>What AI docs do well:</strong>
             <ul>
@@ -174,19 +174,19 @@ function buildQueryPlan(filters: Filter[], indexes: Index[]): QueryPlan {
               <li>Paste the whole file into Claude and ask: "Write complete JSDoc/docstrings for every function"</li>
               <li>Add inline comments to the 3 most complex functions using /doc or Claude</li>
               <li>Ask Claude Code: "Generate a section for the README explaining what [module] does and how to use it"</li>
-              <li>Review all AI-generated docs for accuracy — fix anything wrong</li>
+              <li>Review all AI-generated docs for accuracy - fix anything wrong</li>
             </ol>
             <p><strong>Stretch:</strong> Set up a pre-commit hook that uses Claude Code to flag functions over 20 lines with no docstring, so new code always gets documented.</p>
           </div>
         </section>
 
         <QuickRef title="Lesson 41 Quick Reference" items={[
-          { term: '/doc (Copilot)', definition: 'Select a function, run /doc in chat — generates full JSDoc' },
+          { term: '/doc (Copilot)', definition: 'Select a function, run /doc in chat - generates full JSDoc' },
           { term: 'Google docstring', definition: 'Ask: "Write a Google-style docstring" for clean Python docs with Args/Returns/Raises' },
           { term: 'README from repo', definition: 'Claude Code: "Generate README based on what you find in the codebase"' },
           { term: 'API reference', definition: '"Read all files in src/routes/ and generate API reference in markdown"' },
-          { term: 'Stale docs check', definition: '"Compare README.md with the codebase — what is out of date?"' },
-          { term: 'Inline comments', definition: '"Add inline comments to explain this algorithm" — ask for complex functions' },
+          { term: 'Stale docs check', definition: '"Compare README.md with the codebase - what is out of date?"' },
+          { term: 'Inline comments', definition: '"Add inline comments to explain this algorithm" - ask for complex functions' },
         ]} />
 
         <LessonNav level={5}

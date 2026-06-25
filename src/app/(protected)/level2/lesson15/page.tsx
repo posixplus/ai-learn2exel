@@ -121,14 +121,14 @@ Which consequence is most risky?`}
             <div style={{ marginBottom: '2.5rem' }}>
               <h3 style={{ fontSize: '1.2rem', fontWeight: '600', marginBottom: '1rem' }}>Framework 4: Devil's Advocate</h3>
               <p style={{ fontSize: '0.95rem', lineHeight: '1.6', marginBottom: '1rem', color: '#555' }}>
-                You're convinced the decision is right. Claude plays the other side—hard—so you can stress-test your thinking.
+                You're convinced the decision is right. Claude plays the other side-hard-so you can stress-test your thinking.
               </p>
               <PromptBox label="Devil's Advocate Prompt">
                 {`I want to {decision}. Here's why I think it's right: {your reasoning}.
 
 Play devil's advocate. Argue STRONGLY against this decision. What am I overlooking? Why might this fail? What's the case for the opposite?
 
-Don't be nice—make me defend my position.`}
+Don't be nice-make me defend my position.`}
               </PromptBox>
             </div>
 

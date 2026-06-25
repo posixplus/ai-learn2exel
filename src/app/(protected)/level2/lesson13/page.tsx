@@ -18,7 +18,7 @@ export default function Lesson13() {
             lessonNumber={13}
             duration={90}
             title="AI Writing Lab"
-            subtitle="Draft, edit, and polish professional communication—emails, proposals, and reports at 10x speed"
+            subtitle="Draft, edit, and polish professional communication-emails, proposals, and reports at 10x speed"
             professions={['Teacher', 'Manager', 'Developer', 'Analyst', 'Business', 'Doctor', 'Lawyer']}
           />
 
@@ -28,7 +28,7 @@ export default function Lesson13() {
               1. The Writing Bottleneck
             </h2>
             <p style={{ fontSize: '1rem', lineHeight: '1.6', marginBottom: '1.5rem', color: '#333' }}>
-              Most professionals spend <strong>30–40% of their workday writing</strong>. Emails, Slack messages, reports, proposals, presentations—it adds up. Not because writing is hard, but because we over-edit.
+              Most professionals spend <strong>30-40% of their workday writing</strong>. Emails, Slack messages, reports, proposals, presentations-it adds up. Not because writing is hard, but because we over-edit.
             </p>
             <p style={{ fontSize: '1rem', lineHeight: '1.6', marginBottom: '1rem', color: '#333' }}>
               The typical flow: think → write → rewrite → rewrite → polish → send. This takes forever, especially for high-stakes communication.
@@ -265,7 +265,7 @@ Format:
             </div>
 
             <Callout type="info">
-              <strong>Structure Matters More Than Length:</strong> A messy 10-page report gets skimmed and ignored. A crisp 2-page proposal with clear headings gets read and acted on. Claude is great at structure—use it.
+              <strong>Structure Matters More Than Length:</strong> A messy 10-page report gets skimmed and ignored. A crisp 2-page proposal with clear headings gets read and acted on. Claude is great at structure-use it.
             </Callout>
           </section>
 

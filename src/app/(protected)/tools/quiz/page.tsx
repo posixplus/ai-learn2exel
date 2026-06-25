@@ -98,7 +98,7 @@ const questions: Question[] = [
     question: "How important is privacy to you?",
     answers: [
       {
-        text: 'Very important — I work with sensitive data',
+        text: 'Very important - I work with sensitive data',
         scores: { claude: 1, chatgpt: 0, gemini: 0, deepseek: 0, llama: 1, perplexity: 0 },
       },
       {
@@ -157,7 +157,7 @@ const questions: Question[] = [
     question: 'How do you feel about setup complexity?',
     answers: [
       {
-        text: 'Keep it simple — just open a browser tab',
+        text: 'Keep it simple - just open a browser tab',
         scores: { claude: 0, chatgpt: 1, gemini: 1, deepseek: 0, llama: 0, perplexity: 0 },
       },
       {
@@ -165,7 +165,7 @@ const questions: Question[] = [
         scores: { claude: 1, chatgpt: 1, gemini: 0, deepseek: 0, llama: 0, perplexity: 0 },
       },
       {
-        text: "I'm technical — I want full control",
+        text: "I'm technical - I want full control",
         scores: { claude: 0, chatgpt: 0, gemini: 0, deepseek: 0, llama: 1, perplexity: 0 },
       },
     ],

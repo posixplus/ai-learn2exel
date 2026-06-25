@@ -1,6 +1,8 @@
 'use client'
 import Link from 'next/link'
 import Footer from '@/components/layout/Footer'
+import ToolResources from '@/components/tools/ToolResources'
+import ToolGuideExtras from '@/components/tools/ToolGuideExtras'
 
 export default function CursorPage() {
   return (
@@ -23,11 +25,11 @@ export default function CursorPage() {
                 <span style={{ background: '#F0FDF4', color: '#16A34A', border: '1px solid #BBF7D0', borderRadius: '999px', padding: '.2rem .75rem', fontSize: '.78rem', fontWeight: 600 }}>Free Hobby Tier</span>
               </div>
               <h1 style={{ margin: 0, fontSize: '2rem', fontWeight: 800 }}>Cursor</h1>
-              <p style={{ margin: '.25rem 0 0', color: '#6B7280', fontSize: '1rem' }}>The AI code editor — VS Code fork with deep AI integration and Composer</p>
+              <p style={{ margin: '.25rem 0 0', color: '#6B7280', fontSize: '1rem' }}>The AI code editor - VS Code fork with deep AI integration and Composer</p>
             </div>
           </div>
           <p style={{ fontSize: '1.05rem', color: '#374151', lineHeight: 1.7 }}>
-            Cursor is one of the most popular AI-first code editors. It forks VS Code and adds powerful AI features: inline completions with multi-line awareness, chat with codebase context, and <strong>Composer</strong> — an agentic multi-file editing mode. Trusted by engineers at top tech companies.
+            Cursor is one of the most popular AI-first code editors. It forks VS Code and adds powerful AI features: inline completions with multi-line awareness, chat with codebase context, and <strong>Composer</strong> - an agentic multi-file editing mode. Trusted by engineers at top tech companies.
           </p>
         </div>
 
@@ -51,20 +53,20 @@ export default function CursorPage() {
           <h2 style={{ marginTop: 0, fontSize: '1.3rem' }}>⚡ Install & Setup</h2>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
             <div>
-              <div style={{ fontWeight: 700, marginBottom: '.4rem' }}>Step 1 — Download Cursor</div>
-              <p style={{ margin: 0, color: '#4B5563' }}>Go to <strong>cursor.com</strong> → Download. Pick your OS. Cursor installs as a standalone app — it does not replace your existing VS Code.</p>
+              <div style={{ fontWeight: 700, marginBottom: '.4rem' }}>Step 1 - Download Cursor</div>
+              <p style={{ margin: 0, color: '#4B5563' }}>Go to <strong>cursor.com</strong> → Download. Pick your OS. Cursor installs as a standalone app - it does not replace your existing VS Code.</p>
             </div>
             <div>
-              <div style={{ fontWeight: 700, marginBottom: '.4rem' }}>Step 2 — Import VS Code Settings</div>
+              <div style={{ fontWeight: 700, marginBottom: '.4rem' }}>Step 2 - Import VS Code Settings</div>
               <p style={{ margin: 0, color: '#4B5563' }}>On first launch: <em>Cursor → Import from VS Code</em>. This copies your extensions, themes, and keybindings in one click.</p>
             </div>
             <div>
-              <div style={{ fontWeight: 700, marginBottom: '.4rem' }}>Step 3 — Sign In</div>
+              <div style={{ fontWeight: 700, marginBottom: '.4rem' }}>Step 3 - Sign In</div>
               <p style={{ margin: 0, color: '#4B5563' }}>Sign up at cursor.com. The Hobby tier gives you 2,000 completions/month + limited Composer and Chat. Pro ($20/mo) removes limits.</p>
             </div>
             <div>
-              <div style={{ fontWeight: 700, marginBottom: '.4rem' }}>Step 4 — Choose Your AI Model</div>
-              <p style={{ margin: 0, color: '#4B5563' }}>Cursor Settings → Models. You can use GPT-4o, Claude 3.5/3.7 Sonnet, or Cursor's own fast model. You can also add your own API keys (OpenAI, Anthropic).</p>
+              <div style={{ fontWeight: 700, marginBottom: '.4rem' }}>Step 4 - Choose Your AI Model</div>
+              <p style={{ margin: 0, color: '#4B5563' }}>Cursor Settings → Models. You can use GPT-5.5, Claude Opus 4.8 / Sonnet 4.6, Gemini 3.5, or Cursor&apos;s own fast model. You can also add your own API keys (OpenAI, Anthropic).</p>
             </div>
           </div>
         </div>
@@ -93,16 +95,16 @@ export default function CursorPage() {
           <h2 style={{ marginTop: 0, fontSize: '1.3rem' }}>🚀 Sample Usage</h2>
 
           <div style={{ marginBottom: '1.5rem' }}>
-            <div style={{ fontWeight: 700, marginBottom: '.5rem' }}>1. Cmd+K — Edit Selected Code</div>
+            <div style={{ fontWeight: 700, marginBottom: '.5rem' }}>1. Cmd+K - Edit Selected Code</div>
             <p style={{ color: '#4B5563', marginBottom: '.5rem', fontSize: '.9rem' }}>Select a function → press Cmd+K → type your instruction:</p>
             <div style={{ background: '#F0FDF4', border: '1px solid #BBF7D0', borderRadius: 8, padding: '1rem 1.25rem', fontSize: '.9rem', color: '#166534' }}>
               "Add input validation. Throw a ValidationError if email is not valid format or if name is empty."
             </div>
-            <p style={{ color: '#4B5563', marginTop: '.5rem', fontSize: '.875rem' }}>Cursor shows a diff — press Accept or Reject.</p>
+            <p style={{ color: '#4B5563', marginTop: '.5rem', fontSize: '.875rem' }}>Cursor shows a diff - press Accept or Reject.</p>
           </div>
 
           <div style={{ marginBottom: '1.5rem' }}>
-            <div style={{ fontWeight: 700, marginBottom: '.5rem' }}>2. Composer — Multi-File Task</div>
+            <div style={{ fontWeight: 700, marginBottom: '.5rem' }}>2. Composer - Multi-File Task</div>
             <p style={{ color: '#4B5563', marginBottom: '.5rem', fontSize: '.9rem' }}>Press Cmd+I and describe a cross-cutting change:</p>
             <div style={{ background: '#F0FDF4', border: '1px solid #BBF7D0', borderRadius: 8, padding: '1rem 1.25rem', fontSize: '.9rem', color: '#166534' }}>
               "Migrate all our fetch calls from the old apiClient to the new httpClient in src/lib/http.ts. Update all 8 service files."
@@ -147,6 +149,30 @@ export default function CursorPage() {
             ))}
           </div>
         </div>
+
+        <ToolGuideExtras
+          current="cursor"
+          troubleshooting={[
+            { problem: 'Tab completions are not appearing', fix: 'Cursor Settings → Features → enable Tab/Autocomplete, confirm you are signed in, and that the language for that file is not disabled.' },
+            { problem: 'Model errors or rate limits', fix: 'The Hobby tier is limited. Upgrade to Pro, or add your own OpenAI / Anthropic API key in Settings → Models.' },
+            { problem: '.cursorrules is ignored', fix: 'The file must be named .cursorrules at the project root. Reload the window after creating it.' },
+            { problem: 'The editor feels slow', fix: 'Disable heavy VS Code extensions you imported; large repos take time to index on first open.' },
+          ]}
+          lessons={[
+            { label: 'L39 - Inline Code Completion', href: '/level5/lesson39' },
+            { label: 'L40 - AI Chat for Development', href: '/level5/lesson40' },
+            { label: 'L44 - Refactoring & Code Review', href: '/level5/lesson44' },
+            { label: 'L46 - Agentic Coding', href: '/level5/lesson46' },
+          ]}
+        />
+
+        <ToolResources links={[
+          { label: 'Download Cursor', href: 'https://cursor.com', note: 'Mac, Windows, Linux' },
+          { label: 'Documentation', href: 'https://cursor.com/docs', note: 'Agent, rules, MCP, skills, CLI' },
+          { label: 'Pricing', href: 'https://cursor.com/pricing', note: 'Hobby (free), Pro, Business' },
+          { label: 'Changelog', href: 'https://cursor.com/changelog', note: "What's new each release" },
+          { label: 'Community forum', href: 'https://forum.cursor.com', note: 'Q&A, tips, and bug reports' },
+        ]} />
 
         <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
           <Link href="/tools/windsurf" style={{ background: 'white', border: '1px solid #E5E7EB', borderRadius: 8, padding: '.75rem 1.25rem', fontSize: '.875rem', color: '#374151', textDecoration: 'none', fontWeight: 600 }}>→ Compare: Windsurf</Link>

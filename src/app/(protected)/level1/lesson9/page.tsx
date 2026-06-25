@@ -17,7 +17,7 @@ export default function Lesson9() {
             level={1}
             lessonNumber={9}
             duration={50}
-            title="MCP — Connect AI to Your World"
+            title="MCP - Connect AI to Your World"
             subtitle="Let AI access your files, emails, calendar, and other apps. Connect your world to AI."
             professions={['Teacher', 'Manager', 'Developer', 'Analyst', 'Business', 'Doctor']}
           />
@@ -210,7 +210,7 @@ export default function Lesson9() {
               steps={[
                 "Open your file explorer/Finder.",
                 "Navigate to your home directory.",
-                "Find the hidden folder '.claude' (it might be hidden — show hidden files if needed).",
+                "Find the hidden folder '.claude' (it might be hidden - show hidden files if needed).",
                 "Inside, you should see a file called 'claude_desktop_config.json'.",
                 "Open it with a text editor (VS Code, Notepad, etc.)."
               ]}
@@ -436,7 +436,7 @@ export default function Lesson9() {
               sections={[
                 {
                   title: 'What is MCP?',
-                  content: 'Model Context Protocol — a standard way to connect AI to your apps, files, and data.'
+                  content: 'Model Context Protocol - a standard way to connect AI to your apps, files, and data.'
                 },
                 {
                   title: 'The 3 Roles',
@@ -465,7 +465,7 @@ export default function Lesson9() {
           <LessonNav
             lessonId="l1-9"
             prev={{ href: '/level1/lesson8', title: 'AI Agents Explained' }}
-            next={{ href: '/level1/lesson10', title: 'Claude Code — Deep Dive' }}
+            next={{ href: '/level1/lesson10', title: 'Claude Code - Deep Dive' }}
           />
         </div>
       </main>

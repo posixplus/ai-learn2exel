@@ -17,7 +17,7 @@ export default function Lesson10() {
             level={1}
             lessonNumber={10}
             duration={60}
-            title="Claude Code — Deep Dive"
+            title="Claude Code - Deep Dive"
             subtitle="The most powerful way to use Claude. Run it locally on your computer and give it full autonomy."
             professions={['Developer', 'Analyst', 'Manager', 'Teacher', 'Business', 'Doctor']}
           />
@@ -411,7 +411,7 @@ When asked to add a feature:
                 duration="10 min"
                 steps={[
                   "Follow the installation steps from Section 2.",
-                  "You don't need to understand the command line — just follow the steps."
+                  "You don't need to understand the command line - just follow the steps."
                 ]}
               >
               </HandsOn>
@@ -531,7 +531,7 @@ When asked to add a feature:
 
           <LessonNav
             lessonId="l1-10"
-            prev={{ href: '/level1/lesson9', title: 'MCP — Connect AI to Your World' }}
+            prev={{ href: '/level1/lesson9', title: 'MCP - Connect AI to Your World' }}
             next={{ href: '/level1/lesson11', title: 'Responsible AI & What\'s Next' }}
           />
         </div>

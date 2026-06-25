@@ -1,6 +1,8 @@
 'use client'
 import Link from 'next/link'
 import Footer from '@/components/layout/Footer'
+import ToolResources from '@/components/tools/ToolResources'
+import ToolGuideExtras from '@/components/tools/ToolGuideExtras'
 
 export default function VscodeAiPage() {
   return (
@@ -23,11 +25,11 @@ export default function VscodeAiPage() {
                 <span style={{ background: '#F0FDF4', color: '#16A34A', border: '1px solid #BBF7D0', borderRadius: '999px', padding: '.2rem .75rem', fontSize: '.78rem', fontWeight: 600 }}>Free (editor)</span>
               </div>
               <h1 style={{ margin: 0, fontSize: '2rem', fontWeight: 800 }}>VS Code + AI Extensions</h1>
-              <p style={{ margin: '.25rem 0 0', color: '#6B7280', fontSize: '1rem' }}>Add powerful AI to the world's most popular editor — Copilot, Claude, or Codeium</p>
+              <p style={{ margin: '.25rem 0 0', color: '#6B7280', fontSize: '1rem' }}>Add powerful AI to the world's most popular editor - Copilot, Claude, or Codeium</p>
             </div>
           </div>
           <p style={{ fontSize: '1.05rem', color: '#374151', lineHeight: 1.7 }}>
-            VS Code is the most-used code editor in the world. With the right AI extensions, it becomes a powerful AI-assisted development environment. Unlike Cursor or Windsurf, you don't switch editors — you supercharge the one you already know. Three main AI options: GitHub Copilot, the Claude extension, and Codeium (free).
+            VS Code is the most-used code editor in the world. With the right AI extensions, it becomes a powerful AI-assisted development environment. Unlike Cursor or Windsurf, you don't switch editors - you supercharge the one you already know. Three main AI options: GitHub Copilot, the Claude extension, and Codeium (free).
           </p>
         </div>
 
@@ -49,7 +51,7 @@ export default function VscodeAiPage() {
         </div>
 
         <div style={{ background: 'white', border: '1px solid #E5E7EB', borderRadius: 12, padding: '2rem', marginBottom: '1.5rem' }}>
-          <h2 style={{ marginTop: 0, fontSize: '1.3rem' }}>⚡ Install & Setup — GitHub Copilot</h2>
+          <h2 style={{ marginTop: 0, fontSize: '1.3rem' }}>⚡ Install & Setup - GitHub Copilot</h2>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
             {[
               { step: '1', title: 'Install VS Code', desc: 'Download from code.visualstudio.com. Free, runs on Mac, Windows, and Linux.' },
@@ -69,10 +71,10 @@ export default function VscodeAiPage() {
         </div>
 
         <div style={{ background: 'white', border: '1px solid #E5E7EB', borderRadius: 12, padding: '2rem', marginBottom: '1.5rem' }}>
-          <h2 style={{ marginTop: 0, fontSize: '1.3rem' }}>⚡ Install & Setup — Codeium (Free)</h2>
+          <h2 style={{ marginTop: 0, fontSize: '1.3rem' }}>⚡ Install & Setup - Codeium (Free)</h2>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
             {[
-              { step: '1', title: 'Install Codeium Extension', desc: 'Extensions panel → search "Codeium" → Install. Codeium is free forever — no subscription needed.' },
+              { step: '1', title: 'Install Codeium Extension', desc: 'Extensions panel → search "Codeium" → Install. Codeium is free forever - no subscription needed.' },
               { step: '2', title: 'Create Free Account', desc: 'Click the Codeium icon in the status bar → Sign in → create account at codeium.com. Takes 30 seconds.' },
               { step: '3', title: 'Start Coding', desc: 'Inline completions activate immediately. Open Codeium Chat with Cmd+Shift+A for the chat panel.' },
             ].map(s => (
@@ -88,7 +90,7 @@ export default function VscodeAiPage() {
         </div>
 
         <div style={{ background: 'white', border: '1px solid #E5E7EB', borderRadius: 12, padding: '2rem', marginBottom: '1.5rem' }}>
-          <h2 style={{ marginTop: 0, fontSize: '1.3rem' }}>🚀 Sample Usage — Copilot</h2>
+          <h2 style={{ marginTop: 0, fontSize: '1.3rem' }}>🚀 Sample Usage - Copilot</h2>
 
           <div style={{ marginBottom: '1.5rem' }}>
             <div style={{ fontWeight: 700, marginBottom: '.5rem' }}>Inline Completions</div>
@@ -130,13 +132,36 @@ export default function VscodeAiPage() {
         <div style={{ background: '#FFF7ED', border: '1px solid #FED7AA', borderRadius: 12, padding: '1.5rem', marginBottom: '2rem' }}>
           <h3 style={{ marginTop: 0, color: '#92400E', fontSize: '1.1rem' }}>💡 Pro Tips</h3>
           <ul style={{ margin: 0, paddingLeft: '1.25rem', color: '#78350F', lineHeight: 2 }}>
-            <li>Write descriptive comments above a function <em>before</em> implementing it — Copilot uses them as a spec</li>
-            <li>Install both "GitHub Copilot" and "GitHub Copilot Chat" — they are separate extensions</li>
+            <li>Write descriptive comments above a function <em>before</em> implementing it - Copilot uses them as a spec</li>
+            <li>Install both "GitHub Copilot" and "GitHub Copilot Chat" - they are separate extensions</li>
             <li>Copilot is free for verified students and open-source maintainers (check github.com/education)</li>
             <li>Use <strong>@workspace</strong> in chat to ask questions about your entire project, not just the open file</li>
-            <li>Codeium has no rate limits and no credit card — ideal for learners who don't want to pay yet</li>
+            <li>Codeium has no rate limits and no credit card - ideal for learners who don't want to pay yet</li>
           </ul>
         </div>
+
+        <ToolGuideExtras
+          current="vscode-ai"
+          troubleshooting={[
+            { problem: 'Two completion engines fighting', fix: 'Do not run Copilot and the Windsurf / Codeium plugin at once - they conflict. Disable one per workspace.' },
+            { problem: 'Extension will not sign in', fix: 'Sign in via the account menu; if it loops, sign out everywhere and reauthorize the single extension.' },
+            { problem: 'No inline suggestions', fix: 'Check the extension is enabled for the language you are editing, and that inline suggestions are on in VS Code settings.' },
+            { problem: 'Not sure which to choose', fix: 'Copilot for the broadest ecosystem; the Windsurf plugin for a free, no-card option. See the comparison table above.' },
+          ]}
+          lessons={[
+            { label: 'L38 - AI Tools Landscape', href: '/level5/lesson38' },
+            { label: 'L39 - Inline Code Completion', href: '/level5/lesson39' },
+            { label: 'L40 - AI Chat for Development', href: '/level5/lesson40' },
+          ]}
+        />
+
+        <ToolResources links={[
+          { label: 'Download VS Code', href: 'https://code.visualstudio.com', note: 'Free editor (Mac, Win, Linux)' },
+          { label: 'VS Code AI docs', href: 'https://code.visualstudio.com/docs/copilot/overview', note: "VS Code's built-in AI features" },
+          { label: 'GitHub Copilot extension', href: 'https://marketplace.visualstudio.com/items?itemName=GitHub.copilot', note: 'Install Copilot in VS Code' },
+          { label: 'Copilot docs', href: 'https://docs.github.com/copilot', note: 'Using Copilot in VS Code' },
+          { label: 'Windsurf plugin (ex-Codeium)', href: 'https://marketplace.visualstudio.com/items?itemName=Codeium.codeium', note: 'Free completions in VS Code' },
+        ]} />
 
         <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
           <Link href="/tools/github-copilot" style={{ background: 'white', border: '1px solid #E5E7EB', borderRadius: 8, padding: '.75rem 1.25rem', fontSize: '.875rem', color: '#374151', textDecoration: 'none', fontWeight: 600 }}>→ Full GitHub Copilot Guide</Link>

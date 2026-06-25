@@ -379,7 +379,7 @@ const prompts: Prompt[] = [
     profession: 'everyone',
     category: 'planning',
     prompt:
-      'Help me brainstorm ideas for [PROJECT/PROBLEM]. Generate 15-20 ideas, no matter how wild. Don\'t evaluate yet—just list possibilities. Then pick the 3 most promising and develop them further.',
+      'Help me brainstorm ideas for [PROJECT/PROBLEM]. Generate 15-20 ideas, no matter how wild. Don\'t evaluate yet-just list possibilities. Then pick the 3 most promising and develop them further.',
     tags: ['brainstorm', 'ideas', 'planning'],
   },
   {

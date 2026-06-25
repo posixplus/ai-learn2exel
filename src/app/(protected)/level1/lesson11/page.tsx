@@ -26,7 +26,7 @@ export default function Lesson11() {
           <section className="lesson-section">
             <h2>Understanding Hallucinations</h2>
             <p>
-              A "hallucination" is when an AI confidently gives you false information. The AI isn't lying intentionally — it's making a mistake, but it sounds convincing.
+              A "hallucination" is when an AI confidently gives you false information. The AI isn't lying intentionally - it's making a mistake, but it sounds convincing.
             </p>
 
             <Callout type="warning">
@@ -240,7 +240,7 @@ export default function Lesson11() {
             <ul>
               <li>Consulting (client needs to know you used AI)</li>
               <li>Creative work (if it's AI-generated or AI-assisted, disclose it)</li>
-              <li>Healthcare/legal (very sensitive — check regulations)</li>
+              <li>Healthcare/legal (very sensitive - check regulations)</li>
               <li>Competitive bids (transparency builds trust)</li>
             </ul>
 
@@ -281,7 +281,7 @@ export default function Lesson11() {
             </div>
           </section>
 
-          {/* Section 6: What's Next — 6 Trends */}
+          {/* Section 6: What's Next - 6 Trends */}
           <section className="lesson-section">
             <h2>What's Next: 6 AI Trends to Watch</h2>
             <p>
@@ -299,7 +299,7 @@ export default function Lesson11() {
               <div style={{ backgroundColor: '#f3e5f5', padding: '1.5rem', borderRadius: '8px', borderLeft: '4px solid #9c27b0' }}>
                 <h5 style={{ marginTop: 0 }}>2. Reasoning Models</h5>
                 <p style={{ fontSize: '0.9rem' }}>
-                  AI that can think through complex multi-step problems. Less hallucinating, more accuracy on hard math/logic problems. Models like o1 leading the way.
+                  AI that can think through complex multi-step problems. Less hallucinating, more accuracy on hard math/logic problems. Reasoning is now built into frontier models like GPT-5.5, Gemini 3.5 (Deep Think), and Claude Opus 4.8.
                 </p>
               </div>
 
@@ -327,7 +327,7 @@ export default function Lesson11() {
               <div style={{ backgroundColor: '#ffebee', padding: '1.5rem', borderRadius: '8px', borderLeft: '4px solid #ef5350' }}>
                 <h5 style={{ marginTop: 0 }}>6. AI in Every App</h5>
                 <p style={{ fontSize: '0.9rem' }}>
-                  AI won't be separate. It'll be built into Gmail, Slack, Sheets, your phone, your car. Not optional — just how software works.
+                  AI won't be separate. It'll be built into Gmail, Slack, Sheets, your phone, your car. Not optional - just how software works.
                 </p>
               </div>
             </div>
@@ -469,7 +469,7 @@ Sources to follow:
 
           <LessonNav
             lessonId="l1-11"
-            prev={{ href: '/level1/lesson10', title: 'Claude Code — Deep Dive' }}
+            prev={{ href: '/level1/lesson10', title: 'Claude Code - Deep Dive' }}
             next={{ href: '/level1/capstone', title: 'Level 1 Capstone' }}
           />
         </div>

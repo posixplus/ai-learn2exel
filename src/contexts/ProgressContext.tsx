@@ -5,8 +5,10 @@ import {
   useEffect, type ReactNode,
 } from 'react'
 import { track } from '@vercel/analytics'
+import { TOTAL_LESSONS } from '@/data/course'
 
 export type ProgressMap = Record<string, boolean>
+export type TimeMap = Record<string, number>  // lessonId -> active seconds spent
 
 interface ProgressContextValue {
   progress: ProgressMap
@@ -16,37 +18,45 @@ interface ProgressContextValue {
   completedCount: number
   totalLessons: number
   percentComplete: number
+  // Active-time tracking (used by the dwell gate + completion certificate)
+  time: TimeMap
+  addTime: (lessonId: string, seconds: number) => void
+  totalActiveSeconds: number
 }
 
-const TOTAL_LESSONS = 25  // Lessons 1–25 (capstones not counted)
+// TOTAL_LESSONS is derived from the course data (capstones not counted),
+// so it stays correct automatically as lessons/levels are added.
 const STORAGE_KEY = 'ai-course-progress'
+const STORAGE_KEY_TIME = 'ai-course-time'
 
 const ProgressContext = createContext<ProgressContextValue | null>(null)
 
-function loadFromStorage(): ProgressMap {
+function loadJSON<T>(key: string, fallback: T): T {
   try {
-    const raw = localStorage.getItem(STORAGE_KEY)
-    if (!raw) return {}
-    return JSON.parse(raw) as ProgressMap
+    const raw = localStorage.getItem(key)
+    if (!raw) return fallback
+    return JSON.parse(raw) as T
   } catch {
-    return {}
+    return fallback
   }
 }
 
-function saveToStorage(progress: ProgressMap) {
+function saveJSON(key: string, value: unknown) {
   try {
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(progress))
+    localStorage.setItem(key, JSON.stringify(value))
   } catch {
-    // Storage unavailable — silently ignore
+    // Storage unavailable - silently ignore
   }
 }
 
 export function ProgressProvider({ children }: { children: ReactNode }) {
   const [progress, setProgress] = useState<ProgressMap>({})
+  const [time, setTime] = useState<TimeMap>({})
 
-  // Load from localStorage on mount (client-only)
+  // Load both maps from localStorage on mount (client-only)
   useEffect(() => {
-    setProgress(loadFromStorage())
+    setProgress(loadJSON<ProgressMap>(STORAGE_KEY, {}))
+    setTime(loadJSON<TimeMap>(STORAGE_KEY_TIME, {}))
   }, [])
 
   const isComplete = useCallback((lessonId: string) => !!progress[lessonId], [progress])
@@ -55,7 +65,7 @@ export function ProgressProvider({ children }: { children: ReactNode }) {
     const newValue = !progress[lessonId]
     setProgress(prev => {
       const updated = { ...prev, [lessonId]: newValue }
-      saveToStorage(updated)
+      saveJSON(STORAGE_KEY, updated)
       return updated
     })
     if (newValue) {
@@ -63,14 +73,25 @@ export function ProgressProvider({ children }: { children: ReactNode }) {
     }
   }, [progress])
 
+  const addTime = useCallback((lessonId: string, seconds: number) => {
+    if (!lessonId || seconds <= 0) return
+    setTime(prev => {
+      const updated = { ...prev, [lessonId]: (prev[lessonId] || 0) + seconds }
+      saveJSON(STORAGE_KEY_TIME, updated)
+      return updated
+    })
+  }, [])
+
   const completed = Object.entries(progress).filter(([, v]) => v).map(([k]) => k)
   const completedCount = completed.length
   const percentComplete = Math.round((completedCount / TOTAL_LESSONS) * 100)
+  const totalActiveSeconds = Object.values(time).reduce((a, b) => a + b, 0)
 
   return (
     <ProgressContext.Provider value={{
       progress, completed, isComplete, toggleComplete,
       completedCount, totalLessons: TOTAL_LESSONS, percentComplete,
+      time, addTime, totalActiveSeconds,
     }}>
       {children}
     </ProgressContext.Provider>

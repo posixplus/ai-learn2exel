@@ -114,11 +114,11 @@ export default function Lesson6() {
           <section className="lesson-section">
             <h2>Context Management: The Token Window</h2>
             <p>
-              AI models have a "context window" — a maximum amount of text they can process in one conversation. Once you exceed that, the AI forgets the beginning of your conversation.
+              AI models have a "context window" - a maximum amount of text they can process in one conversation. Once you exceed that, the AI forgets the beginning of your conversation.
             </p>
 
             <Callout type="info">
-              <strong>Current context windows:</strong> Claude 3.5 Sonnet ~200k tokens, GPT-4o ~128k tokens, Gemini 2.0 ~1M tokens, Claude Opus ~200k tokens. One token ≈ 4 characters. So Claude can handle ~800,000 characters before hitting the limit.
+              <strong>Current context windows:</strong> Claude (Sonnet 4.6 / Opus 4.8) ~200K-1M tokens, GPT-5.5 ~1M tokens, Gemini 3.5 ~2M tokens. One token ≈ 4 characters, so a 200K window holds roughly 800,000 characters of text. (These numbers keep growing - always check the current docs.)
             </Callout>
 
             <h4>The Problem: Long Conversations</h4>
@@ -168,7 +168,7 @@ I'm a business analyst at a mid-size fintech company. I work with C-suite, produ
 
 MY PREFERENCES:
 - Always structure responses with Executive Summary first, then Details
-- Use data-driven language (avoid "I think" — say "The data shows")
+- Use data-driven language (avoid "I think" - say "The data shows")
 - When I ask for analysis, include: Finding, Impact, Recommendation, Next Steps
 - Use tables for comparisons; use bullet points for lists
 - Keep explanations technical but accessible (avoid jargon without explanation)
@@ -180,7 +180,7 @@ MY WORKFLOW:
 
 MY GUARDRAILS:
 - Never include proprietary company info in examples
-- Ask before using email/Slack tone — be formal unless told otherwise`}
+- Ask before using email/Slack tone - be formal unless told otherwise`}
             </PromptBox>
 
             <p style={{ marginTop: '1.5rem' }}>

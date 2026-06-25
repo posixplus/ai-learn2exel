@@ -23,7 +23,7 @@ export async function POST(req: NextRequest) {
         body: JSON.stringify({
           from: 'feedback@learn2exel.com',
           to: '2005jay@gmail.com',
-          subject: `⭐ Level ${level} Feedback — ${rating}/5 stars (${starLabel})`,
+          subject: `⭐ Level ${level} Feedback - ${rating}/5 stars (${starLabel})`,
           html: `
             <div style="font-family: sans-serif; max-width: 600px; margin: 0 auto; padding: 32px; background: #f9fafb; border-radius: 12px;">
               <h2 style="margin: 0 0 24px; color: #111827;">📬 New Course Feedback</h2>
@@ -31,11 +31,11 @@ export async function POST(req: NextRequest) {
               <table style="width: 100%; border-collapse: collapse; background: white; border-radius: 8px; overflow: hidden; margin-bottom: 24px;">
                 <tr style="background: #f3f4f6;">
                   <td style="padding: 10px 16px; font-weight: 600; color: #374151; width: 140px;">Level</td>
-                  <td style="padding: 10px 16px; color: #111827;">Level ${level} — ${levelTitle}</td>
+                  <td style="padding: 10px 16px; color: #111827;">Level ${level} - ${levelTitle}</td>
                 </tr>
                 <tr>
                   <td style="padding: 10px 16px; font-weight: 600; color: #374151;">Rating</td>
-                  <td style="padding: 10px 16px; color: #111827;">${'⭐'.repeat(rating)} ${rating}/5 — ${starLabel}</td>
+                  <td style="padding: 10px 16px; color: #111827;">${'⭐'.repeat(rating)} ${rating}/5 - ${starLabel}</td>
                 </tr>
                 <tr style="background: #f3f4f6;">
                   <td style="padding: 10px 16px; font-weight: 600; color: #374151;">From</td>
@@ -62,7 +62,7 @@ export async function POST(req: NextRequest) {
       })
     } catch (err) {
       console.error('Resend email failed:', err)
-      // Continue — don't fail the request just because email failed
+      // Continue - don't fail the request just because email failed
     }
   } else {
     console.log(`[FEEDBACK] Level ${level} | ${rating}★ | ${name || 'anon'} | "${comment}"`)

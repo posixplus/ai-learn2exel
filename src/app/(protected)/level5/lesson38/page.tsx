@@ -10,27 +10,27 @@ export default function Lesson38() {
       <Sidebar level={5} currentLessonId="l5-38" />
       <main className="lesson-main">
         <LessonHeader level={5} lessonNumber={38} duration={60}
-          title="AI Tools for Devs — The Landscape"
-          subtitle="GitHub Copilot, Claude Code, Cursor, Windsurf — what they each do, how to choose, and how to set them up." />
+          title="AI Tools for Devs - The Landscape"
+          subtitle="GitHub Copilot, Claude Code, Cursor, Windsurf - what they each do, how to choose, and how to set them up." />
 
         <section className="section-card">
           <h2>The AI Coding Tool Explosion</h2>
-          <p>In 2024–2025, AI coding tools went from novelty to necessity. Every major IDE now has AI built in or available via extension. The challenge is no longer "should I use AI?" — it's "which tool for which job?"</p>
+          <p>In 2024-2025, AI coding tools went from novelty to necessity. Every major IDE now has AI built in or available via extension. The challenge is no longer "should I use AI?" - it's "which tool for which job?"</p>
           <div className="info-box">
             <strong>The main players:</strong>
             <ul>
-              <li><strong>GitHub Copilot</strong> — Microsoft/GitHub. Deep VS Code + JetBrains integration. Powered by OpenAI models. Best for inline completion.</li>
-              <li><strong>Claude Code</strong> — Anthropic. Terminal-first, full-codebase awareness. Best for large refactors, multi-file changes, and agentic tasks.</li>
-              <li><strong>Cursor</strong> — Fork of VS Code. Deep file indexing, Cmd+K edits, Composer for multi-file. Best all-in-one IDE experience.</li>
-              <li><strong>Windsurf</strong> — Codeium's IDE. "Flows" for agentic multi-step changes. Fast and lightweight.</li>
-              <li><strong>Codeium / Supermaven</strong> — Free alternatives for inline completion. Good for teams on a budget.</li>
+              <li><strong>GitHub Copilot</strong> - Microsoft/GitHub. Deep VS Code + JetBrains integration. Powered by OpenAI models. Best for inline completion.</li>
+              <li><strong>Claude Code</strong> - Anthropic. Terminal-first, full-codebase awareness. Best for large refactors, multi-file changes, and agentic tasks.</li>
+              <li><strong>Cursor</strong> - Fork of VS Code. Deep file indexing, Cmd+K edits, Composer for multi-file. Best all-in-one IDE experience.</li>
+              <li><strong>Windsurf</strong> - Codeium's IDE. "Flows" for agentic multi-step changes. Fast and lightweight.</li>
+              <li><strong>Codeium / Supermaven</strong> - Free alternatives for inline completion. Good for teams on a budget.</li>
             </ul>
           </div>
         </section>
 
         <section className="section-card">
           <h2>How These Tools Actually Work</h2>
-          <p>All AI coding tools share the same underlying mechanism — they send context to a language model and stream back completions. Understanding what context they send is the key to using them well.</p>
+          <p>All AI coding tools share the same underlying mechanism - they send context to a language model and stream back completions. Understanding what context they send is the key to using them well.</p>
           <pre className="code-block">{`What the model typically sees:
 ┌─────────────────────────────────────┐
 │  System prompt (tool's instructions) │
@@ -72,7 +72,7 @@ Codeium       | Free completion      | VS Code,     | Free
               <div>Install <strong>GitHub Copilot</strong> + <strong>GitHub Copilot Chat</strong> extensions from VS Code marketplace</div>
             </div>
             <div className="step"><div className="step-number">2</div>
-              <div>Sign in with your GitHub account (requires Copilot subscription — free tier available for students/OSS maintainers)</div>
+              <div>Sign in with your GitHub account (requires Copilot subscription - free tier available for students/OSS maintainers)</div>
             </div>
             <div className="step"><div className="step-number">3</div>
               <div>Enable inline suggestions: <code>Settings → GitHub Copilot → Enable</code></div>
@@ -81,7 +81,7 @@ Codeium       | Free completion      | VS Code,     | Free
               <div>Open Copilot Chat with <code>Ctrl+Alt+I</code> (Windows) or <code>Cmd+Shift+I</code> (Mac)</div>
             </div>
             <div className="step"><div className="step-number">5</div>
-              <div>Test: open a new file, type a function signature, and wait 1–2s for ghost text</div>
+              <div>Test: open a new file, type a function signature, and wait 1-2s for ghost text</div>
             </div>
           </div>
         </section>

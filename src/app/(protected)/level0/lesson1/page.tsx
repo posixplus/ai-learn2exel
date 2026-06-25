@@ -43,7 +43,7 @@ export default function Lesson1() {
                 <div className="concept-icon">🧠</div>
                 <h3>Machine Learning (ML)</h3>
                 <p className="concept-label">"Learning by Example"</p>
-                <p>A subset of AI where systems improve their performance by learning from data, without being explicitly programmed for every scenario. Show it 1,000 emails, and it learns what spam looks like—without you writing rules.</p>
+                <p>A subset of AI where systems improve their performance by learning from data, without being explicitly programmed for every scenario. Show it 1,000 emails, and it learns what spam looks like-without you writing rules.</p>
                 <p className="concept-examples"><strong>Examples:</strong> spam filters, credit card fraud detection, Netflix recommendations</p>
               </div>
 
@@ -80,7 +80,7 @@ export default function Lesson1() {
                 <div className="timeline-content">
                   <h3>1950</h3>
                   <p><strong>Turing Test Proposed</strong></p>
-                  <p>Alan Turing asks: "Can machines think?" He proposes the Turing Test—if a human can't tell whether they're talking to a machine or a human, the machine is intelligent. We're still testing this today.</p>
+                  <p>Alan Turing asks: "Can machines think?" He proposes the Turing Test-if a human can't tell whether they're talking to a machine or a human, the machine is intelligent. We're still testing this today.</p>
                 </div>
               </div>
 
@@ -107,7 +107,7 @@ export default function Lesson1() {
                 <div className="timeline-content">
                   <h3>2017</h3>
                   <p><strong>Transformer Architecture Invented</strong></p>
-                  <p>Researchers publish "Attention Is All You Need," introducing the Transformer—the architecture that powers ChatGPT, Claude, and Gemini. This is why these models work.</p>
+                  <p>Researchers publish "Attention Is All You Need," introducing the Transformer-the architecture that powers ChatGPT, Claude, and Gemini. This is why these models work.</p>
                 </div>
               </div>
 
@@ -141,9 +141,9 @@ export default function Lesson1() {
               <div className="timeline-item">
                 <div className="timeline-dot"></div>
                 <div className="timeline-content">
-                  <h3>2024–2025</h3>
+                  <h3>2024-2026</h3>
                   <p><strong>AI Goes Everywhere</strong></p>
-                  <p>AI agents that can take actions, multimodal models that understand text+image+video, reasoning models that think step-by-step. AI is no longer a novelty—it's infrastructure.</p>
+                  <p>AI agents that can take actions, multimodal models that understand text+image+video, and reasoning models that think step-by-step are now mainstream. By 2026, models like Claude Opus 4.8, GPT-5.5, and Gemini 3.5 power everyday work. AI is no longer a novelty-it's infrastructure.</p>
                 </div>
               </div>
             </div>
@@ -156,12 +156,12 @@ export default function Lesson1() {
 
             <h3>Step 1: Tokenization (Breaking Words Into Pieces)</h3>
             <p>You type: "What is a hamburger?"</p>
-            <p>The model doesn't see that as one word. It breaks it into tokens—small chunks that might be a whole word, part of a word, or a punctuation mark. "Hamburger" becomes ["ham", "bur", "ger"]. This is because models work with numbers, and tokens map to numbers the model understands.</p>
+            <p>The model doesn't see that as one word. It breaks it into tokens-small chunks that might be a whole word, part of a word, or a punctuation mark. "Hamburger" becomes ["ham", "bur", "ger"]. This is because models work with numbers, and tokens map to numbers the model understands.</p>
             <p><strong>Why?</strong> Models are language pattern detectors. They work with numbers, not letters. Tokens are the bridge.</p>
 
             <h3>Step 2: Training (Learning Patterns From Billions of Examples)</h3>
-            <p>Before you ever typed that question, Claude was trained on a massive amount of text from the internet—books, articles, websites, and code. During training, the model learned statistical patterns: "When these tokens appear together, what usually comes next?"</p>
-            <p>For example, the model learned: "When you see 'the quick brown fox,' the next word is usually 'jumps.'" It learned patterns for grammar, facts, writing styles, coding conventions—all by statistical pattern matching.</p>
+            <p>Before you ever typed that question, Claude was trained on a massive amount of text from the internet-books, articles, websites, and code. During training, the model learned statistical patterns: "When these tokens appear together, what usually comes next?"</p>
+            <p>For example, the model learned: "When you see 'the quick brown fox,' the next word is usually 'jumps.'" It learned patterns for grammar, facts, writing styles, coding conventions-all by statistical pattern matching.</p>
             <p><strong>Why this matters:</strong> The model is <em>not</em> looking things up in a database. It's recalling learned patterns. This is why it's powerful AND why it can make mistakes.</p>
 
             <h3>Step 3: Next-Token Prediction (Filling in the Blank, Scaled Up)</h3>
@@ -177,7 +177,7 @@ export default function Lesson1() {
               <li>Reason step-by-step (but it does)</li>
               <li>Translate languages it saw only a few times in training (but it does)</li>
             </ul>
-            <p>These "emergent capabilities" arise spontaneously when models get large enough. At a certain scale, the pattern-matching becomes powerful enough to do things it was never explicitly trained to do. This is still not fully understood by researchers—it's one of the great mysteries of AI.</p>
+            <p>These "emergent capabilities" arise spontaneously when models get large enough. At a certain scale, the pattern-matching becomes powerful enough to do things it was never explicitly trained to do. This is still not fully understood by researchers-it's one of the great mysteries of AI.</p>
 
             <Callout
               type="info"
@@ -210,7 +210,7 @@ export default function Lesson1() {
                 </tr>
                 <tr>
                   <td>"AI will replace all jobs immediately"</td>
-                  <td>AI augments most jobs and automates specific tasks, not entire roles—at least for now. Your job might change, but AI is a tool your industry will use, not a replacement.</td>
+                  <td>AI augments most jobs and automates specific tasks, not entire roles-at least for now. Your job might change, but AI is a tool your industry will use, not a replacement.</td>
                 </tr>
                 <tr>
                   <td>"You need to be technical to use AI"</td>
@@ -218,11 +218,11 @@ export default function Lesson1() {
                 </tr>
                 <tr>
                   <td>"Free AI tools are useless"</td>
-                  <td>Claude.ai free, ChatGPT free, and Gemini free tiers are surprisingly capable. You don't need to pay for real value—though paid tiers offer more usage.</td>
+                  <td>Claude.ai free, ChatGPT free, and Gemini free tiers are surprisingly capable. You don't need to pay for real value-though paid tiers offer more usage.</td>
                 </tr>
                 <tr>
                   <td>"AI understands everything it generates"</td>
-                  <td>AI generates plausible text without true understanding. It can write about nuclear physics without understanding physics—it's following learned patterns.</td>
+                  <td>AI generates plausible text without true understanding. It can write about nuclear physics without understanding physics-it's following learned patterns.</td>
                 </tr>
               </tbody>
             </table>
@@ -237,13 +237,13 @@ export default function Lesson1() {
               title="Your First AI Conversation"
               description="Let's do this right now. Follow these steps and you'll have had your first real AI conversation in under 5 minutes."
               steps={[
-                "Open claude.ai in your browser (free account — takes 2 minutes to create)",
+                "Open claude.ai in your browser (free account - takes 2 minutes to create)",
                 'Type exactly this: "Explain what you are in 3 sentences, for someone who has never heard of AI before."',
                 "Read the response. Notice how it structures the answer.",
                 'Now type: "Explain it as if I\'m a 10-year-old."',
-                "Compare the two responses — notice how AI adapts its communication style to your request",
+                "Compare the two responses - notice how AI adapts its communication style to your request",
                 'Finally try: "What are 3 things I should know before using AI tools like you?"',
-                "Congratulations — you just had your first productive AI conversation!",
+                "Congratulations - you just had your first productive AI conversation!",
               ]}
             />
 
@@ -270,7 +270,7 @@ export default function Lesson1() {
                       <PromptBox
                         text={`I teach 5th grade science. Create a 10-question quiz on the water cycle that's appropriate for 10-year-olds. Include an answer key. Make it fun and not too hard.`}
                       />
-                      <p><strong>Follow-up idea:</strong> Ask AI to rewrite the same quiz at 3 different difficulty levels—for advanced students, average students, and students who are struggling. That's instant differentiation.</p>
+                      <p><strong>Follow-up idea:</strong> Ask AI to rewrite the same quiz at 3 different difficulty levels-for advanced students, average students, and students who are struggling. That's instant differentiation.</p>
                     </>
                   ),
                 },
@@ -282,7 +282,7 @@ export default function Lesson1() {
                       <p>Healthcare providers use AI to explain diagnoses in language patients understand.</p>
                       <p><strong>Prompt:</strong></p>
                       <PromptBox
-                        text={`I'm a doctor. A patient just asked me what Type 2 Diabetes is. Write me a 150-word explanation in plain language—no medical jargon. Include what causes it and what they can do about it.`}
+                        text={`I'm a doctor. A patient just asked me what Type 2 Diabetes is. Write me a 150-word explanation in plain language-no medical jargon. Include what causes it and what they can do about it.`}
                       />
                       <p><strong>Follow-up idea:</strong> Ask AI to write the same explanation for different audiences: a 70-year-old with no medical background, a teenager, and a spouse wanting to understand how to help.</p>
                     </>
@@ -351,7 +351,7 @@ export default function Lesson1() {
           {/* SECTION 7: QUICK REFERENCE */}
           <section className="lesson-section">
             <QuickRef
-              title="Lesson 1 — Quick Reference"
+              title="Lesson 1 - Quick Reference"
               items={[
                 {
                   heading: 'Key Terms',

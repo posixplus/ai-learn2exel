@@ -18,7 +18,7 @@ export default function Lesson14() {
             lessonNumber={14}
             duration={75}
             title="AI + Data Analysis"
-            subtitle="Read spreadsheets, spot trends, and turn numbers into insights—without being a data scientist"
+            subtitle="Read spreadsheets, spot trends, and turn numbers into insights-without being a data scientist"
             professions={['Teacher', 'Manager', 'Developer', 'Analyst', 'Business', 'Doctor', 'Lawyer']}
           />
 
@@ -52,14 +52,14 @@ export default function Lesson14() {
                 <li><strong>Summarize tables:</strong> Turn 500 rows into a 5-bullet insight</li>
                 <li><strong>Calculate stats:</strong> Average, median, percentiles, growth rates, percentages</li>
                 <li><strong>Find outliers:</strong> Which items are performing best or worst?</li>
-                <li><strong>Write formulas:</strong> Excel, Google Sheets—Claude can build them</li>
+                <li><strong>Write formulas:</strong> Excel, Google Sheets-Claude can build them</li>
                 <li><strong>Compare periods:</strong> This quarter vs. last, this year vs. last year</li>
                 <li><strong>Interpret dashboards:</strong> Paste a screenshot, ask "what should I worry about?"</li>
               </ul>
             </div>
 
             <Callout type="warning">
-              <strong>Critical Limitation:</strong> Claude cannot access external files, URLs, or databases directly. You must copy and paste the data into the conversation. For large files, use Claude's built-in file upload feature, or copy-paste the relevant rows. This is a security feature—your data stays in your conversation.
+              <strong>Critical Limitation:</strong> Claude cannot access external files, URLs, or databases directly. You must copy and paste the data into the conversation. For large files, use Claude's built-in file upload feature, or copy-paste the relevant rows. This is a security feature-your data stays in your conversation.
             </Callout>
           </section>
 

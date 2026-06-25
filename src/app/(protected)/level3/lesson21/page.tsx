@@ -11,11 +11,11 @@ export default function Lesson21() {
         <main className="lesson-main">
           <LessonHeader level={3} lessonNumber={21} duration={90}
             title="CLAUDE.md: Your Personal AI Brain"
-            subtitle="Set up persistent context once — get dramatically better results in every session, forever" />
+            subtitle="Set up persistent context once - get dramatically better results in every session, forever" />
 
           <section className="section-card">
             <h2>The Problem with Starting Fresh Every Time</h2>
-            <p>Every Claude conversation starts blank. No memory of your role, preferences, code style, or team conventions. You re-explain the same context in every session — or get generic responses that don't fit your situation.</p>
+            <p>Every Claude conversation starts blank. No memory of your role, preferences, code style, or team conventions. You re-explain the same context in every session - or get generic responses that don't fit your situation.</p>
             <p>CLAUDE.md solves this permanently. Claude reads it automatically at the start of every session. Write it once, use it forever.</p>
           </section>
 
@@ -28,11 +28,11 @@ export default function Lesson21() {
               </div>
               <div className="step">
                 <strong>Project: ./CLAUDE.md (in any folder)</strong>
-                <p>Applies only when Claude runs in that directory. Project-specific: architecture, key files, team conventions, deployment steps. Commit to git — your whole team benefits.</p>
+                <p>Applies only when Claude runs in that directory. Project-specific: architecture, key files, team conventions, deployment steps. Commit to git - your whole team benefits.</p>
               </div>
             </div>
             <div className="info-box">
-              Claude Code also reads CLAUDE.md files in parent directories — allowing multi-level context for monorepos and workspaces.
+              Claude Code also reads CLAUDE.md files in parent directories - allowing multi-level context for monorepos and workspaces.
             </div>
           </section>
 
@@ -40,7 +40,7 @@ export default function Lesson21() {
             <h2>Before and After: Why CLAUDE.md Changes Everything</h2>
             <div className="steps-list">
               <div className="step">
-                <strong>Without CLAUDE.md — Claude's response to "Review this function":</strong>
+                <strong>Without CLAUDE.md - Claude's response to "Review this function":</strong>
                 <pre>{`The function looks generally well-structured. A few suggestions:
 1. Consider adding error handling for edge cases
 2. The variable names could be more descriptive  
@@ -52,10 +52,10 @@ export default function Lesson21() {
                 <strong>With CLAUDE.md (developer, TypeScript, strict mode, prefers concise feedback):</strong>
                 <pre>{`Two issues:
 
-1. Line 14: fetchUser() can return null — you're not handling it.
+1. Line 14: fetchUser() can return null - you're not handling it.
    Add: if (!user) throw new ApiError(404, 'User not found')
 
-2. This should be async — you're calling an async fn but not awaiting.
+2. This should be async - you're calling an async fn but not awaiting.
    Change: getUserData() → async getUserData()
 
 No other changes needed. Tests already cover the happy path.`}</pre>
@@ -65,13 +65,13 @@ No other changes needed. Tests already cover the happy path.`}</pre>
           </section>
 
           <section className="section-card">
-            <h2>Real Global CLAUDE.md — Developer Version</h2>
+            <h2>Real Global CLAUDE.md - Developer Version</h2>
             <p>A real, fully filled-in example. Copy and customize this right now:</p>
             <pre>{`# About Me
 Name: Alex Chen
 Role: Senior Full-Stack Engineer
 Company: Series B fintech startup (80 people)
-Industry: Financial technology — payment processing
+Industry: Financial technology - payment processing
 Experience: 7 years, primarily TypeScript/Node/React
 
 # currentDate
@@ -88,10 +88,10 @@ Git: GitHub, conventional commits, PR required for main
 
 # How I Work
 - Give me concise, direct answers. No preamble.
-- Always show full function code when editing — not just the changed lines.
+- Always show full function code when editing - not just the changed lines.
 - For changes touching >2 files, show a plan first and wait for my approval.
 - When you create a file, state the exact path.
-- Flag security issues immediately — don't bury them in suggestions.
+- Flag security issues immediately - don't bury them in suggestions.
 - If you're uncertain about my intent, ask ONE clarifying question.
 
 # Code Style
@@ -103,37 +103,37 @@ Git: GitHub, conventional commits, PR required for main
 - All API handlers wrapped in try/catch with structured error responses
 
 # Do Not
-- Add unnecessary comments — code should be self-documenting
+- Add unnecessary comments - code should be self-documenting
 - Suggest adding a library when built-ins handle it
 - Use deprecated Node.js APIs
 - Write tests with implementation details as assertions (test behavior, not code)
 - Add "Certainly!" or filler phrases
-- Suggest I read the docs — if I'm asking, I've read the docs
+- Suggest I read the docs - if I'm asking, I've read the docs
 
 # Security Rules (our compliance requirements)
-- Never log PII (emails, names, payment data) — use masked versions
-- All database queries must use parameterized inputs (Prisma handles this — flag raw queries)
+- Never log PII (emails, names, payment data) - use masked versions
+- All database queries must use parameterized inputs (Prisma handles this - flag raw queries)
 - Authentication checks must happen in middleware, not in individual routes
 - Flag any code that could expose internal error messages to end users`}</pre>
           </section>
 
           <section className="section-card">
-            <h2>Real Global CLAUDE.md — Knowledge Worker Version</h2>
+            <h2>Real Global CLAUDE.md - Knowledge Worker Version</h2>
             <p>Non-developer version for analysts, managers, and knowledge workers:</p>
             <pre>{`# About Me
 Name: Sarah Kim
 Role: Product Manager, Growth Team
 Company: B2B SaaS (Series A, 45 people)
-Industry: HR Tech — employee engagement software
+Industry: HR Tech - employee engagement software
 Context: I manage features from ideation to launch. I work with 
 engineering (6 devs), design (2), and data (1 analyst).
 
 # currentDate
-Today is: [Check system date — use it when I ask about "this week", "next sprint", etc.]
+Today is: [Check system date - use it when I ask about "this week", "next sprint", etc.]
 
 # How I Like Answers
 - Lead with the recommendation. Then explain why.
-- Max 3 options when I ask for alternatives — with a clear recommended one.
+- Max 3 options when I ask for alternatives - with a clear recommended one.
 - Use bullet points for lists, prose for analysis.
 - If something has a catch or risk I should know, say it immediately.
 - End complex responses with: "Next step: [specific action I should take]"
@@ -147,13 +147,13 @@ Today is: [Check system date — use it when I ask about "this week", "next spri
 
 # Writing Style
 - Match our company voice: direct, warm, not corporate
-- Avoid jargon — our team is mixed technical/non-technical
+- Avoid jargon - our team is mixed technical/non-technical
 - Emails: short. 5 sentences max unless it's a major announcement.
 - PRDs: problem first, then solution. Include "out of scope" section always.
 
 # Do Not
 - Add caveats I didn't ask for
-- Write longer than needed — I can ask for more if I need it
+- Write longer than needed - I can ask for more if I need it
 - Give me generic PM advice from a textbook
 - Suggest I talk to stakeholders when I'm asking you to help me draft content
 - Use "leverage", "synergy", "circle back", or similar corporate speak`}</pre>
@@ -171,12 +171,12 @@ Last updated: [date]
 ## Architecture Overview
 [3-5 sentences: stack, key design decisions, overall structure]
 
-## Key Files — Read These First
-- src/auth/session.ts — session management, JWT handling
-- src/middleware.ts — request pipeline, auth, rate limiting
-- src/api/index.ts — all API routes registered here
-- src/db/schema.ts — Drizzle ORM schema, single source of truth
-- src/lib/email.ts — all email sending goes through here
+## Key Files - Read These First
+- src/auth/session.ts - session management, JWT handling
+- src/middleware.ts - request pipeline, auth, rate limiting
+- src/api/index.ts - all API routes registered here
+- src/db/schema.ts - Drizzle ORM schema, single source of truth
+- src/lib/email.ts - all email sending goes through here
 
 ## Common Commands
 npm run dev          # development server (port 3000)
@@ -225,8 +225,8 @@ See: .env.example for full list`}</pre>
             <h2>Memory Skills in Cowork</h2>
             <p>Cowork's <code>memory-management</code> skill adds a two-tier system on top of CLAUDE.md:</p>
             <ul>
-              <li><strong>CLAUDE.md</strong> — Working memory: active preferences, current project, frequently used info</li>
-              <li><strong>memory/ directory</strong> — Long-term knowledge: decisions made months ago, team info, domain knowledge that rarely changes</li>
+              <li><strong>CLAUDE.md</strong> - Working memory: active preferences, current project, frequently used info</li>
+              <li><strong>memory/ directory</strong> - Long-term knowledge: decisions made months ago, team info, domain knowledge that rarely changes</li>
             </ul>
             <p>Trigger it: "Remember that our API uses snake_case for all parameters" or "Update my memory with the decisions we made today."</p>
           </section>
@@ -237,11 +237,11 @@ See: .env.example for full list`}</pre>
               <div className="step">
                 <strong>Part A: Create Your Global CLAUDE.md (12 min)</strong>
                 <pre>{`mkdir -p ~/.claude && nano ~/.claude/CLAUDE.md`}</pre>
-                <p>Use the appropriate template above (developer or knowledge worker). Fill in every section. Don't skip "Do Not" — it's often the most valuable part of the file.</p>
+                <p>Use the appropriate template above (developer or knowledge worker). Fill in every section. Don't skip "Do Not" - it's often the most valuable part of the file.</p>
               </div>
               <div className="step">
                 <strong>Part B: Test It (8 min)</strong>
-                <p>Open a new Claude Code session. Ask: "What do you know about me and how I work?" Claude should accurately reflect your CLAUDE.md — role, preferences, constraints. Fix anything that's wrong or missing before moving on.</p>
+                <p>Open a new Claude Code session. Ask: "What do you know about me and how I work?" Claude should accurately reflect your CLAUDE.md - role, preferences, constraints. Fix anything that's wrong or missing before moving on.</p>
               </div>
               <div className="step">
                 <strong>Part C: Project CLAUDE.md (5 min)</strong>
@@ -255,7 +255,7 @@ See: .env.example for full list`}</pre>
             { term: "./CLAUDE.md", definition: "Project memory. Put in project root. Commit to git. Your whole team gets the context benefits." },
             { term: "Do Not section", definition: "Most valuable part of CLAUDE.md. Add one prohibition every time Claude does something that annoys you. Eliminates friction fast." },
             { term: "Current Focus", definition: "2-3 sentences about what you're actively working on. Update weekly. Helps Claude prioritize context relevance." },
-            { term: "/init command", definition: "Claude Code auto-generates a CLAUDE.md from your codebase structure. Great starting point — then customize." },
+            { term: "/init command", definition: "Claude Code auto-generates a CLAUDE.md from your codebase structure. Great starting point - then customize." },
             { term: "Memory Skills", definition: "Cowork's memory-management skill adds a long-term knowledge base (memory/ dir) on top of CLAUDE.md for persistent context." },
           ]} />
 

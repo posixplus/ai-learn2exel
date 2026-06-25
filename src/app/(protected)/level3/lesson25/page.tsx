@@ -11,7 +11,7 @@ export default function Lesson25() {
         <main className="lesson-main">
           <LessonHeader level={3} lessonNumber={25} duration={120}
             title="Agentic Workflows: Claude as Your Chief of Staff"
-            subtitle="Design autonomous multi-step workflows — with a complete end-to-end Daily Intelligence Briefing you build today" />
+            subtitle="Design autonomous multi-step workflows - with a complete end-to-end Daily Intelligence Briefing you build today" />
 
           <section className="section-card">
             <h2>What Makes Something Agentic?</h2>
@@ -36,7 +36,7 @@ export default function Lesson25() {
               <div className="step"><strong>3. Execute step</strong><p>Claude calls a tool (search, read file, API call, write, etc.) and receives a result.</p></div>
               <div className="step"><strong>4. Observe</strong><p>Claude reads the result and checks whether the step achieved its goal.</p></div>
               <div className="step"><strong>5. Adapt</strong><p>If the result was unexpected, Claude revises the plan. If on track, moves to the next step.</p></div>
-              <div className="step"><strong>6. Repeat</strong><p>Steps 3–5 repeat until the goal is complete or Claude needs human input.</p></div>
+              <div className="step"><strong>6. Repeat</strong><p>Steps 3-5 repeat until the goal is complete or Claude needs human input.</p></div>
               <div className="step"><strong>7. Deliver</strong><p>Claude returns the final output and a summary of what was done.</p></div>
             </div>
           </section>
@@ -90,22 +90,22 @@ export default function Lesson25() {
 
 4. COMPILE: Create a briefing in this format:
 
-# Daily Briefing — {today's date}
+# Daily Briefing - {today's date}
 
 ## 📅 Today's Schedule ({N} meetings)
-[time] — [meeting title] — [key attendees]
+[time] - [meeting title] - [key attendees]
 
 ## 📧 Email Priorities ({N} urgent)
 **URGENT:**
-- From: [sender] — [subject] — Suggested reply: [one sentence]
+- From: [sender] - [subject] - Suggested reply: [one sentence]
 
 **FYI (no action needed):**
-- [sender] — [subject]
+- [sender] - [subject]
 
 ## 📰 Industry Pulse
-- [story 1 — one sentence]
-- [story 2 — one sentence]  
-- [story 3 — one sentence]
+- [story 1 - one sentence]
+- [story 2 - one sentence]  
+- [story 3 - one sentence]
 
 ## 🎯 Focus Recommendation
 [2 sentences: what to tackle first today and why, based on calendar + email]
@@ -120,7 +120,7 @@ export default function Lesson25() {
                 <strong>Step 3: Watch Claude run the workflow (trace of what happens)</strong>
                 <p>Here's exactly what Claude does step by step when you run the prompt above:</p>
                 <pre>{`[Tool call 1] gcal_list_events(timeMin="2025-01-13T00:00", timeMax="2025-01-13T23:59")
-→ Returns: 4 events — 9:00 standup, 11:00 product review, 2:00 1:1 with Sarah, 4:30 team retro
+→ Returns: 4 events - 9:00 standup, 11:00 product review, 2:00 1:1 with Sarah, 4:30 team retro
 
 [Tool call 2] gmail_search_messages(query="is:unread", maxResults=30)
 → Returns: 12 unread emails from last 24 hours
@@ -135,7 +135,7 @@ export default function Lesson25() {
 
 [Claude reasons]: Selecting 3 most relevant stories for a SaaS PM...
 
-[Claude composes briefing — entire document]
+[Claude composes briefing - entire document]
 
 [Tool call 4] write_file(path="~/Documents/briefings/2025-01-13.md", content="...")
 → File saved successfully
@@ -143,7 +143,7 @@ export default function Lesson25() {
 Response to you:
 "Your briefing is saved to ~/Documents/briefings/2025-01-13.md
 
-🎯 Focus for today: Start with Sarah's email re: the API pricing decision — 
+🎯 Focus for today: Start with Sarah's email re: the API pricing decision - 
 it's blocking the enterprise deal closing this week. Your 9am standup is in 
 47 minutes, so draft that reply first."`}</pre>
               </div>
@@ -162,11 +162,11 @@ send me a macOS notification when it's ready.`}</pre>
                 <strong>Step 5: Iterate and improve</strong>
                 <p>After running for a week, you'll notice patterns. Common improvements:</p>
                 <ul>
-                  <li>Add Slack MCP — check for important Slack messages and DMs overnight</li>
-                  <li>Add your task manager (Linear/Asana/Notion) — show overdue tickets</li>
-                  <li>Add GitHub — surface open PRs waiting for your review</li>
-                  <li>Customize urgency signals — "emails from my CEO or direct reports are always URGENT"</li>
-                  <li>Add a "This Week" section on Mondays only — what's due by Friday</li>
+                  <li>Add Slack MCP - check for important Slack messages and DMs overnight</li>
+                  <li>Add your task manager (Linear/Asana/Notion) - show overdue tickets</li>
+                  <li>Add GitHub - surface open PRs waiting for your review</li>
+                  <li>Customize urgency signals - "emails from my CEO or direct reports are always URGENT"</li>
+                  <li>Add a "This Week" section on Mondays only - what's due by Friday</li>
                 </ul>
               </div>
             </div>
@@ -196,13 +196,13 @@ Total time: ~4 minutes vs 3-4 hours manually.`}</pre>
               </div>
             </div>
             <div className="info-box">
-              In Claude Code and Cowork, Claude uses the built-in Agent tool to spawn sub-agents automatically. You don't need to configure anything — just give Claude a goal that benefits from parallel processing and include enough context.
+              In Claude Code and Cowork, Claude uses the built-in Agent tool to spawn sub-agents automatically. You don't need to configure anything - just give Claude a goal that benefits from parallel processing and include enough context.
             </div>
           </section>
 
           <section className="section-card">
-            <h2>Computer Use — Claude Controls Your Screen</h2>
-            <p>Computer Use lets Claude see your screen (via screenshots) and control your mouse and keyboard. This enables Claude to interact with any GUI app — not just those with APIs.</p>
+            <h2>Computer Use - Claude Controls Your Screen</h2>
+            <p>Computer Use lets Claude see your screen (via screenshots) and control your mouse and keyboard. This enables Claude to interact with any GUI app - not just those with APIs.</p>
             <div className="steps-list">
               <div className="step">
                 <strong>What it can do</strong>
@@ -227,7 +227,7 @@ Total time: 30 seconds. No API. No custom integration.`}</pre>
               </div>
             </div>
             <div className="info-box">
-              <strong>Safety first:</strong> Claude always asks for permission before clicking buttons or submitting forms. Never authorize actions you haven't reviewed. Computer Use is powerful — treat it like giving someone your keyboard.
+              <strong>Safety first:</strong> Claude always asks for permission before clicking buttons or submitting forms. Never authorize actions you haven't reviewed. Computer Use is powerful - treat it like giving someone your keyboard.
             </div>
           </section>
 
@@ -237,12 +237,12 @@ Total time: 30 seconds. No API. No custom integration.`}</pre>
             <div className="steps-list">
               <div className="step">
                 <strong>1. Be specific about the goal AND what "done" looks like</strong>
-                <p>❌ "Research competitors" — no finish line, no output format</p>
+                <p>❌ "Research competitors" - no finish line, no output format</p>
                 <p>✅ "Research Acme and Zendesk. For each: find pricing page URL, list all pricing tiers with prices, identify their primary target segment. Output as a markdown table. Save to ~/Documents/comp-research.md"</p>
               </div>
               <div className="step">
                 <strong>2. Give fallback instructions</strong>
-                <p>❌ Nothing — Claude stalls when it hits a 404 or missing data</p>
+                <p>❌ Nothing - Claude stalls when it hits a 404 or missing data</p>
                 <p>✅ "If you can't find pricing for a company, note 'pricing not public' and continue. Don't get stuck on any one company for more than 2 minutes."</p>
               </div>
               <div className="step">
@@ -288,7 +288,7 @@ Total time: 30 seconds. No API. No custom integration.`}</pre>
             { term: "Daily briefing", definition: "Gmail + Calendar + Search → personalized daily plan. Runs automatically at 7:45am via scheduled task. Built in this lesson." },
             { term: "Fallback instructions", definition: "Tell Claude what to do when a step fails: 'skip and note it', 'continue with next item'. Prevents stalling on edge cases." },
             { term: "Sub-agents", definition: "Claude instances running in parallel on subtasks. Orchestrator spawns them automatically for large research or analysis tasks." },
-            { term: "Computer Use", definition: "Claude sees your screen and controls mouse/keyboard. Works with any GUI — no API needed. Always approve before actions with side effects." },
+            { term: "Computer Use", definition: "Claude sees your screen and controls mouse/keyboard. Works with any GUI - no API needed. Always approve before actions with side effects." },
             { term: "Small scale first", definition: "Test every agentic workflow on 2-3 items before running on 50. Catch problems cheaply then scale up." },
           ]} />
 

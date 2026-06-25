@@ -2,7 +2,7 @@
 import { useState } from 'react'
 
 interface LevelFeedbackProps {
-  level: 0 | 1 | 2 | 3 | 4 | 5
+  level: 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9
   levelTitle: string
 }
 
@@ -13,6 +13,10 @@ const LEVEL_COLORS: Record<number, { bg: string; border: string; accent: string 
   3: { bg: '#F5F3FF', border: '#DDD6FE', accent: '#7C3AED' },
   4: { bg: '#FFF1F2', border: '#FECDD3', accent: '#E11D48' },
   5: { bg: '#F5F3FF', border: '#C4B5FD', accent: '#6D28D9' },
+  6: { bg: '#FDF2F8', border: '#FBCFE8', accent: '#DB2777' },
+  7: { bg: '#EEF2FF', border: '#C7D2FE', accent: '#4F46E5' },
+  8: { bg: '#ECFEFF', border: '#A5F3FC', accent: '#0891B2' },
+  9: { bg: '#F7FEE7', border: '#D9F99D', accent: '#65A30D' },
 }
 
 export default function LevelFeedback({ level, levelTitle }: LevelFeedbackProps) {
@@ -120,7 +124,7 @@ export default function LevelFeedback({ level, levelTitle }: LevelFeedbackProps)
               width: '100%', boxSizing: 'border-box', padding: '.65rem .85rem',
               border: '1.5px solid #D1D5DB', borderRadius: 10, fontSize: '.875rem',
               fontFamily: 'inherit', resize: 'vertical', outline: 'none',
-              background: 'white', color: '#111827', lineHeight: 1.5,
+              background: 'var(--color-card)', color: '#111827', lineHeight: 1.5,
             }}
           />
         </div>
@@ -138,7 +142,7 @@ export default function LevelFeedback({ level, levelTitle }: LevelFeedbackProps)
             style={{
               width: '100%', boxSizing: 'border-box', padding: '.55rem .85rem',
               border: '1.5px solid #D1D5DB', borderRadius: 10, fontSize: '.875rem',
-              fontFamily: 'inherit', outline: 'none', background: 'white', color: '#111827',
+              fontFamily: 'inherit', outline: 'none', background: 'var(--color-card)', color: '#111827',
             }}
           />
         </div>

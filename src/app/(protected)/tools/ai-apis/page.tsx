@@ -1,6 +1,7 @@
 'use client'
 import Link from 'next/link'
 import Footer from '@/components/layout/Footer'
+import ToolResources from '@/components/tools/ToolResources'
 
 export default function AiApisPage() {
   return (
@@ -15,9 +16,9 @@ export default function AiApisPage() {
 
       <div style={{ maxWidth: 900, margin: '0 auto', padding: '2.5rem 1.5rem 4rem' }}>
         <div style={{ marginBottom: '2.5rem' }}>
-          <h1 style={{ margin: '0 0 .5rem', fontSize: '2rem', fontWeight: 800 }}>🔌 AI APIs — Developer's Comparison Guide</h1>
+          <h1 style={{ margin: '0 0 .5rem', fontSize: '2rem', fontWeight: 800 }}>🔌 AI APIs - Developer's Comparison Guide</h1>
           <p style={{ fontSize: '1.05rem', color: '#374151', lineHeight: 1.7, marginBottom: 0 }}>
-            Every major AI provider offers an API — a way to call AI models programmatically from your own code. This guide compares the top options: pricing, strengths, and when to use each.
+            Every major AI provider offers an API - a way to call AI models programmatically from your own code. This guide compares the top options: pricing, strengths, and when to use each.
           </p>
         </div>
 
@@ -25,19 +26,19 @@ export default function AiApisPage() {
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '1.25rem', marginBottom: '2.5rem' }}>
           {[
             {
-              icon: '🟣', name: 'Anthropic API', models: 'Claude 3.5, Claude 3.7 Sonnet, Haiku',
-              strength: 'Best reasoning, long context (200K), safest for production',
-              price: 'Sonnet: $3/$15 per 1M tokens (in/out)', url: 'anthropic.com/api',
+              icon: '🟣', name: 'Anthropic API', models: 'Claude Opus 4.8, Sonnet 4.6, Haiku 4.5',
+              strength: 'Best reasoning, long context (200K-1M), safest for production',
+              price: 'Sonnet: $3/$15 per 1M tokens (in/out)', url: 'platform.claude.com',
               badge: 'Best for complex tasks', color: '#7C3AED'
             },
             {
-              icon: '🟢', name: 'OpenAI API', models: 'GPT-4o, o3, o1, GPT-4o-mini',
+              icon: '🟢', name: 'OpenAI API', models: 'GPT-5.5, GPT-5.5 mini, o-series',
               strength: 'Widest ecosystem, best plugin/tool support, most integrations',
-              price: 'GPT-4o: $2.50/$10 per 1M tokens', url: 'platform.openai.com',
+              price: 'GPT-5.5: ~$5/$30 per 1M tokens', url: 'platform.openai.com',
               badge: 'Most popular', color: '#16A34A'
             },
             {
-              icon: '🔵', name: 'Google AI (Gemini API)', models: 'Gemini 1.5 Pro, Flash, 2.0',
+              icon: '🔵', name: 'Google AI (Gemini API)', models: 'Gemini 3.5 Pro, Gemini 3.5 Flash',
               strength: 'Massive context window (2M tokens), multimodal, generous free tier',
               price: 'Flash: Free tier + $0.075/$0.30 per 1M', url: 'ai.google.dev',
               badge: 'Largest context window', color: '#2563EB'
@@ -74,7 +75,7 @@ export default function AiApisPage() {
 
         {/* Getting started */}
         <div style={{ background: 'white', border: '1px solid #E5E7EB', borderRadius: 12, padding: '2rem', marginBottom: '1.5rem' }}>
-          <h2 style={{ marginTop: 0, fontSize: '1.3rem' }}>⚡ Hello World — Your First API Call</h2>
+          <h2 style={{ marginTop: 0, fontSize: '1.3rem' }}>⚡ Hello World - Your First API Call</h2>
           <p style={{ color: '#4B5563', fontSize: '.9rem', marginBottom: '1rem' }}>Every AI API follows the same pattern: authenticate with an API key, send a message, receive a response. Here is the same call in Python for the three most popular APIs:</p>
 
           <div style={{ marginBottom: '1.25rem' }}>
@@ -99,7 +100,7 @@ export default function AiApisPage() {
               <span style={{ color: '#7DD3FC' }}>from</span> openai <span style={{ color: '#7DD3FC' }}>import</span> OpenAI<br />
               client = OpenAI(api_key=<span style={{ color: '#FDE68A' }}>"sk-..."</span>)<br /><br />
               response = client.chat.completions.create(<br />
-              &nbsp;&nbsp;model=<span style={{ color: '#FDE68A' }}>"gpt-4o"</span>,<br />
+              &nbsp;&nbsp;model=<span style={{ color: '#FDE68A' }}>"gpt-5.5"</span>,<br />
               &nbsp;&nbsp;messages=[{'{'}<span style={{ color: '#FDE68A' }}>"role"</span>: <span style={{ color: '#FDE68A' }}>"user"</span>, <span style={{ color: '#FDE68A' }}>"content"</span>: <span style={{ color: '#FDE68A' }}>"Hello!"</span>{'}'}]<br />
               )<br />
               <span style={{ color: '#7DD3FC' }}>print</span>(response.choices[<span style={{ color: '#86EFAC' }}>0</span>].message.content)
@@ -107,7 +108,7 @@ export default function AiApisPage() {
           </div>
 
           <div>
-            <div style={{ fontWeight: 700, marginBottom: '.5rem', color: '#D97706' }}>Ollama — Local (no API key!)</div>
+            <div style={{ fontWeight: 700, marginBottom: '.5rem', color: '#D97706' }}>Ollama - Local (no API key!)</div>
             <div style={{ background: '#1E293B', borderRadius: 8, padding: '1rem', fontFamily: 'monospace', fontSize: '.825rem', color: '#E2E8F0', lineHeight: 1.8 }}>
               pip install ollama<br /><br />
               <span style={{ color: '#7DD3FC' }}>import</span> ollama<br /><br />
@@ -121,7 +122,7 @@ export default function AiApisPage() {
         </div>
 
         <div style={{ background: 'white', border: '1px solid #E5E7EB', borderRadius: 12, padding: '2rem', marginBottom: '1.5rem' }}>
-          <h2 style={{ marginTop: 0, fontSize: '1.3rem' }}>💰 Cost Calculator — Rough Guide</h2>
+          <h2 style={{ marginTop: 0, fontSize: '1.3rem' }}>💰 Cost Calculator - Rough Guide</h2>
           <p style={{ color: '#4B5563', fontSize: '.9rem', marginBottom: '1rem' }}>APIs charge per token (roughly 1 token ≈ 0.75 words). Here is what typical usage costs:</p>
           <div style={{ overflowX: 'auto' }}>
             <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '.875rem' }}>
@@ -130,7 +131,7 @@ export default function AiApisPage() {
                   <th style={{ padding: '.65rem 1rem', textAlign: 'left' }}>Task</th>
                   <th style={{ padding: '.65rem 1rem', textAlign: 'center' }}>Tokens (approx)</th>
                   <th style={{ padding: '.65rem 1rem', textAlign: 'center' }}>Claude Sonnet</th>
-                  <th style={{ padding: '.65rem 1rem', textAlign: 'center' }}>GPT-4o</th>
+                  <th style={{ padding: '.65rem 1rem', textAlign: 'center' }}>GPT-5.5</th>
                 </tr>
               </thead>
               <tbody>
@@ -159,12 +160,21 @@ export default function AiApisPage() {
           <ul style={{ margin: 0, paddingLeft: '1.25rem', color: '#78350F', lineHeight: 2.2 }}>
             <li><strong>Building a product that needs the best reasoning?</strong> → Anthropic Claude API</li>
             <li><strong>Need the widest integration ecosystem (LangChain, etc.)?</strong> → OpenAI API</li>
-            <li><strong>Need massive context (millions of tokens)?</strong> → Google Gemini 1.5 Pro API</li>
+            <li><strong>Need massive context (millions of tokens)?</strong> → Google Gemini 3.5 Pro API</li>
             <li><strong>Want the cheapest option with decent quality?</strong> → Mistral Small or Groq</li>
             <li><strong>Want free, no API key, private?</strong> → Ollama (local)</li>
-            <li><strong>Experimenting / learning?</strong> → Anthropic or OpenAI — great docs, SDKs for all languages</li>
+            <li><strong>Experimenting / learning?</strong> → Anthropic or OpenAI - great docs, SDKs for all languages</li>
           </ul>
         </div>
+
+        <ToolResources links={[
+          { label: 'OpenAI Platform', href: 'https://platform.openai.com', note: 'Docs, API keys, pricing' },
+          { label: 'Anthropic (Claude) Platform', href: 'https://platform.claude.com', note: 'Claude developer platform + docs' },
+          { label: 'Google Gemini API', href: 'https://ai.google.dev', note: 'Gemini API + AI Studio' },
+          { label: 'Mistral La Plateforme', href: 'https://mistral.ai', note: 'European models + API' },
+          { label: 'Groq', href: 'https://groq.com', note: 'Very fast inference API' },
+          { label: 'OpenRouter', href: 'https://openrouter.ai', note: 'One API across many providers' },
+        ]} />
 
         <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
           <Link href="/tools/ollama" style={{ background: 'white', border: '1px solid #E5E7EB', borderRadius: 8, padding: '.75rem 1.25rem', fontSize: '.875rem', color: '#374151', textDecoration: 'none', fontWeight: 600 }}>→ Free Local Alternative (Ollama)</Link>

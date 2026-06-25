@@ -14,7 +14,7 @@ export default function Lesson32() {
           lessonNumber={32}
           duration={100}
           title="Multi-Agent Architectures"
-          subtitle="One Claude is good. An orchestra of Claudes — each with a focused role — is transformative."
+          subtitle="One Claude is good. An orchestra of Claudes - each with a focused role - is transformative."
         />
 
         <section className="section-card">
@@ -40,13 +40,13 @@ export default function Lesson32() {
           <p>
             One Claude (the orchestrator) breaks the task into subtasks and delegates
             to specialist sub-agents. Each sub-agent has its own system prompt and
-            context — they never see each other's full conversation.
+            context - they never see each other's full conversation.
           </p>
 
           <pre className="code-block">{`import anthropic
 client = anthropic.Anthropic()
 
-def call_claude(system: str, user: str, model="claude-opus-4-5") -> str:
+def call_claude(system: str, user: str, model="claude-opus-4-8") -> str:
     r = client.messages.create(
         model=model, max_tokens=1024,
         messages=[
@@ -133,7 +133,7 @@ async def parallel_analyse(document: str) -> dict:
 report = asyncio.run(parallel_analyse(open("spec.txt").read()))`}</pre>
 
           <div className="info-box">
-            <strong>Cost tip:</strong> Use <code>claude-haiku-4-5</code> for parallel sub-agents — it's ~20x cheaper than Opus and fast. Reserve Opus for the orchestrator and final synthesis steps.
+            <strong>Cost tip:</strong> Use <code>claude-haiku-4-5</code> for parallel sub-agents - it's ~20x cheaper than Opus and fast. Reserve Opus for the orchestrator and final synthesis steps.
           </div>
         </section>
 
@@ -178,7 +178,7 @@ report = asyncio.run(parallel_analyse(open("spec.txt").read()))`}</pre>
               <li><strong>Max iterations:</strong> always cap loops (3-5 rounds max)</li>
               <li><strong>Token budgets:</strong> set lower <code>max_tokens</code> for sub-agents than orchestrator</li>
               <li><strong>Haiku for internals:</strong> sub-agents doing extraction/formatting don't need Opus</li>
-              <li><strong>Early stopping:</strong> check intermediate results — bail if something is clearly wrong</li>
+              <li><strong>Early stopping:</strong> check intermediate results - bail if something is clearly wrong</li>
               <li><strong>Logging:</strong> log every agent call with token counts for cost monitoring</li>
             </ul>
           </div>
@@ -205,7 +205,7 @@ report = asyncio.run(parallel_analyse(open("spec.txt").read()))`}</pre>
             { term: 'Parallel pipeline', definition: 'asyncio.gather() to run independent agents simultaneously' },
             { term: 'Critic + reviser', definition: 'Generate-critique-revise loop with APPROVED exit condition' },
             { term: 'Haiku for sub-agents', definition: 'Use cheaper/faster model for extraction; Opus for synthesis' },
-            { term: 'Max iterations', definition: 'Always cap loops — 3-5 rounds prevents runaway costs' },
+            { term: 'Max iterations', definition: 'Always cap loops - 3-5 rounds prevents runaway costs' },
           ]}
         />
 

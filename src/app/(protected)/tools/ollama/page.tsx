@@ -1,6 +1,7 @@
 'use client'
 import Link from 'next/link'
 import Footer from '@/components/layout/Footer'
+import ToolResources from '@/components/tools/ToolResources'
 
 export default function OllamaPage() {
   return (
@@ -20,14 +21,14 @@ export default function OllamaPage() {
             <div>
               <div style={{ display: 'flex', gap: '.5rem', marginBottom: '.4rem' }}>
                 <span style={{ background: '#F0FDF4', color: '#16A34A', border: '1px solid #BBF7D0', borderRadius: '999px', padding: '.2rem .75rem', fontSize: '.78rem', fontWeight: 600 }}>100% Free & Open Source</span>
-                <span style={{ background: '#F0F9FF', color: '#0369A1', border: '1px solid #BAE6FD', borderRadius: '999px', padding: '.2rem .75rem', fontSize: '.78rem', fontWeight: 600 }}>Runs Locally — No Internet Needed</span>
+                <span style={{ background: '#F0F9FF', color: '#0369A1', border: '1px solid #BAE6FD', borderRadius: '999px', padding: '.2rem .75rem', fontSize: '.78rem', fontWeight: 600 }}>Runs Locally - No Internet Needed</span>
               </div>
               <h1 style={{ margin: 0, fontSize: '2rem', fontWeight: 800 }}>Ollama</h1>
-              <p style={{ margin: '.25rem 0 0', color: '#6B7280', fontSize: '1rem' }}>Run powerful AI models on your own computer — completely private, completely free</p>
+              <p style={{ margin: '.25rem 0 0', color: '#6B7280', fontSize: '1rem' }}>Run powerful AI models on your own computer - completely private, completely free</p>
             </div>
           </div>
           <p style={{ fontSize: '1.05rem', color: '#374151', lineHeight: 1.7 }}>
-            Ollama makes it as easy to run an AI model locally as installing any other app. One command to pull a model, one command to chat. Your data never leaves your machine — no API keys, no usage limits, no monthly fees. Supports Llama 3, Mistral, Gemma, Phi-3, DeepSeek, and dozens more.
+            Ollama makes it as easy to run an AI model locally as installing any other app. One command to pull a model, one command to chat. Your data never leaves your machine - no API keys, no usage limits, no monthly fees. Supports Llama 3, Mistral, Gemma, Phi-3, DeepSeek, and dozens more.
           </p>
         </div>
 
@@ -52,8 +53,8 @@ export default function OllamaPage() {
           <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
             {[
               { step: '1', title: 'Download Ollama', desc: 'Go to ollama.com → Download. Pick your OS. On Mac, drag Ollama.app to Applications. It adds a menu bar icon.' },
-              { step: '2', title: 'Pull your first model', desc: 'Open Terminal and run: ollama pull llama3.2 — this downloads the 2.0 GB Llama 3.2 3B model. For a bigger model: ollama pull llama3.1 (4.7 GB, much more capable).' },
-              { step: '3', title: 'Chat in terminal', desc: 'Run: ollama run llama3.2 — a chat prompt appears. Type your message and press Enter. Type /bye to exit.' },
+              { step: '2', title: 'Pull your first model', desc: 'Open Terminal and run: ollama pull llama3.2 - this downloads the 2.0 GB Llama 3.2 3B model. For a bigger model: ollama pull llama3.1 (4.7 GB, much more capable).' },
+              { step: '3', title: 'Chat in terminal', desc: 'Run: ollama run llama3.2 - a chat prompt appears. Type your message and press Enter. Type /bye to exit.' },
               { step: '4', title: 'Or use a GUI (optional)', desc: 'Install Open WebUI for a ChatGPT-like browser interface: run the Docker command from openwebui.com. Connects to your local Ollama automatically.' },
             ].map(s => (
               <div key={s.step} style={{ display: 'flex', gap: '1rem' }}>
@@ -147,13 +148,20 @@ export default function OllamaPage() {
         <div style={{ background: '#F0FDF4', border: '1px solid #BBF7D0', borderRadius: 12, padding: '1.5rem', marginBottom: '2rem' }}>
           <h3 style={{ marginTop: 0, color: '#14532D', fontSize: '1.1rem' }}>💡 Pro Tips</h3>
           <ul style={{ margin: 0, paddingLeft: '1.25rem', color: '#166534', lineHeight: 2 }}>
-            <li>Apple Silicon Macs (M1/M2/M3/M4) run Ollama models fast using the GPU — even 7B models feel snappy</li>
-            <li>Models are cached — pulling is a one-time download. Running them requires no internet</li>
+            <li>Apple Silicon Macs (M1/M2/M3/M4) run Ollama models fast using the GPU - even 7B models feel snappy</li>
+            <li>Models are cached - pulling is a one-time download. Running them requires no internet</li>
             <li>Use <strong>Open WebUI</strong> (openwebui.com) for a full browser-based ChatGPT-like UI over your local models</li>
-            <li>Ollama exposes an OpenAI-compatible API at localhost:11434 — swap it into any code that uses OpenAI</li>
-            <li>For max privacy: AI coding without any data leaving your machine — perfect for confidential codebases</li>
+            <li>Ollama exposes an OpenAI-compatible API at localhost:11434 - swap it into any code that uses OpenAI</li>
+            <li>For max privacy: AI coding without any data leaving your machine - perfect for confidential codebases</li>
           </ul>
         </div>
+
+        <ToolResources links={[
+          { label: 'Download Ollama', href: 'https://ollama.com', note: 'Mac, Windows, Linux - free' },
+          { label: 'Model library', href: 'https://ollama.com/library', note: 'Browse Llama, Mistral, Gemma, DeepSeek, Qwen...' },
+          { label: 'GitHub repo', href: 'https://github.com/ollama/ollama', note: 'Source, docs, and issues' },
+          { label: 'Blog', href: 'https://ollama.com/blog', note: 'New models and features' },
+        ]} />
 
         <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
           <Link href="/tools/local-ai" style={{ background: 'white', border: '1px solid #E5E7EB', borderRadius: 8, padding: '.75rem 1.25rem', fontSize: '.875rem', color: '#374151', textDecoration: 'none', fontWeight: 600 }}>→ Free Local AI 1-Pager</Link>

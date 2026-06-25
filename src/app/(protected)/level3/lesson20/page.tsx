@@ -11,19 +11,19 @@ export default function Lesson20() {
         <main className="lesson-main">
           <LessonHeader level={3} lessonNumber={20} duration={120}
             title="Advanced Prompt Engineering for Claude"
-            subtitle="The 7 techniques that separate 10x users — with a full end-to-end walkthrough" />
+            subtitle="The 7 techniques that separate 10x users - with a full end-to-end walkthrough" />
 
           <section className="section-card">
             <h2>The Prompting Gap</h2>
-            <p>Most prompts fail for the same reasons: vague asks with no context, no format instructions, no examples of good output. The gap between a weak and strong prompt isn't skill — it's structure. This lesson gives you the complete toolkit, plus a real walkthrough of a prompt going from bad to excellent.</p>
+            <p>Most prompts fail for the same reasons: vague asks with no context, no format instructions, no examples of good output. The gap between a weak and strong prompt isn't skill - it's structure. This lesson gives you the complete toolkit, plus a real walkthrough of a prompt going from bad to excellent.</p>
           </section>
 
           <section className="section-card">
-            <h2>1. XML Tags — Claude's Native Language</h2>
+            <h2>1. XML Tags - Claude's Native Language</h2>
             <p>Claude was trained on XML-tagged data. It gives structured tags special attention and uses them to separate distinct parts of complex prompts cleanly.</p>
             <pre>{`<context>
 I am a product manager at a B2B SaaS company. We sell to mid-market HR teams.
-Our biggest competitor just released AI-powered performance reviews — 
+Our biggest competitor just released AI-powered performance reviews - 
 a feature we've been planning but haven't shipped.
 </context>
 
@@ -35,7 +35,7 @@ Analyze this competitive threat and recommend a response strategy.
 - 3-6 month execution timeline
 - 2 available engineers, no new hires
 - No features requiring more than 4 weeks of engineering time
-- Our brand positioning is "human-centered HR" — avoid AI-first messaging
+- Our brand positioning is "human-centered HR" - avoid AI-first messaging
 </constraints>
 
 <format>
@@ -50,7 +50,7 @@ Analyze this competitive threat and recommend a response strategy.
           </section>
 
           <section className="section-card">
-            <h2>2. Extended Thinking — Make Claude Reason Out Loud</h2>
+            <h2>2. Extended Thinking - Make Claude Reason Out Loud</h2>
             <p>For hard problems, you want Claude to think first, not just react. Trigger deep reasoning with specific phrases:</p>
             <ul>
               <li><strong>"Think step by step before answering."</strong></li>
@@ -61,7 +61,7 @@ Analyze this competitive threat and recommend a response strategy.
               <div className="step">
                 <strong>Without extended thinking</strong>
                 <pre>{`Q: Should we charge monthly or annually as our default plan?
-A: Annual billing is generally better for SaaS — higher LTV, 
+A: Annual billing is generally better for SaaS - higher LTV, 
    lower churn, better cash flow. Offer a discount for annual.`}</pre>
               </div>
               <div className="step">
@@ -80,7 +80,7 @@ Monthly default pros: Lower barrier to start, easier to upsell mid-year,
 better for low-price high-volume products.
 
 Edge case I should flag: What's your sales-assist vs self-serve ratio? 
-If >50% sales-assisted, annual is almost always correct — reps can 
+If >50% sales-assisted, annual is almost always correct - reps can 
 handle objections and the deal economics work better. If fully self-serve 
 with a $15-50/month price point, monthly default with a 2-month free 
 annual incentive often converts better.
@@ -98,22 +98,22 @@ What's your ACV and sales model?`}</pre>
           </section>
 
           <section className="section-card">
-            <h2>3. Few-Shot Examples — Show, Don't Tell</h2>
-            <p>Instead of describing what you want, show Claude 2–5 examples. This is the fastest way to control tone, format, and style — especially for repeated tasks like summarization, classification, or writing in your voice.</p>
+            <h2>3. Few-Shot Examples - Show, Don't Tell</h2>
+            <p>Instead of describing what you want, show Claude 2-5 examples. This is the fastest way to control tone, format, and style - especially for repeated tasks like summarization, classification, or writing in your voice.</p>
             <pre>{`<example>
 Input: Q3 revenue was $2.1M, up from $1.8M in Q2.
-Output: Revenue grew 16.7% QoQ to $2.1M — strong momentum heading into Q4.
+Output: Revenue grew 16.7% QoQ to $2.1M - strong momentum heading into Q4.
 </example>
 
 <example>
 Input: Churn increased from 3.2% to 4.8% in August.
-Output: Churn spiked +50% in August to 4.8% — investigate root cause immediately, 
+Output: Churn spiked +50% in August to 4.8% - investigate root cause immediately, 
 this is approaching the threshold where it compounds.
 </example>
 
 <example>
 Input: NPS score moved from 34 to 41 after the new onboarding.
-Output: NPS jumped +7 points to 41 post-onboarding revamp — early signal the 
+Output: NPS jumped +7 points to 41 post-onboarding revamp - early signal the 
 investment is working. Track if this holds at 90-day cohort.
 </example>
 
@@ -121,7 +121,7 @@ Now write a metric summary for: DAU dropped from 12,400 to 10,800 in the last 7 
           </section>
 
           <section className="section-card">
-            <h2>4. Role Prompting — Be Specific</h2>
+            <h2>4. Role Prompting - Be Specific</h2>
             <p>Generic roles give generic results. The more precisely you define the role, the more expert and calibrated the output.</p>
             <div className="steps-list">
               <div className="step">
@@ -141,10 +141,10 @@ direct, data-driven, and have no patience for vanity metrics."`}</pre>
 
           <section className="section-card">
             <h2>5. Output Format Control</h2>
-            <p>Always specify the exact format you want. Claude follows format instructions very precisely — use this to get output that's immediately usable:</p>
+            <p>Always specify the exact format you want. Claude follows format instructions very precisely - use this to get output that's immediately usable:</p>
             <ul>
               <li><strong>JSON:</strong> "Respond as a JSON object with keys: <code>title</code> (string), <code>summary</code> (string, max 80 words), <code>action_items</code> (array of strings), <code>priority</code> (high|medium|low)"</li>
-              <li><strong>Markdown table:</strong> "Respond in a markdown table with columns: Option | Pros | Cons | Effort (1–5) | Recommended"</li>
+              <li><strong>Markdown table:</strong> "Respond in a markdown table with columns: Option | Pros | Cons | Effort (1-5) | Recommended"</li>
               <li><strong>Length-constrained doc:</strong> "Use H2 headings for each section. Each section max 100 words. End with a TL;DR of exactly 2 sentences."</li>
               <li><strong>Bullet format:</strong> "Format as: [emoji] [one-sentence finding]. No sub-bullets. Max 7 bullets total."</li>
             </ul>
@@ -156,22 +156,22 @@ direct, data-driven, and have no patience for vanity metrics."`}</pre>
             <ul>
               <li>"Do not add caveats, disclaimers, or qualifications to your answer."</li>
               <li>"Do not repeat my question back to me."</li>
-              <li>"Do not suggest I consult a professional — just give me the answer."</li>
+              <li>"Do not suggest I consult a professional - just give me the answer."</li>
               <li>"Do not use phrases like 'Certainly!', 'Great question!', or 'Of course!'."</li>
-              <li>"Do not give me a list of options — give me your single best recommendation."</li>
+              <li>"Do not give me a list of options - give me your single best recommendation."</li>
               <li>"Do not pad the response. Say it in as few words as possible."</li>
             </ul>
           </section>
 
           <section className="section-card">
             <h2>7. Assistant Prefill</h2>
-            <p>In the API, you can pre-fill Claude's response. Claude continues from exactly where you left off — perfect for forcing specific output formats or skipping preambles:</p>
-            <pre>{`// API only — forces Claude to start mid-sentence
+            <p>In the API, you can pre-fill Claude's response. Claude continues from exactly where you left off - perfect for forcing specific output formats or skipping preambles:</p>
+            <pre>{`// API only - forces Claude to start mid-sentence
 messages: [
   { role: "user", content: "Analyze our Q3 performance." },
   { role: "assistant", content: "## Q3 Performance Analysis\n\n**Revenue:**" }
 ]
-// Claude continues from "Revenue:" — no preamble, straight to content`}</pre>
+// Claude continues from "Revenue:" - no preamble, straight to content`}</pre>
           </section>
 
           <section className="section-card">
@@ -179,7 +179,7 @@ messages: [
             <p>Here's a real prompt going through 3 iterations from weak to excellent. The task: write a cold email to a VP of Engineering.</p>
             <div className="steps-list">
               <div className="step">
-                <strong>Iteration 1 — Weak prompt, mediocre output</strong>
+                <strong>Iteration 1 - Weak prompt, mediocre output</strong>
                 <pre>{`Prompt: Write a cold email to a VP of Engineering about our developer tool.
 
 Output: "Hi [Name], I hope this email finds you well. I wanted to reach out 
@@ -188,18 +188,18 @@ to introduce our developer tool that helps engineering teams be more productive.
 Problem: Generic, boring, no personalization, no clear value prop.`}</pre>
               </div>
               <div className="step">
-                <strong>Iteration 2 — Added role + context</strong>
+                <strong>Iteration 2 - Added role + context</strong>
                 <pre>{`Prompt: You are an experienced B2B SaaS sales rep. Write a cold email to 
 a VP of Engineering at a 200-person fintech company. We sell a code review 
 automation tool that saves senior engineers 4 hours/week on PR reviews.
 
-Output: Better — mentions the specific pain point (PR review time), 
+Output: Better - mentions the specific pain point (PR review time), 
 mentions fintech. But still too long, and opens with "I hope..."
 
 Problem: Still using email clichés. Doesn't respect the recipient's time.`}</pre>
               </div>
               <div className="step">
-                <strong>Iteration 3 — Full technique stack</strong>
+                <strong>Iteration 3 - Full technique stack</strong>
                 <pre>{`<persona>
 You are a B2B SaaS AE with 8 years of experience selling developer tools. 
 You've closed deals at Stripe, Plaid, and Robinhood. You write emails 
@@ -219,12 +219,12 @@ Write a cold email that gets a reply.
 <constraints>
 - Under 75 words total
 - No "I hope this finds you well" or similar openers
-- No feature lists — one specific value, one specific pain
+- No feature lists - one specific value, one specific pain
 - Call to action: 15-minute call, not a demo
 - First line must reference something specific about fintech engineering
 </constraints>
 
-Output: "Fintech PR review backlogs are brutal — compliance requirements 
+Output: "Fintech PR review backlogs are brutal - compliance requirements 
 mean every line needs scrutiny, but your senior engineers are spending 
 4+ hours/week just on reviews.
 
@@ -253,7 +253,7 @@ Much better: specific, short, one pain point, human tone, low-friction CTA.`}</p
               </div>
               <div className="step">
                 <strong>Iteration 3: Add format control + negative constraints.</strong>
-                <p>Specify the exact output format. Add "do not" rules for the remaining problems. Run it. Save the final version — this is your reusable template.</p>
+                <p>Specify the exact output format. Add "do not" rules for the remaining problems. Run it. Save the final version - this is your reusable template.</p>
               </div>
             </div>
           </section>
@@ -261,7 +261,7 @@ Much better: specific, short, one pain point, human tone, low-friction CTA.`}</p
           <QuickRef title="Lesson 20 Quick Reference" items={[
             { term: "XML Tags", definition: "Structure prompts with <context>, <task>, <format>, <constraints>. Claude gives these special attention from training." },
             { term: "Extended Thinking", definition: "Add 'Think step by step before answering.' Claude reasons through tradeoffs and edge cases before giving a final answer." },
-            { term: "Few-Shot", definition: "Show 2–5 examples of ideal output. Fastest way to control tone, format, and style for recurring tasks." },
+            { term: "Few-Shot", definition: "Show 2-5 examples of ideal output. Fastest way to control tone, format, and style for recurring tasks." },
             { term: "Role Prompting", definition: "Specific domain + years + specialty > generic role. 'B2B SaaS growth marketer, PLG focus, $1M-$20M ARR' >> 'marketing expert'." },
             { term: "Negative Constraints", definition: "List what NOT to do: no caveats, no repeating the question, no hedging, no filler phrases. Kills bad defaults fast." },
             { term: "3-iteration rule", definition: "Almost no prompt is perfect first try. Plan for 3 iterations: write → identify what's wrong → add structure → repeat." },

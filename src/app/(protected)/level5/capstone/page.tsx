@@ -2,6 +2,7 @@ import LessonHeader from '@/components/lesson/LessonHeader'
 import Sidebar from '@/components/lesson/Sidebar'
 import LessonNav from '@/components/lesson/LessonNav'
 import LevelFeedback from '@/components/lesson/LevelFeedback'
+import LevelQuiz from '@/components/lesson/LevelQuiz'
 
 export default function Level5Capstone() {
   return (
@@ -27,14 +28,14 @@ export default function Level5Capstone() {
             </p>
             <p>
               Choose one of three projects below. Each one is designed to exercise the full
-              Level 5 skill set. Use any AI tool — GitHub Copilot, Claude Code, Cursor — but
+              Level 5 skill set. Use any AI tool - GitHub Copilot, Claude Code, Cursor - but
               the point is to use them intentionally, not just as autocomplete.
             </p>
           </div>
         </section>
 
         <section className="section-card">
-          <h2>Project A — Full-Stack Feature with AI Pair Programming</h2>
+          <h2>Project A - Full-Stack Feature with AI Pair Programming</h2>
           <p>
             Build a complete feature end-to-end using AI as your pair programmer throughout
             the entire cycle: design → implementation → tests → documentation → PR.
@@ -45,7 +46,7 @@ export default function Level5Capstone() {
           <ul>
             <li>CRUD operations for tasks (title, description, status, due date, priority)</li>
             <li>Filtering by status and priority, sorting by due date</li>
-            <li>JWT authentication — users only see their own tasks</li>
+            <li>JWT authentication - users only see their own tasks</li>
             <li>Rate limiting (100 req/15 min per user)</li>
             <li>Comprehensive test suite (unit + integration)</li>
             <li>OpenAPI/Swagger documentation</li>
@@ -54,7 +55,7 @@ export default function Level5Capstone() {
           <h3>AI Requirements (must use all of these)</h3>
           <div className="code-block">
             <pre>{`# 1. Use inline completion to write the route handlers
-#    Comment-first: "// GET /tasks — return paginated list filtered by status"
+#    Comment-first: "// GET /tasks - return paginated list filtered by status"
 
 # 2. Use /tests to generate the test suite
 #    Then ask AI to find edge cases you missed
@@ -84,10 +85,10 @@ export default function Level5Capstone() {
         </section>
 
         <section className="section-card">
-          <h2>Project B — Legacy Codebase Modernization</h2>
+          <h2>Project B - Legacy Codebase Modernization</h2>
           <p>
             Take a messy legacy codebase and systematically modernize it using AI-assisted
-            refactoring, test generation, and documentation — the exact workflow you would
+            refactoring, test generation, and documentation - the exact workflow you would
             use on a real job.
           </p>
 
@@ -110,23 +111,23 @@ export default function Level5Capstone() {
           <h3>Modernization Checklist (use AI for each step)</h3>
           <div className="steps-list">
             <div className="step">
-              <strong>Phase 1 — Understand the codebase</strong>
+              <strong>Phase 1 - Understand the codebase</strong>
               <p>Use AI chat to map out what each file does: "Explain this function to me in plain English."</p>
             </div>
             <div className="step">
-              <strong>Phase 2 — Generate tests BEFORE refactoring</strong>
+              <strong>Phase 2 - Generate tests BEFORE refactoring</strong>
               <p>Use /tests to capture current behavior. These are your safety net.</p>
             </div>
             <div className="step">
-              <strong>Phase 3 — AI-assisted refactoring</strong>
+              <strong>Phase 3 - AI-assisted refactoring</strong>
               <p>"Refactor this to use async/await", "Rename all variables to be descriptive", "Extract into smaller functions"</p>
             </div>
             <div className="step">
-              <strong>Phase 4 — AI-generated documentation</strong>
+              <strong>Phase 4 - AI-generated documentation</strong>
               <p>Generate JSDoc/docstrings and a README.md for the project.</p>
             </div>
             <div className="step">
-              <strong>Phase 5 — Security and performance review</strong>
+              <strong>Phase 5 - Security and performance review</strong>
               <p>Ask AI: "Check for injection vulnerabilities", "Find N+1 patterns", "Identify memory leaks"</p>
             </div>
           </div>
@@ -142,10 +143,10 @@ export default function Level5Capstone() {
         </section>
 
         <section className="section-card">
-          <h2>Project C — Team AI Toolkit</h2>
+          <h2>Project C - Team AI Toolkit</h2>
           <p>
             Build the AI infrastructure for a development team: custom Claude Code commands,
-            a CLAUDE.md, and an MCP server integration. This is the meta-project —
+            a CLAUDE.md, and an MCP server integration. This is the meta-project -
             instead of writing features, you are writing the tools that make the whole
             team faster.
           </p>
@@ -164,11 +165,11 @@ export default function Level5Capstone() {
               <strong>2. Custom command library</strong>
               <div className="code-block">
                 <pre>{`# Build at least 5 custom commands in .claude/commands/:
-# /pr-review    — pre-PR checklist with your team's standards
-# /onboard      — explain this codebase to a new engineer
-# /debug        — structured debug workflow
-# /security     — security review checklist
-# /release      — generate changelog + release notes`}</pre>
+# /pr-review    - pre-PR checklist with your team's standards
+# /onboard      - explain this codebase to a new engineer
+# /debug        - structured debug workflow
+# /security     - security review checklist
+# /release      - generate changelog + release notes`}</pre>
               </div>
             </div>
             <div className="step">
@@ -221,7 +222,7 @@ export default function Level5Capstone() {
           </div>
           <div className="info-box">
             <strong>The real skill:</strong> After Level 5, the goal is not to use AI on
-            every task — it is to know precisely which tasks benefit from AI assistance
+            every task - it is to know precisely which tasks benefit from AI assistance
             and to apply the right tool confidently. That discernment is what separates
             an AI-augmented developer from one who just has Copilot installed.
           </div>
@@ -231,25 +232,26 @@ export default function Level5Capstone() {
           <h2>What You Have Learned in Level 5</h2>
           <p>You covered the complete developer AI toolkit:</p>
           <ul>
-            <li><strong>L38</strong> — The AI tools landscape and setup</li>
-            <li><strong>L39</strong> — Inline completion mastery</li>
-            <li><strong>L40</strong> — AI chat for development (/explain, /fix, /tests, /doc)</li>
-            <li><strong>L41</strong> — Documenting code with AI</li>
-            <li><strong>L42</strong> — Debugging with AI</li>
-            <li><strong>L43</strong> — Writing tests with AI</li>
-            <li><strong>L44</strong> — Refactoring and code review with AI</li>
-            <li><strong>L45</strong> — Git workflow with AI</li>
-            <li><strong>L46</strong> — Agentic coding</li>
-            <li><strong>L47</strong> — Custom extensions and team tooling</li>
+            <li><strong>L38</strong> - The AI tools landscape and setup</li>
+            <li><strong>L39</strong> - Inline completion mastery</li>
+            <li><strong>L40</strong> - AI chat for development (/explain, /fix, /tests, /doc)</li>
+            <li><strong>L41</strong> - Documenting code with AI</li>
+            <li><strong>L42</strong> - Debugging with AI</li>
+            <li><strong>L43</strong> - Writing tests with AI</li>
+            <li><strong>L44</strong> - Refactoring and code review with AI</li>
+            <li><strong>L45</strong> - Git workflow with AI</li>
+            <li><strong>L46</strong> - Agentic coding</li>
+            <li><strong>L47</strong> - Custom extensions and team tooling</li>
           </ul>
           <div className="hands-on-box">
             <strong>You are done.</strong> You have gone from basic AI prompting to
             running autonomous agents, building custom tools, and setting up AI workflows
             for entire teams. This is the cutting edge of how software is being built today.
-            The tools will keep evolving — but the mental model you have built here will not.
+            The tools will keep evolving - but the mental model you have built here will not.
           </div>
         </section>
 
+        <LevelQuiz level={5} />
         <LevelFeedback level={5} levelTitle="AI Coding Tools & Developer Workflows" />
         <LessonNav
           level={5}

@@ -20,14 +20,14 @@ export default function Lesson44() {
         <section className="section-card">
           <h2>Why AI Excels at Code Review</h2>
           <p>
-            Code review is pattern recognition — spotting anti-patterns, naming issues, and logic
+            Code review is pattern recognition - spotting anti-patterns, naming issues, and logic
             gaps. AI tools have seen millions of codebases and recognize these patterns instantly.
             The key is prompting effectively to get actionable suggestions, not generic advice.
           </p>
           <div className="info-box">
             <strong>AI catches well:</strong> naming inconsistencies, long functions, deep nesting,
             duplicated logic, missing error handling, unsafe type casts, and security smells.
-            <br /><strong>AI misses:</strong> business context, team conventions, and product intent — always apply human judgment.
+            <br /><strong>AI misses:</strong> business context, team conventions, and product intent - always apply human judgment.
           </div>
         </section>
 
@@ -120,13 +120,13 @@ function calculateTotalWithTax(subtotal, quantity) {
           </p>
           <div className="steps-list">
             <div className="step">
-              <strong>Step 1 — Get your diff</strong>
+              <strong>Step 1 - Get your diff</strong>
               <div className="code-block">
                 <pre>{`git diff main..HEAD > pr-diff.txt`}</pre>
               </div>
             </div>
             <div className="step">
-              <strong>Step 2 — Paste into Claude Code or Copilot Chat</strong>
+              <strong>Step 2 - Paste into Claude Code or Copilot Chat</strong>
               <div className="code-block">
                 <pre>{`# Prompt:
 "Review this diff as if you're a senior engineer.
@@ -135,7 +135,7 @@ style violations, and anything that would get a 'request changes' comment."`}</p
               </div>
             </div>
             <div className="step">
-              <strong>Step 3 — Iterate on the feedback</strong>
+              <strong>Step 3 - Iterate on the feedback</strong>
               <p>Address AI-flagged issues, then re-run the review on the updated diff.</p>
             </div>
           </div>
@@ -154,7 +154,7 @@ style violations, and anything that would get a 'request changes' comment."`}</p
 
 // Example catch:
 const query = "SELECT * FROM users WHERE id = " + req.params.id;
-// AI flags: SQL injection — use parameterized queries
+// AI flags: SQL injection - use parameterized queries
 const query = "SELECT * FROM users WHERE id = ?";
 db.query(query, [req.params.id]);`}</pre>
           </div>
@@ -173,7 +173,7 @@ db.query(query, [req.params.id]);`}</pre>
 // Example N+1 catch:
 for (const user of users) {
   const orders = await db.query('SELECT * FROM orders WHERE user_id = ?', [user.id]);
-  // AI flags: N+1 query — use a JOIN or batch load instead
+  // AI flags: N+1 query - use a JOIN or batch load instead
 }
 
 // Suggested fix:

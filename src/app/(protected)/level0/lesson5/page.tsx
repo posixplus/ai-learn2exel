@@ -28,7 +28,7 @@ export default function Lesson5() {
           {/* SECTION 1: WHY PROMPTING IS A SKILL */}
           <section className="lesson-section">
             <h2>Section 1: Why Prompting Is a Skill</h2>
-            <p>The difference between a mediocre AI response and an excellent one usually isn't the AI—it's how you ask. Here's the proof.</p>
+            <p>The difference between a mediocre AI response and an excellent one usually isn't the AI-it's how you ask. Here's the proof.</p>
 
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem', margin: '2rem 0' }}>
               <div style={{ padding: '1.5rem', backgroundColor: '#fef2f2', borderRadius: '8px', borderLeft: '4px solid #ef4444' }}>
@@ -130,7 +130,7 @@ export default function Lesson5() {
             </ul>
 
             <h3>Why it works:</h3>
-            <p>AI is a pattern-matcher. Showing it 2-3 examples is like saying "here's the pattern I want"—much clearer than describing it.</p>
+            <p>AI is a pattern-matcher. Showing it 2-3 examples is like saying "here's the pattern I want"-much clearer than describing it.</p>
 
             <h3>Example: Product Descriptions</h3>
 
@@ -161,7 +161,7 @@ export default function Lesson5() {
             </div>
 
             <p style={{ marginTop: '1rem', padding: '1rem', backgroundColor: '#f0f4ff', borderRadius: '6px', borderLeft: '3px solid #2563eb' }}>
-              <strong>The magic:</strong> AI sees the pattern—brief, benefit-focused, feature-structured—and copies it for the new product. Without examples, it might write a paragraph. With examples, it nails your style.
+              <strong>The magic:</strong> AI sees the pattern-brief, benefit-focused, feature-structured-and copies it for the new product. Without examples, it might write a paragraph. With examples, it nails your style.
             </p>
           </section>
 
@@ -186,7 +186,7 @@ export default function Lesson5() {
                 text={`A farmer has 12 cows. He sells 3 and buys 5. A cow costs $800 to feed per year. How much does he spend on cow feed annually?`}
               />
               <p style={{ fontSize: '0.9rem', marginTop: '0.75rem', color: '#666' }}>
-                AI might answer: "He spends $9,600 annually." (Wrong—it's $12,800 for 14 cows)
+                AI might answer: "He spends $9,600 annually." (Wrong-it's $11,200 for 14 cows)
               </p>
             </div>
 
@@ -388,11 +388,11 @@ When uncertain: ask me which direction I'd prefer`}
 
           {/* SECTION 8: HANDS-ON */}
           <section className="lesson-section">
-            <h2>Section 8: Hands-On — Build Your Personal System Prompt</h2>
+            <h2>Section 8: Hands-On - Build Your Personal System Prompt</h2>
 
             <HandsOn
               title="Set Up AI for Life"
-              description="Create a system prompt that shapes how AI talks to you—from now on, in every conversation."
+              description="Create a system prompt that shapes how AI talks to you-from now on, in every conversation."
               steps={[
                 "Decide your profession and main AI use cases (teaching, coding, writing, research, etc.)",
                 "Write your system prompt using the template from Section 6. Spend 5 minutes thinking about your actual preferences. (Most people skip this and regret it.)",
@@ -407,16 +407,16 @@ When uncertain: ask me which direction I'd prefer`}
             </p>
           </section>
 
-          {/* SECTION 9: WHAT NOT TO DO — AI PRIVACY & SAFETY */}
+          {/* SECTION 9: WHAT NOT TO DO - AI PRIVACY & SAFETY */}
           <section className="lesson-section">
-            <h2>Section 9: What NOT to Share with AI — Protecting Your Privacy</h2>
+            <h2>Section 9: What NOT to Share with AI - Protecting Your Privacy</h2>
 
             <p>
-              AI tools are powerful — but they are not a safe place for sensitive personal or financial information. Before you paste something into an AI chat, it is worth understanding what happens to that data and what you should never share.
+              AI tools are powerful - but they are not a safe place for sensitive personal or financial information. Before you paste something into an AI chat, it is worth understanding what happens to that data and what you should never share.
             </p>
 
             <Callout type="warning" title="The Core Rule">
-              Treat every AI chat window like a public forum. If you would not post it on a notice board, do not paste it into a chat. This applies to all AI tools — Claude, ChatGPT, Gemini, Copilot, and others — unless you are on a verified enterprise plan with explicit data privacy guarantees.
+              Treat every AI chat window like a public forum. If you would not post it on a notice board, do not paste it into a chat. This applies to all AI tools - Claude, ChatGPT, Gemini, Copilot, and others - unless you are on a verified enterprise plan with explicit data privacy guarantees.
             </Callout>
 
             <h3 style={{ marginTop: '2rem' }}>Never Paste These Into an AI Chat</h3>
@@ -503,7 +503,7 @@ When uncertain: ask me which direction I'd prefer`}
             <div style={{ display: 'flex', flexDirection: 'column', gap: '.75rem', margin: '1rem 0' }}>
               {[
                 { icon: '📤', text: 'Your message is transmitted to a third-party server (Anthropic, OpenAI, Google, etc.) over the internet.' },
-                { icon: '📝', text: 'It may be logged for safety monitoring, abuse detection, or service improvement — even with privacy settings on.' },
+                { icon: '📝', text: 'It may be logged for safety monitoring, abuse detection, or service improvement - even with privacy settings on.' },
                 { icon: '🤖', text: 'Some providers may use inputs to improve future models unless you explicitly opt out (check your account settings).' },
                 { icon: '🔓', text: 'In the event of a data breach at the provider, anything you shared could be exposed.' },
                 { icon: '👀', text: 'Human reviewers at AI companies may read samples of conversations as part of quality review processes.' },
@@ -516,7 +516,7 @@ When uncertain: ask me which direction I'd prefer`}
             </div>
 
             <h3 style={{ marginTop: '2rem' }}>Safe Ways to Use AI with Sensitive Context</h3>
-            <p>You can still get value from AI for sensitive topics — just anonymize or generalize the data first:</p>
+            <p>You can still get value from AI for sensitive topics - just anonymize or generalize the data first:</p>
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', margin: '1rem 0' }}>
               <div style={{ background: '#FEF2F2', border: '1px solid #FECACA', borderRadius: 8, padding: '1rem' }}>
                 <div style={{ fontWeight: 700, color: '#DC2626', marginBottom: '.6rem', fontSize: '.9rem' }}>❌ Instead of this...</div>
@@ -576,14 +576,14 @@ When uncertain: ask me which direction I'd prefer`}
                   </div>
                 ))}
               </div>
-              <p style={{ margin: '.75rem 0 0', color: '#5B21B6', fontSize: '.875rem', fontWeight: 600 }}>If the answer to any of these is "yes" — anonymize before sharing, or don't share at all.</p>
+              <p style={{ margin: '.75rem 0 0', color: '#5B21B6', fontSize: '.875rem', fontWeight: 600 }}>If the answer to any of these is "yes" - anonymize before sharing, or don't share at all.</p>
             </div>
           </section>
 
           {/* SECTION 10: QUICK REFERENCE */}
           <section className="lesson-section">
             <QuickRef
-              title="Lesson 5 — Quick Reference"
+              title="Lesson 5 - Quick Reference"
               items={[
                 {
                   heading: 'Five Prompting Techniques',
@@ -643,7 +643,7 @@ When uncertain: ask me which direction I'd prefer`}
                   heading: 'Safe Anonymization Patterns',
                   points: [
                     'Replace names with "[Customer A]" or "[Employee 1]"',
-                    'Use ranges instead of exact figures: "$70K–80K" not "$76,234"',
+                    'Use ranges instead of exact figures: "$70K-80K" not "$76,234"',
                     'Describe what the data looks like rather than pasting it',
                     'Ask your question with hypothetical numbers, not real ones',
                     '3-second check: "Would I be OK if this appeared in a news story?"',

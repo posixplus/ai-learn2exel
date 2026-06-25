@@ -14,13 +14,13 @@ export default function Lesson37() {
           lessonNumber={37}
           duration={90}
           title="Advanced Prompt Evaluation"
-          subtitle="Stop guessing whether your prompts are good. Build a test suite and measure it — like real engineering."
+          subtitle="Stop guessing whether your prompts are good. Build a test suite and measure it - like real engineering."
         />
 
         <section className="section-card">
           <h2>Why Evaluation Matters</h2>
           <p>
-            Most teams tune prompts by feel — tweak, test manually with 3 examples,
+            Most teams tune prompts by feel - tweak, test manually with 3 examples,
             ship. This works until it doesn't: a prompt change that improves one case
             breaks five others. Evaluation (evals) catches regressions, measures
             improvement, and gives you confidence to iterate fast.
@@ -29,9 +29,9 @@ export default function Lesson37() {
             <strong>What evals give you:</strong>
             <ul>
               <li>Quantitative score for your prompt before and after changes</li>
-              <li>Regression detection — did prompt v2 break anything v1 handled?</li>
-              <li>Model comparison — is Haiku good enough, or do you need Sonnet?</li>
-              <li>Coverage — are edge cases handled, not just happy path?</li>
+              <li>Regression detection - did prompt v2 break anything v1 handled?</li>
+              <li>Model comparison - is Haiku good enough, or do you need Sonnet?</li>
+              <li>Coverage - are edge cases handled, not just happy path?</li>
             </ul>
           </div>
         </section>
@@ -39,7 +39,7 @@ export default function Lesson37() {
         <section className="section-card">
           <h2>Building an Eval Dataset</h2>
           <p>
-            An eval dataset is a list of (input, expected_output) pairs. Start small — 
+            An eval dataset is a list of (input, expected_output) pairs. Start small - 
             20 good examples beats 200 mediocre ones.
           </p>
 
@@ -47,7 +47,7 @@ export default function Lesson37() {
 [
   {
     "id": "triage_001",
-    "input": "My invoice from last month is wrong — I was charged twice",
+    "input": "My invoice from last month is wrong - I was charged twice",
     "expected": {"category": "billing", "priority": "high"},
     "tags": ["billing", "duplicate_charge"]
   },
@@ -68,9 +68,9 @@ export default function Lesson37() {
           <div className="info-box">
             <strong>What makes a good eval dataset:</strong>
             <ul>
-              <li>Cover your real distribution — sample from actual production data</li>
+              <li>Cover your real distribution - sample from actual production data</li>
               <li>Include edge cases explicitly (ambiguous, short, foreign language inputs)</li>
-              <li>Include "hard negatives" — inputs that look like one category but are another</li>
+              <li>Include "hard negatives" - inputs that look like one category but are another</li>
               <li>Tag examples by type so you can see failure patterns per category</li>
             </ul>
           </div>
@@ -116,7 +116,7 @@ def exact_match_eval(dataset: list) -> dict:
           <h2>LLM-as-Judge (for Open-Ended Outputs)</h2>
           <p>
             When outputs are prose (summaries, answers, emails), there's no single
-            correct answer. Use Claude itself as the judge — it's surprisingly reliable
+            correct answer. Use Claude itself as the judge - it's surprisingly reliable
             with a well-structured rubric.
           </p>
           <pre className="code-block">{`def llm_judge(question: str, ideal_answer: str,
@@ -138,7 +138,7 @@ Return JSON only:
   "conciseness": N, "overall": N, "reasoning": "one sentence"}}"""
 
     r = client.messages.create(
-        model="claude-opus-4-5",   # use a strong model as judge
+        model="claude-opus-4-8",   # use a strong model as judge
         max_tokens=256,
         messages=[{"role": "user", "content": prompt}]
     )
@@ -178,7 +178,7 @@ def test_support_triage_accuracy():
             <ul>
               <li>Run evals on current prompt (baseline score)</li>
               <li>Make prompt changes in a branch</li>
-              <li>Run evals again — compare to baseline</li>
+              <li>Run evals again - compare to baseline</li>
               <li>Only merge if new score is equal or better</li>
               <li>Add new failing cases to the dataset before fixing them</li>
             </ul>
@@ -193,8 +193,8 @@ def test_support_triage_accuracy():
               <li>Pick a prompt (support triage, summariser, extractor, etc.)</li>
               <li>Create 20 test cases: 10 typical, 5 edge cases, 5 hard negatives</li>
               <li>Write the exact_match_eval or llm_judge runner</li>
-              <li>Run it — what's your baseline accuracy?</li>
-              <li>Change one thing in the prompt and run again — did it improve?</li>
+              <li>Run it - what's your baseline accuracy?</li>
+              <li>Change one thing in the prompt and run again - did it improve?</li>
             </ol>
             <p><strong>Stretch:</strong> Run the same eval against claude-haiku vs claude-sonnet vs claude-opus. Plot the accuracy vs cost tradeoff to find the optimal model for your use case.</p>
           </div>
@@ -203,11 +203,11 @@ def test_support_triage_accuracy():
         <QuickRef
           title="Lesson 37 Quick Reference"
           items={[
-            { term: 'Eval dataset', definition: '20+ (input, expected) pairs — cover edge cases, not just happy path' },
-            { term: 'Exact match', definition: 'For structured outputs — compare predicted to expected dict/JSON' },
+            { term: 'Eval dataset', definition: '20+ (input, expected) pairs - cover edge cases, not just happy path' },
+            { term: 'Exact match', definition: 'For structured outputs - compare predicted to expected dict/JSON' },
             { term: 'LLM-as-judge', definition: 'Use strong Claude to score prose outputs on a rubric (1-5 scale)' },
-            { term: 'Eval in CI', definition: 'pytest + threshold check on every PR — catch regressions before they ship' },
-            { term: 'Prompt versioning', definition: 'Store prompts in Git — every change is reviewable and reversible' },
+            { term: 'Eval in CI', definition: 'pytest + threshold check on every PR - catch regressions before they ship' },
+            { term: 'Prompt versioning', definition: 'Store prompts in Git - every change is reviewable and reversible' },
             { term: 'Model comparison eval', definition: 'Run same dataset against Haiku/Sonnet/Opus to find cost/quality sweet spot' },
           ]}
         />

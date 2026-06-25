@@ -463,7 +463,7 @@ KEY PREFERENCES:
               sections={[
                 {
                   title: 'Three Ways to Build',
-                  content: 'Claude Projects (easiest, best for most people) | ChatGPT Custom GPTs (if you use ChatGPT) | Google Gemini Gems (coming soon)'
+                  content: 'Claude Projects (easiest, best for most people) | ChatGPT Custom GPTs (if you use ChatGPT) | Google Gemini Gems'
                 },
                 {
                   title: 'The 5 Elements',

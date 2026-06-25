@@ -17,7 +17,7 @@ export default function Footer() {
       </div>
 
       <p className="footer-note">
-        This course is free to share. AI capabilities change rapidly — always verify important information.
+        This course is free to share. AI capabilities change rapidly - always verify important information.
       </p>
     </footer>
   )

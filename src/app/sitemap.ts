@@ -1,33 +1,32 @@
 import type { MetadataRoute } from 'next'
+import { LEVELS, ALL_LESSONS } from '@/data/course'
 
 const BASE = 'https://learn2exel.com'
 
-const LESSONS = [
-  // Level 0
-  'level0/lesson1', 'level0/lesson2', 'level0/lesson3', 'level0/lesson4', 'level0/lesson5',
-  'level0/capstone',
-  // Level 1
-  'level1/lesson6', 'level1/lesson7', 'level1/lesson8', 'level1/lesson9', 'level1/lesson10',
-  'level1/capstone',
-  // Level 2
-  'level2/lesson11', 'level2/lesson12', 'level2/lesson13', 'level2/lesson14', 'level2/lesson15',
-  'level2/capstone',
-  // Level 3
-  'level3/lesson16', 'level3/lesson17', 'level3/lesson18', 'level3/lesson19', 'level3/lesson20',
-  'level3/capstone',
-  // Level 4
-  'level4/lesson21', 'level4/lesson22', 'level4/lesson23', 'level4/lesson24', 'level4/lesson25',
-  'level4/capstone',
-  // Level 5
-  'level5/lesson26', 'level5/lesson27', 'level5/lesson28', 'level5/lesson29', 'level5/lesson30',
-  'level5/capstone',
+// Derived from the single course data source so the sitemap never drifts.
+const LESSON_PATHS = [
+  ...ALL_LESSONS.map(l => `level${l.level}/lesson${l.number}`),
+  ...LEVELS.map(lvl => `${lvl.slug}/capstone`),
 ]
 
 const TOOLS = [
+  'certifications',
+  'certificate',
   'tools/quiz',
   'tools/prompt-library',
   'tools/glossary',
   'tools/claude-cheatsheet',
+  'tools/antigravity',
+  'tools/cursor',
+  'tools/windsurf',
+  'tools/github-copilot',
+  'tools/claude-code-cli',
+  'tools/vscode-ai',
+  'tools/ollama',
+  'tools/huggingface',
+  'tools/local-ai',
+  'tools/ai-apis',
+  'tools/ai-hardware',
 ]
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -40,7 +39,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'weekly',
       priority: 1,
     },
-    ...LESSONS.map(path => ({
+    ...LESSON_PATHS.map(path => ({
       url: `${BASE}/${path}`,
       lastModified: now,
       changeFrequency: 'monthly' as const,

@@ -11,7 +11,7 @@ export default function Lesson40() {
       <main className="lesson-main">
         <LessonHeader level={5} lessonNumber={40} duration={75}
           title="AI Chat for Development"
-          subtitle="Inline completion is fast. Chat is deep. Know when to use each — and how to ask questions that get great answers." />
+          subtitle="Inline completion is fast. Chat is deep. Know when to use each - and how to ask questions that get great answers." />
 
         <section className="section-card">
           <h2>Chat vs Inline: Choosing the Right Mode</h2>
@@ -119,19 +119,19 @@ claude
           <h2>Getting Better Answers: Prompting for Code</h2>
           <div className="steps-list">
             <div className="step"><div className="step-number">1</div>
-              <div><strong>Give context first</strong> — "I'm using Express 4, TypeScript, Prisma ORM, and PostgreSQL"</div>
+              <div><strong>Give context first</strong> - "I'm using Express 4, TypeScript, Prisma ORM, and PostgreSQL"</div>
             </div>
             <div className="step"><div className="step-number">2</div>
-              <div><strong>State constraints upfront</strong> — "No external libraries", "Must be backward compatible", "Needs to work in Node 18"</div>
+              <div><strong>State constraints upfront</strong> - "No external libraries", "Must be backward compatible", "Needs to work in Node 18"</div>
             </div>
             <div className="step"><div className="step-number">3</div>
-              <div><strong>Ask for explanations</strong> — "Explain why you made each choice" surfaces assumptions you can correct</div>
+              <div><strong>Ask for explanations</strong> - "Explain why you made each choice" surfaces assumptions you can correct</div>
             </div>
             <div className="step"><div className="step-number">4</div>
-              <div><strong>Request alternatives</strong> — "Show me 2 approaches with tradeoffs" is better than accepting the first suggestion</div>
+              <div><strong>Request alternatives</strong> - "Show me 2 approaches with tradeoffs" is better than accepting the first suggestion</div>
             </div>
             <div className="step"><div className="step-number">5</div>
-              <div><strong>Iterate, don't restart</strong> — "Keep everything but change the error handling to use a Result type" is faster than re-prompting from scratch</div>
+              <div><strong>Iterate, don't restart</strong> - "Keep everything but change the error handling to use a Result type" is faster than re-prompting from scratch</div>
             </div>
           </div>
         </section>
@@ -140,7 +140,7 @@ claude
           { term: '/explain', definition: 'Copilot Chat: explain selected code in plain English' },
           { term: '/fix + /tests', definition: 'Fix selected bug or generate unit tests for selection' },
           { term: '@workspace', definition: 'VS Code: ask about your entire codebase (not just open files)' },
-          { term: 'Claude Code chat', definition: 'Reads entire repo — best for architecture/cross-file questions' },
+          { term: 'Claude Code chat', definition: 'Reads entire repo - best for architecture/cross-file questions' },
           { term: 'Context first', definition: 'Always state your stack (Express, Prisma, TS) before asking a question' },
           { term: 'Ask for alternatives', definition: '"Show 2 approaches with tradeoffs" beats accepting the first answer' },
         ]} />

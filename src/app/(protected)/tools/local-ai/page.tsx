@@ -18,9 +18,9 @@ export default function LocalAiPage() {
         {/* Hero 1-pager banner */}
         <div style={{ background: 'linear-gradient(135deg, #F0FDF4, #DCFCE7)', border: '2px solid #86EFAC', borderRadius: 16, padding: '2rem', marginBottom: '2.5rem', textAlign: 'center' }}>
           <div style={{ fontSize: '3rem', marginBottom: '.75rem' }}>🆓</div>
-          <h1 style={{ margin: '0 0 .5rem', fontSize: '2rem', fontWeight: 800 }}>Running AI Locally — Free & Private</h1>
+          <h1 style={{ margin: '0 0 .5rem', fontSize: '2rem', fontWeight: 800 }}>Running AI Locally - Free & Private</h1>
           <p style={{ margin: 0, color: '#166534', fontSize: '1.05rem', maxWidth: 580, marginLeft: 'auto', marginRight: 'auto', lineHeight: 1.7 }}>
-            Everything you need to run powerful AI models on your own computer — no subscription, no cloud, no data sharing.
+            Everything you need to run powerful AI models on your own computer - no subscription, no cloud, no data sharing.
           </p>
         </div>
 
@@ -32,7 +32,7 @@ export default function LocalAiPage() {
               { icon: '🔒', title: 'Complete Privacy', desc: 'Your data never leaves your machine. No usage logs, no training on your input.' },
               { icon: '💰', title: 'Zero Cost', desc: 'No monthly fees, no API credits. Run as many tokens as you want, forever.' },
               { icon: '⚡', title: 'No Rate Limits', desc: 'No throttling, no queues, no "capacity exceeded" errors at peak hours.' },
-              { icon: '📴', title: 'Works Offline', desc: 'Once downloaded, models work without internet — on planes, secure networks, anywhere.' },
+              { icon: '📴', title: 'Works Offline', desc: 'Once downloaded, models work without internet - on planes, secure networks, anywhere.' },
             ].map(f => (
               <div key={f.title} style={{ padding: '1rem', background: '#F0FDF4', borderRadius: 8, textAlign: 'center' }}>
                 <div style={{ fontSize: '1.75rem', marginBottom: '.4rem' }}>{f.icon}</div>
@@ -45,7 +45,7 @@ export default function LocalAiPage() {
 
         {/* vs Cloud */}
         <div style={{ background: 'white', border: '1px solid #E5E7EB', borderRadius: 12, padding: '2rem', marginBottom: '1.5rem' }}>
-          <h2 style={{ marginTop: 0, fontSize: '1.3rem' }}>Local AI vs Cloud AI — Honest Comparison</h2>
+          <h2 style={{ marginTop: 0, fontSize: '1.3rem' }}>Local AI vs Cloud AI - Honest Comparison</h2>
           <div style={{ overflowX: 'auto' }}>
             <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '.875rem' }}>
               <thead>
@@ -59,13 +59,13 @@ export default function LocalAiPage() {
                 {[
                   ['Cost', '✅ Free', '💰 $20+/month'],
                   ['Privacy', '✅ 100% private', '⚠️ Sent to provider'],
-                  ['Quality (best model)', '⚠️ Good (Llama 3.1 70B)', '✅ Excellent (Claude 3.7)'],
+                  ['Quality (best model)', '⚠️ Good (Llama 70B-class)', '✅ Excellent (Claude Opus 4.8)'],
                   ['Quality (small models)', '⚠️ Basic', '✅ Still strong'],
                   ['Speed (Apple Silicon)', '✅ Fast', '✅ Fast'],
                   ['Speed (older hardware)', '⚠️ Slow', '✅ Always fast'],
                   ['Internet required', '✅ No', '❌ Yes'],
                   ['Latest models', '⚠️ 2-3 months behind', '✅ Cutting edge'],
-                  ['Context window', '⚠️ Typically 8K–128K', '✅ Up to 200K'],
+                  ['Context window', '⚠️ Typically 8K-128K', '✅ Up to 200K'],
                   ['Setup effort', '⚠️ 10 min install', '✅ Instant (web)'],
                 ].map(([factor, local, cloud]) => (
                   <tr key={factor} style={{ borderBottom: '1px solid #F3F4F6' }}>
@@ -87,9 +87,9 @@ export default function LocalAiPage() {
             <span style={{ color: '#94A3B8' }}># macOS: download the .dmg, or:</span><br />
             brew install ollama<br /><br />
             <span style={{ color: '#94A3B8' }}># Step 2: Download a model</span><br />
-            ollama pull llama3.2 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style={{ color: '#94A3B8' }}># 2 GB — fast, runs on 8 GB RAM</span><br />
+            ollama pull llama3.2 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style={{ color: '#94A3B8' }}># 2 GB - fast, runs on 8 GB RAM</span><br />
             <span style={{ color: '#94A3B8' }}># Or for better quality:</span><br />
-            ollama pull llama3.1 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style={{ color: '#94A3B8' }}># 4.7 GB — much smarter</span><br /><br />
+            ollama pull llama3.1 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style={{ color: '#94A3B8' }}># 4.7 GB - much smarter</span><br /><br />
             <span style={{ color: '#94A3B8' }}># Step 3: Chat</span><br />
             ollama run llama3.2<br /><br />
             <span style={{ color: '#94A3B8' }}># Step 4 (optional): Add a browser UI</span><br />
@@ -127,7 +127,7 @@ export default function LocalAiPage() {
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '1rem' }}>
             {[
               { name: 'Open WebUI', desc: 'Full ChatGPT-like web interface. Runs in your browser. Supports all Ollama models. Best overall.', url: 'openwebui.com', free: true },
-              { name: 'LM Studio', desc: 'Desktop app with model browser. Download and run models with a GUI — no terminal needed.', url: 'lmstudio.ai', free: true },
+              { name: 'LM Studio', desc: 'Desktop app with model browser. Download and run models with a GUI - no terminal needed.', url: 'lmstudio.ai', free: true },
               { name: 'GPT4All', desc: 'Simple desktop app. Good for beginners. One-click model download and chat.', url: 'nomic.ai/gpt4all', free: true },
               { name: 'Msty', desc: 'Clean desktop AI client. Supports Ollama + cloud models. Good conversation management.', url: 'msty.app', free: true },
             ].map(g => (
@@ -146,7 +146,7 @@ export default function LocalAiPage() {
         <div style={{ background: '#F0FDF4', border: '1px solid #BBF7D0', borderRadius: 12, padding: '1.5rem', marginBottom: '2rem' }}>
           <h3 style={{ marginTop: 0, color: '#14532D', fontSize: '1.1rem' }}>📋 Bottom Line</h3>
           <p style={{ margin: 0, color: '#166534', lineHeight: 1.8 }}>
-            <strong>Use local AI when:</strong> privacy matters, you're offline, you hit rate limits, or you want zero cost. Use cloud AI (Claude, ChatGPT) when you need the absolute best quality, the latest models, or you're doing complex reasoning tasks on short deadlines. Most power users run both — local for everyday tasks, cloud for the hard problems.
+            <strong>Use local AI when:</strong> privacy matters, you're offline, you hit rate limits, or you want zero cost. Use cloud AI (Claude, ChatGPT) when you need the absolute best quality, the latest models, or you're doing complex reasoning tasks on short deadlines. Most power users run both - local for everyday tasks, cloud for the hard problems.
           </p>
         </div>
 

@@ -33,7 +33,7 @@ export default function Lesson23() {
           </section>
 
           <section className="section-card">
-            <h2>Plan Mode — The Most Underused Feature</h2>
+            <h2>Plan Mode - The Most Underused Feature</h2>
             <p>Plan Mode shows you exactly what Claude intends to do before it does anything. Critical for multi-file changes, refactors, and anything with significant blast radius.</p>
             <p>Trigger Plan Mode by starting your message with "Plan:" or "Show me a plan before making any changes."</p>
             <div className="steps-list">
@@ -46,20 +46,20 @@ Currently in src/auth/session.ts.`}</pre>
                 <strong>Claude responds with a plan like this (before touching any file):</strong>
                 <pre>{`## Plan: JWT Refresh Token Rotation Refactor
 
-1. Read src/auth/session.ts — understand current session implementation
-2. Read src/middleware.ts — see how sessions are used in request handling  
-3. Read src/api/auth/login.ts — understand current login flow
+1. Read src/auth/session.ts - understand current session implementation
+2. Read src/middleware.ts - see how sessions are used in request handling  
+3. Read src/api/auth/login.ts - understand current login flow
 4. Check package.json for existing JWT libraries (jsonwebtoken, jose, etc.)
 
 Then I'll implement:
 5. Add refreshToken field to User model in src/types/user.ts
-6. Create src/auth/tokens.ts — JWT generation, validation, rotation logic
-7. Update src/auth/session.ts — integrate new token utilities, add rotation logic
-8. Update src/middleware.ts — check token expiry, auto-refresh if within 5 min
-9. Update src/api/auth/login.ts — return both access + refresh tokens
-10. Add src/api/auth/refresh.ts — new endpoint for token refresh
+6. Create src/auth/tokens.ts - JWT generation, validation, rotation logic
+7. Update src/auth/session.ts - integrate new token utilities, add rotation logic
+8. Update src/middleware.ts - check token expiry, auto-refresh if within 5 min
+9. Update src/api/auth/login.ts - return both access + refresh tokens
+10. Add src/api/auth/refresh.ts - new endpoint for token refresh
 11. Write tests in src/auth/__tests__/tokens.test.ts
-12. Run npm test — verify no regressions
+12. Run npm test - verify no regressions
 
 Estimated files changed: 6. New files: 2.
 
@@ -68,11 +68,11 @@ Shall I proceed? (yes to start, or tell me what to change)`}</pre>
               <div className="step">
                 <strong>You can edit the plan before approving:</strong>
                 <p>"Skip step 4, I know we use 'jose'. Add a step to update the API docs in docs/auth.md. Proceed."</p>
-                <p>Claude incorporates your changes and starts executing — only after you approve.</p>
+                <p>Claude incorporates your changes and starts executing - only after you approve.</p>
               </div>
             </div>
             <div className="info-box">
-              <strong>Best practice:</strong> Always use Plan Mode for changes touching more than 2 files, or for anything you can't easily undo. You can edit the plan before approving — add, remove, or reorder steps.
+              <strong>Best practice:</strong> Always use Plan Mode for changes touching more than 2 files, or for anything you can't easily undo. You can edit the plan before approving - add, remove, or reorder steps.
             </div>
           </section>
 
@@ -90,7 +90,7 @@ $ git checkout -b feature/PROJ-142-csv-export-reports
 Switched to a new branch 'feature/PROJ-142-csv-export-reports'
 
 I've created branch feature/PROJ-142-csv-export-reports. Ready to start 
-implementing — shall I read the reports module first to understand the 
+implementing - shall I read the reports module first to understand the 
 existing structure?`}</pre>
               </div>
               <div className="step">
@@ -102,7 +102,7 @@ Claude reads: src/reports/index.ts, src/reports/types.ts, src/utils/format.ts
 
 Claude implements:
 - src/reports/exporters/csv.ts (new)
-- src/reports/index.ts (updated — adds export button)
+- src/reports/index.ts (updated - adds export button)
 - src/reports/__tests__/csv.test.ts (new)
 
 Runs: npm test -- src/reports/__tests__/csv.test.ts
@@ -148,7 +148,7 @@ download any report as a CSV file with one click.
 ## Testing
 - 12 unit tests added (all passing)
 - Manual testing: exported 3 different report types, verified in Excel and Google Sheets
-- Performance tested with 50k row dataset — exports in under 2 seconds
+- Performance tested with 50k row dataset - exports in under 2 seconds
 
 ## How to test
 1. Go to any report → click the new "Export CSV" button in the top right
@@ -162,7 +162,7 @@ PR created: https://github.com/your-org/your-repo/pull/287`}</pre>
               <div className="step">
                 <strong>Step 5: Handle review feedback</strong>
                 <pre>{`Reviewer comment: "The CSV exporter should handle timezone conversion 
-for date fields — currently outputting UTC."
+for date fields - currently outputting UTC."
 
 You (to Claude): Fix the timezone issue the reviewer mentioned in PR #287.
 
@@ -257,11 +257,11 @@ pushes, and replies to the review comment with a summary of the fix.`}</pre>
                 <strong>Map your architecture in CLAUDE.md</strong>
                 <p>Include a "Key Files" section in your project CLAUDE.md. Example:</p>
                 <pre>{`## Key Files
-- src/auth/session.ts — session management, JWT handling
-- src/middleware.ts — request pipeline, auth checks, rate limiting  
-- src/api/index.ts — API router, all routes registered here
-- src/db/schema.ts — Drizzle ORM schema, single source of truth for DB
-- src/lib/email.ts — all email sending goes through here`}</pre>
+- src/auth/session.ts - session management, JWT handling
+- src/middleware.ts - request pipeline, auth checks, rate limiting  
+- src/api/index.ts - API router, all routes registered here
+- src/db/schema.ts - Drizzle ORM schema, single source of truth for DB
+- src/lib/email.ts - all email sending goes through here`}</pre>
                 <p>Claude reads this first and navigates precisely without reading everything.</p>
               </div>
               <div className="step">
@@ -282,11 +282,11 @@ pushes, and replies to the review comment with a summary of the fix.`}</pre>
           <section className="section-card">
             <h2>Keyboard Shortcuts</h2>
             <ul>
-              <li><kbd>Ctrl+C</kbd> twice — Force stop Claude mid-execution</li>
-              <li><kbd>Escape</kbd> — Cancel current input without sending</li>
-              <li><kbd>Up Arrow</kbd> — Cycle through previous commands</li>
-              <li><kbd>Tab</kbd> — Autocomplete file paths and command names</li>
-              <li><kbd>Shift+Tab</kbd> — Toggle auto-accept mode (executes everything without prompting — use carefully)</li>
+              <li><kbd>Ctrl+C</kbd> twice - Force stop Claude mid-execution</li>
+              <li><kbd>Escape</kbd> - Cancel current input without sending</li>
+              <li><kbd>Up Arrow</kbd> - Cycle through previous commands</li>
+              <li><kbd>Tab</kbd> - Autocomplete file paths and command names</li>
+              <li><kbd>Shift+Tab</kbd> - Toggle auto-accept mode (executes everything without prompting - use carefully)</li>
             </ul>
           </section>
 
@@ -295,7 +295,7 @@ pushes, and replies to the review comment with a summary of the fix.`}</pre>
             <div className="steps-list">
               <div className="step">
                 <strong>Task A: Plan Mode on a Real Task (10 min)</strong>
-                <p>Pick any real refactoring or feature task in a project you own. Type "Plan: [your task]" and let Claude respond with a plan. Don't approve yet — edit at least one step. Then approve and watch it execute.</p>
+                <p>Pick any real refactoring or feature task in a project you own. Type "Plan: [your task]" and let Claude respond with a plan. Don't approve yet - edit at least one step. Then approve and watch it execute.</p>
               </div>
               <div className="step">
                 <strong>Task B: Set Up the Notification Hook (5 min)</strong>
@@ -303,18 +303,18 @@ pushes, and replies to the review comment with a summary of the fix.`}</pre>
               </div>
               <div className="step">
                 <strong>Task C: Full Git Workflow (20 min)</strong>
-                <p>Pick a small, real task in any project. Ask Claude to: create a feature branch, implement the change, commit with conventional commits format, and (if you have GitHub MCP) create a PR with a full description. Review the PR description — is it something you'd actually merge?</p>
+                <p>Pick a small, real task in any project. Ask Claude to: create a feature branch, implement the change, commit with conventional commits format, and (if you have GitHub MCP) create a PR with a full description. Review the PR description - is it something you'd actually merge?</p>
               </div>
             </div>
           </section>
 
           <QuickRef title="Lesson 23 Quick Reference" items={[
-            { term: "Plan Mode", definition: "Start with 'Plan:' — Claude shows every step before touching any file. Edit the plan before approving." },
+            { term: "Plan Mode", definition: "Start with 'Plan:' - Claude shows every step before touching any file. Edit the plan before approving." },
             { term: "/compact", definition: "Summarizes conversation history to free context. Run before switching to a new sub-task." },
             { term: "Conventional commits", definition: "Format: type(scope): description. Types: feat, fix, chore, docs, refactor, test. Claude uses these automatically." },
             { term: "notification hook", definition: "Fires when Claude needs your attention. Add macOS sound/notification so you can work on other things while Claude runs." },
             { term: "post_tool_call hook", definition: "Runs after every tool use. Use for: audit logging, auto-running tests, notifications on file changes." },
-            { term: "Shift+Tab", definition: "Auto-accept mode — Claude executes without prompting. Use only in trusted, personal projects." },
+            { term: "Shift+Tab", definition: "Auto-accept mode - Claude executes without prompting. Use only in trusted, personal projects." },
           ]} />
 
           <LessonNav

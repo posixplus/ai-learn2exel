@@ -14,21 +14,21 @@ export default function Lesson30() {
           lessonNumber={30}
           duration={90}
           title="Structured Outputs & Tool Use"
-          subtitle="Make Claude return machine-readable data and call your functions — the foundation of every real AI feature."
+          subtitle="Make Claude return machine-readable data and call your functions - the foundation of every real AI feature."
         />
 
         <section className="section-card">
           <h2>Why Unstructured Text Isn't Enough</h2>
           <p>
-            Claude is a great writer. But your app is not a reader — it needs JSON.
+            Claude is a great writer. But your app is not a reader - it needs JSON.
             Structured outputs and tool use are two ways to get reliable, parseable
             data back from Claude instead of a wall of prose.
           </p>
           <div className="info-box">
             <strong>The two techniques:</strong>
             <ul>
-              <li><strong>Structured outputs</strong> — tell Claude to respond in a specific JSON schema</li>
-              <li><strong>Tool use</strong> — give Claude functions it can call; you execute them, return results</li>
+              <li><strong>Structured outputs</strong> - tell Claude to respond in a specific JSON schema</li>
+              <li><strong>Tool use</strong> - give Claude functions it can call; you execute them, return results</li>
             </ul>
           </div>
         </section>
@@ -46,7 +46,7 @@ client = anthropic.Anthropic()
 
 def extract_contact(text: str) -> dict:
     response = client.messages.create(
-        model="claude-opus-4-5",
+        model="claude-opus-4-8",
         max_tokens=256,
         system="""Extract contact info and return ONLY valid JSON:
 {
@@ -55,7 +55,7 @@ def extract_contact(text: str) -> dict:
   "phone": "string or null",
   "company": "string or null"
 }
-No markdown, no explanation — raw JSON only.""",
+No markdown, no explanation - raw JSON only.""",
         messages=[{"role": "user", "content": text}]
     )
     import json
@@ -73,7 +73,7 @@ print(result)
             <strong>Pro tips for reliable JSON:</strong>
             <ul>
               <li>Say "ONLY valid JSON" and "no markdown" in the system prompt</li>
-              <li>Paste the exact schema in the prompt — Claude will follow it closely</li>
+              <li>Paste the exact schema in the prompt - Claude will follow it closely</li>
               <li>Wrap <code>json.loads()</code> in a try/except and retry once on failure</li>
               <li>For complex schemas, use Pydantic + instructor library (see below)</li>
             </ul>
@@ -84,7 +84,7 @@ print(result)
           <h2>Instructor: Pydantic-Validated Outputs</h2>
           <p>
             The <code>instructor</code> library patches the Anthropic client to validate
-            Claude's JSON against a Pydantic model — automatic retries included.
+            Claude's JSON against a Pydantic model - automatic retries included.
           </p>
 
           <pre className="code-block">{`# pip install instructor pydantic
@@ -102,7 +102,7 @@ class Contact(BaseModel):
 client = instructor.from_anthropic(anthropic.Anthropic())
 
 contact = client.messages.create(
-    model="claude-opus-4-5",
+    model="claude-opus-4-8",
     max_tokens=256,
     response_model=Contact,
     messages=[{
@@ -125,25 +125,25 @@ print(contact.email)  # sarah@acme.io`}</pre>
             <div className="step">
               <div className="step-number">1</div>
               <div>
-                <strong>Define your tools</strong> — name, description, and JSON Schema for parameters
+                <strong>Define your tools</strong> - name, description, and JSON Schema for parameters
               </div>
             </div>
             <div className="step">
               <div className="step-number">2</div>
               <div>
-                <strong>Send to Claude</strong> — include <code>tools</code> array in the API call
+                <strong>Send to Claude</strong> - include <code>tools</code> array in the API call
               </div>
             </div>
             <div className="step">
               <div className="step-number">3</div>
               <div>
-                <strong>Check stop reason</strong> — if <code>tool_use</code>, Claude wants to call a function
+                <strong>Check stop reason</strong> - if <code>tool_use</code>, Claude wants to call a function
               </div>
             </div>
             <div className="step">
               <div className="step-number">4</div>
               <div>
-                <strong>Execute and return</strong> — run the function, send result back as <code>tool_result</code>
+                <strong>Execute and return</strong> - run the function, send result back as <code>tool_result</code>
               </div>
             </div>
           </div>
@@ -177,7 +177,7 @@ messages = [{"role": "user", "content": "What's the weather in Tokyo?"}]
 
 # Step 2: first call
 response = client.messages.create(
-    model="claude-opus-4-5", max_tokens=512,
+    model="claude-opus-4-8", max_tokens=512,
     tools=tools, messages=messages
 )
 
@@ -195,7 +195,7 @@ if response.stop_reason == "tool_use":
         }]}
     ]
     final = client.messages.create(
-        model="claude-opus-4-5", max_tokens=512,
+        model="claude-opus-4-8", max_tokens=512,
         tools=tools, messages=messages
     )
     print(final.content[0].text)
@@ -230,7 +230,7 @@ async function searchProducts(query: string, maxResults = 5) {
 export async function POST(req: Request) {
   const { messages } = await req.json()
   const response = await client.messages.create({
-    model: 'claude-opus-4-5', max_tokens: 1024,
+    model: 'claude-opus-4-8', max_tokens: 1024,
     tools, messages
   })
 
@@ -241,7 +241,7 @@ export async function POST(req: Request) {
       (toolBlock as any).input.max_results
     )
     const followUp = await client.messages.create({
-      model: 'claude-opus-4-5', max_tokens: 1024,
+      model: 'claude-opus-4-8', max_tokens: 1024,
       tools,
       messages: [
         ...messages,
@@ -268,7 +268,7 @@ export async function POST(req: Request) {
               <li>Write the system prompt with the exact JSON schema</li>
               <li>Test with 3 different invoice formats (email, PDF text, handwritten scan OCR)</li>
               <li>Add a Pydantic model with instructor to auto-validate</li>
-              <li>Handle the case where a field is missing — use <code>Optional</code></li>
+              <li>Handle the case where a field is missing - use <code>Optional</code></li>
             </ol>
             <p><strong>Stretch:</strong> Add a tool <code>lookup_vendor(name)</code> that checks a local dict of known vendors and returns their standard payment terms.</p>
           </div>
@@ -278,7 +278,7 @@ export async function POST(req: Request) {
           title="Lesson 30 Quick Reference"
           items={[
             { term: 'Structured output', definition: 'System prompt + JSON schema → json.loads() on response' },
-            { term: 'instructor library', definition: 'pip install instructor — Pydantic validation + auto-retry' },
+            { term: 'instructor library', definition: 'pip install instructor - Pydantic validation + auto-retry' },
             { term: 'tool use', definition: 'Claude chooses which function to call + args; you execute it' },
             { term: 'stop_reason == tool_use', definition: 'Signal that Claude wants to call a function' },
             { term: 'tool_result', definition: 'Message role=user with type=tool_result to return function output' },

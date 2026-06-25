@@ -11,18 +11,18 @@ export default function Lesson29() {
       <main className="lesson-main">
         <LessonHeader level={4} lessonNumber={29} duration={90}
           title="The Claude API: Direct Access"
-          subtitle="Stop relying on UIs — call Claude from code with streaming, multi-turn conversations, and full control" />
+          subtitle="Stop relying on UIs - call Claude from code with streaming, multi-turn conversations, and full control" />
 
         <section className="section-card">
           <h2>Why Go Direct to the API?</h2>
           <p>
             Claude Code and Cowork are powerful interfaces for your own work. But when you want to embed Claude
             inside a product, run it in a background job, process thousands of items in batch, or pipe its output
-            into another system — you need the API. This is where Claude becomes infrastructure, not a tool you use.
+            into another system - you need the API. This is where Claude becomes infrastructure, not a tool you use.
           </p>
           <div className="info-box">
             <strong>What you need:</strong> An Anthropic API key from <code>console.anthropic.com</code>.
-            Free credits on signup. Billing is per token — input + output. No subscription required.
+            Free credits on signup. Billing is per token - input + output. No subscription required.
           </div>
         </section>
 
@@ -53,7 +53,7 @@ Content-Type: application/json
         </section>
 
         <section className="section-card">
-          <h2>SDK Setup — Python and Node</h2>
+          <h2>SDK Setup - Python and Node</h2>
           <div className="steps-list">
             <div className="step">
               <strong>Python SDK</strong>
@@ -99,7 +99,7 @@ console.log(message.content[0].text)`}</pre>
         <section className="section-card">
           <h2>Streaming Responses</h2>
           <p>
-            Streaming sends tokens as they are generated. Essential for any user-facing feature — users see output
+            Streaming sends tokens as they are generated. Essential for any user-facing feature - users see output
             immediately rather than waiting 5-30 seconds for a full response.
           </p>
           <div className="steps-list">
@@ -138,7 +138,7 @@ export async function POST(req: Request) {
         <section className="section-card">
           <h2>Multi-Turn Conversations</h2>
           <p>
-            The API is stateless — Claude remembers nothing between calls. You must pass the full conversation
+            The API is stateless - Claude remembers nothing between calls. You must pass the full conversation
             history on every request. You control exactly what context Claude has.
           </p>
           <pre>{`messages = []
@@ -149,7 +149,7 @@ response = client.messages.create(model="claude-sonnet-4-6",
     max_tokens=256, messages=messages)
 messages.append({"role": "assistant", "content": response.content[0].text})
 
-# Turn 2 — Claude remembers because we pass the full history
+# Turn 2 - Claude remembers because we pass the full history
 messages.append({"role": "user", "content": "What's my name?"})
 response = client.messages.create(model="claude-sonnet-4-6",
     max_tokens=256, messages=messages)
@@ -161,7 +161,7 @@ cost_usd = total * 0.000003
 print(f"Tokens used: {total} (cost: ~USD {cost_usd:.4f})")`}</pre>
           <div className="info-box">
             <strong>Context cost warning:</strong> Long conversations get expensive. At 200K context window,
-            you could send 150K words of history — but each message costs tokens for the entire history.
+            you could send 150K words of history - but each message costs tokens for the entire history.
             Implement sliding window cutoff or summarisation for long-running conversations.
           </div>
         </section>
@@ -170,19 +170,19 @@ print(f"Tokens used: {total} (cost: ~USD {cost_usd:.4f})")`}</pre>
           <h2>Key API Parameters</h2>
           <div className="steps-list">
             <div className="step">
-              <strong><code>model</code></strong> — Haiku for bulk/cheap tasks ($0.25/M input), Sonnet for most production work ($3/M), Opus for the hardest reasoning ($15/M).
+              <strong><code>model</code></strong> - Haiku for bulk/cheap tasks ($0.25/M input), Sonnet for most production work ($3/M), Opus for the hardest reasoning ($15/M).
             </div>
             <div className="step">
-              <strong><code>max_tokens</code></strong> — Hard cap on output. Set to 2x what you expect. The API stops at this limit; it does not truncate your input.
+              <strong><code>max_tokens</code></strong> - Hard cap on output. Set to 2x what you expect. The API stops at this limit; it does not truncate your input.
             </div>
             <div className="step">
-              <strong><code>temperature</code></strong> — 0 = deterministic/consistent (classification, extraction). 1 = creative/varied (writing). Default is 1. For production pipelines use 0.
+              <strong><code>temperature</code></strong> - 0 = deterministic/consistent (classification, extraction). 1 = creative/varied (writing). Default is 1. For production pipelines use 0.
             </div>
             <div className="step">
-              <strong><code>system</code></strong> — Your most powerful lever. A precise system prompt beats a vague one every time. Spend more time here than on the user message.
+              <strong><code>system</code></strong> - Your most powerful lever. A precise system prompt beats a vague one every time. Spend more time here than on the user message.
             </div>
             <div className="step">
-              <strong><code>stop_sequences</code></strong> — Stop generation when Claude outputs this string. Useful for structured output: <code>["```"]</code> stops after a code block.
+              <strong><code>stop_sequences</code></strong> - Stop generation when Claude outputs this string. Useful for structured output: <code>["```"]</code> stops after a code block.
             </div>
           </div>
         </section>
@@ -196,7 +196,7 @@ print(f"Tokens used: {total} (cost: ~USD {cost_usd:.4f})")`}</pre>
 client = anthropic.Anthropic()
 
 tickets = [
-    "I can't log in — password reset isn't working",
+    "I can't log in - password reset isn't working",
     "Please add dark mode to the dashboard",
     "The CSV export generates a blank file every time",
     "How do I add a team member to my account?",
@@ -224,7 +224,7 @@ for ticket in tickets:
         </section>
 
         <QuickRef title="Lesson 29 Quick Reference" items={[
-          { term: 'Messages API', definition: 'POST /v1/messages with model, max_tokens, system, messages array. Stateless — pass full history each call.' },
+          { term: 'Messages API', definition: 'POST /v1/messages with model, max_tokens, system, messages array. Stateless - pass full history each call.' },
           { term: 'Streaming', definition: 'Use .stream() to get tokens as generated. Essential for user-facing UIs. Returns ReadableStream for browser.' },
           { term: 'temperature=0', definition: 'Makes output deterministic and consistent. Use for classification, extraction, JSON output. Default is 1.' },
           { term: 'Model costs', definition: 'Haiku: $0.25/M input. Sonnet: $3/M input. Opus: $15/M input. Route by task complexity to control costs.' },

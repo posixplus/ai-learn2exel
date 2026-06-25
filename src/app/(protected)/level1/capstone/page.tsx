@@ -4,6 +4,7 @@ import PromptBox from '@/components/lesson/PromptBox'
 import HandsOn from '@/components/lesson/HandsOn'
 import Callout from '@/components/lesson/Callout'
 import LevelFeedback from '@/components/lesson/LevelFeedback'
+import LevelQuiz from '@/components/lesson/LevelQuiz'
 
 export default function Level1Capstone() {
   return (
@@ -230,7 +231,7 @@ GUARDRAILS:
               ]}
             >
               <Callout type="info">
-                Each prompt should be short and focused. Don't ask the AI to do the next step automatically — you're controlling the flow.
+                Each prompt should be short and focused. Don't ask the AI to do the next step automatically - you're controlling the flow.
               </Callout>
             </HandsOn>
 
@@ -453,7 +454,8 @@ GUARDRAILS:
             </p>
           </section>
         </div>
-        <LevelFeedback level={1} levelTitle="Going Deeper — Agents, MCP & Claude Code" />
+        <LevelQuiz level={1} />
+        <LevelFeedback level={1} levelTitle="Going Deeper - Agents, MCP & Claude Code" />
       </main>
       <Footer />
     </div>

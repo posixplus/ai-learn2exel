@@ -22,7 +22,7 @@ export default function Lesson45() {
           <p>
             Git is where development work gets captured, reviewed, and shipped. AI can improve
             every stage: writing descriptive commit messages, summarizing changes for PRs,
-            generating changelogs, and resolving tricky merge conflicts — all without leaving
+            generating changelogs, and resolving tricky merge conflicts - all without leaving
             your terminal.
           </p>
           <div className="info-box">
@@ -93,7 +93,7 @@ git diff main..HEAD | claude "Write a comprehensive PR description for this diff
           </p>
           <div className="steps-list">
             <div className="step">
-              <strong>Step 1 — Trigger the conflict and see what AI sees</strong>
+              <strong>Step 1 - Trigger the conflict and see what AI sees</strong>
               <div className="code-block">
                 <pre>{`# When git shows conflict markers:
 <<<<<<< HEAD
@@ -104,21 +104,21 @@ const timeout = 30000; // their change
               </div>
             </div>
             <div className="step">
-              <strong>Step 2 — Ask AI to explain and resolve</strong>
+              <strong>Step 2 - Ask AI to explain and resolve</strong>
               <div className="code-block">
                 <pre>{`# Paste the conflicted file into Claude Code:
 claude "This file has merge conflicts. Explain what each side changed
 and suggest the correct resolution, preserving both teams' intentions."
 
 # Or in Copilot Chat:
-# /fix — it detects conflict markers and proposes resolutions`}</pre>
+# /fix - it detects conflict markers and proposes resolutions`}</pre>
               </div>
             </div>
             <div className="step">
-              <strong>Step 3 — Review and accept</strong>
+              <strong>Step 3 - Review and accept</strong>
               <p>
                 Always review AI's resolution. It may not know which timeout value is correct
-                for your use case — that business context is yours to provide.
+                for your use case - that business context is yours to provide.
               </p>
             </div>
           </div>
@@ -197,11 +197,11 @@ npx husky add .husky/commit-msg 'npx commitlint --edit $1'`}</pre>
 
         <QuickRef title="Lesson 45 Quick Reference" items={[
           { term: 'Commit message', definition: 'git diff --staged | claude "Write a conventional commit message"' },
-          { term: 'Conventional format', definition: 'type(scope): description — feat, fix, refactor, docs, test, chore' },
+          { term: 'Conventional format', definition: 'type(scope): description - feat, fix, refactor, docs, test, chore' },
           { term: 'PR description', definition: 'git log main..HEAD --oneline | claude "Write a PR description"' },
           { term: 'Merge conflict', definition: 'Paste conflicted file, ask AI to explain both sides and suggest resolution' },
           { term: 'Changelog', definition: 'git log v1.0..v2.0 --oneline | claude "Generate CHANGELOG section"' },
-          { term: 'Git help', definition: 'claude "How do I squash my last 5 commits?" — use Claude as a git expert' },
+          { term: 'Git help', definition: 'claude "How do I squash my last 5 commits?" - use Claude as a git expert' },
           { term: 'Git hooks', definition: 'Ask AI to write commit-msg or pre-push hooks, deploy via husky' },
         ]} />
 

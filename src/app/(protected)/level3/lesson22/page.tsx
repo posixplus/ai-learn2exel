@@ -11,11 +11,11 @@ export default function Lesson22() {
         <main className="lesson-main">
           <LessonHeader level={3} lessonNumber={22} duration={120}
             title="MCP: Connecting Claude to Everything"
-            subtitle="Model Context Protocol — the open standard that makes Claude 10x more powerful" />
+            subtitle="Model Context Protocol - the open standard that makes Claude 10x more powerful" />
 
           <section className="section-card">
             <h2>What is MCP?</h2>
-            <p>Model Context Protocol (MCP) is an open standard released by Anthropic in November 2024. It defines how AI models connect to external tools, data sources, and services in a standardized way. Think of it as USB-C for AI — one universal connector that works with everything.</p>
+            <p>Model Context Protocol (MCP) is an open standard released by Anthropic in November 2024. It defines how AI models connect to external tools, data sources, and services in a standardized way. Think of it as USB-C for AI - one universal connector that works with everything.</p>
             <p>Before MCP, every AI integration was a one-off custom build. With MCP, any tool that builds an MCP server is instantly compatible with Claude. The ecosystem is exploding: GitHub, Slack, Notion, Linear, Figma, Gmail, Google Calendar, and hundreds more already have MCP servers.</p>
           </section>
 
@@ -94,9 +94,9 @@ claude
 /mcp
 
 # You should see:
-# ✓ github (connected) — 15 tools available
-# ✓ filesystem (connected) — 8 tools available
-# ✓ brave-search (connected) — 1 tool available`}</pre>
+# ✓ github (connected) - 15 tools available
+# ✓ filesystem (connected) - 8 tools available
+# ✓ brave-search (connected) - 1 tool available`}</pre>
               </div>
               <div className="step">
                 <strong>Step 5: Test with a real request</strong>
@@ -163,7 +163,7 @@ Format as a table.`}</pre>
               </div>
             </div>
             <div className="info-box">
-              <strong>Browse all:</strong> <a href="https://github.com/modelcontextprotocol/servers" target="_blank" rel="noopener noreferrer">github.com/modelcontextprotocol/servers</a> — community-maintained list of MCP servers
+              <strong>Browse all:</strong> <a href="https://github.com/modelcontextprotocol/servers" target="_blank" rel="noopener noreferrer">github.com/modelcontextprotocol/servers</a> - community-maintained list of MCP servers
             </div>
           </section>
 
@@ -182,7 +182,7 @@ Format as a table.`}</pre>
 
           <section className="section-card">
             <h2>Building a Simple Custom MCP Server</h2>
-            <p>Any internal tool or data source can become an MCP server. Here's a working minimal example in TypeScript — connects Claude to an internal REST API:</p>
+            <p>Any internal tool or data source can become an MCP server. Here's a working minimal example in TypeScript - connects Claude to an internal REST API:</p>
             <pre>{`import { Server } from "@modelcontextprotocol/sdk/server/index.js";
 import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";
 
@@ -251,7 +251,7 @@ new StdioServerTransport(server).start();`}</pre>
     "INTERNAL_API_KEY": "your_api_key"
   }
 }`}</pre>
-            <p>Now Claude can answer: "Get me customer CUST-4821's profile and all their open high-priority tickets" — pulling live data from your internal system.</p>
+            <p>Now Claude can answer: "Get me customer CUST-4821's profile and all their open high-priority tickets" - pulling live data from your internal system.</p>
           </section>
 
           <section className="hands-on-box">
@@ -267,7 +267,7 @@ new StdioServerTransport(server).start();`}</pre>
               </div>
               <div className="step">
                 <strong>Task C: Design Your Custom MCP (5 min)</strong>
-                <p>Think about an internal tool at your company that Claude doesn't have access to. Sketch out: what 3 tools would you expose? What would each tool take as input and return? (No code needed — just the design.)</p>
+                <p>Think about an internal tool at your company that Claude doesn't have access to. Sketch out: what 3 tools would you expose? What would each tool take as input and return? (No code needed - just the design.)</p>
               </div>
             </div>
           </section>

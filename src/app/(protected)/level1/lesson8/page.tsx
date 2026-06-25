@@ -444,7 +444,7 @@ export default function Lesson8() {
                   "Look at what Claude returned. Are the insights accurate?",
                   "Are the sources credible? Check them.",
                   "Ask Claude to refine: 'Go deeper on [specific insight]. I want more details.'",
-                  "Note: This is Claude acting like an agent — planning steps, using tools (search), delivering results."
+                  "Note: This is Claude acting like an agent - planning steps, using tools (search), delivering results."
                 ]}
               >
               </HandsOn>
@@ -499,7 +499,7 @@ export default function Lesson8() {
                   "Upload your data file (if any).",
                   "Tell Claude your goal.",
                   "Claude will: understand what you need, write code, run it, iterate if needed, deliver the result.",
-                  "This is a full agent workflow — planning, coding, executing, self-correcting."
+                  "This is a full agent workflow - planning, coding, executing, self-correcting."
                 ]}
               >
               </HandsOn>
@@ -542,7 +542,7 @@ export default function Lesson8() {
           <LessonNav
             lessonId="l1-8"
             prev={{ href: '/level1/lesson7', title: 'Custom AI Tools' }}
-            next={{ href: '/level1/lesson9', title: 'MCP — Connect AI to Your World' }}
+            next={{ href: '/level1/lesson9', title: 'MCP - Connect AI to Your World' }}
           />
         </div>
       </main>

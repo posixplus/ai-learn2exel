@@ -1,6 +1,7 @@
 'use client'
 import Link from 'next/link'
 import Footer from '@/components/layout/Footer'
+import ToolResources from '@/components/tools/ToolResources'
 
 export default function AiHardwarePage() {
   return (
@@ -17,17 +18,17 @@ export default function AiHardwarePage() {
         <div style={{ marginBottom: '2.5rem' }}>
           <h1 style={{ margin: '0 0 .5rem', fontSize: '2rem', fontWeight: 800 }}>🖥️ Buying a Computer for AI</h1>
           <p style={{ fontSize: '1.05rem', color: '#374151', lineHeight: 1.7, marginBottom: 0 }}>
-            If you only use cloud AI (Claude, ChatGPT), any modern computer works fine. This guide is for people who want to run AI models <strong>locally</strong> — which requires specific hardware considerations. We cover Mac vs Windows, RAM requirements, and specific recommendations by budget.
+            If you only use cloud AI (Claude, ChatGPT), any modern computer works fine. This guide is for people who want to run AI models <strong>locally</strong> - which requires specific hardware considerations. We cover Mac vs Windows, RAM requirements, and specific recommendations by budget.
           </p>
         </div>
 
         {/* Quick verdict */}
         <div style={{ background: 'linear-gradient(135deg, #EEF2FF, #F5F3FF)', border: '2px solid #C7D2FE', borderRadius: 16, padding: '1.75rem', marginBottom: '2.5rem' }}>
-          <h2 style={{ marginTop: 0, fontSize: '1.2rem', color: '#3730A3' }}>⚡ TL;DR — The Quick Answer</h2>
+          <h2 style={{ marginTop: 0, fontSize: '1.2rem', color: '#3730A3' }}>⚡ TL;DR - The Quick Answer</h2>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem' }}>
             <div>
               <div style={{ fontWeight: 700, fontSize: '1rem', marginBottom: '.5rem', color: '#1E3A8A' }}>For local AI: Get an Apple Silicon Mac</div>
-              <p style={{ margin: 0, color: '#374151', fontSize: '.9rem', lineHeight: 1.7 }}>The M-series chip's unified memory architecture makes it the best value for running large models locally. An M3 MacBook Pro with 36 GB RAM runs Llama 70B smoothly — something that would cost $3,000+ in a Windows GPU setup.</p>
+              <p style={{ margin: 0, color: '#374151', fontSize: '.9rem', lineHeight: 1.7 }}>The M-series chip's unified memory architecture makes it the best value for running large models locally. An M3 MacBook Pro with 36 GB RAM runs Llama 70B smoothly - something that would cost $3,000+ in a Windows GPU setup.</p>
             </div>
             <div>
               <div style={{ fontWeight: 700, fontSize: '1rem', marginBottom: '.5rem', color: '#1E3A8A' }}>Just using cloud AI? Any modern laptop works</div>
@@ -52,9 +53,9 @@ export default function AiHardwarePage() {
                 {[
                   ['Local model speed', '✅ Excellent (unified memory)', '✅ Excellent (dedicated VRAM)'],
                   ['Running 7B models', '✅ Any M-chip Mac (16 GB)', '✅ Any RTX 3060+ (8 GB VRAM)'],
-                  ['Running 70B models', '✅ 36–48 GB unified RAM', '❌ Needs 2× A100 or H100 (~$30K+)'],
-                  ['Cost for 70B capable', '💰 ~$2,500 (M3 Pro 36 GB)', '💰 $10,000–$30,000+'],
-                  ['Battery life', '✅ Excellent (12–18 hrs)', '⚠️ Poor during GPU tasks'],
+                  ['Running 70B models', '✅ 36-48 GB unified RAM', '❌ Needs 2× A100 or H100 (~$30K+)'],
+                  ['Cost for 70B capable', '💰 ~$2,500 (M3 Pro 36 GB)', '💰 $10,000-$30,000+'],
+                  ['Battery life', '✅ Excellent (12-18 hrs)', '⚠️ Poor during GPU tasks'],
                   ['CUDA ecosystem (PyTorch)', '⚠️ MPS backend (some gaps)', '✅ Full CUDA support'],
                   ['Ollama support', '✅ Native, very fast', '✅ Works via NVIDIA CUDA'],
                   ['Cloud AI (Claude/Copilot)', '✅ Same as any machine', '✅ Same as any machine'],
@@ -73,15 +74,15 @@ export default function AiHardwarePage() {
 
         {/* Apple Silicon */}
         <div style={{ background: 'white', border: '1px solid #E5E7EB', borderRadius: 12, padding: '2rem', marginBottom: '1.5rem' }}>
-          <h2 style={{ marginTop: 0, fontSize: '1.3rem' }}>🍎 Apple Silicon — Recommended Configurations</h2>
-          <p style={{ color: '#4B5563', fontSize: '.9rem', marginBottom: '1.25rem' }}>Apple's M-series chips use <strong>unified memory</strong> — the CPU and GPU share the same RAM pool. This is why a 36 GB M3 Pro beats most Windows machines at local AI: the full 36 GB is available to the model.</p>
+          <h2 style={{ marginTop: 0, fontSize: '1.3rem' }}>🍎 Apple Silicon - Recommended Configurations</h2>
+          <p style={{ color: '#4B5563', fontSize: '.9rem', marginBottom: '1.25rem' }}>Apple's M-series chips use <strong>unified memory</strong> - the CPU and GPU share the same RAM pool. This is why a 36 GB M3 Pro beats most Windows machines at local AI: the full 36 GB is available to the model.</p>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
             {[
-              { budget: 'Entry (~$1,300)', model: 'MacBook Air M3 — 16 GB RAM', capability: 'Runs Llama 3.2 3B, Mistral 7B, phi3:mini comfortably. Good for learning and everyday AI assistance.', verdict: 'Good start' },
-              { budget: 'Mid (~$2,000)', model: 'MacBook Pro M3 — 18–24 GB RAM', capability: 'Runs Llama 3.1 8B smoothly. Can run 13B models at acceptable speed. Good for developers.', verdict: 'Recommended' },
-              { budget: 'Pro (~$2,500–3,000)', model: 'MacBook Pro M3 Pro — 36 GB RAM', capability: 'Runs Llama 3.1 70B at usable speed. Near GPT-4 quality locally. Best value for serious local AI work.', verdict: 'Best for local AI' },
-              { budget: 'Power (~$3,500–6,000)', model: 'MacBook Pro M3 Max — 48–128 GB RAM', capability: 'Runs 70B models fast. Can run multiple models simultaneously. For ML engineers and researchers.', verdict: 'For professionals' },
-              { budget: 'Desktop (~$1,600+)', model: 'Mac Mini M4 Pro — 24–64 GB RAM', capability: 'Best performance per dollar for a desktop AI workstation. Add your own monitor.', verdict: 'Best desktop value' },
+              { budget: 'Entry (~$1,300)', model: 'MacBook Air M3 - 16 GB RAM', capability: 'Runs Llama 3.2 3B, Mistral 7B, phi3:mini comfortably. Good for learning and everyday AI assistance.', verdict: 'Good start' },
+              { budget: 'Mid (~$2,000)', model: 'MacBook Pro M3 - 18-24 GB RAM', capability: 'Runs Llama 3.1 8B smoothly. Can run 13B models at acceptable speed. Good for developers.', verdict: 'Recommended' },
+              { budget: 'Pro (~$2,500-3,000)', model: 'MacBook Pro M3 Pro - 36 GB RAM', capability: 'Runs Llama 3.1 70B at usable speed. Near GPT-4 quality locally. Best value for serious local AI work.', verdict: 'Best for local AI' },
+              { budget: 'Power (~$3,500-6,000)', model: 'MacBook Pro M3 Max - 48-128 GB RAM', capability: 'Runs 70B models fast. Can run multiple models simultaneously. For ML engineers and researchers.', verdict: 'For professionals' },
+              { budget: 'Desktop (~$1,600+)', model: 'Mac Mini M4 Pro - 24-64 GB RAM', capability: 'Best performance per dollar for a desktop AI workstation. Add your own monitor.', verdict: 'Best desktop value' },
             ].map(r => (
               <div key={r.budget} style={{ padding: '1rem 1.25rem', border: '1px solid #E5E7EB', borderRadius: 10, display: 'grid', gridTemplateColumns: '130px 1fr auto', gap: '1rem', alignItems: 'start' }}>
                 <div>
@@ -103,9 +104,9 @@ export default function AiHardwarePage() {
           <p style={{ color: '#4B5563', fontSize: '.9rem', marginBottom: '1.25rem' }}>Windows with a dedicated NVIDIA GPU is the other serious option for local AI. The advantage: full CUDA support for PyTorch/TensorFlow development and fine-tuning. The limitation: VRAM is the bottleneck (separate from system RAM), and 70B models need massive VRAM.</p>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
             {[
-              { gpu: 'RTX 3060 (12 GB VRAM)', price: '~$300', runs: 'Llama 7B–13B well. Best budget GPU for local AI.', note: 'Entry point' },
-              { gpu: 'RTX 4070 (12 GB VRAM)', price: '~$600', runs: 'Llama 7B–13B fast. Better throughput than 3060.', note: 'Good mid-range' },
-              { gpu: 'RTX 4080 (16 GB VRAM)', price: '~$1,000', runs: 'Llama 13B–34B models. Solid for development.', note: 'Recommended GPU' },
+              { gpu: 'RTX 3060 (12 GB VRAM)', price: '~$300', runs: 'Llama 7B-13B well. Best budget GPU for local AI.', note: 'Entry point' },
+              { gpu: 'RTX 4070 (12 GB VRAM)', price: '~$600', runs: 'Llama 7B-13B fast. Better throughput than 3060.', note: 'Good mid-range' },
+              { gpu: 'RTX 4080 (16 GB VRAM)', price: '~$1,000', runs: 'Llama 13B-34B models. Solid for development.', note: 'Recommended GPU' },
               { gpu: 'RTX 4090 (24 GB VRAM)', price: '~$2,000', runs: 'Llama 70B (quantized). Best consumer GPU for AI.', note: 'Best consumer GPU' },
               { gpu: '2× RTX 4090 (48 GB VRAM)', price: '~$4,000+', runs: 'Full 70B models at good speed. Serious AI rig.', note: 'Enthusiast' },
             ].map(g => (
@@ -130,7 +131,7 @@ export default function AiHardwarePage() {
         <div style={{ background: 'white', border: '1px solid #E5E7EB', borderRadius: 12, padding: '2rem', marginBottom: '1.5rem' }}>
           <h2 style={{ marginTop: 0, fontSize: '1.3rem' }}>🐧 Linux (for Power Users)</h2>
           <p style={{ color: '#4B5563', lineHeight: 1.7, margin: 0 }}>
-            If you're comfortable with Linux, Ubuntu + NVIDIA GPU is the most flexible setup for AI development. Full CUDA support, no licensing restrictions, best PyTorch performance. Same GPU recommendations as Windows apply. Ollama runs natively. The tradeoff is setup complexity — not recommended for beginners.
+            If you're comfortable with Linux, Ubuntu + NVIDIA GPU is the most flexible setup for AI development. Full CUDA support, no licensing restrictions, best PyTorch performance. Same GPU recommendations as Windows apply. Ollama runs natively. The tradeoff is setup complexity - not recommended for beginners.
           </p>
         </div>
 
@@ -152,6 +153,13 @@ export default function AiHardwarePage() {
             ))}
           </div>
         </div>
+
+        <ToolResources links={[
+          { label: 'Apple Mac (Apple silicon)', href: 'https://www.apple.com/mac/', note: 'M-series unified memory - great for local AI' },
+          { label: 'NVIDIA GeForce RTX', href: 'https://www.nvidia.com/en-us/geforce/', note: 'GPUs with VRAM for local models' },
+          { label: 'Ollama', href: 'https://ollama.com', note: 'Run models on the hardware you buy' },
+          { label: 'LM Studio', href: 'https://lmstudio.ai', note: 'Desktop app to run local models with a GUI' },
+        ]} />
 
         <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
           <Link href="/tools/ollama" style={{ background: 'white', border: '1px solid #E5E7EB', borderRadius: 8, padding: '.75rem 1.25rem', fontSize: '.875rem', color: '#374151', textDecoration: 'none', fontWeight: 600 }}>→ Run Local Models (Ollama)</Link>

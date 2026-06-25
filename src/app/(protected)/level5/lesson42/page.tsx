@@ -11,7 +11,7 @@ export default function Lesson42() {
       <main className="lesson-main">
         <LessonHeader level={5} lessonNumber={42} duration={75}
           title="Debugging with AI"
-          subtitle="AI doesn't just fix bugs — it explains root causes, reads stack traces in seconds, and spots issues you'd miss at 11pm." />
+          subtitle="AI doesn't just fix bugs - it explains root causes, reads stack traces in seconds, and spots issues you'd miss at 11pm." />
 
         <section className="section-card">
           <h2>The AI Debugging Mindset</h2>
@@ -19,16 +19,16 @@ export default function Lesson42() {
           <div className="info-box">
             <strong>The three debugging modes:</strong>
             <ul>
-              <li><strong>"Explain this error"</strong> — understand what went wrong and why, before touching code</li>
-              <li><strong>"Find the bug"</strong> — give AI the code + symptoms, ask it to identify the root cause</li>
-              <li><strong>"Fix and explain"</strong> — ask for the fix AND an explanation of what was wrong</li>
+              <li><strong>"Explain this error"</strong> - understand what went wrong and why, before touching code</li>
+              <li><strong>"Find the bug"</strong> - give AI the code + symptoms, ask it to identify the root cause</li>
+              <li><strong>"Fix and explain"</strong> - ask for the fix AND an explanation of what was wrong</li>
             </ul>
           </div>
         </section>
 
         <section className="section-card">
           <h2>Stack Trace Reading</h2>
-          <pre className="code-block">{`// Paste the full stack trace — not just the last line
+          <pre className="code-block">{`// Paste the full stack trace - not just the last line
 // Bad: "I get a TypeError, help"
 // Good: paste everything below
 
@@ -140,10 +140,10 @@ What would you add to diagnose which one is occurring?"
         </section>
 
         <QuickRef title="Lesson 42 Quick Reference" items={[
-          { term: 'Explain first', definition: 'Ask "what is the root cause?" before asking for the fix — builds real understanding' },
+          { term: 'Explain first', definition: 'Ask "what is the root cause?" before asking for the fix - builds real understanding' },
           { term: 'Full stack trace', definition: 'Always paste the complete trace, not just the error message' },
-          { term: '/fix (Copilot)', definition: 'Select broken code + /fix — add a comment describing the bug for better results' },
-          { term: 'Race condition prompt', definition: '"What are the possible race conditions here?" — works well for async/concurrent bugs' },
+          { term: '/fix (Copilot)', definition: 'Select broken code + /fix - add a comment describing the bug for better results' },
+          { term: 'Race condition prompt', definition: '"What are the possible race conditions here?" - works well for async/concurrent bugs' },
           { term: 'Logic trace', definition: '"Walk through what this function actually does step by step" for logic bugs' },
           { term: 'Minimal repro', definition: 'Ask Claude: "Write a minimal test that reproduces this bug"' },
         ]} />

@@ -20,7 +20,7 @@ export default function Lesson46() {
         <section className="section-card">
           <h2>What Is Agentic Coding?</h2>
           <p>
-            Traditional AI assistance is reactive — you prompt, it responds. Agentic coding
+            Traditional AI assistance is reactive - you prompt, it responds. Agentic coding
             flips that model: you describe a goal, and the AI agent autonomously plans steps,
             reads files, writes code, runs tests, and iterates until the task is done.
           </p>
@@ -39,11 +39,11 @@ export default function Lesson46() {
           <h2>Claude Code Agent Mode</h2>
           <p>
             Claude Code can autonomously explore your codebase, make multi-file edits, run
-            shell commands, and iterate based on test output — all in one session.
+            shell commands, and iterate based on test output - all in one session.
           </p>
           <div className="steps-list">
             <div className="step">
-              <strong>Step 1 — Give a high-level task description</strong>
+              <strong>Step 1 - Give a high-level task description</strong>
               <div className="code-block">
                 <pre>{`# In your project directory:
 claude
@@ -57,14 +57,14 @@ Add unit tests for the middleware."`}</pre>
               </div>
             </div>
             <div className="step">
-              <strong>Step 2 — Let the agent explore and plan</strong>
+              <strong>Step 2 - Let the agent explore and plan</strong>
               <p>
                 Claude Code reads your existing middleware files, package.json, and test structure
-                before writing anything. It proposes a plan — you can approve or redirect.
+                before writing anything. It proposes a plan - you can approve or redirect.
               </p>
             </div>
             <div className="step">
-              <strong>Step 3 — Review changes as they come</strong>
+              <strong>Step 3 - Review changes as they come</strong>
               <div className="code-block">
                 <pre>{`# Claude Code shows each file change with a diff:
 # Created: src/middleware/rateLimiter.ts
@@ -76,7 +76,7 @@ Add unit tests for the middleware."`}</pre>
               </div>
             </div>
             <div className="step">
-              <strong>Step 4 — Accept, reject, or redirect</strong>
+              <strong>Step 4 - Accept, reject, or redirect</strong>
               <p>
                 Use <code>y</code> to accept changes, <code>n</code> to reject, or type a
                 correction to redirect the agent mid-task.
@@ -193,13 +193,13 @@ npm test  # verify nothing is broken beyond the target area
 # 4. Set scope boundaries in your prompt
 "Only modify files in src/middleware/. Do not change app.ts."
 
-# 5. Use checkpoints — commit working states
+# 5. Use checkpoints - commit working states
 git commit -m "chore: checkpoint before AI refactor"`}</pre>
           </div>
           <div className="info-box">
             <strong>Rule of thumb:</strong> The bigger the agentic task, the more important
             your review. AI agents are excellent at execution but they don't know your
-            system's quirks, unwritten rules, or business constraints — you do.
+            system's quirks, unwritten rules, or business constraints - you do.
           </div>
         </section>
 
@@ -207,7 +207,7 @@ git commit -m "chore: checkpoint before AI refactor"`}</pre>
           <h2>Copilot Workspace (GitHub)</h2>
           <p>
             Copilot Workspace takes agentic coding to the PR level. From a GitHub Issue,
-            it plans, implements, and opens a PR — all from the browser.
+            it plans, implements, and opens a PR - all from the browser.
           </p>
           <div className="code-block">
             <pre>{`# Workflow:
@@ -233,7 +233,7 @@ git commit -m "chore: checkpoint before AI refactor"`}</pre>
 
         <QuickRef title="Lesson 46 Quick Reference" items={[
           { term: 'Agentic coding', definition: 'Describe a goal; AI plans, writes, runs tests, and iterates autonomously' },
-          { term: 'Claude Code agent', definition: 'Run claude in project dir, describe task — it reads files and makes multi-file edits' },
+          { term: 'Claude Code agent', definition: 'Run claude in project dir, describe task - it reads files and makes multi-file edits' },
           { term: 'Cursor Composer', definition: 'Cmd+I for multi-file agentic tasks; use @filename for context' },
           { term: 'Agent prompt structure', definition: 'TASK + CONTEXT + REQUIREMENTS + OUTPUT + DO NOT' },
           { term: 'Best tasks for agents', definition: 'Scaffolding, large refactors, cross-cutting concerns, bulk test generation' },

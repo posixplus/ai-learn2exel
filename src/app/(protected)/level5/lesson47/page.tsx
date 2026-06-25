@@ -40,7 +40,7 @@ export default function Lesson47() {
           </p>
           <div className="steps-list">
             <div className="step">
-              <strong>Step 1 — Create the commands directory</strong>
+              <strong>Step 1 - Create the commands directory</strong>
               <div className="code-block">
                 <pre>{`mkdir -p .claude/commands
 # Personal commands (not committed):
@@ -48,14 +48,14 @@ mkdir -p ~/.claude/commands`}</pre>
               </div>
             </div>
             <div className="step">
-              <strong>Step 2 — Write a command file</strong>
+              <strong>Step 2 - Write a command file</strong>
               <div className="code-block">
                 <pre>{`# .claude/commands/pr-review.md
 Review the staged changes as a senior engineer on this team.
 Our standards:
 - All functions must have JSDoc comments
 - Error handling must use our AppError class from src/lib/errors.ts
-- No console.log — use the logger from src/lib/logger.ts
+- No console.log - use the logger from src/lib/logger.ts
 - All async functions need try/catch
 
 Flag violations with file and line number.
@@ -63,7 +63,7 @@ Suggest fixes using our existing patterns.`}</pre>
               </div>
             </div>
             <div className="step">
-              <strong>Step 3 — Run your custom command</strong>
+              <strong>Step 3 - Run your custom command</strong>
               <div className="code-block">
                 <pre>{`claude /pr-review
 # Claude Code reads the command file and executes it
@@ -74,7 +74,7 @@ Suggest fixes using our existing patterns.`}</pre>
         </section>
 
         <section className="section-card">
-          <h2>CLAUDE.md — Project Context File</h2>
+          <h2>CLAUDE.md - Project Context File</h2>
           <p>
             The <code>CLAUDE.md</code> file in your repo root is automatically read by
             Claude Code at the start of every session. It gives the AI persistent context
@@ -90,14 +90,14 @@ Frontend: Next.js 14 App Router + Tailwind
 
 ## Code Conventions
 - Use named exports only (no default exports)
-- All DB queries go through src/db/queries/ — never inline SQL
+- All DB queries go through src/db/queries/ - never inline SQL
 - Error handling: throw AppError instances, never raw Error
 - Logging: import logger from '@/lib/logger', never console.log
 
 ## Key Files
-- src/db/schema.ts — database types
-- src/lib/auth.ts — authentication utilities
-- docs/api.md — API documentation
+- src/db/schema.ts - database types
+- src/lib/auth.ts - authentication utilities
+- docs/api.md - API documentation
 
 ## Testing
 - Use vitest + testing-library
@@ -111,7 +111,7 @@ Frontend: Next.js 14 App Router + Tailwind
         </section>
 
         <section className="section-card">
-          <h2>MCP Servers — Tool Extensions</h2>
+          <h2>MCP Servers - Tool Extensions</h2>
           <p>
             Model Context Protocol (MCP) lets you give Claude Code access to external tools:
             databases, APIs, file systems, and custom services. Any tool your team uses
@@ -151,7 +151,7 @@ Frontend: Next.js 14 App Router + Tailwind
             <pre>{`# Install the MCP SDK:
 npm install @modelcontextprotocol/sdk
 
-# src/mcp-server.ts — minimal example
+# src/mcp-server.ts - minimal example
 import { Server } from '@modelcontextprotocol/sdk/server/index.js';
 import { StdioServerTransport } from '@modelcontextprotocol/sdk/server/stdio.js';
 
@@ -186,10 +186,10 @@ await server.connect(transport);
 # They respond to @mentions in Copilot Chat
 
 # Use cases:
-# @docs — search internal documentation
-# @deploy — check deployment status, trigger deploys
-# @oncall — who's on call, open incidents
-# @runbook — fetch runbook for a service
+# @docs - search internal documentation
+# @deploy - check deployment status, trigger deploys
+# @oncall - who's on call, open incidents
+# @runbook - fetch runbook for a service
 
 # To build one:
 # 1. Create a GitHub App at github.com/settings/apps
@@ -203,7 +203,7 @@ await server.connect(transport);
           </div>
           <div className="info-box">
             <strong>Who should build these:</strong> Platform/DevEx teams building company-wide
-            internal tools. Individual developers rarely need custom extensions — CLAUDE.md
+            internal tools. Individual developers rarely need custom extensions - CLAUDE.md
             and custom commands cover most personal customization needs.
           </div>
         </section>
@@ -212,13 +212,13 @@ await server.connect(transport);
           <h2>Team AI Playbook</h2>
           <p>Combine everything in this level into a team-wide AI workflow standard:</p>
           <div className="code-block">
-            <pre>{`# Team AI Playbook — what to standardize:
+            <pre>{`# Team AI Playbook - what to standardize:
 
 # 1. CLAUDE.md in every repo (project context)
 # 2. Shared .claude/commands/ committed to repos
-#    - /pr-review  — pre-PR checklist
-#    - /onboard    — explain the codebase to new devs
-#    - /debug      — structured debugging workflow
+#    - /pr-review  - pre-PR checklist
+#    - /onboard    - explain the codebase to new devs
+#    - /debug      - structured debugging workflow
 
 # 3. Agreed prompt patterns for common tasks:
 #    - Commit messages: conventional commits format
@@ -245,12 +245,12 @@ await server.connect(transport);
 
         <QuickRef title="Lesson 47 Quick Reference" items={[
           { term: 'CLAUDE.md', definition: 'Repo-root file auto-read by Claude Code; encodes project context and conventions' },
-          { term: 'Custom commands', definition: '.claude/commands/name.md — invoke with /name in Claude Code' },
+          { term: 'Custom commands', definition: '.claude/commands/name.md - invoke with /name in Claude Code' },
           { term: 'MCP server', definition: 'Tool extension that gives Claude Code access to external systems' },
-          { term: 'Copilot Extension', definition: 'GitHub App with @agent interface — team-level internal tool integrations' },
+          { term: 'Copilot Extension', definition: 'GitHub App with @agent interface - team-level internal tool integrations' },
           { term: 'Team playbook', definition: 'Shared CLAUDE.md + commands + MCP servers + agreed prompt patterns' },
-          { term: 'MCP SDK', definition: 'npm install @modelcontextprotocol/sdk — build custom tool servers' },
-          { term: 'Configuration file', definition: '~/.claude/claude_desktop_config.json — register MCP servers globally' },
+          { term: 'MCP SDK', definition: 'npm install @modelcontextprotocol/sdk - build custom tool servers' },
+          { term: 'Configuration file', definition: '~/.claude/claude_desktop_config.json - register MCP servers globally' },
         ]} />
 
         <LessonNav

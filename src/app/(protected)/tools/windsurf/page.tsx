@@ -1,6 +1,8 @@
 'use client'
 import Link from 'next/link'
 import Footer from '@/components/layout/Footer'
+import ToolResources from '@/components/tools/ToolResources'
+import ToolGuideExtras from '@/components/tools/ToolGuideExtras'
 
 export default function WindsurfPage() {
   return (
@@ -25,11 +27,11 @@ export default function WindsurfPage() {
                 <span style={{ background: '#F0FDF4', color: '#16A34A', border: '1px solid #BBF7D0', borderRadius: '999px', padding: '.2rem .75rem', fontSize: '.78rem', fontWeight: 600 }}>Free Tier Available</span>
               </div>
               <h1 style={{ margin: 0, fontSize: '2rem', fontWeight: 800 }}>Windsurf</h1>
-              <p style={{ margin: '.25rem 0 0', color: '#6B7280', fontSize: '1rem' }}>by Codeium — The AI-first IDE built around deep codebase awareness</p>
+              <p style={{ margin: '.25rem 0 0', color: '#6B7280', fontSize: '1rem' }}>by Codeium - The AI-first IDE built around deep codebase awareness</p>
             </div>
           </div>
           <p style={{ fontSize: '1.05rem', color: '#374151', lineHeight: 1.7, marginBottom: 0 }}>
-            Windsurf is a full IDE (based on VS Code) where every feature is designed around AI. Its standout feature is <strong>Cascade</strong> — an agentic AI that understands your entire codebase, not just the current file, and can autonomously plan and execute multi-step tasks.
+            Windsurf is a full IDE (based on VS Code) where every feature is designed around AI. Its standout feature is <strong>Cascade</strong> - an agentic AI that understands your entire codebase, not just the current file, and can autonomously plan and execute multi-step tasks.
           </p>
         </div>
 
@@ -55,19 +57,19 @@ export default function WindsurfPage() {
           <h2 style={{ marginTop: 0, fontSize: '1.3rem' }}>⚡ Install & Setup</h2>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
             <div>
-              <div style={{ fontWeight: 700, marginBottom: '.4rem' }}>Step 1 — Download Windsurf</div>
+              <div style={{ fontWeight: 700, marginBottom: '.4rem' }}>Step 1 - Download Windsurf</div>
               <p style={{ margin: 0, color: '#4B5563' }}>Go to <strong>codeium.com/windsurf</strong> → click Download. Available for macOS (Apple Silicon + Intel), Windows, and Linux.</p>
             </div>
             <div>
-              <div style={{ fontWeight: 700, marginBottom: '.4rem' }}>Step 2 — Sign In (Free Account)</div>
+              <div style={{ fontWeight: 700, marginBottom: '.4rem' }}>Step 2 - Sign In (Free Account)</div>
               <p style={{ margin: 0, color: '#4B5563' }}>Launch Windsurf → click "Sign in with Codeium" → create a free account. No credit card needed for the free tier.</p>
             </div>
             <div>
-              <div style={{ fontWeight: 700, marginBottom: '.4rem' }}>Step 3 — Open Your Project</div>
-              <p style={{ margin: 0, color: '#4B5563' }}>File → Open Folder → select your project. Windsurf indexes your entire codebase in the background — this gives Cascade full context.</p>
+              <div style={{ fontWeight: 700, marginBottom: '.4rem' }}>Step 3 - Open Your Project</div>
+              <p style={{ margin: 0, color: '#4B5563' }}>File → Open Folder → select your project. Windsurf indexes your entire codebase in the background - this gives Cascade full context.</p>
             </div>
             <div>
-              <div style={{ fontWeight: 700, marginBottom: '.4rem' }}>Step 4 — Open Cascade</div>
+              <div style={{ fontWeight: 700, marginBottom: '.4rem' }}>Step 4 - Open Cascade</div>
               <p style={{ margin: 0, color: '#4B5563' }}>Press <kbd style={{ background: '#F3F4F6', border: '1px solid #D1D5DB', borderRadius: 4, padding: '.1rem .4rem', fontFamily: 'monospace', fontSize: '.9rem' }}>Cmd+L</kbd> (Mac) or <kbd style={{ background: '#F3F4F6', border: '1px solid #D1D5DB', borderRadius: 4, padding: '.1rem .4rem', fontFamily: 'monospace', fontSize: '.9rem' }}>Ctrl+L</kbd> (Windows) to open the Cascade panel on the right.</p>
             </div>
           </div>
@@ -79,10 +81,10 @@ export default function WindsurfPage() {
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1rem' }}>
             {[
               { icon: '🌊', name: 'Cascade (Agentic AI)', desc: 'Autonomous AI agent that reads your codebase, plans multi-file changes, runs terminal commands, and iterates until the task is complete.' },
-              { icon: '💡', name: 'Supercomplete', desc: 'Context-aware inline completion that understands your entire repo — not just the current line. Predicts whole functions and logical next steps.' },
+              { icon: '💡', name: 'Supercomplete', desc: 'Context-aware inline completion that understands your entire repo - not just the current line. Predicts whole functions and logical next steps.' },
               { icon: '💬', name: 'Chat Mode', desc: 'Ask questions about your code. Reference files with @filename. Cascade answers with full repo context.' },
-              { icon: '🔍', name: 'Codebase Indexing', desc: 'Windsurf automatically indexes your project so Cascade knows every function, class, and file — no need to paste context manually.' },
-              { icon: '🔌', name: 'VS Code Compatible', desc: 'All your VS Code extensions work in Windsurf. Same keybindings, themes, and settings — minimal transition friction.' },
+              { icon: '🔍', name: 'Codebase Indexing', desc: 'Windsurf automatically indexes your project so Cascade knows every function, class, and file - no need to paste context manually.' },
+              { icon: '🔌', name: 'VS Code Compatible', desc: 'All your VS Code extensions work in Windsurf. Same keybindings, themes, and settings - minimal transition friction.' },
               { icon: '🆓', name: 'Generous Free Tier', desc: 'Free tier includes 25 Cascade uses per month + unlimited completions. Premium adds higher limits and GPT-4/Claude models.' },
             ].map(f => (
               <div key={f.name} style={{ padding: '1rem', background: '#F9FAFB', borderRadius: 8, border: '1px solid #F3F4F6' }}>
@@ -109,12 +111,12 @@ export default function WindsurfPage() {
           </div>
 
           <div style={{ marginBottom: '1.5rem' }}>
-            <div style={{ fontWeight: 700, marginBottom: '.5rem', color: '#374151' }}>2. Cascade — Agentic Task</div>
+            <div style={{ fontWeight: 700, marginBottom: '.5rem', color: '#374151' }}>2. Cascade - Agentic Task</div>
             <p style={{ color: '#4B5563', marginBottom: '.5rem' }}>Open Cascade (Cmd+L) and type a high-level task:</p>
             <div style={{ background: '#F0FDF4', border: '1px solid #BBF7D0', borderRadius: 8, padding: '1rem 1.25rem', fontSize: '.9rem', color: '#166534', lineHeight: 1.7 }}>
               "Add pagination to the /api/products endpoint. Use cursor-based pagination. Update the React ProductList component to load more on scroll. Add tests for the new params."
             </div>
-            <p style={{ color: '#4B5563', marginTop: '.75rem', fontSize: '.9rem' }}>Cascade reads your existing files, proposes a plan, writes the changes, and runs your tests — all without you writing a single line.</p>
+            <p style={{ color: '#4B5563', marginTop: '.75rem', fontSize: '.9rem' }}>Cascade reads your existing files, proposes a plan, writes the changes, and runs your tests - all without you writing a single line.</p>
           </div>
 
           <div>
@@ -122,7 +124,7 @@ export default function WindsurfPage() {
             <div style={{ background: '#F0FDF4', border: '1px solid #BBF7D0', borderRadius: 8, padding: '1rem 1.25rem', fontSize: '.9rem', color: '#166534', lineHeight: 1.7 }}>
               "Where does this app handle authentication? Walk me through the full auth flow from login to session."
             </div>
-            <p style={{ color: '#4B5563', marginTop: '.75rem', fontSize: '.9rem' }}>Cascade traces through your actual files and gives a specific answer with file references — no need to grep the codebase yourself.</p>
+            <p style={{ color: '#4B5563', marginTop: '.75rem', fontSize: '.9rem' }}>Cascade traces through your actual files and gives a specific answer with file references - no need to grep the codebase yourself.</p>
           </div>
         </div>
 
@@ -130,11 +132,11 @@ export default function WindsurfPage() {
         <div style={{ background: '#FFF7ED', border: '1px solid #FED7AA', borderRadius: 12, padding: '1.5rem', marginBottom: '1.5rem' }}>
           <h3 style={{ marginTop: 0, color: '#92400E', fontSize: '1.1rem' }}>💡 Pro Tips</h3>
           <ul style={{ margin: 0, paddingLeft: '1.25rem', color: '#78350F', lineHeight: 2 }}>
-            <li>Let Windsurf fully index your project before using Cascade — wait for the indexing spinner to finish</li>
+            <li>Let Windsurf fully index your project before using Cascade - wait for the indexing spinner to finish</li>
             <li>Use <strong>@filename</strong> in Cascade to focus on specific files</li>
-            <li>Cascade can run terminal commands — useful for running tests and seeing results inline</li>
+            <li>Cascade can run terminal commands - useful for running tests and seeing results inline</li>
             <li>Migrate from VS Code in seconds: Settings → Import from VS Code</li>
-            <li>For large tasks, set scope in your prompt: "Only modify files in src/api/ — do not touch the frontend"</li>
+            <li>For large tasks, set scope in your prompt: "Only modify files in src/api/ - do not touch the frontend"</li>
           </ul>
         </div>
 
@@ -159,6 +161,29 @@ export default function WindsurfPage() {
         </div>
 
         {/* Related Tools */}
+        <ToolGuideExtras
+          current="windsurf"
+          troubleshooting={[
+            { problem: 'Cascade will not run', fix: 'Sign in and check your plan credits. Cascade actions consume credits on the free tier; they refill or require a paid plan.' },
+            { problem: 'Confused: the app vs the plugin', fix: 'Windsurf is the standalone IDE; the Windsurf plugin (formerly Codeium) adds completions to VS Code / JetBrains. Pick one per editor.' },
+            { problem: 'Slow indexing on big repos', fix: 'First open indexes the whole codebase - let it finish. Exclude build/vendor folders to speed it up.' },
+            { problem: 'Completions stopped', fix: 'Sign out and back in, and confirm Windsurf is the only AI completion engine running (two engines conflict).' },
+          ]}
+          lessons={[
+            { label: 'L46 - Agentic Coding', href: '/level5/lesson46' },
+            { label: 'L40 - AI Chat for Development', href: '/level5/lesson40' },
+            { label: 'L47 - Custom AI Extensions', href: '/level5/lesson47' },
+            { label: 'L56 - From Prompter to Loop Designer', href: '/level7/lesson56' },
+          ]}
+        />
+
+        <ToolResources links={[
+          { label: 'Download Windsurf', href: 'https://windsurf.com', note: 'Mac, Windows, Linux (now part of Cognition / Devin)' },
+          { label: 'VS Code / JetBrains plugin', href: 'https://marketplace.visualstudio.com/items?itemName=Codeium.codeium', note: 'Windsurf plugin (formerly Codeium)' },
+          { label: 'Pricing', href: 'https://windsurf.com/pricing', note: 'Free tier + paid plans' },
+          { label: 'Changelog', href: 'https://windsurf.com/changelog', note: 'Release notes' },
+        ]} />
+
         <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
           <Link href="/tools/cursor" style={{ background: 'white', border: '1px solid #E5E7EB', borderRadius: 8, padding: '.75rem 1.25rem', fontSize: '.875rem', color: '#374151', textDecoration: 'none', fontWeight: 600 }}>→ Compare: Cursor</Link>
           <Link href="/tools/vscode-ai" style={{ background: 'white', border: '1px solid #E5E7EB', borderRadius: 8, padding: '.75rem 1.25rem', fontSize: '.875rem', color: '#374151', textDecoration: 'none', fontWeight: 600 }}>→ Compare: VS Code + AI</Link>

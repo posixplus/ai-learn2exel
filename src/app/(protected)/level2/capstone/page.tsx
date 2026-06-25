@@ -4,6 +4,7 @@ import PromptBox from '@/components/lesson/PromptBox'
 import HandsOn from '@/components/lesson/HandsOn'
 import Callout from '@/components/lesson/Callout'
 import LevelFeedback from '@/components/lesson/LevelFeedback'
+import LevelQuiz from '@/components/lesson/LevelQuiz'
 
 export default function Level2Capstone() {
   return (
@@ -66,7 +67,7 @@ export default function Level2Capstone() {
               </div>
               <div style={{ border: '2px solid #059669', borderRadius: '10px', padding: '1.5rem' }}>
                 <h3 style={{ marginTop: 0, color: '#065f46' }}>Track D: The Builder</h3>
-                <p style={{ fontSize: '0.9rem' }}>Create a &quot;mini AI product&quot; — a documented prompt chain that solves a specific problem, written as an SOP you could hand to a colleague.</p>
+                <p style={{ fontSize: '0.9rem' }}>Create a &quot;mini AI product&quot; - a documented prompt chain that solves a specific problem, written as an SOP you could hand to a colleague.</p>
                 <p style={{ fontSize: '0.85rem', color: '#64748b' }}><strong>End result:</strong> A shareable, reusable AI workflow with a live demo.</p>
               </div>
             </div>
@@ -81,7 +82,7 @@ export default function Level2Capstone() {
               duration="90 min"
               steps={[
                 'Choose a real topic relevant to your work that you\'d normally spend hours researching.',
-                'Run the Research Sprint prompt (below). Get 8–10 synthesized sources in 15 minutes.',
+                'Run the Research Sprint prompt (below). Get 8-10 synthesized sources in 15 minutes.',
                 'Paste the research output back into Claude and ask it to identify the 3 key themes.',
                 'Ask Claude to write a 500-word executive brief using those themes.',
                 'Run the Data Analysis prompt if you have any relevant numbers or trends.',
@@ -93,7 +94,7 @@ export default function Level2Capstone() {
               <PromptBox label="Research Sprint Prompt">
 {`You are a research analyst. I need a synthesis on: [YOUR TOPIC]
 
-Find and summarize 8–10 key sources or findings. For each:
+Find and summarize 8-10 key sources or findings. For each:
 - Source name / author / year
 - One-sentence main finding
 - Relevance to [YOUR CONTEXT/ROLE]
@@ -119,9 +120,9 @@ End with: 3 recommended actions.`}
                 'Identify the #1 task that eats your team\'s time every week (e.g., status reports, meeting prep, emails).',
                 'Create a Claude Project. Write a system prompt for your role as a manager (use the template from Lesson 16).',
                 'Upload your team\'s most-used template, style guide, or SOP document.',
-                'Build Automation 1: Email summarizer — new emails from key stakeholders → Claude brief → Slack.',
-                'Build Automation 2: Meeting prep — 30 min before a meeting → Claude drafts agenda + talking points → sent to you.',
-                'Build Automation 3: Status report — every Friday 4pm → Claude generates weekly summary → Google Doc.',
+                'Build Automation 1: Email summarizer - new emails from key stakeholders → Claude brief → Slack.',
+                'Build Automation 2: Meeting prep - 30 min before a meeting → Claude drafts agenda + talking points → sent to you.',
+                'Build Automation 3: Status report - every Friday 4pm → Claude generates weekly summary → Google Doc.',
                 'Create a 1-page "AI Starter Guide" for your team: 5 prompts, how to access Claude, what it\'s useful for.',
                 'Demo one workflow live to your team. Measure: how long does it take now vs. before?',
               ]}
@@ -152,8 +153,8 @@ OUTPUT FORMAT: Summary | Details | Action Items | Timeline`}
               steps={[
                 'List the top 5 tasks in your profession that take the most time and follow a repeatable pattern.',
                 'Create a Claude Project. Write a detailed system prompt with your professional context, constraints, and standards.',
-                'Upload 2–3 reference documents: your professional guidelines, templates, or past high-quality work.',
-                'Write and test 10 prompts — 2 for each of your top 5 tasks. Save them to your prompt library.',
+                'Upload 2-3 reference documents: your professional guidelines, templates, or past high-quality work.',
+                'Write and test 10 prompts - 2 for each of your top 5 tasks. Save them to your prompt library.',
                 'Identify the one task that is most repetitive and most automatable.',
                 'Build one automation in Zapier or Make that handles that task with minimal input from you.',
                 'Run a full "day in the life" test: use your Project for everything you do today.',
@@ -185,8 +186,8 @@ NEVER:
               title="Build a Shareable AI Workflow"
               duration="90 min"
               steps={[
-                'Identify one specific problem in your organization that AI could solve — something others face too.',
-                'Design a 3–5 step prompt chain: each step takes the output of the previous one as input.',
+                'Identify one specific problem in your organization that AI could solve - something others face too.',
+                'Design a 3-5 step prompt chain: each step takes the output of the previous one as input.',
                 'Test every step with real data. Iterate until each step produces reliable output.',
                 'Document it as a 1-page SOP: Problem → Steps → Prompts → Expected Output → Common Issues.',
                 'Record a short demo (Loom or screen recording) showing the full workflow in action.',
@@ -201,12 +202,12 @@ PROBLEM IT SOLVES: [Specific pain point]
 TIME SAVED: [Estimated hours per week]
 REQUIRES: Claude [free/Pro] + [any other tools]
 
-STEP 1 — [Name]:
+STEP 1 - [Name]:
 Input: [What do you paste in?]
 Prompt: [FULL PROMPT]
 Output: [What do you get?]
 
-STEP 2 — [Name]:
+STEP 2 - [Name]:
 Input: [Output from Step 1 + anything new]
 Prompt: [FULL PROMPT]
 Output: [What do you get?]
@@ -225,7 +226,7 @@ COMMON ISSUES: [What goes wrong and how to fix it]`}
               {[
                 'What\'s the one workflow you built that now saves you the most time? Be specific.',
                 'What was harder than expected? What was surprisingly easy?',
-                'What AI workflow would you build next — if you had one more week?',
+                'What AI workflow would you build next - if you had one more week?',
                 'How would you explain AI\'s role in your work to a skeptical colleague in 2 sentences?',
                 'What\'s your biggest remaining question about AI after completing Level 2?',
               ].map((q, i) => (
@@ -281,7 +282,8 @@ COMMON ISSUES: [What goes wrong and how to fix it]`}
             </Link>
           </div>
 
-        <LevelFeedback level={2} levelTitle="Applied AI — Research, Writing & Automation" />
+        <LevelQuiz level={2} />
+        <LevelFeedback level={2} levelTitle="Applied AI - Research, Writing & Automation" />
           <Footer />
         </div>
       </main>

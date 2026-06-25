@@ -14,23 +14,23 @@ export default function Lesson34() {
           lessonNumber={34}
           duration={80}
           title="Multi-Modal: Vision & Docs"
-          subtitle="Claude can see. Send images, screenshots, PDFs, and diagrams — and get intelligent answers back."
+          subtitle="Claude can see. Send images, screenshots, PDFs, and diagrams - and get intelligent answers back."
         />
 
         <section className="section-card">
           <h2>What Claude Can See</h2>
           <p>
             Claude 3+ is natively multi-modal. You can send images directly in the
-            API request — no separate vision model or OCR pipeline required. Claude
+            API request - no separate vision model or OCR pipeline required. Claude
             understands diagrams, screenshots, charts, handwriting, and documents.
           </p>
           <div className="info-box">
             <strong>Supported formats:</strong>
             <ul>
               <li>Images: JPEG, PNG, GIF, WebP (up to 20MB per image)</li>
-              <li>PDFs: sent as base64 or URL — Claude reads every page</li>
+              <li>PDFs: sent as base64 or URL - Claude reads every page</li>
               <li>Up to 20 images per request (across all content blocks)</li>
-              <li>No separate OCR step — Claude extracts text from images automatically</li>
+              <li>No separate OCR step - Claude extracts text from images automatically</li>
             </ul>
           </div>
         </section>
@@ -53,7 +53,7 @@ def analyse_image(image_path: str, question: str) -> str:
     media_type = media_types.get(ext, "image/jpeg")
 
     response = client.messages.create(
-        model="claude-opus-4-5",
+        model="claude-opus-4-8",
         max_tokens=1024,
         messages=[{
             "role": "user",
@@ -81,9 +81,9 @@ print(analyse_image("diagram.png",
 
         <section className="section-card">
           <h2>Sending an Image: URL</h2>
-          <pre className="code-block">{`# Faster — no need to download the image first
+          <pre className="code-block">{`# Faster - no need to download the image first
 response = client.messages.create(
-    model="claude-opus-4-5",
+    model="claude-opus-4-8",
     max_tokens=512,
     messages=[{
         "role": "user",
@@ -114,7 +114,7 @@ def analyse_pdf(pdf_path: str, question: str) -> str:
         pdf_data = base64.standard_b64encode(f.read()).decode("utf-8")
 
     response = client.messages.create(
-        model="claude-opus-4-5",
+        model="claude-opus-4-8",
         max_tokens=2048,
         messages=[{
             "role": "user",
@@ -157,7 +157,7 @@ export async function POST(req: Request) {
   const base64 = Buffer.from(buffer).toString('base64')
 
   const response = await client.messages.create({
-    model: 'claude-opus-4-5',
+    model: 'claude-opus-4-8',
     max_tokens: 1024,
     messages: [{
       role: 'user',
@@ -183,13 +183,13 @@ export async function POST(req: Request) {
           <h2>High-Value Vision Use Cases</h2>
           <div className="info-box">
             <ul>
-              <li><strong>Receipt / invoice OCR</strong> — extract structured data from photos of documents</li>
-              <li><strong>Screenshot-to-code</strong> — "Implement this UI in React/Tailwind"</li>
-              <li><strong>Chart analysis</strong> — trend extraction, anomaly detection in graphs</li>
-              <li><strong>Form processing</strong> — extract fields from filled paper forms</li>
-              <li><strong>Diagram explanation</strong> — explain architecture diagrams, flowcharts, ERDs</li>
-              <li><strong>Quality inspection</strong> — flag defects in product photos</li>
-              <li><strong>Accessibility audit</strong> — describe UI screenshots for screen reader compliance checks</li>
+              <li><strong>Receipt / invoice OCR</strong> - extract structured data from photos of documents</li>
+              <li><strong>Screenshot-to-code</strong> - "Implement this UI in React/Tailwind"</li>
+              <li><strong>Chart analysis</strong> - trend extraction, anomaly detection in graphs</li>
+              <li><strong>Form processing</strong> - extract fields from filled paper forms</li>
+              <li><strong>Diagram explanation</strong> - explain architecture diagrams, flowcharts, ERDs</li>
+              <li><strong>Quality inspection</strong> - flag defects in product photos</li>
+              <li><strong>Accessibility audit</strong> - describe UI screenshots for screen reader compliance checks</li>
             </ul>
           </div>
         </section>
@@ -202,7 +202,7 @@ export async function POST(req: Request) {
               <li>Take a photo of any receipt (or find one online)</li>
               <li>Send it to Claude with the prompt: "Extract all line items, totals, tax, and merchant name as JSON"</li>
               <li>Parse the JSON response and display it in a clean table</li>
-              <li>Add a "category" field — ask Claude to categorise each item (food, transport, office, etc.)</li>
+              <li>Add a "category" field - ask Claude to categorise each item (food, transport, office, etc.)</li>
             </ol>
             <p><strong>Stretch:</strong> Build a Next.js drag-and-drop page where users upload receipt images and get a monthly expense summary automatically.</p>
           </div>
@@ -214,8 +214,8 @@ export async function POST(req: Request) {
             { term: 'Image block', definition: 'type: "image", source: {type: "base64"|"url", ...}' },
             { term: 'Document block', definition: 'type: "document", source: {media_type: "application/pdf", data: base64}' },
             { term: 'Max images', definition: '20 images per request, up to 20MB each' },
-            { term: 'No OCR needed', definition: 'Claude reads text in images natively — no preprocessing required' },
-            { term: 'URL source', definition: 'Pass a public image URL directly — faster than base64 for remote images' },
+            { term: 'No OCR needed', definition: 'Claude reads text in images natively - no preprocessing required' },
+            { term: 'URL source', definition: 'Pass a public image URL directly - faster than base64 for remote images' },
             { term: 'Vision + tools', definition: 'Combine image input with tool use for structured extraction workflows' },
           ]}
         />

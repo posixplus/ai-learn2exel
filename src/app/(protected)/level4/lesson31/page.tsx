@@ -20,17 +20,17 @@ export default function Lesson31() {
         <section className="section-card">
           <h2>What is RAG and Why Does It Matter?</h2>
           <p>
-            Claude knows a lot — but not your company wiki, your product docs, or
+            Claude knows a lot - but not your company wiki, your product docs, or
             last week's sales data. RAG solves this by retrieving relevant chunks of
             your data at query time and stuffing them into Claude's context window.
           </p>
           <div className="info-box">
             <strong>RAG pipeline in 4 steps:</strong>
             <ol>
-              <li><strong>Ingest</strong> — chunk your documents, embed each chunk into a vector</li>
-              <li><strong>Store</strong> — save vectors in a vector database (Supabase pgvector, Pinecone, etc.)</li>
-              <li><strong>Retrieve</strong> — embed the user query, find closest chunks by cosine similarity</li>
-              <li><strong>Generate</strong> — pass retrieved chunks + question to Claude, get grounded answer</li>
+              <li><strong>Ingest</strong> - chunk your documents, embed each chunk into a vector</li>
+              <li><strong>Store</strong> - save vectors in a vector database (Supabase pgvector, Pinecone, etc.)</li>
+              <li><strong>Retrieve</strong> - embed the user query, find closest chunks by cosine similarity</li>
+              <li><strong>Generate</strong> - pass retrieved chunks + question to Claude, get grounded answer</li>
             </ol>
           </div>
         </section>
@@ -82,7 +82,7 @@ chunks = splitter.split_text(your_document)`}</pre>
           <h2>Step 2: Embeddings + Supabase pgvector</h2>
           <p>
             We'll use OpenAI's embedding model (or Voyage AI, which is excellent for
-            Claude workflows) and store vectors in Supabase — free tier included.
+            Claude workflows) and store vectors in Supabase - free tier included.
           </p>
 
           <pre className="code-block">{`-- In Supabase SQL editor:
@@ -169,7 +169,7 @@ ingest_document(open("handbook.txt").read(),
 
     # Generate grounded answer
     response = claude.messages.create(
-        model="claude-opus-4-5",
+        model="claude-opus-4-8",
         max_tokens=512,
         system="""You are a helpful assistant. Answer using ONLY
 the context provided. If the answer isn't in the context,
@@ -205,10 +205,10 @@ print(ask("What is our parental leave policy?"))`}</pre>
             <ol>
               <li>Chunk 3+ documents and store in Supabase with the SQL schema above</li>
               <li>Build a query function that retrieves and passes to Claude</li>
-              <li>Test with 5 questions — note where it gets it right vs. wrong</li>
+              <li>Test with 5 questions - note where it gets it right vs. wrong</li>
               <li>Add source citation: include the metadata source in the response</li>
             </ol>
-            <p><strong>Stretch:</strong> Add a confidence score — if the highest similarity is below 0.75, have Claude say it's not sure rather than hallucinating.</p>
+            <p><strong>Stretch:</strong> Add a confidence score - if the highest similarity is below 0.75, have Claude say it's not sure rather than hallucinating.</p>
           </div>
         </section>
 
@@ -217,8 +217,8 @@ print(ask("What is our parental leave policy?"))`}</pre>
           items={[
             { term: 'RAG', definition: 'Retrieve relevant chunks at query time, pass to Claude as context' },
             { term: 'Chunking', definition: '500-1000 chars, 10-15% overlap, split on paragraphs first' },
-            { term: 'pgvector', definition: 'Postgres extension for vector storage — built into Supabase' },
-            { term: 'Cosine similarity', definition: '1 - (embedding <=> query_embedding) — ranges 0 to 1' },
+            { term: 'pgvector', definition: 'Postgres extension for vector storage - built into Supabase' },
+            { term: 'Cosine similarity', definition: '1 - (embedding <=> query_embedding) - ranges 0 to 1' },
             { term: 'Voyage AI', definition: 'Anthropic-recommended embedding model, great for Claude RAG' },
             { term: 'HyDE', definition: 'Generate hypothetical answer, embed it for better retrieval' },
           ]}

@@ -28,11 +28,11 @@ export default function Lesson35() {
           <div className="info-box">
             <strong>Production checklist overview:</strong>
             <ul>
-              <li>Prompt caching — cut costs by up to 90% on repeated context</li>
-              <li>Rate limit handling — exponential backoff, queuing</li>
-              <li>Error handling — retry logic, graceful degradation</li>
-              <li>Observability — logging, latency tracking, error alerts</li>
-              <li>Cost control — per-user limits, budget alerts</li>
+              <li>Prompt caching - cut costs by up to 90% on repeated context</li>
+              <li>Rate limit handling - exponential backoff, queuing</li>
+              <li>Error handling - retry logic, graceful degradation</li>
+              <li>Observability - logging, latency tracking, error alerts</li>
+              <li>Cost control - per-user limits, budget alerts</li>
             </ul>
           </div>
         </section>
@@ -54,7 +54,7 @@ LARGE_SYSTEM = """You are an expert customer support agent for Acme Corp.
 
 def support_reply(user_message: str) -> str:
     response = client.messages.create(
-        model="claude-opus-4-5",
+        model="claude-opus-4-8",
         max_tokens=512,
         system=[
             {
@@ -79,7 +79,7 @@ def support_reply(user_message: str) -> str:
               <li>System prompt over 1,024 tokens (minimum cacheable size)</li>
               <li>RAG context that's the same across multiple user turns</li>
               <li>Few-shot examples that don't change per request</li>
-              <li>Cache TTL is 5 minutes — keep requests coming to maintain the cache</li>
+              <li>Cache TTL is 5 minutes - keep requests coming to maintain the cache</li>
             </ul>
           </div>
         </section>
@@ -105,10 +105,10 @@ def call_with_retry(max_retries: int = 5, **kwargs) -> str:
             time.sleep(wait)
 
         except APIStatusError as e:
-            if e.status_code >= 500:  # server error — retry
+            if e.status_code >= 500:  # server error - retry
                 time.sleep(2 ** attempt)
             else:
-                raise  # 4xx — don't retry (bad request, auth, etc.)
+                raise  # 4xx - don't retry (bad request, auth, etc.)
 
     raise RuntimeError("Max retries exceeded")`}</pre>
         </section>
@@ -121,7 +121,7 @@ def call_with_retry(max_retries: int = 5, **kwargs) -> str:
   "timestamp": "2025-01-15T10:23:11Z",
   "user_id": "user_abc",
   "feature": "support_chat",
-  "model": "claude-opus-4-5",
+  "model": "claude-opus-4-8",
   "input_tokens": 1240,
   "output_tokens": 312,
   "cache_read_tokens": 980,       # how much was cached
@@ -133,7 +133,7 @@ def call_with_retry(max_retries: int = 5, **kwargs) -> str:
 
 # Alert on:
 # - stop_reason == "max_tokens" (increase max_tokens or truncate input)
-# - latency_ms > 10000 (p99 spike — investigate)
+# - latency_ms > 10000 (p99 spike - investigate)
 # - error rate > 1% (API issues or prompt problems)
 # - daily cost > threshold (budget breach)`}</pre>
         </section>
@@ -160,7 +160,7 @@ def check_rate_limit(user_id: str,
 def handle_chat(user_id: str, message: str):
     if not check_rate_limit(user_id):
         return {"error": "Too many requests. Try again in a minute."}, 429
-    return {"reply": call_with_retry(model="claude-opus-4-5",
+    return {"reply": call_with_retry(model="claude-opus-4-8",
                                       max_tokens=512,
                                       messages=[{"role":"user",
                                                  "content": message}])}`}</pre>
@@ -171,10 +171,10 @@ def handle_chat(user_id: str, message: str):
           <div className="info-box">
             <strong>When Claude is slow or unavailable, have a fallback plan:</strong>
             <ul>
-              <li><strong>Cached responses</strong> — for high-traffic, repeated queries, cache Claude's output</li>
-              <li><strong>Haiku fallback</strong> — if Opus is slow, retry with Haiku at lower quality</li>
-              <li><strong>Queue + async</strong> — for non-realtime tasks, queue the job and notify when done</li>
-              <li><strong>Partial responses</strong> — stream partial output so users see progress even if it's slow</li>
+              <li><strong>Cached responses</strong> - for high-traffic, repeated queries, cache Claude's output</li>
+              <li><strong>Haiku fallback</strong> - if Opus is slow, retry with Haiku at lower quality</li>
+              <li><strong>Queue + async</strong> - for non-realtime tasks, queue the job and notify when done</li>
+              <li><strong>Partial responses</strong> - stream partial output so users see progress even if it's slow</li>
             </ul>
           </div>
         </section>
@@ -182,11 +182,11 @@ def handle_chat(user_id: str, message: str):
         <QuickRef
           title="Lesson 35 Quick Reference"
           items={[
-            { term: 'Prompt caching', definition: 'cache_control: {type: "ephemeral"} — 90% discount on repeated context' },
-            { term: 'Cache TTL', definition: '5 minutes — keep requests flowing to maintain cache hit' },
+            { term: 'Prompt caching', definition: 'cache_control: {type: "ephemeral"} - 90% discount on repeated context' },
+            { term: 'Cache TTL', definition: '5 minutes - keep requests flowing to maintain cache hit' },
             { term: 'Retry logic', definition: 'Exponential backoff: 2^attempt seconds; max 5 retries' },
-            { term: 'RateLimitError', definition: 'anthropic.RateLimitError — back off; APIStatusError >= 500 also retry' },
-            { term: 'stop_reason max_tokens', definition: 'Bad sign — response was cut off. Increase max_tokens or shorten input' },
+            { term: 'RateLimitError', definition: 'anthropic.RateLimitError - back off; APIStatusError >= 500 also retry' },
+            { term: 'stop_reason max_tokens', definition: 'Bad sign - response was cut off. Increase max_tokens or shorten input' },
             { term: 'Per-user limits', definition: 'Redis INCR + EXPIRE for sliding window rate limiting' },
           ]}
         />

@@ -14,29 +14,29 @@ export default function Lesson24() {
             subtitle="Build custom skills from scratch, chain tools, and automate the tasks you do every day" />
 
           <section className="section-card">
-            <h2>Cowork vs Claude Code — When to Use Which</h2>
+            <h2>Cowork vs Claude Code - When to Use Which</h2>
             <div className="steps-list">
               <div className="step">
-                <strong>Claude Code — for technical work</strong>
+                <strong>Claude Code - for technical work</strong>
                 <p>Terminal-based. Deep code editing, file operations, Git, shell commands, debugging. Built for developers who live in the terminal.</p>
               </div>
               <div className="step">
-                <strong>Cowork — for knowledge work</strong>
+                <strong>Cowork - for knowledge work</strong>
                 <p>Desktop app. Skills system, plugins, Desktop Commander, scheduled tasks, GUI-friendly. Built for writing, research, analysis, and cross-tool automation.</p>
               </div>
             </div>
-            <p>Power users use both. They share the same Claude model and MCP ecosystem — what you set up in one works in the other.</p>
+            <p>Power users use both. They share the same Claude model and MCP ecosystem - what you set up in one works in the other.</p>
           </section>
 
           <section className="section-card">
             <h2>How the Skills System Works</h2>
-            <p>Skills are triggered programs that give Claude specialized capabilities. Each skill is defined by a <code>SKILL.md</code> file — a markdown document Claude reads before executing the skill.</p>
-            <p>When you describe a task in Cowork, Claude identifies the matching skill and follows its SKILL.md instructions using whatever tools and MCPs are available. Skills are composable — one skill can call another.</p>
+            <p>Skills are triggered programs that give Claude specialized capabilities. Each skill is defined by a <code>SKILL.md</code> file - a markdown document Claude reads before executing the skill.</p>
+            <p>When you describe a task in Cowork, Claude identifies the matching skill and follows its SKILL.md instructions using whatever tools and MCPs are available. Skills are composable - one skill can call another.</p>
           </section>
 
           <section className="section-card">
             <h2>Anatomy of a SKILL.md</h2>
-            <p>Before building one, understand what a skill file contains. Here's the actual structure of a real built-in skill — <code>daily-briefing</code>:</p>
+            <p>Before building one, understand what a skill file contains. Here's the actual structure of a real built-in skill - <code>daily-briefing</code>:</p>
             <pre>{`# Daily Briefing Skill
 
 ## When to Use
@@ -73,10 +73,10 @@ Output exactly this structure:
 ## Good morning! Here's your {day}, {date}
 
 ### 📅 Today's Schedule ({N} meetings)
-{chronological list, each: time — title — attendees if relevant}
+{chronological list, each: time - title - attendees if relevant}
 
 ### 📧 Email Actions Needed ({N} emails)  
-{list: sender — subject — what action is needed — deadline if stated}
+{list: sender - subject - what action is needed - deadline if stated}
 
 ### ✅ Top Tasks
 {top 3 incomplete tasks, most important first}
@@ -138,18 +138,18 @@ Use exactly this template:
 **Date:** {date} | **Attendees:** {list}
 
 ### 🎯 Decisions Made
-{bullet list — each decision as one clear sentence}
+{bullet list - each decision as one clear sentence}
 
 ### ✅ Action Items
 | Owner | Action | Due |
 |-------|--------|-----|
-{row per action item — use "TBD" for unspecified owners/dates}
+{row per action item - use "TBD" for unspecified owners/dates}
 
 ### ❓ Open Questions
-{bullet list — each question with who owns finding the answer}
+{bullet list - each question with who owns finding the answer}
 
 ### 💡 Key Insights
-{bullet list — 3-5 notable points worth remembering}
+{bullet list - 3-5 notable points worth remembering}
 
 ### 📋 Next Steps
 {1-3 sentence summary of immediate next steps}
@@ -188,7 +188,7 @@ Date: [today] | Attendees: Sarah, Mike
 | [You] | Follow up with legal on data retention policy | ASAP |
 
 ❓ Open Questions
-- Enterprise tier pricing model — who owns this decision?
+- Enterprise tier pricing model - who owns this decision?
 
 💡 Key Insights
 - v1 deprecation requires a migration path for existing customers
@@ -250,13 +250,13 @@ everyone should update their tickets by eod."`}</pre>
 │   │   └── SKILL.md
 │   └── skill-two/
 │       └── SKILL.md
-└── mcp-configs/           # optional — MCP servers this plugin needs
+└── mcp-configs/           # optional - MCP servers this plugin needs
     └── github.json`}</pre>
             <p>Install plugins: Cowork Settings → Plugins → Install from file. Or use the <code>create-cowork-plugin</code> skill to build and package your own.</p>
           </section>
 
           <section className="section-card">
-            <h2>Desktop Commander — Controlling Your Mac</h2>
+            <h2>Desktop Commander - Controlling Your Mac</h2>
             <p>Desktop Commander is a built-in MCP that gives Claude direct access to your Mac. Available in both Cowork and Claude Code.</p>
             <div className="steps-list">
               <div className="step">
@@ -295,20 +295,20 @@ consolidated summary table.`}</pre>
           <section className="section-card">
             <h2>Scheduled Tasks in Practice</h2>
             <p>Use the <code>schedule</code> skill to create tasks that run automatically. Real examples:</p>
-            <pre>{`# Weekly report — every Friday at 4:30pm
+            <pre>{`# Weekly report - every Friday at 4:30pm
 "Every Friday at 4:30pm, go through my completed tasks this week,
 draft a weekly summary email, and save it as a Gmail draft to send
 to my manager."
 
-# Daily briefing — every weekday at 8am  
+# Daily briefing - every weekday at 8am  
 "Every weekday at 8am, run my daily briefing skill and send me
 the output via Gmail."
 
-# Monthly file cleanup — 1st of each month
+# Monthly file cleanup - 1st of each month
 "On the 1st of every month at 9am, find all files in ~/Downloads
 older than 60 days and list them for me to review."
 
-# Before every meeting — 15 minutes prior
+# Before every meeting - 15 minutes prior
 "15 minutes before each calendar event, look up the attendees 
 on LinkedIn and prepare 3 talking points based on their recent activity."`}</pre>
           </section>
@@ -332,10 +332,10 @@ on LinkedIn and prepare 3 talking points based on their recent activity."`}</pre
           </section>
 
           <QuickRef title="Lesson 24 Quick Reference" items={[
-            { term: "SKILL.md sections", definition: "When to Use, What You Need, Instructions (steps), Output Format, Example. All are important — don't skip any." },
+            { term: "SKILL.md sections", definition: "When to Use, What You Need, Instructions (steps), Output Format, Example. All are important - don't skip any." },
             { term: "~/.claude/skills/", definition: "Where global custom skills live. Create folder + SKILL.md to add a new skill that works across all Cowork sessions." },
             { term: "skill-creator skill", definition: "A meta-skill that interviews you and writes the SKILL.md for you. Trigger: 'Help me create a skill for [task]'." },
-            { term: "Trigger phrases", definition: "The 'When to Use' section. Add many variations — how you'd naturally ask for this. More triggers = skill activates more reliably." },
+            { term: "Trigger phrases", definition: "The 'When to Use' section. Add many variations - how you'd naturally ask for this. More triggers = skill activates more reliably." },
             { term: "Plugin", definition: "Bundle of skills + MCP configs + manifest. Share with team or install from others. More powerful than individual skills." },
             { term: "Desktop Commander", definition: "Built-in MCP: file ops, process management, shell commands, Spotlight search. Works in both Cowork and Claude Code." },
           ]} />

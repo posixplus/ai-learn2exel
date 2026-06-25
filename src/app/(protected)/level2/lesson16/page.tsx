@@ -28,20 +28,20 @@ export default function Lesson16() {
           <section className="lesson-section">
             <h2>What Are Claude Projects?</h2>
             <p>
-              Claude Projects are persistent AI workspaces where you can set up a specialized assistant that remembers your context, preferences, and reference materials across conversations. Think of it this way: a regular chat is like a sticky note—useful in the moment but forgotten after. A Project is like training a dedicated assistant who has a filing cabinet full of your documents, a clear understanding of your role and goals, and standing instructions on how to help you best.
+              Claude Projects are persistent AI workspaces where you can set up a specialized assistant that remembers your context, preferences, and reference materials across conversations. Think of it this way: a regular chat is like a sticky note-useful in the moment but forgotten after. A Project is like training a dedicated assistant who has a filing cabinet full of your documents, a clear understanding of your role and goals, and standing instructions on how to help you best.
             </p>
             <p>
               In a Project, two things persist permanently:
             </p>
             <ul>
-              <li><strong>System Prompt:</strong> Your permanent instructions to the AI—your role, context, what you want it to always do, what to never do, and your preferred output format.</li>
+              <li><strong>System Prompt:</strong> Your permanent instructions to the AI-your role, context, what you want it to always do, what to never do, and your preferred output format.</li>
               <li><strong>Uploaded Documents:</strong> PDFs, text files, images, and other reference materials (style guides, SOPs, templates, past work) that the AI can access and cite in every conversation.</li>
             </ul>
             <p>
               What does <em>not</em> persist: your actual conversation history is separate. Each new chat in the Project starts fresh conversation history, but the AI has the system prompt and docs ready to go.
             </p>
             <Callout type="info">
-              <strong>Availability Note:</strong> Projects are available on Claude Pro and Team plans. Free users can still use system prompts in individual conversations—they just won't persist automatically. Learn more: <a href="https://support.anthropic.com/en/articles/9517075-what-are-projects" target="_blank" rel="noopener">What are Projects</a>
+              <strong>Availability Note:</strong> Projects are available on Claude Pro and Team plans. Free users can still use system prompts in individual conversations-they just won't persist automatically. Learn more: <a href="https://support.anthropic.com/en/articles/9517075-what-are-projects" target="_blank" rel="noopener">What are Projects</a>
             </Callout>
           </section>
 
@@ -67,19 +67,19 @@ export default function Lesson16() {
               <PromptBox label="System Prompt">
 {`You are a content strategist supporting a B2B SaaS marketing manager. Your role is to draft, edit, and optimize content for our target audience: technical founders and engineering leaders aged 28-45.
 
-CONTEXT: We sell a project management tool for engineering teams. Our brand is direct, honest, and jargon-free. We avoid hype and focus on real use cases. Our audience is skeptical of marketing—they want substance over polish.
+CONTEXT: We sell a project management tool for engineering teams. Our brand is direct, honest, and jargon-free. We avoid hype and focus on real use cases. Our audience is skeptical of marketing-they want substance over polish.
 
 ALWAYS:
 - Start every response with a one-sentence summary of the content direction
 - Reference our brand guide style when revising copy
-- Include 1–2 real usage examples from our customer base (make these realistic, not made-up)
+- Include 1-2 real usage examples from our customer base (make these realistic, not made-up)
 - Flag any claims that need fact-checking or customer validation
 - Suggest a call-to-action for each piece of content
 
 NEVER:
 - Use superlatives like "revolutionary," "game-changing," or "industry-leading" without evidence
 - Recommend using tools or platforms we don't actively use
-- Write in a tone that feels "salesy"—err on the side of understated
+- Write in a tone that feels "salesy"-err on the side of understated
 
 OUTPUT FORMAT: 
 Draft | Revision Suggestions | SEO Notes | Next Steps`}
@@ -91,7 +91,7 @@ Draft | Revision Suggestions | SEO Notes | Next Steps`}
               <PromptBox label="System Prompt">
 {`You are a clinical assistant supporting a busy physician in an outpatient practice. Your role is to help draft, structure, and review clinical documentation quickly without compromising accuracy or completeness.
 
-CONTEXT: You support a family medicine doctor in a 20-patient-per-day practice. Our notes must be compliant with EHR standards, insurance coding requirements, and local healthcare regulations. Efficiency matters—every minute saved helps us see more patients.
+CONTEXT: You support a family medicine doctor in a 20-patient-per-day practice. Our notes must be compliant with EHR standards, insurance coding requirements, and local healthcare regulations. Efficiency matters-every minute saved helps us see more patients.
 
 ALWAYS:
 - Use standard medical terminology and abbreviations (SOAP format, ICD-10 concepts)
@@ -101,7 +101,7 @@ ALWAYS:
 - Suggest appropriate coding suggestions (but note that physician must verify)
 
 NEVER:
-- Make diagnostic conclusions—only organize information for physician review
+- Make diagnostic conclusions-only organize information for physician review
 - Include speculative information without flagging it as such
 - Miss documenting patient education or follow-up instructions
 - Include protected health information (PHI) outside the secure EHR
@@ -148,7 +148,7 @@ Summary | Critical Issues | Medium Issues | Nice-to-Haves | Questions for Author
               <li><strong>Style Guides & Brand Guidelines:</strong> "Write in an active voice. Use 'you' not 'we'. Avoid jargon."</li>
               <li><strong>Standard Operating Procedures (SOPs):</strong> Step-by-step processes your team follows (hiring, customer onboarding, content review).</li>
               <li><strong>Templates & Examples:</strong> Past email campaigns, proposal templates, report formats that show your preferred structure.</li>
-              <li><strong>Product Documentation:</strong> Your product features, API specs, user personas—anything the AI should know about your offering.</li>
+              <li><strong>Product Documentation:</strong> Your product features, API specs, user personas-anything the AI should know about your offering.</li>
               <li><strong>Glossaries & Abbreviations:</strong> Industry terms, company-specific acronyms, and how you define key concepts.</li>
               <li><strong>Past Good Work:</strong> High-quality examples of what you've produced (successful proposals, blog posts, code samples).</li>
             </ul>
@@ -281,10 +281,10 @@ Summary | Critical Issues | Medium Issues | Nice-to-Haves | Questions for Author
               duration="30 min"
               steps={[
                 'Go to claude.ai and click "Create New Project"',
-                'Write your system prompt using the template below. Spend 2–3 minutes getting it right—this is the core of your Project.',
-                'Upload 1–2 relevant documents (a style guide, template, or past example)',
+                'Write your system prompt using the template below. Spend 2-3 minutes getting it right-this is the core of your Project.',
+                'Upload 1-2 relevant documents (a style guide, template, or past example)',
                 'Test it with the three test prompts below. Try to find the gaps in your setup.',
-                'Refine your system prompt based on what you learned. A second iteration is normal—and valuable.',
+                'Refine your system prompt based on what you learned. A second iteration is normal-and valuable.',
               ]}
             >
               <div style={{ marginTop: '20px' }}>
@@ -292,7 +292,7 @@ Summary | Critical Issues | Medium Issues | Nice-to-Haves | Questions for Author
                 <PromptBox label="Copy and customize this">
 {`You are a {YOUR ROLE} helping with {YOUR MAIN TASK}.
 
-CONTEXT: {Describe your work situation, audience, goals, constraints. 2–3 sentences.}
+CONTEXT: {Describe your work situation, audience, goals, constraints. 2-3 sentences.}
 
 ALWAYS:
 - {Standing instruction 1}

@@ -48,7 +48,7 @@ export default function Lesson2() {
 
               <div className="ai-tool-card">
                 <div className="tool-header">
-                  <h3>ChatGPT / GPT-4o</h3>
+                  <h3>ChatGPT (GPT-5.5)</h3>
                   <p className="tool-maker">OpenAI</p>
                 </div>
                 <div className="tool-tags">
@@ -222,12 +222,12 @@ export default function Lesson2() {
                 </tr>
                 <tr>
                   <td><strong>Context Window</strong></td>
-                  <td>200K tokens</td>
-                  <td>128K tokens</td>
-                  <td>1M tokens</td>
+                  <td>200K-1M tokens</td>
+                  <td>~1M tokens</td>
+                  <td>Up to 2M tokens</td>
                   <td>128K tokens</td>
                   <td>Varies</td>
-                  <td>32K tokens</td>
+                  <td>128K tokens</td>
                 </tr>
               </tbody>
             </table>
@@ -250,20 +250,20 @@ export default function Lesson2() {
 
             <h3>Claude (Anthropic)</h3>
             <ul>
-              <li><strong>Free:</strong> Limited messages per day, 200K context window, access to latest model. Good for students, hobbyists, and experimentation.</li>
+              <li><strong>Free:</strong> Limited messages per day, a large context window, access to a recent model. Good for students, hobbyists, and experimentation.</li>
               <li><strong>Claude Pro ($20/month):</strong> Unlimited messages, earlier access to new features, faster responses. Worth it if you use AI multiple hours a day.</li>
             </ul>
 
             <h3>ChatGPT (OpenAI)</h3>
             <ul>
-              <li><strong>Free:</strong> Access to GPT-4o mini (weaker), limited usage, basic features. Fine for casual use.</li>
-              <li><strong>ChatGPT Plus ($20/month):</strong> Unlimited GPT-4o, image generation, web browsing, plugins. Best all-rounder for power users.</li>
+              <li><strong>Free:</strong> Access to GPT-5.5 with daily usage limits and basic features. Fine for casual use.</li>
+              <li><strong>ChatGPT Plus ($20/month):</strong> Much higher GPT-5.5 limits, image generation, web browsing, and agent features. Best all-rounder for power users.</li>
             </ul>
 
             <h3>Gemini (Google)</h3>
             <ul>
-              <li><strong>Free:</strong> Very generous—daily limits are high. Works in Gmail, Docs, Sheets, Drive. Great value if you use Google Workspace.</li>
-              <li><strong>Gemini Advanced ($20/month):</strong> Higher usage limits, access to Gemini 2.0, better performance. Not necessary for most people.</li>
+              <li><strong>Free:</strong> Very generous-daily limits are high. Works in Gmail, Docs, Sheets, Drive. Great value if you use Google Workspace.</li>
+              <li><strong>Gemini Advanced ($20/month):</strong> Higher usage limits, access to the latest Gemini models (such as Gemini 3.5), better performance. Not necessary for most people.</li>
             </ul>
 
             <h3>DeepSeek</h3>
@@ -310,7 +310,7 @@ export default function Lesson2() {
 
           {/* SECTION 5: HANDS-ON */}
           <section className="lesson-section">
-            <h2>Section 5: Hands-On — The Side-by-Side Test</h2>
+            <h2>Section 5: Hands-On - The Side-by-Side Test</h2>
 
             <HandsOn
               title="Compare Two AI Tools Side-by-Side"
@@ -438,22 +438,22 @@ export default function Lesson2() {
           {/* SECTION 7: QUICK REFERENCE */}
           <section className="lesson-section">
             <QuickRef
-              title="Lesson 2 — Quick Reference"
+              title="Lesson 2 - Quick Reference"
               items={[
                 {
                   heading: 'The Big Three',
                   points: [
-                    'Claude (Anthropic) — Best reasoning & writing, privacy-focused',
-                    'ChatGPT (OpenAI) — Best all-rounder, image generation, web search',
-                    'Gemini (Google) — Best free tier, integrates with Google Workspace',
+                    'Claude (Anthropic) - Best reasoning & writing, privacy-focused',
+                    'ChatGPT (OpenAI) - Best all-rounder, image generation, web search',
+                    'Gemini (Google) - Best free tier, integrates with Google Workspace',
                   ],
                 },
                 {
                   heading: 'Other Solid Options',
                   points: [
-                    'DeepSeek — Free, strong coding, good alternative to ChatGPT',
-                    'Llama (Meta) — Open-source, can run locally, privacy-first',
-                    'Mistral — European option, good multilingual support',
+                    'DeepSeek - Free, strong coding, good alternative to ChatGPT',
+                    'Llama (Meta) - Open-source, can run locally, privacy-first',
+                    'Mistral - European option, good multilingual support',
                   ],
                 },
                 {

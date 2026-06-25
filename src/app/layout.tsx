@@ -1,14 +1,19 @@
 import type { Metadata } from 'next'
+import { Suspense } from 'react'
+import Script from 'next/script'
 import './globals.css'
 import { ProgressProvider } from '@/contexts/ProgressContext'
 import WelcomeModal from '@/components/layout/WelcomeModal'
+import ThemeToggle from '@/components/layout/ThemeToggle'
+import CommandPalette from '@/components/layout/CommandPalette'
+import GoogleAnalyticsTracker from '@/components/layout/GoogleAnalytics'
 import { Analytics } from '@vercel/analytics/react'
 
 export const metadata: Metadata = {
-  title: 'AI for Everyone — Learn AI, LLMs & Claude',
+  title: 'AI for Everyone - Learn AI, LLMs & Claude',
   description: 'A free, practical AI course for all professions. Learn prompting, Claude Code, agents, APIs and more. Self-paced.',
   openGraph: {
-    title: 'AI for Everyone — Learn AI, LLMs & Claude',
+    title: 'AI for Everyone - Learn AI, LLMs & Claude',
     description: 'Free practical AI course covering prompting, Claude Code, agents, APIs and more.',
     url: 'https://learn2exel.com',
     siteName: 'AI for Everyone',
@@ -16,7 +21,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'AI for Everyone — Learn AI, LLMs & Claude',
+    title: 'AI for Everyone - Learn AI, LLMs & Claude',
     description: 'Free practical AI course for all professions. Self-paced.',
   },
   metadataBase: new URL('https://learn2exel.com'),
@@ -24,32 +29,30 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <head>
-        {/* Google Tag Manager */}
+        {/* Resolve theme before paint (no flash). Stored choice wins; else OS preference. */}
         <script
           dangerouslySetInnerHTML={{
-            __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-PB989XQ8');`,
+            __html: `(function(){try{var t=localStorage.getItem('ai-course-theme');if(t!=='light'&&t!=='dark'){t=window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}document.documentElement.setAttribute('data-theme',t);}catch(e){}})();`,
           }}
         />
       </head>
       <body>
-        {/* Google Tag Manager (noscript fallback) */}
-        <noscript>
-          <iframe
-            src="https://www.googletagmanager.com/ns.html?id=GTM-PB989XQ8"
-            height="0"
-            width="0"
-            style={{ display: 'none', visibility: 'hidden' }}
-          />
-        </noscript>
+        {/* Google Analytics 4 (loaded via next/script). send_page_view is off;
+            GoogleAnalyticsTracker fires a pageview on every route change. */}
+        <Script src="https://www.googletagmanager.com/gtag/js?id=G-ECLX277HV0" strategy="afterInteractive" />
+        <Script id="ga4-init" strategy="afterInteractive">
+          {`window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ECLX277HV0',{send_page_view:false});`}
+        </Script>
+        <Suspense fallback={null}>
+          <GoogleAnalyticsTracker />
+        </Suspense>
         <ProgressProvider>
           <WelcomeModal />
           {children}
+          <ThemeToggle />
+          <CommandPalette />
         </ProgressProvider>
         <Analytics />
       </body>

@@ -17,7 +17,7 @@ const S = {
   badge: { background: '#FEF3C7', color: '#92400E', border: '1px solid #FDE68A', borderRadius: 4, padding: '.05rem .35rem', fontSize: '.65rem', fontWeight: 700, marginLeft: '.3rem' },
 }
 
-// OS-specific shortcuts — only Mode Switching differs between Mac and Windows
+// OS-specific shortcuts - only Mode Switching differs between Mac and Windows
 const OS_KEYS = {
   mac: {
     cycleMode: '⇧ Tab',
@@ -46,7 +46,7 @@ function KbdRow({ keys, desc, isNew }: { keys: string | string[], desc: string, 
   )
 }
 
-// OS-sensitive shortcut — highlighted in blue to make it obvious it changes
+// OS-sensitive shortcut - highlighted in blue to make it obvious it changes
 function OsKbdRow({ keyVal, desc, isNew }: { keyVal: string, desc: string, isNew?: boolean }) {
   return (
     <div style={S.row}>
@@ -95,7 +95,7 @@ export default function ClaudeCodeCheatSheet() {
         {/* Hero */}
         <div style={{ background: 'linear-gradient(135deg, #1e1b4b, #4338ca)', borderRadius: 18, padding: '2rem 2.5rem', marginBottom: '2rem', color: 'white', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '1rem' }}>
           <div>
-            <h1 style={{ margin: 0, fontSize: '1.9rem', fontWeight: 900, letterSpacing: '-.02em' }}>⌨️ Claude Code — Cheat Sheet</h1>
+            <h1 style={{ margin: 0, fontSize: '1.9rem', fontWeight: 900, letterSpacing: '-.02em' }}>⌨️ Claude Code - Cheat Sheet</h1>
             <p style={{ margin: '.4rem 0 0', opacity: .8, fontSize: '.95rem' }}>Keyboard shortcuts · Slash commands · Workflows · MCP · Memory · CLI flags</p>
           </div>
           <Link href="/tools/claude-code-cli" style={{ background: 'rgba(255,255,255,.15)', color: 'white', borderRadius: 8, padding: '.5rem 1rem', fontSize: '.85rem', fontWeight: 600, textDecoration: 'none' }}>Setup Guide →</Link>
@@ -305,7 +305,7 @@ export default function ClaudeCodeCheatSheet() {
 
               <Subhead>Built-in Skills</Subhead>
               <CmdRow cmd="/simplify" desc="Code review (3 parallel agents)" />
-              <CmdRow cmd="/batch" desc="Large parallel changes (5–30 worktrees)" />
+              <CmdRow cmd="/batch" desc="Large parallel changes (5-30 worktrees)" />
               <CmdRow cmd="/debug [desc]" desc="Troubleshoot from debug log" />
               <CmdRow cmd="/loop [interval]" desc="Recurring scheduled task" />
               <CmdRow cmd="/claude-api" desc="Load API + SDK reference" />
@@ -474,8 +474,8 @@ export default function ClaudeCodeCheatSheet() {
         <div style={{ borderTop: '1px solid #E5E7EB', marginTop: '.5rem', paddingTop: '1.5rem', display: 'flex', gap: '.75rem', flexWrap: 'wrap', alignItems: 'center' }}>
           <span style={{ fontSize: '.85rem', color: '#9CA3AF' }}>Related:</span>
           <Link href="/tools/claude-code-cli" style={{ background: 'white', border: '1px solid #E5E7EB', borderRadius: 8, padding: '.6rem 1rem', fontSize: '.85rem', color: '#374151', textDecoration: 'none', fontWeight: 600 }}>⌨️ Claude Code CLI Setup</Link>
-          <Link href="/level1/lesson10" style={{ background: 'white', border: '1px solid #E5E7EB', borderRadius: 8, padding: '.6rem 1rem', fontSize: '.85rem', color: '#374151', textDecoration: 'none', fontWeight: 600 }}>📚 Lesson 10 — Claude Code Deep Dive</Link>
-          <Link href="/level3/lesson23" style={{ background: 'white', border: '1px solid #E5E7EB', borderRadius: 8, padding: '.6rem 1rem', fontSize: '.85rem', color: '#374151', textDecoration: 'none', fontWeight: 600 }}>🔮 Lesson 23 — Claude Code Superuser</Link>
+          <Link href="/level1/lesson10" style={{ background: 'white', border: '1px solid #E5E7EB', borderRadius: 8, padding: '.6rem 1rem', fontSize: '.85rem', color: '#374151', textDecoration: 'none', fontWeight: 600 }}>📚 Lesson 10 - Claude Code Deep Dive</Link>
+          <Link href="/level3/lesson23" style={{ background: 'white', border: '1px solid #E5E7EB', borderRadius: 8, padding: '.6rem 1rem', fontSize: '.85rem', color: '#374151', textDecoration: 'none', fontWeight: 600 }}>🔮 Lesson 23 - Claude Code Superuser</Link>
           <Link href="/tools/prompt-library" style={{ background: 'white', border: '1px solid #E5E7EB', borderRadius: 8, padding: '.6rem 1rem', fontSize: '.85rem', color: '#374151', textDecoration: 'none', fontWeight: 600 }}>📚 Prompt Library</Link>
         </div>
 

@@ -25,13 +25,13 @@ export default function Lesson18() {
           <section className="lesson-section">
             <h2>The AI Habit Stack</h2>
             <p>
-              Most people use AI occasionally but never get the full benefit — they don&apos;t make it habitual.
+              Most people use AI occasionally but never get the full benefit - they don&apos;t make it habitual.
               The difference between someone who uses Claude once a month and someone who gets 10 hours back
               per week isn&apos;t talent. It&apos;s habit. The <strong>AI Habit Stack</strong> is three moments
               built into every day where you use Claude intentionally.
             </p>
 
-            <h3>🌅 Morning (5 min) — Daily Briefing</h3>
+            <h3>🌅 Morning (5 min) - Daily Briefing</h3>
             <PromptBox label="Morning Briefing Prompt">
 {`Here's my calendar and to-do list for today:
 
@@ -48,17 +48,17 @@ Help me:
 Be specific. I need to be ready to execute in 30 minutes.`}
             </PromptBox>
 
-            <h3>⚡ Mid-Task (On-Demand) — Your AI Co-Worker</h3>
-            <p>Whenever you&apos;re stuck, drafting, or analyzing — open Claude first. Make it your default, not your fallback.</p>
+            <h3>⚡ Mid-Task (On-Demand) - Your AI Co-Worker</h3>
+            <p>Whenever you&apos;re stuck, drafting, or analyzing - open Claude first. Make it your default, not your fallback.</p>
             <PromptBox label="Mid-Task Unstuck Prompt">
 {`I'm stuck on [TASK]. Here's what I've tried: [DESCRIBE ATTEMPTS]
 The problem is: [WHAT'S BLOCKING YOU]
 I need to: [DESIRED OUTCOME]
 
-Walk me through the next 2–3 steps.`}
+Walk me through the next 2-3 steps.`}
             </PromptBox>
 
-            <h3>🌙 Evening (5 min) — Reflection & Tomorrow</h3>
+            <h3>🌙 Evening (5 min) - Reflection & Tomorrow</h3>
             <PromptBox label="Evening Reflection Prompt">
 {`Here's what I accomplished today: [LIST WINS]
 What didn't go as planned: [BLOCKERS OR FAILURES]
@@ -67,7 +67,7 @@ Tomorrow's schedule: [PASTE CALENDAR]
 Help me:
 1. Write my top 3 priorities for tomorrow (be specific)
 2. Identify one thing I should say "no" to
-3. Draft 2–3 follow-up emails needed tonight
+3. Draft 2-3 follow-up emails needed tonight
 4. Note one thing I learned today worth remembering`}
             </PromptBox>
 
@@ -81,7 +81,7 @@ Help me:
             <h2>Building Your Personal Prompt Library</h2>
             <p>
               A <strong>prompt library</strong> is a simple document where you collect, organize, and refine
-              your best prompts. Over time it becomes your competitive advantage — a toolbox that grows
+              your best prompts. Over time it becomes your competitive advantage - a toolbox that grows
               every week.
             </p>
             <h3>Where to Store It</h3>
@@ -133,7 +133,7 @@ Last Updated: [DATE]`}
           <section className="lesson-section">
             <h2>Staying Current with AI</h2>
             <p>
-              AI moves fast. The key is <em>curation over consumption</em> — 15 minutes per week,
+              AI moves fast. The key is <em>curation over consumption</em> - 15 minutes per week,
               not 2 hours per day.
             </p>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1rem', margin: '1.5rem 0' }}>
@@ -163,7 +163,7 @@ Cover:
 4. One trend to watch next month
 5. One tool I could start using right now
 
-Under 500 words. I know the basics — skip the intro.`}
+Under 500 words. I know the basics - skip the intro.`}
             </PromptBox>
           </section>
 
@@ -171,15 +171,15 @@ Under 500 words. I know the basics — skip the intro.`}
             <h2>Spreading AI to Your Team</h2>
             <p>The real win isn&apos;t you using AI. It&apos;s your whole team using it. Here&apos;s how to lead that without being the annoying evangelist.</p>
             <ol>
-              <li><strong>Start with one painful problem</strong> that costs your team real time — not abstract potential.</li>
+              <li><strong>Start with one painful problem</strong> that costs your team real time - not abstract potential.</li>
               <li><strong>Solve it yourself first.</strong> Build the workflow, test it, document it.</li>
               <li><strong>Show, don&apos;t tell.</strong> Demo it live. Let people see 15 minutes of work done in 5.</li>
               <li><strong>Create a shared prompt doc.</strong> A simple Google Doc: &quot;Here are 5 prompts that save us time. Try one.&quot;</li>
               <li><strong>Run a 30-min lunch &amp; learn.</strong> Working session, not a presentation. Everyone tries a prompt.</li>
               <li><strong>Be honest about limitations.</strong> &quot;It hallucinates sometimes. Check critical outputs.&quot; Trust requires honesty.</li>
             </ol>
-            <PromptBox label="Team AI Adoption Proposal — Send to Your Manager">
-{`Subject: Proposal — Using AI to Reduce [PROBLEM] on Our Team
+            <PromptBox label="Team AI Adoption Proposal - Send to Your Manager">
+{`Subject: Proposal - Using AI to Reduce [PROBLEM] on Our Team
 
 [MANAGER NAME],
 
@@ -195,7 +195,7 @@ The Proposal:
 4. We decide whether to continue
 
 The Benefit: Recover [X hours/week] to invest in [higher-value work].
-The Risk: Low — 2-week test on non-critical work.
+The Risk: Low - 2-week test on non-critical work.
 
 Can we discuss this week?
 [YOUR NAME]`}
@@ -244,7 +244,7 @@ Last Updated: [DATE]`}
             { term: 'Staying Current', definition: 'One newsletter + one weekly Claude briefing prompt = informed without overwhelmed. 15 min/week is enough.' },
             { term: 'Team Adoption', definition: 'Start with one painful problem. Solve it yourself. Demo it live. Share a prompt doc. Run a lunch & learn. Lead with proof.' },
             { term: 'Compliance First', definition: 'Check your org\'s AI policy. Healthcare, legal, and finance have specific regulations. Get approval before sharing client data with any AI.' },
-            { term: 'The Real Win', definition: 'When AI becomes your default for research, writing, and decisions — not an occasional experiment — everything compounds.' },
+            { term: 'The Real Win', definition: 'When AI becomes your default for research, writing, and decisions - not an occasional experiment - everything compounds.' },
           ]} />
 
           <LessonNav

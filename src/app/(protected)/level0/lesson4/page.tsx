@@ -49,7 +49,7 @@ export default function Lesson4() {
 
               <div style={{ padding: '1.5rem', backgroundColor: '#f9fafb', borderRadius: '8px', borderLeft: '4px solid #f59e0b' }}>
                 <h3 style={{ margin: '0 0 0.5rem 0', fontSize: '1.1rem' }}>3. Explain & Teach</h3>
-                <p style={{ fontSize: '0.95rem', margin: '0.5rem 0' }}>Break down complex topics into plain English. AI can explain at multiple levels—for a 5-year-old, for a teenager, for an expert.</p>
+                <p style={{ fontSize: '0.95rem', margin: '0.5rem 0' }}>Break down complex topics into plain English. AI can explain at multiple levels-for a 5-year-old, for a teenager, for an expert.</p>
                 <PromptBox
                   text="Explain quantum entanglement to someone with no physics background. Use an everyday analogy."
                 />
@@ -67,7 +67,7 @@ export default function Lesson4() {
                 <h3 style={{ margin: '0 0 0.5rem 0', fontSize: '1.1rem' }}>5. Brainstorm & Ideate</h3>
                 <p style={{ fontSize: '0.95rem', margin: '0.5rem 0' }}>Generate options, suggest alternatives, overcome creative blocks. AI is a brainstorming partner that never says "that's stupid."</p>
                 <PromptBox
-                  text="I'm stuck on how to open my presentation. Give me 5 different opening ideas—funny, serious, surprising, data-driven, and question-based."
+                  text="I'm stuck on how to open my presentation. Give me 5 different opening ideas-funny, serious, surprising, data-driven, and question-based."
                 />
               </div>
 
@@ -153,12 +153,12 @@ export default function Lesson4() {
 
                       <p style={{ marginTop: '1rem', marginBottom: '0.5rem', fontWeight: 'bold' }}>Prompt 1: Explain Confusing Concepts</p>
                       <PromptBox
-                        text="I don't understand photosynthesis. Explain it using examples I can relate to—not just textbook definitions. Make it intuitive."
+                        text="I don't understand photosynthesis. Explain it using examples I can relate to-not just textbook definitions. Make it intuitive."
                       />
 
                       <p style={{ marginTop: '1rem', marginBottom: '0.5rem', fontWeight: 'bold' }}>Prompt 2: Essay Structure & Brainstorming</p>
                       <PromptBox
-                        text="I need to write an essay on 'The role of technology in education.' Give me: a strong thesis, 3 main arguments, and counter-arguments I should address. Don't write the essay for me—just the structure."
+                        text="I need to write an essay on 'The role of technology in education.' Give me: a strong thesis, 3 main arguments, and counter-arguments I should address. Don't write the essay for me-just the structure."
                       />
 
                       <p style={{ marginTop: '1rem', marginBottom: '0.5rem', fontWeight: 'bold' }}>Prompt 3: Study Plan</p>
@@ -330,7 +330,7 @@ export default function Lesson4() {
 
           {/* SECTION 4: HANDS-ON */}
           <section className="lesson-section">
-            <h2>Section 4: Hands-On — Your First Real Work Task</h2>
+            <h2>Section 4: Hands-On - Your First Real Work Task</h2>
             <p>Let's actually do this. Pick one task you've been putting off, and use AI to start or finish it in the next 15 minutes.</p>
 
             <HandsOn
@@ -339,14 +339,14 @@ export default function Lesson4() {
               steps={[
                 "Identify one task: something you've been procrastinating on, something that usually takes 30+ minutes, or something you dread doing.",
                 "Frame it as an AI prompt using the formula from Lesson 3: 'You are [role]. I need to [task]. The audience is [who]. Please [specific ask]. Format as [format]. Keep it [length/tone].'",
-                "Copy the prompt into Claude (claude.ai) or ChatGPT (chatgpt.com). Take 3 minutes to write a good prompt—don't skip this step.",
+                "Copy the prompt into Claude (claude.ai) or ChatGPT (chatgpt.com). Take 3 minutes to write a good prompt-don't skip this step.",
                 "Read the response. Is it 80% there? Great. Use it and refine from there. Perfectionism is the enemy. If it's 70%, refine once. If it's 40%, ask for alternatives.",
                 "Copy the result to where you need it (email, document, presentation). You've saved 20-30 minutes. Do it again next week.",
               ]}
             />
 
             <p style={{ marginTop: '1.5rem', fontSize: '0.9rem', color: '#666' }}>
-              <strong>The truth:</strong> Your first 1-2 uses of AI for real work will feel awkward. By the third time, you won't think about it—it'll just be how you work. Give it a week. The payoff is real.
+              <strong>The truth:</strong> Your first 1-2 uses of AI for real work will feel awkward. By the third time, you won't think about it-it'll just be how you work. Give it a week. The payoff is real.
             </p>
 
             <p style={{ marginTop: '1rem', padding: '1rem', backgroundColor: '#f0fdf4', borderRadius: '6px', borderLeft: '3px solid #16a34a' }}>
@@ -357,17 +357,17 @@ export default function Lesson4() {
           {/* SECTION 5: QUICK REFERENCE */}
           <section className="lesson-section">
             <QuickRef
-              title="Lesson 4 — Quick Reference"
+              title="Lesson 4 - Quick Reference"
               items={[
                 {
                   heading: 'Six Core AI Capabilities',
                   points: [
-                    'Write & Edit — drafting, proofreading, rewriting',
-                    'Research & Summarize — extract key points from long documents',
-                    'Explain & Teach — break down complex topics at different levels',
-                    'Plan & Organize — create outlines, schedules, project plans',
-                    'Brainstorm & Ideate — generate options and overcome creative blocks',
-                    'Analyze & Review — critique your work, find weaknesses, play devil\'s advocate',
+                    'Write & Edit - drafting, proofreading, rewriting',
+                    'Research & Summarize - extract key points from long documents',
+                    'Explain & Teach - break down complex topics at different levels',
+                    'Plan & Organize - create outlines, schedules, project plans',
+                    'Brainstorm & Ideate - generate options and overcome creative blocks',
+                    'Analyze & Review - critique your work, find weaknesses, play devil\'s advocate',
                   ],
                 },
                 {

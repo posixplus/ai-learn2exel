@@ -179,7 +179,7 @@ export default function Lesson3() {
             <p>Tell AI what you want changed.</p>
             <PromptBox
               label="Example"
-              text="Make it shorter—about half the length. Use simpler words. Remove the jargon."
+              text="Make it shorter-about half the length. Use simpler words. Remove the jargon."
             />
             <p style={{ fontSize: '0.9rem', color: '#666', marginTop: '0.5rem' }}>
               <strong>When to use:</strong> After the first response, when you see what you got but want tweaks.
@@ -218,7 +218,7 @@ export default function Lesson3() {
 
           {/* SECTION 4: HANDS-ON (6 PROFESSION WALKTHROUGHS) */}
           <section className="lesson-section">
-            <h2>Section 4: Hands-On — Profession Walkthroughs</h2>
+            <h2>Section 4: Hands-On - Profession Walkthroughs</h2>
             <p>Here are six real, specific prompts for different professions. Pick yours and try it right now in Claude or ChatGPT.</p>
 
             <ProfessionSpotlight
@@ -230,7 +230,7 @@ export default function Lesson3() {
                     <>
                       <p><strong>The Task:</strong> Create a quiz that students will actually engage with.</p>
                       <PromptBox
-                        text={`I teach 7th grade science. Create a 10-question multiple choice quiz on the water cycle. Each question should have 4 options (A, B, C, D). Include the correct answer. Make questions appropriate for 12-13 year olds—not too easy, not impossible. A few should be knowledge-based, but include at least 2 "thinking" questions that require understanding, not just memorization.`}
+                        text={`I teach 7th grade science. Create a 10-question multiple choice quiz on the water cycle. Each question should have 4 options (A, B, C, D). Include the correct answer. Make questions appropriate for 12-13 year olds-not too easy, not impossible. A few should be knowledge-based, but include at least 2 "thinking" questions that require understanding, not just memorization.`}
                       />
                       <p style={{ marginTop: '1rem', fontSize: '0.9rem' }}>
                         <strong>What to look for:</strong> Are the questions clear? Are they the right difficulty? Would you actually use these?
@@ -248,7 +248,7 @@ export default function Lesson3() {
                     <>
                       <p><strong>The Task:</strong> Explain a diagnosis in a way patients understand.</p>
                       <PromptBox
-                        text={`I'm a family physician. Write a patient-friendly explanation of Type 2 Diabetes. The explanation should: 1) Define it simply, 2) Explain what causes it, 3) List 3-4 lifestyle changes that help manage it, 4) Give hope—it's manageable. Write for someone with no medical background, approximately 200 words. Avoid jargon.`}
+                        text={`I'm a family physician. Write a patient-friendly explanation of Type 2 Diabetes. The explanation should: 1) Define it simply, 2) Explain what causes it, 3) List 3-4 lifestyle changes that help manage it, 4) Give hope-it's manageable. Write for someone with no medical background, approximately 200 words. Avoid jargon.`}
                       />
                       <p style={{ marginTop: '1rem', fontSize: '0.9rem' }}>
                         <strong>What to look for:</strong> Is it understandable? Does it avoid scary language while being honest? Would a patient feel hopeful?
@@ -365,21 +365,21 @@ export default function Lesson3() {
               <div style={{ padding: '1.5rem', backgroundColor: '#f5f3ff', borderRadius: '8px', borderLeft: '4px solid #7c3aed', marginBottom: '1rem' }}>
                 <p style={{ margin: '0 0 0.5rem 0', fontWeight: 'bold', color: '#7c3aed' }}>Claude's Response (revised)</p>
                 <p style={{ margin: '0.5rem 0', fontStyle: 'italic', fontSize: '0.95rem' }}>
-                  "Hi [Client], Thanks so much for reaching out about [Project]. I appreciate your confidence in us. We're completely slammed right now, so I can't give it the attention it deserves. Let's grab coffee next month—I'd love to explore what else we might do together. Talk soon!"
+                  "Hi [Client], Thanks so much for reaching out about [Project]. I appreciate your confidence in us. We're completely slammed right now, so I can't give it the attention it deserves. Let's grab coffee next month-I'd love to explore what else we might do together. Talk soon!"
                 </p>
               </div>
 
               <div style={{ padding: '1.5rem', backgroundColor: '#f0f9ff', borderRadius: '8px', borderLeft: '4px solid #0284c7', marginBottom: '1rem' }}>
                 <p style={{ margin: '0 0 0.5rem 0', fontWeight: 'bold', color: '#0284c7' }}>Turn 3: Final Polish</p>
                 <PromptBox
-                  text="Perfect. One small thing—is 'completely slammed' too casual? Any other wording?"
+                  text="Perfect. One small thing-is 'completely slammed' too casual? Any other wording?"
                 />
               </div>
 
               <div style={{ padding: '1.5rem', backgroundColor: '#f5f3ff', borderRadius: '8px', borderLeft: '4px solid #7c3aed' }}>
                 <p style={{ margin: '0 0 0.5rem 0', fontWeight: 'bold', color: '#7c3aed' }}>Claude's Response</p>
                 <p style={{ margin: '0.5rem 0', fontStyle: 'italic', fontSize: '0.95rem' }}>
-                  "You could say 'tied up with other commitments' or 'at capacity' if you want it slightly less casual. But honestly, 'completely slammed' feels human and honest—clients know we're busy. It actually builds credibility. Keep it as-is."
+                  "You could say 'tied up with other commitments' or 'at capacity' if you want it slightly less casual. But honestly, 'completely slammed' feels human and honest-clients know we're busy. It actually builds credibility. Keep it as-is."
                 </p>
               </div>
             </div>
@@ -392,7 +392,7 @@ export default function Lesson3() {
           {/* SECTION 6: QUICK REFERENCE */}
           <section className="lesson-section">
             <QuickRef
-              title="Lesson 3 — Quick Reference"
+              title="Lesson 3 - Quick Reference"
               items={[
                 {
                   heading: 'Prompt Formula',

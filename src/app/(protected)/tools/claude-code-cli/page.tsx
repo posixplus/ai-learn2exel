@@ -1,6 +1,9 @@
 'use client'
 import Link from 'next/link'
 import Footer from '@/components/layout/Footer'
+import ToolResources from '@/components/tools/ToolResources'
+import ToolGuideExtras from '@/components/tools/ToolGuideExtras'
+import CommandBlock from '@/components/tools/CommandBlock'
 
 export default function ClaudeCodePage() {
   return (
@@ -23,11 +26,11 @@ export default function ClaudeCodePage() {
                 <span style={{ background: '#FEF3C7', color: '#92400E', border: '1px solid #FDE68A', borderRadius: '999px', padding: '.2rem .75rem', fontSize: '.78rem', fontWeight: 600 }}>Requires Claude API or Pro</span>
               </div>
               <h1 style={{ margin: 0, fontSize: '2rem', fontWeight: 800 }}>Claude Code (CLI)</h1>
-              <p style={{ margin: '.25rem 0 0', color: '#6B7280', fontSize: '1rem' }}>by Anthropic — terminal-native agentic coding assistant</p>
+              <p style={{ margin: '.25rem 0 0', color: '#6B7280', fontSize: '1rem' }}>by Anthropic - terminal-native agentic coding assistant</p>
             </div>
           </div>
           <p style={{ fontSize: '1.05rem', color: '#374151', lineHeight: 1.7 }}>
-            Claude Code is Anthropic's terminal-native AI coding tool. Unlike editor plugins, it runs directly in your shell — giving it full access to your filesystem, git history, terminal output, and the ability to run commands. It is the most powerful option for agentic tasks: give it a goal and it autonomously reads files, writes code, runs tests, and iterates.
+            Claude Code is Anthropic's terminal-native AI coding tool. Unlike editor plugins, it runs directly in your shell - giving it full access to your filesystem, git history, terminal output, and the ability to run commands. It is the most powerful option for agentic tasks: give it a goal and it autonomously reads files, writes code, runs tests, and iterates.
           </p>
         </div>
 
@@ -37,7 +40,7 @@ export default function ClaudeCodePage() {
             { label: 'Interface', value: 'Terminal (CLI)' },
             { label: 'Requires', value: 'Claude Pro or API' },
             { label: 'Platform', value: 'Mac, Linux, WSL' },
-            { label: 'Model', value: 'Claude 3.5/3.7 Sonnet' },
+            { label: 'Model', value: 'Claude Opus 4.8 / Sonnet 4.6' },
             { label: 'Install via', value: 'npm (Node.js)' },
           ].map(f => (
             <div key={f.label} style={{ background: 'white', border: '1px solid #E5E7EB', borderRadius: 10, padding: '1rem', textAlign: 'center' }}>
@@ -53,8 +56,8 @@ export default function ClaudeCodePage() {
             {[
               { step: '1', title: 'Install Node.js', desc: 'Claude Code requires Node.js 18+. Download from nodejs.org or run: brew install node (Mac).' },
               { step: '2', title: 'Install Claude Code', desc: 'Run in terminal: npm install -g @anthropic-ai/claude-code' },
-              { step: '3', title: 'Authenticate', desc: 'Run: claude — on first launch it opens your browser to sign in with your Anthropic account. Requires Claude Pro ($20/month) or an API key (pay-per-use, very affordable for coding tasks).' },
-              { step: '4', title: 'Verify installation', desc: 'Run: claude --version — you should see the version number. Then cd into any project and run: claude' },
+              { step: '3', title: 'Authenticate', desc: 'Run: claude - on first launch it opens your browser to sign in with your Anthropic account. Requires Claude Pro ($20/month) or an API key (pay-per-use, very affordable for coding tasks).' },
+              { step: '4', title: 'Verify installation', desc: 'Run: claude --version - you should see the version number. Then cd into any project and run: claude' },
             ].map(s => (
               <div key={s.step} style={{ display: 'flex', gap: '1rem' }}>
                 <div style={{ width: 28, height: 28, borderRadius: '50%', background: '#7C3AED', color: 'white', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 700, fontSize: '.85rem', flexShrink: 0, marginTop: 2 }}>{s.step}</div>
@@ -66,19 +69,14 @@ export default function ClaudeCodePage() {
             ))}
           </div>
 
-          <div style={{ background: '#1E293B', borderRadius: 8, padding: '1rem', fontFamily: 'monospace', fontSize: '.875rem', color: '#E2E8F0', marginTop: '1.25rem', lineHeight: 1.8 }}>
-            <span style={{ color: '#94A3B8' }}># Install and launch:</span><br />
-            <span style={{ color: '#86EFAC' }}>npm</span> install -g @anthropic-ai/claude-code<br />
-            <span style={{ color: '#86EFAC' }}>cd</span> my-project<br />
-            <span style={{ color: '#86EFAC' }}>claude</span>
-          </div>
+          <CommandBlock label="# Install and launch" command={`npm install -g @anthropic-ai/claude-code\ncd my-project\nclaude`} />
         </div>
 
         <div style={{ background: 'white', border: '1px solid #E5E7EB', borderRadius: 12, padding: '2rem', marginBottom: '1.5rem' }}>
           <h2 style={{ marginTop: 0, fontSize: '1.3rem' }}>🚀 Sample Usage</h2>
 
           <div style={{ marginBottom: '1.5rem' }}>
-            <div style={{ fontWeight: 700, marginBottom: '.5rem' }}>Interactive Mode — Ask & Iterate</div>
+            <div style={{ fontWeight: 700, marginBottom: '.5rem' }}>Interactive Mode - Ask & Iterate</div>
             <div style={{ background: '#1E293B', borderRadius: 8, padding: '1rem', fontFamily: 'monospace', fontSize: '.875rem', color: '#E2E8F0', lineHeight: 1.8 }}>
               <span style={{ color: '#86EFAC' }}>$</span> claude<br />
               <span style={{ color: '#94A3B8' }}>{`>`}</span> <span style={{ color: '#FDE68A' }}>Explain the auth flow in this project</span><br />
@@ -101,14 +99,14 @@ export default function ClaudeCodePage() {
           </div>
 
           <div>
-            <div style={{ fontWeight: 700, marginBottom: '.5rem' }}>CLAUDE.md — Persistent Project Context</div>
+            <div style={{ fontWeight: 700, marginBottom: '.5rem' }}>CLAUDE.md - Persistent Project Context</div>
             <p style={{ color: '#4B5563', fontSize: '.9rem', marginBottom: '.5rem' }}>Create a CLAUDE.md file in your project root. Claude Code reads it automatically every session:</p>
             <div style={{ background: '#1E293B', borderRadius: 8, padding: '1rem', fontFamily: 'monospace', fontSize: '.875rem', color: '#E2E8F0', lineHeight: 1.7 }}>
               <span style={{ color: '#94A3B8' }}># CLAUDE.md</span><br />
               <span style={{ color: '#86EFAC' }}>## Stack</span> Node.js + Express + PostgreSQL<br />
               <span style={{ color: '#86EFAC' }}>## Conventions</span><br />
               - Use AppError for all errors (src/lib/errors.ts)<br />
-              - No console.log — use logger from src/lib/logger.ts<br />
+              - No console.log - use logger from src/lib/logger.ts<br />
               <span style={{ color: '#86EFAC' }}>## Tests</span> vitest, run with npm test
             </div>
           </div>
@@ -117,13 +115,37 @@ export default function ClaudeCodePage() {
         <div style={{ background: '#F5F3FF', border: '1px solid #DDD6FE', borderRadius: 12, padding: '1.5rem', marginBottom: '1.5rem' }}>
           <h3 style={{ marginTop: 0, color: '#5B21B6', fontSize: '1.1rem' }}>💡 Pro Tips</h3>
           <ul style={{ margin: 0, paddingLeft: '1.25rem', color: '#4C1D95', lineHeight: 2 }}>
-            <li>Always start agentic tasks in a <strong>clean git branch</strong> — Claude will modify multiple files</li>
-            <li>The <strong>CLAUDE.md</strong> file is your most powerful tool — detailed context = better output</li>
+            <li>Always start agentic tasks in a <strong>clean git branch</strong> - Claude will modify multiple files</li>
+            <li>The <strong>CLAUDE.md</strong> file is your most powerful tool - detailed context = better output</li>
             <li>Use <strong>Ctrl+C</strong> to interrupt Claude mid-task and redirect it</li>
             <li>Press <strong>y</strong> to accept file changes, <strong>n</strong> to reject, or type a correction</li>
             <li>API key mode (no Pro required): set ANTHROPIC_API_KEY in your environment and billing kicks in at ~$0.003/1K tokens</li>
           </ul>
         </div>
+
+        <ToolGuideExtras
+          current="claude-code-cli"
+          troubleshooting={[
+            { problem: 'command not found: claude', fix: 'Re-run the global install and make sure your npm global bin directory is on your PATH. Restart the terminal afterward.' },
+            { problem: 'Authentication errors', fix: 'Log in with your Claude subscription, or set ANTHROPIC_API_KEY in your environment for API-key mode.' },
+            { problem: 'Too many permission prompts', fix: 'Configure allowed tools / commands in settings, or run with the right permission mode - but review what you allow.' },
+            { problem: 'Token costs climbing', fix: 'Scope each task, use /clear to reset context between tasks, and prefer a cheaper model (Haiku) for simple jobs.' },
+          ]}
+          lessons={[
+            { label: 'L46 - Agentic Coding', href: '/level5/lesson46' },
+            { label: 'L47 - Custom AI Extensions', href: '/level5/lesson47' },
+            { label: 'L56 - From Prompter to Loop Designer', href: '/level7/lesson56' },
+            { label: 'L59 - Skills', href: '/level7/lesson59' },
+          ]}
+        />
+
+        <ToolResources links={[
+          { label: 'Product page', href: 'https://claude.com/product/claude-code', note: 'What it is + how to install' },
+          { label: 'Documentation', href: 'https://code.claude.com/docs', note: 'Commands, CLAUDE.md, MCP, agents' },
+          { label: 'npm package', href: 'https://www.npmjs.com/package/@anthropic-ai/claude-code', note: 'npm i -g @anthropic-ai/claude-code' },
+          { label: 'GitHub repo', href: 'https://github.com/anthropics/claude-code', note: 'Issues + source' },
+          { label: 'Pricing', href: 'https://claude.com/pricing', note: 'Subscription + API rates' },
+        ]} />
 
         <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
           <Link href="/tools/github-copilot" style={{ background: 'white', border: '1px solid #E5E7EB', borderRadius: 8, padding: '.75rem 1.25rem', fontSize: '.875rem', color: '#374151', textDecoration: 'none', fontWeight: 600 }}>→ Compare: GitHub Copilot</Link>

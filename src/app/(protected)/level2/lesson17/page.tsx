@@ -102,7 +102,7 @@ export default function Lesson17() {
               n8n + Claude: <a href="https://n8n.io/integrations/anthropic/" target="_blank" rel="noopener">n8n Anthropic integration</a>
             </p>
             <Callout type="info">
-              <strong>Good News:</strong> You don't need to code. All three platforms let you connect Claude to hundreds of apps using a visual drag-and-drop interface. No programming required—just clicks, dropdowns, and text fields.
+              <strong>Good News:</strong> You don't need to code. All three platforms let you connect Claude to hundreds of apps using a visual drag-and-drop interface. No programming required-just clicks, dropdowns, and text fields.
             </Callout>
           </section>
 
@@ -110,7 +110,7 @@ export default function Lesson17() {
           <section className="lesson-section">
             <h2>Building Your First Automation in Zapier</h2>
             <p>
-              Let's walk through a real automation step by step. We'll build: <strong>Email Summarizer — When a new email arrives in Gmail with a specific label, Claude summarizes it and adds it to a Google Sheet.</strong>
+              Let's walk through a real automation step by step. We'll build: <strong>Email Summarizer - When a new email arrives in Gmail with a specific label, Claude summarizes it and adds it to a Google Sheet.</strong>
             </p>
             <ol>
               <li><strong>Create a Zapier Account</strong> at zapier.com. Sign up for free.</li>
@@ -130,11 +130,11 @@ export default function Lesson17() {
                   <li>Click "Add Step" and search for "Claude" (or "Anthropic Claude")</li>
                   <li>Select the Claude action</li>
                   <li>Paste your Claude API key (from Claude.ai account settings)</li>
-                  <li>Leave Model as default (Claude 3.5 Sonnet)</li>
+                  <li>Leave Model as default (the latest Claude Sonnet)</li>
                 </ul>
               </li>
               <li>
-                <strong>Write the Claude Prompt</strong> — Use the template below
+                <strong>Write the Claude Prompt</strong> - Use the template below
               </li>
               <li>
                 <strong>Set Output: Google Sheets</strong>
@@ -145,12 +145,12 @@ export default function Lesson17() {
                   <li>Map the columns: Date | From | Subject | Summary (from Claude output)</li>
                 </ul>
               </li>
-              <li><strong>Test & Activate</strong> — Send yourself a test email with the label. Check the sheet.</li>
+              <li><strong>Test & Activate</strong> - Send yourself a test email with the label. Check the sheet.</li>
             </ol>
 
             <h3 style={{ marginTop: '20px', marginBottom: '12px' }}>The Claude Prompt for This Automation</h3>
             <PromptBox label="Paste this into Zapier's Claude action">
-{`Summarize this email in 2–3 sentences. Focus on the key ask or information. Be concise and actionable.
+{`Summarize this email in 2-3 sentences. Focus on the key ask or information. Be concise and actionable.
 
 Email:
 From: {sender_name} ({sender_email})
@@ -166,7 +166,7 @@ Summary: [Your summary here]`}
           <section className="lesson-section">
             <h2>30 Automation Ideas by Role</h2>
             <p style={{ marginBottom: '24px' }}>
-              Copy any of these and adapt them to your work. Each can save you 2–5 hours per week.
+              Copy any of these and adapt them to your work. Each can save you 2-5 hours per week.
             </p>
 
             <div
@@ -261,7 +261,7 @@ Summary: [Your summary here]`}
               <div style={{ marginTop: '20px' }}>
                 <h4 style={{ marginBottom: '12px' }}>Prompt Template: Email Summary Automation</h4>
                 <PromptBox label="Use this for email-based automations">
-{`Summarize the email below in 1–2 sentences. Extract the key action or question. Be concise.
+{`Summarize the email below in 1-2 sentences. Extract the key action or question. Be concise.
 
 From: {sender_name}
 Subject: {subject}

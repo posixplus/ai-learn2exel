@@ -1,6 +1,7 @@
 'use client'
 import Link from 'next/link'
 import Footer from '@/components/layout/Footer'
+import ToolResources from '@/components/tools/ToolResources'
 
 export default function HuggingFacePage() {
   return (
@@ -23,7 +24,7 @@ export default function HuggingFacePage() {
                 <span style={{ background: '#F0FDF4', color: '#16A34A', border: '1px solid #BBF7D0', borderRadius: '999px', padding: '.2rem .75rem', fontSize: '.78rem', fontWeight: 600 }}>Free Tier Available</span>
               </div>
               <h1 style={{ margin: 0, fontSize: '2rem', fontWeight: 800 }}>Hugging Face</h1>
-              <p style={{ margin: '.25rem 0 0', color: '#6B7280', fontSize: '1rem' }}>The GitHub of AI — 700,000+ models, datasets, and Spaces to explore and deploy</p>
+              <p style={{ margin: '.25rem 0 0', color: '#6B7280', fontSize: '1rem' }}>The GitHub of AI - 700,000+ models, datasets, and Spaces to explore and deploy</p>
             </div>
           </div>
           <p style={{ fontSize: '1.05rem', color: '#374151', lineHeight: 1.7 }}>
@@ -36,7 +37,7 @@ export default function HuggingFacePage() {
           {[
             { icon: '🧠', title: 'Models', count: '700,000+', desc: 'Pre-trained models for text, images, audio, video, and code' },
             { icon: '📊', title: 'Datasets', count: '150,000+', desc: 'Training and benchmark datasets for all AI tasks' },
-            { icon: '🚀', title: 'Spaces', count: '300,000+', desc: 'Live interactive demos — try any model in your browser' },
+            { icon: '🚀', title: 'Spaces', count: '300,000+', desc: 'Live interactive demos - try any model in your browser' },
             { icon: '💻', title: 'Inference API', count: 'Pay-per-use', desc: 'Call any model via REST API without managing infrastructure' },
           ].map(c => (
             <div key={c.title} style={{ background: 'white', border: '1px solid #E5E7EB', borderRadius: 12, padding: '1.25rem', textAlign: 'center' }}>
@@ -53,8 +54,8 @@ export default function HuggingFacePage() {
           <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
             {[
               { step: '1', title: 'Create a free account', desc: 'Go to huggingface.co → Sign Up. The free tier gives you access to the model hub, Spaces, and limited Inference API usage.' },
-              { step: '2', title: 'Browse Models', desc: 'huggingface.co/models — filter by task (text generation, translation, image classification etc.), language, and license. Sort by "Most Downloads" to find popular ones.' },
-              { step: '3', title: 'Try a model in Spaces', desc: 'Many models have a "Spaces" demo button — click it to test the model live in your browser with no code. Great for evaluation before committing.' },
+              { step: '2', title: 'Browse Models', desc: 'huggingface.co/models - filter by task (text generation, translation, image classification etc.), language, and license. Sort by "Most Downloads" to find popular ones.' },
+              { step: '3', title: 'Try a model in Spaces', desc: 'Many models have a "Spaces" demo button - click it to test the model live in your browser with no code. Great for evaluation before committing.' },
               { step: '4', title: 'Get your API token', desc: 'Settings → Access Tokens → New Token. Use this token to call models via the Inference API or download models programmatically.' },
             ].map(s => (
               <div key={s.step} style={{ display: 'flex', gap: '1rem' }}>
@@ -124,12 +125,20 @@ export default function HuggingFacePage() {
           <h3 style={{ marginTop: 0, color: '#92400E', fontSize: '1.1rem' }}>💡 Pro Tips</h3>
           <ul style={{ margin: 0, paddingLeft: '1.25rem', color: '#78350F', lineHeight: 2 }}>
             <li>Filter models by <strong>license: Apache 2.0 or MIT</strong> if you need commercial use rights</li>
-            <li>The <strong>Serverless Inference API</strong> is free for low-volume use — perfect for prototyping</li>
-            <li>Spaces are free to browse and test — no account needed for most public demos</li>
-            <li><strong>GGUF format models</strong> on HF are optimized for Ollama — search for "GGUF" to find them</li>
+            <li>The <strong>Serverless Inference API</strong> is free for low-volume use - perfect for prototyping</li>
+            <li>Spaces are free to browse and test - no account needed for most public demos</li>
+            <li><strong>GGUF format models</strong> on HF are optimized for Ollama - search for "GGUF" to find them</li>
             <li>Use the HF Leaderboard (huggingface.co/open-llm-leaderboard) to compare open-source models before downloading</li>
           </ul>
         </div>
+
+        <ToolResources links={[
+          { label: 'Hugging Face Hub', href: 'https://huggingface.co', note: 'Models, datasets, and Spaces' },
+          { label: 'Browse models', href: 'https://huggingface.co/models', note: 'Search 1M+ open models' },
+          { label: 'Documentation', href: 'https://huggingface.co/docs', note: 'Transformers, Hub, Inference, Diffusers' },
+          { label: 'Spaces (live demos)', href: 'https://huggingface.co/spaces', note: 'Try models in the browser' },
+          { label: 'Learn / courses', href: 'https://huggingface.co/learn', note: 'Free NLP, LLM, and agents courses' },
+        ]} />
 
         <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
           <Link href="/tools/ollama" style={{ background: 'white', border: '1px solid #E5E7EB', borderRadius: 8, padding: '.75rem 1.25rem', fontSize: '.875rem', color: '#374151', textDecoration: 'none', fontWeight: 600 }}>→ Run HF Models Locally with Ollama</Link>
