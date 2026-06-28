@@ -56,6 +56,38 @@ Never commit `.env.local` (it is gitignored).
 
 ---
 
+## Verifiable Certificates (optional)
+
+The `/certificate` page can issue **verifiable** certificates: a learner who
+finishes the course enters their name + email, confirms via a one-time magic
+link, and gets a certificate with an ID anyone can check at `/verify/{id}`.
+This needs three things wired up (it stays disabled/erroring gracefully until then):
+
+1. **Database** - in Vercel: **Storage -> Create Database -> Neon (Postgres)** and
+   attach it to the project. It sets `DATABASE_URL` automatically. The two tables
+   (`magic_tokens`, `certificates`) are created on first use - no migration step.
+2. **Email** - set `RESEND_API_KEY` and verify your sending domain in
+   [Resend](https://resend.com). Set `CERT_EMAIL_FROM` to an address on that domain
+   (or omit it to use Resend's `onboarding@resend.dev` sandbox sender while testing).
+3. **Signing secret** - set `CERT_SIGNING_SECRET` to any long random string.
+
+| Variable | Purpose |
+| --- | --- |
+| `DATABASE_URL` | Neon/Postgres connection (set automatically by the Vercel integration). |
+| `RESEND_API_KEY` | Sends the magic-link confirmation email. |
+| `CERT_EMAIL_FROM` | "From" address for that email; defaults to the Resend sandbox sender. |
+| `CERT_SIGNING_SECRET` | Secret used to sign issued certificates. |
+
+**Note on trust:** the certificate is issued to a *verified email* and recorded
+server-side, so a third party can confirm it is genuine at `/verify/{id}`. Course
+*completion itself* is still self-reported by the learner (the site has no login
+and does not track per-lesson progress on the server), which is stated on the
+certificate. This is an authenticity guarantee, not a proctored exam.
+
+**Test flow:** complete all 80 lessons (or set the gate in dev) -> `/certificate`
+-> enter name + email -> click the emailed link -> certificate issues -> open
+`/verify/{the-id}` to confirm it resolves.
+
 ## Analytics
 
 Google Analytics 4 (`G-ECLX277HV0`) is wired in `src/app/layout.tsx` via
