@@ -153,7 +153,7 @@ export default function CertificatePage() {
 
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', marginTop: '3rem', gap: '1.5rem', flexWrap: 'wrap' }}>
           <div style={{ textAlign: 'left' }}>
-            <div style={{ fontWeight: 700, fontFamily: 'Georgia, serif', fontSize: '1.05rem', color: '#0F172A' }}>Learn to Excel AI</div>
+            <div style={{ fontWeight: 700, fontFamily: 'Georgia, serif', fontSize: '1.05rem', color: '#0F172A' }}>Learn to Exel AI</div>
             <div style={{ borderTop: '1px solid #999', paddingTop: '.3rem', marginTop: '.3rem', fontSize: '.78rem', color: '#666' }}>
               Issuing authority · Virginia, USA
             </div>
@@ -172,7 +172,7 @@ export default function CertificatePage() {
       </div>
 
       <p style={{ textAlign: 'center', color: 'var(--color-text-subtle)', fontSize: '.78rem', marginTop: '1.25rem', maxWidth: 560, marginInline: 'auto' }}>
-        This is a course-completion keepsake from Learn to Excel AI, not an accredited or government-recognized credential.
+        This is a course-completion keepsake from Learn to Exel AI, not an accredited or government-recognized credential.
       </p>
     </div>
   )
