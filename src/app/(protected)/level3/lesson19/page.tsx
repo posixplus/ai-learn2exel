@@ -3,6 +3,7 @@ import LessonHeader from '@/components/lesson/LessonHeader'
 import Sidebar from '@/components/lesson/Sidebar'
 import LessonNav from '@/components/lesson/LessonNav'
 import QuickRef from '@/components/lesson/QuickRef'
+import { CLAUDE, MODELS_AS_OF, ctxStr } from '@/data/models'
 
 export default function Lesson19() {
   return (
@@ -20,23 +21,27 @@ export default function Lesson19() {
           </section>
 
           <section className="section-card">
-            <h2>The Model Lineup</h2>
+            <h2>The Model Lineup <span style={{ fontSize: '.8rem', fontWeight: 400, color: '#6B7280' }}>(as of {MODELS_AS_OF})</span></h2>
             <div className="steps-list">
               <div className="step">
-                <strong>Claude Opus 4.5 - The Thinker</strong>
-                <p>Most intelligent. Use for: complex reasoning, long document analysis, research synthesis, difficult architecture decisions. Slower, higher cost. Best when quality matters more than speed.</p>
+                <strong>{CLAUDE.opus.name} - The Thinker</strong>
+                <p>Most intelligent of the everyday tiers. Use for: complex reasoning, long document analysis, research synthesis, difficult architecture decisions. Slower, higher cost. Best when quality matters more than speed.</p>
               </div>
               <div className="step">
-                <strong>Claude Sonnet 4.5 - The Daily Driver</strong>
+                <strong>{CLAUDE.sonnet.name} - The Daily Driver</strong>
                 <p>Best balance of intelligence and speed. Handles 90% of real tasks with high quality. Default choice unless you have a specific reason to switch.</p>
               </div>
               <div className="step">
-                <strong>Claude Haiku 4.5 - The Sprinter</strong>
+                <strong>{CLAUDE.haiku.name} - The Sprinter</strong>
                 <p>Fastest, lowest cost. Best for high-volume automation, simple classification, quick structured extraction. Use in pipelines where you need thousands of calls.</p>
+              </div>
+              <div className="step">
+                <strong>{CLAUDE.fable.name} - The Specialist</strong>
+                <p>Sits above Opus and costs about double. Built for long-running autonomous agents and the hardest problems. You will rarely need it in this course; know it exists so the pricing page makes sense.</p>
               </div>
             </div>
             <div className="info-box">
-              <strong>Decision rule:</strong> Default to Sonnet. Upgrade to Opus only when a task needs deep, multi-step reasoning. Use Haiku for repeatable, simple, automated steps.
+              <strong>Decision rule:</strong> Default to Sonnet. Upgrade to Opus only when a task needs deep, multi-step reasoning. Use Haiku for repeatable, simple, automated steps. Reach for Fable only when Opus is demonstrably falling short on a long agentic task.
             </div>
           </section>
 
@@ -207,10 +212,10 @@ The second response is actionable. The first is useless.`}</pre>
           </section>
 
           <QuickRef title="Lesson 19 Quick Reference" items={[
-            { term: "Opus 4.5", definition: "Use when: complex multi-step reasoning, nuanced analysis, the difference between good and great matters. Costs more, thinks deeper." },
-            { term: "Sonnet 4.5", definition: "Default for 90% of tasks. Best speed/quality balance. If you're not sure which model, use Sonnet." },
-            { term: "Haiku 4.5", definition: "Use for: high-volume pipelines, simple classification, fast structured extraction. Fastest and cheapest." },
-            { term: "200k context window", definition: "~150,000 words. Paste whole documents, large codebases, many emails. Use /compact in long sessions to free space." },
+            { term: CLAUDE.opus.short, definition: "Use when: complex multi-step reasoning, nuanced analysis, the difference between good and great matters. Costs more, thinks deeper." },
+            { term: CLAUDE.sonnet.short, definition: "Default for 90% of tasks. Best speed/quality balance. If you're not sure which model, use Sonnet." },
+            { term: CLAUDE.haiku.short, definition: "Use for: high-volume pipelines, simple classification, fast structured extraction. Fastest and cheapest." },
+            { term: `${ctxStr(CLAUDE.sonnet.context)} context window`, definition: "Roughly 750,000 words on Sonnet and Opus (Haiku is 200K). Paste whole documents, large codebases, many emails. Use /compact in long sessions to free space." },
             { term: "System prompt", definition: "Hidden instructions that shape all of Claude's responses. Set via Project Instructions, CLAUDE.md, or API system parameter." },
             { term: "Constitutional AI", definition: "Claude reasons about whether its responses are good, not just pattern-matches. Give Claude your intent for better calibration." },
           ]} />

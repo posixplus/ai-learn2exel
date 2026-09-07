@@ -48,7 +48,7 @@ export default function Lesson2() {
 
               <div className="ai-tool-card">
                 <div className="tool-header">
-                  <h3>ChatGPT (GPT-5.5)</h3>
+                  <h3>ChatGPT (GPT-5.6)</h3>
                   <p className="tool-maker">OpenAI</p>
                 </div>
                 <div className="tool-tags">
@@ -256,14 +256,15 @@ export default function Lesson2() {
 
             <h3>ChatGPT (OpenAI)</h3>
             <ul>
-              <li><strong>Free:</strong> Access to GPT-5.5 with daily usage limits and basic features. Fine for casual use.</li>
-              <li><strong>ChatGPT Plus ($20/month):</strong> Much higher GPT-5.5 limits, image generation, web browsing, and agent features. Best all-rounder for power users.</li>
+              <li><strong>Free:</strong> Runs the small GPT-5.6 Luna model with daily usage limits and basic features. Fine for casual use.</li>
+              <li><strong>ChatGPT Go ($8/month):</strong> Budget tier with higher limits than Free. Worth it if you hit the free cap regularly but don&apos;t need the flagship model.</li>
+              <li><strong>ChatGPT Plus ($20/month):</strong> Access to the flagship GPT-5.6 Sol, image generation, web browsing, and agent features. Best all-rounder for power users.</li>
             </ul>
 
             <h3>Gemini (Google)</h3>
             <ul>
               <li><strong>Free:</strong> Very generous-daily limits are high. Works in Gmail, Docs, Sheets, Drive. Great value if you use Google Workspace.</li>
-              <li><strong>Gemini Advanced ($20/month):</strong> Higher usage limits, access to the latest Gemini models (such as Gemini 3.5), better performance. Not necessary for most people.</li>
+              <li><strong>Gemini Advanced ($20/month):</strong> Higher usage limits, access to the latest Gemini models (such as Gemini 3.8 Flash and 3.1 Pro), better performance. Not necessary for most people.</li>
             </ul>
 
             <h3>DeepSeek</h3>

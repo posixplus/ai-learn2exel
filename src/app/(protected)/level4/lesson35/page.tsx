@@ -54,7 +54,7 @@ LARGE_SYSTEM = """You are an expert customer support agent for Acme Corp.
 
 def support_reply(user_message: str) -> str:
     response = client.messages.create(
-        model="claude-opus-4-8",
+        model="claude-opus-5",
         max_tokens=512,
         system=[
             {
@@ -121,7 +121,7 @@ def call_with_retry(max_retries: int = 5, **kwargs) -> str:
   "timestamp": "2025-01-15T10:23:11Z",
   "user_id": "user_abc",
   "feature": "support_chat",
-  "model": "claude-opus-4-8",
+  "model": "claude-opus-5",
   "input_tokens": 1240,
   "output_tokens": 312,
   "cache_read_tokens": 980,       # how much was cached
@@ -160,7 +160,7 @@ def check_rate_limit(user_id: str,
 def handle_chat(user_id: str, message: str):
     if not check_rate_limit(user_id):
         return {"error": "Too many requests. Try again in a minute."}, 429
-    return {"reply": call_with_retry(model="claude-opus-4-8",
+    return {"reply": call_with_retry(model="claude-opus-5",
                                       max_tokens=512,
                                       messages=[{"role":"user",
                                                  "content": message}])}`}</pre>

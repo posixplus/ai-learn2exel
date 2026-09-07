@@ -169,7 +169,7 @@ ingest_document(open("handbook.txt").read(),
 
     # Generate grounded answer
     response = claude.messages.create(
-        model="claude-opus-4-8",
+        model="claude-opus-5",
         max_tokens=512,
         system="""You are a helpful assistant. Answer using ONLY
 the context provided. If the answer isn't in the context,

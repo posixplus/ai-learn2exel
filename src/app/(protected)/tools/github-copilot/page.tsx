@@ -40,7 +40,7 @@ export default function GithubCopilotPage() {
             { label: 'Business', value: '$19/user/month' },
             { label: 'Free tier', value: 'Students & OSS' },
             { label: 'Works in', value: 'VS Code, JetBrains, Vim' },
-            { label: 'Powered by', value: 'GPT-5.5, Claude, Gemini' },
+            { label: 'Powered by', value: 'GPT-5.6, Claude, Gemini' },
           ].map(f => (
             <div key={f.label} style={{ background: 'white', border: '1px solid #E5E7EB', borderRadius: 10, padding: '1rem', textAlign: 'center' }}>
               <div style={{ fontSize: '.78rem', color: '#9CA3AF', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '.05em', marginBottom: '.25rem' }}>{f.label}</div>
@@ -56,7 +56,7 @@ export default function GithubCopilotPage() {
               { step: '1', title: 'Get a Copilot subscription', desc: 'Go to github.com/features/copilot → Start free trial (30 days free). Students: apply at github.com/education for free access.' },
               { step: '2', title: 'Install the extensions', desc: 'VS Code Extensions → search "GitHub Copilot" → install it. Then search "GitHub Copilot Chat" and install that too (separate extension).' },
               { step: '3', title: 'Sign in with GitHub', desc: 'VS Code will prompt you to sign in with GitHub. Authorize in the browser. Your subscription activates automatically.' },
-              { step: '4', title: 'Configure your model', desc: 'Copilot Settings → Model → choose GPT-5.5, Claude Sonnet 4.6, or Gemini 3.5. You can switch per task.' },
+              { step: '4', title: 'Configure your model', desc: 'Copilot Settings → Model → choose GPT-5.6, Claude Sonnet 5, or Gemini 3.8 Flash. You can switch per task.' },
               { step: '5', title: 'Enable Copilot Edits (optional)', desc: 'View → Copilot Edits to enable multi-file agentic editing. This is Copilot\'s answer to Cursor Composer.' },
             ].map(s => (
               <div key={s.step} style={{ display: 'flex', gap: '1rem' }}>
@@ -137,7 +137,7 @@ export default function GithubCopilotPage() {
             <li><strong>Free for students:</strong> Verify at github.com/education - includes Copilot + other GitHub Pro features</li>
             <li>Use <strong>@workspace</strong> in chat to ask about your entire project: "@workspace where do we handle auth?"</li>
             <li>Copilot works in <strong>JetBrains</strong> (IntelliJ, WebStorm, PyCharm) - install from the JetBrains Marketplace</li>
-            <li>Switch models per task: use Claude Sonnet 4.6 for analysis, GPT-5.5 for coding, a reasoning model for hard math/logic</li>
+            <li>Switch models per task: use Claude Sonnet 5 for analysis, GPT-5.6 for coding, a reasoning model for hard math/logic</li>
             <li>Add a <strong>.github/copilot-instructions.md</strong> file to set project-wide instructions for Copilot</li>
           </ul>
         </div>
@@ -148,7 +148,7 @@ export default function GithubCopilotPage() {
             { problem: 'No suggestions showing', fix: 'Confirm the Copilot extension is installed and enabled, you are signed in to GitHub, and your subscription / free tier is active for that language.' },
             { problem: 'Copilot Chat is missing', fix: 'Update the Copilot and Copilot Chat extensions - chat needs the latest versions.' },
             { problem: 'Free-tier limits hit', fix: 'The free tier caps completions and chat per month. Upgrade to Pro, or use a free alternative like the Windsurf plugin.' },
-            { problem: 'Wrong model is being used', fix: 'Copilot Settings → Model lets you switch (GPT-5.5, Claude Sonnet 4.6, Gemini 3.5) per task.' },
+            { problem: 'Wrong model is being used', fix: 'Copilot Settings → Model lets you switch (GPT-5.6, Claude Sonnet 5, Gemini 3.8 Flash) per task.' },
           ]}
           lessons={[
             { label: 'L38 - AI Tools Landscape', href: '/level5/lesson38' },

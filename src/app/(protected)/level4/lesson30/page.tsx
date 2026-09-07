@@ -46,7 +46,7 @@ client = anthropic.Anthropic()
 
 def extract_contact(text: str) -> dict:
     response = client.messages.create(
-        model="claude-opus-4-8",
+        model="claude-opus-5",
         max_tokens=256,
         system="""Extract contact info and return ONLY valid JSON:
 {
@@ -102,7 +102,7 @@ class Contact(BaseModel):
 client = instructor.from_anthropic(anthropic.Anthropic())
 
 contact = client.messages.create(
-    model="claude-opus-4-8",
+    model="claude-opus-5",
     max_tokens=256,
     response_model=Contact,
     messages=[{
@@ -177,7 +177,7 @@ messages = [{"role": "user", "content": "What's the weather in Tokyo?"}]
 
 # Step 2: first call
 response = client.messages.create(
-    model="claude-opus-4-8", max_tokens=512,
+    model="claude-opus-5", max_tokens=512,
     tools=tools, messages=messages
 )
 
@@ -195,7 +195,7 @@ if response.stop_reason == "tool_use":
         }]}
     ]
     final = client.messages.create(
-        model="claude-opus-4-8", max_tokens=512,
+        model="claude-opus-5", max_tokens=512,
         tools=tools, messages=messages
     )
     print(final.content[0].text)
@@ -230,7 +230,7 @@ async function searchProducts(query: string, maxResults = 5) {
 export async function POST(req: Request) {
   const { messages } = await req.json()
   const response = await client.messages.create({
-    model: 'claude-opus-4-8', max_tokens: 1024,
+    model: 'claude-opus-5', max_tokens: 1024,
     tools, messages
   })
 
@@ -241,7 +241,7 @@ export async function POST(req: Request) {
       (toolBlock as any).input.max_results
     )
     const followUp = await client.messages.create({
-      model: 'claude-opus-4-8', max_tokens: 1024,
+      model: 'claude-opus-5', max_tokens: 1024,
       tools,
       messages: [
         ...messages,

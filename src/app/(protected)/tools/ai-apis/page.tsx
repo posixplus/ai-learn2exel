@@ -1,5 +1,6 @@
 'use client'
 import Link from 'next/link'
+import { CLAUDE, CLAUDE_LINEUP, OPENAI, OPENAI_PREVIEW, GEMINI, MODELS_AS_OF, priceStr, ctxStr, roughCost } from '@/data/models'
 import Footer from '@/components/layout/Footer'
 import ToolResources from '@/components/tools/ToolResources'
 
@@ -26,22 +27,22 @@ export default function AiApisPage() {
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '1.25rem', marginBottom: '2.5rem' }}>
           {[
             {
-              icon: '🟣', name: 'Anthropic API', models: 'Claude Opus 4.8, Sonnet 4.6, Haiku 4.5',
-              strength: 'Best reasoning, long context (200K-1M), safest for production',
-              price: 'Sonnet: $3/$15 per 1M tokens (in/out)', url: 'platform.claude.com',
+              icon: '🟣', name: 'Anthropic API', models: `${CLAUDE_LINEUP} (${CLAUDE.fable.short} for the hardest agentic work)`,
+              strength: `Best reasoning and agent tooling, ${ctxStr(CLAUDE.sonnet.context)} context on Sonnet and up, safest for production`,
+              price: `Sonnet: ${priceStr(CLAUDE.sonnet)} per 1M tokens (in/out)`, url: 'platform.claude.com',
               badge: 'Best for complex tasks', color: '#7C3AED'
             },
             {
-              icon: '🟢', name: 'OpenAI API', models: 'GPT-5.5, GPT-5.5 mini, o-series',
+              icon: '🟢', name: 'OpenAI API', models: `${OPENAI.flagship.short} / Terra / Luna (${OPENAI_PREVIEW} in limited preview)`,
               strength: 'Widest ecosystem, best plugin/tool support, most integrations',
-              price: 'GPT-5.5: ~$5/$30 per 1M tokens', url: 'platform.openai.com',
+              price: `${OPENAI.flagship.short}: ${priceStr(OPENAI.flagship)} per 1M tokens`, url: 'platform.openai.com',
               badge: 'Most popular', color: '#16A34A'
             },
             {
-              icon: '🔵', name: 'Google AI (Gemini API)', models: 'Gemini 3.5 Pro, Gemini 3.5 Flash',
-              strength: 'Massive context window (2M tokens), multimodal, generous free tier',
-              price: 'Flash: Free tier + $0.075/$0.30 per 1M', url: 'ai.google.dev',
-              badge: 'Largest context window', color: '#2563EB'
+              icon: '🔵', name: 'Google AI (Gemini API)', models: `${GEMINI.pro.short}, ${GEMINI.flash.short}`,
+              strength: `${ctxStr(GEMINI.pro.context)} context, multimodal, generous free tier, Search grounding`,
+              price: `Flash: Free tier + ${priceStr(GEMINI.flash)} per 1M`, url: 'ai.google.dev',
+              badge: 'Best free tier', color: '#2563EB'
             },
             {
               icon: '🔴', name: 'Mistral API', models: 'Mistral Large, Medium, Small',
@@ -85,7 +86,7 @@ export default function AiApisPage() {
               <span style={{ color: '#7DD3FC' }}>import</span> anthropic<br />
               client = anthropic.Anthropic(api_key=<span style={{ color: '#FDE68A' }}>"sk-ant-..."</span>)<br /><br />
               message = client.messages.create(<br />
-              &nbsp;&nbsp;model=<span style={{ color: '#FDE68A' }}>"claude-3-5-sonnet-20241022"</span>,<br />
+              &nbsp;&nbsp;model=<span style={{ color: '#FDE68A' }}>"{CLAUDE.sonnet.id}"</span>,<br />
               &nbsp;&nbsp;max_tokens=<span style={{ color: '#86EFAC' }}>1024</span>,<br />
               &nbsp;&nbsp;messages=[{'{'}<span style={{ color: '#FDE68A' }}>"role"</span>: <span style={{ color: '#FDE68A' }}>"user"</span>, <span style={{ color: '#FDE68A' }}>"content"</span>: <span style={{ color: '#FDE68A' }}>"Hello!"</span>{'}'}]<br />
               )<br />
@@ -100,7 +101,7 @@ export default function AiApisPage() {
               <span style={{ color: '#7DD3FC' }}>from</span> openai <span style={{ color: '#7DD3FC' }}>import</span> OpenAI<br />
               client = OpenAI(api_key=<span style={{ color: '#FDE68A' }}>"sk-..."</span>)<br /><br />
               response = client.chat.completions.create(<br />
-              &nbsp;&nbsp;model=<span style={{ color: '#FDE68A' }}>"gpt-5.5"</span>,<br />
+              &nbsp;&nbsp;model=<span style={{ color: '#FDE68A' }}>"gpt-5.6-sol"</span>,<br />
               &nbsp;&nbsp;messages=[{'{'}<span style={{ color: '#FDE68A' }}>"role"</span>: <span style={{ color: '#FDE68A' }}>"user"</span>, <span style={{ color: '#FDE68A' }}>"content"</span>: <span style={{ color: '#FDE68A' }}>"Hello!"</span>{'}'}]<br />
               )<br />
               <span style={{ color: '#7DD3FC' }}>print</span>(response.choices[<span style={{ color: '#86EFAC' }}>0</span>].message.content)
@@ -130,18 +131,18 @@ export default function AiApisPage() {
                 <tr style={{ background: '#F9FAFB', borderBottom: '2px solid #E5E7EB' }}>
                   <th style={{ padding: '.65rem 1rem', textAlign: 'left' }}>Task</th>
                   <th style={{ padding: '.65rem 1rem', textAlign: 'center' }}>Tokens (approx)</th>
-                  <th style={{ padding: '.65rem 1rem', textAlign: 'center' }}>Claude Sonnet</th>
-                  <th style={{ padding: '.65rem 1rem', textAlign: 'center' }}>GPT-5.5</th>
+                  <th style={{ padding: '.65rem 1rem', textAlign: 'center' }}>{CLAUDE.sonnet.name}</th>
+                  <th style={{ padding: '.65rem 1rem', textAlign: 'center' }}>{OPENAI.flagship.name}</th>
                 </tr>
               </thead>
               <tbody>
                 {[
-                  ['Single Q&A', '500', '$0.001', '$0.002'],
-                  ['Code review (1 file)', '2,000', '$0.006', '$0.010'],
-                  ['Summarize 10-page doc', '5,000', '$0.015', '$0.025'],
-                  ['1,000 Q&As per month', '500K', '$1.50', '$2.50'],
-                  ['Small app (10K API calls)', '5M', '$15.00', '$25.00'],
-                ].map(([task, tokens, claude, gpt]) => (
+                  ['Single Q&A', 500],
+                  ['Code review (1 file)', 2_000],
+                  ['Summarize 10-page doc', 5_000],
+                  ['1,000 Q&As per month', 500_000],
+                  ['Small app (10K API calls)', 5_000_000],
+                ].map(([task, n]) => [task as string, (n as number).toLocaleString(), roughCost(CLAUDE.sonnet, n as number), roughCost(OPENAI.flagship, n as number)]).map(([task, tokens, claude, gpt]) => (
                   <tr key={task} style={{ borderBottom: '1px solid #F3F4F6' }}>
                     <td style={{ padding: '.6rem 1rem', color: '#374151' }}>{task}</td>
                     <td style={{ padding: '.6rem 1rem', textAlign: 'center', color: '#6B7280' }}>{tokens}</td>
@@ -152,7 +153,7 @@ export default function AiApisPage() {
               </tbody>
             </table>
           </div>
-          <p style={{ color: '#6B7280', fontSize: '.8rem', marginTop: '.75rem', marginBottom: 0 }}>Prices above are estimates. Always check current pricing at each provider's website. API costs are generally very low for individual developers.</p>
+          <p style={{ color: '#6B7280', fontSize: '.8rem', marginTop: '.75rem', marginBottom: 0 }}>Prices above are estimates as of {MODELS_AS_OF}, assuming a 50/50 input/output split. Always check current pricing at each provider's website. API costs are generally very low for individual developers.</p>
         </div>
 
         <div style={{ background: '#FFF7ED', border: '1px solid #FED7AA', borderRadius: 12, padding: '1.5rem', marginBottom: '2rem' }}>
@@ -160,7 +161,7 @@ export default function AiApisPage() {
           <ul style={{ margin: 0, paddingLeft: '1.25rem', color: '#78350F', lineHeight: 2.2 }}>
             <li><strong>Building a product that needs the best reasoning?</strong> → Anthropic Claude API</li>
             <li><strong>Need the widest integration ecosystem (LangChain, etc.)?</strong> → OpenAI API</li>
-            <li><strong>Need massive context (millions of tokens)?</strong> → Google Gemini 3.5 Pro API</li>
+            <li><strong>Need massive context (millions of tokens)?</strong> → Claude (Sonnet 5 and up) or Gemini - all at ~1M tokens now</li>
             <li><strong>Want the cheapest option with decent quality?</strong> → Mistral Small or Groq</li>
             <li><strong>Want free, no API key, private?</strong> → Ollama (local)</li>
             <li><strong>Experimenting / learning?</strong> → Anthropic or OpenAI - great docs, SDKs for all languages</li>

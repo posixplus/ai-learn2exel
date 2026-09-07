@@ -46,7 +46,7 @@ export default function Lesson32() {
           <pre className="code-block">{`import anthropic
 client = anthropic.Anthropic()
 
-def call_claude(system: str, user: str, model="claude-opus-4-8") -> str:
+def call_claude(system: str, user: str, model="claude-opus-5") -> str:
     r = client.messages.create(
         model=model, max_tokens=1024,
         messages=[

@@ -143,7 +143,7 @@ export default function Lesson1() {
                 <div className="timeline-content">
                   <h3>2024-2026</h3>
                   <p><strong>AI Goes Everywhere</strong></p>
-                  <p>AI agents that can take actions, multimodal models that understand text+image+video, and reasoning models that think step-by-step are now mainstream. By 2026, models like Claude Opus 4.8, GPT-5.5, and Gemini 3.5 power everyday work. AI is no longer a novelty-it's infrastructure.</p>
+                  <p>AI agents that can take actions, multimodal models that understand text+image+video, and reasoning models that think step-by-step are now mainstream. By 2026, models like Claude Opus 5, GPT-5.6, and Gemini 3.8 power everyday work. AI is no longer a novelty-it's infrastructure.</p>
                 </div>
               </div>
             </div>

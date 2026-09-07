@@ -163,7 +163,7 @@ traceability with LID-style specs + tests.`}</pre>
             <strong>Hands-on (15 min):</strong> Take one requirement from your app (reuse an EARS spec from
             Lesson 74). Now write the full arrow for it by hand: give it a greppable ID (e.g.
             <code> TASK-ADD-001</code>), write the one-line spec, write a failing-first test that references
-            that ID, and sketch the code stub with a <code>// @spec TASK-ADD-001</code> comment. You&apos;ve
+            that ID, and sketch the code stub with a <code>{"// @spec TASK-ADD-001"}</code> comment. You&apos;ve
             just hand-built a single link of the chain LID enforces across an entire codebase - and felt why
             it makes intent impossible to lose.
           </div>

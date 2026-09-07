@@ -59,7 +59,7 @@ export default function LocalAiPage() {
                 {[
                   ['Cost', '✅ Free', '💰 $20+/month'],
                   ['Privacy', '✅ 100% private', '⚠️ Sent to provider'],
-                  ['Quality (best model)', '⚠️ Good (Llama 70B-class)', '✅ Excellent (Claude Opus 4.8)'],
+                  ['Quality (best model)', '⚠️ Good (Llama 70B-class)', '✅ Excellent (Claude Opus 5)'],
                   ['Quality (small models)', '⚠️ Basic', '✅ Still strong'],
                   ['Speed (Apple Silicon)', '✅ Fast', '✅ Fast'],
                   ['Speed (older hardware)', '⚠️ Slow', '✅ Always fast'],

@@ -35,7 +35,7 @@ anthropic-version: 2023-06-01
 Content-Type: application/json
 
 {
-  "model": "claude-sonnet-4-6",
+  "model": "claude-sonnet-5",
   "max_tokens": 1024,
   "system": "You are a senior Python engineer. Reply with code only.",
   "messages": [
@@ -46,7 +46,7 @@ Content-Type: application/json
           <pre>{`{
   "role": "assistant",
   "content": [{ "type": "text", "text": "def validate_email..." }],
-  "model": "claude-sonnet-4-6",
+  "model": "claude-sonnet-5",
   "stop_reason": "end_turn",
   "usage": { "input_tokens": 28, "output_tokens": 87 }
 }`}</pre>
@@ -64,7 +64,7 @@ import anthropic
 client = anthropic.Anthropic()  # reads ANTHROPIC_API_KEY from env
 
 message = client.messages.create(
-    model="claude-sonnet-4-6",
+    model="claude-sonnet-5",
     max_tokens=1024,
     system="You are a helpful assistant.",
     messages=[{"role": "user", "content": "Explain RAG in 3 sentences."}]
@@ -81,7 +81,7 @@ import Anthropic from '@anthropic-ai/sdk'
 const client = new Anthropic() // reads ANTHROPIC_API_KEY from env
 
 const message = await client.messages.create({
-  model: 'claude-sonnet-4-6',
+  model: 'claude-sonnet-5',
   max_tokens: 1024,
   system: 'You are a helpful assistant.',
   messages: [{ role: 'user', content: 'Explain RAG in 3 sentences.' }],
@@ -106,7 +106,7 @@ console.log(message.content[0].text)`}</pre>
             <div className="step">
               <strong>Python streaming</strong>
               <pre>{`with client.messages.stream(
-    model="claude-sonnet-4-6",
+    model="claude-sonnet-5",
     max_tokens=1024,
     messages=[{"role": "user", "content": "Write a poem about APIs."}]
 ) as stream:
@@ -123,7 +123,7 @@ const client = new Anthropic()
 export async function POST(req: Request) {
   const { message } = await req.json()
   const stream = await client.messages.stream({
-    model: 'claude-sonnet-4-6',
+    model: 'claude-sonnet-5',
     max_tokens: 1024,
     messages: [{ role: 'user', content: message }],
   })
@@ -145,13 +145,13 @@ export async function POST(req: Request) {
 
 # Turn 1
 messages.append({"role": "user", "content": "My name is Jay."})
-response = client.messages.create(model="claude-sonnet-4-6",
+response = client.messages.create(model="claude-sonnet-5",
     max_tokens=256, messages=messages)
 messages.append({"role": "assistant", "content": response.content[0].text})
 
 # Turn 2 - Claude remembers because we pass the full history
 messages.append({"role": "user", "content": "What's my name?"})
-response = client.messages.create(model="claude-sonnet-4-6",
+response = client.messages.create(model="claude-sonnet-5",
     max_tokens=256, messages=messages)
 # "Your name is Jay."
 

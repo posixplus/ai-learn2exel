@@ -56,7 +56,7 @@ Features:
 4. POST /api/triage - given a ticket body, return {category, priority} using
    Claude claude-haiku-4-5 with structured JSON output
 5. POST /api/draft-reply - RAG over knowledge_base, return a draft reply
-   using claude-opus-4-8 with prompt caching on the system prompt
+   using claude-opus-5 with prompt caching on the system prompt
 6. GET /api/tickets - list all tickets
 7. UI: /inbox page with ticket list; click opens detail with:
    - Ticket body
@@ -94,7 +94,7 @@ Architecture:
 - researcher(sub_question) -> findings (bullet points)
   Use claude-haiku-4-5 for researchers (cheap + parallel)
 - synthesiser(all_findings, original_question) -> 600-word report
-  Use claude-opus-4-8 for synthesis
+  Use claude-opus-5 for synthesis
 - critic(report) -> {"score": 1-10, "improvements": [...]}
   Loop max 3 times; stop if score >= 8 or "APPROVED" in output
 - reviser(report, critique) -> improved report
@@ -138,7 +138,7 @@ Features:
 2. POST /api/extract:
    - Accept file as FormData
    - Convert to base64 (image) or base64 pdf document block
-   - Send to claude-opus-4-8 with this system prompt:
+   - Send to claude-opus-5 with this system prompt:
      "Extract all data from this document. Return JSON:
       {type: 'receipt'|'invoice'|'form'|'contract'|'other',
        vendor: string|null, date: string|null,
