@@ -3,6 +3,7 @@ import LessonHeader from '@/components/lesson/LessonHeader'
 import Sidebar from '@/components/lesson/Sidebar'
 import LessonNav from '@/components/lesson/LessonNav'
 import QuickRef from '@/components/lesson/QuickRef'
+import { CLAUDE } from '@/data/models'
 
 export default function Lesson28() {
   return (
@@ -36,8 +37,8 @@ export default function Lesson28() {
             <h3>Full Annotated settings.json</h3>
             <pre>{`{
   // ─── MODEL SELECTION ──────────────────────────────────
-  "model": "claude-sonnet-4-6",        // Main model for all tasks
-  "smallFastModel": "claude-haiku-4-5-20251001", // Used for quick sub-tasks
+  "model": "${CLAUDE.sonnet.id}",          // Main model for all tasks
+  "smallFastModel": "${CLAUDE.haiku.id}", // Used for quick sub-tasks
 
   // ─── MCP SERVERS ──────────────────────────────────────
   "mcpServers": {
@@ -107,9 +108,9 @@ export default function Lesson28() {
             <div className="step">
               <strong><code>model</code> - Primary model</strong>
               <p>Used for all main tasks: code writing, analysis, planning, complex reasoning.</p>
-              <pre>{`"model": "claude-sonnet-4-6"   // Best balance: speed + quality
-"model": "claude-opus-4-8"    // Maximum capability (slower, higher cost)
-"model": "claude-haiku-4-5-20251001"  // Fastest, cheapest (simple tasks only)`}</pre>
+              <pre>{`"model": "${CLAUDE.sonnet.id}"   // Best balance: speed + quality
+"model": "${CLAUDE.opus.id}"     // Maximum capability (slower, higher cost)
+"model": "${CLAUDE.haiku.id}"  // Fastest, cheapest (simple tasks only)`}</pre>
               <div className="info-box" style={{marginTop:'0.75rem'}}>
                 <strong>Best practice:</strong> Use Sonnet as your default. Switch to Opus only for complex architectural decisions,
                 extended thinking tasks, or when Sonnet is clearly underperforming. Haiku is rarely worth the quality trade-off for coding tasks.
@@ -119,7 +120,7 @@ export default function Lesson28() {
               <strong><code>smallFastModel</code> - Sub-task model</strong>
               <p>Used automatically for lightweight operations: summarisation, quick lookups, tool call routing.
               Keeping this as Haiku saves tokens without sacrificing quality on your main work.</p>
-              <pre>{`"smallFastModel": "claude-haiku-4-5-20251001"`}</pre>
+              <pre>{`"smallFastModel": "${CLAUDE.haiku.id}"`}</pre>
             </div>
           </div>
         </section>

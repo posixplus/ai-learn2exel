@@ -3,6 +3,7 @@ import LessonHeader from '@/components/lesson/LessonHeader'
 import Sidebar from '@/components/lesson/Sidebar'
 import LessonNav from '@/components/lesson/LessonNav'
 import QuickRef from '@/components/lesson/QuickRef'
+import { CLAUDE, MODELS_AS_OF } from '@/data/models'
 
 export default function Lesson33() {
   return (
@@ -51,7 +52,7 @@ Return JSON: {"category": "...", "priority": "high|medium|low",
 Identify: unusual clauses, liability caps, IP ownership issues, termination rights.
 Flag anything that deviates from our standard terms (attached below).
 Be concise. Bullet points per section.""",
-        "model": "claude-opus-4-8",
+        "model": "claude-opus-5",
         "max_tokens": 2048,
     },
     "weekly_summary": {
@@ -60,7 +61,7 @@ Be concise. Bullet points per section.""",
 - Open questions still unresolved
 - Action items with owners
 Keep it under 200 words.""",
-        "model": "claude-sonnet-4-6",
+        "model": "claude-sonnet-5",
         "max_tokens": 512,
     }
 }
@@ -91,11 +92,11 @@ def run_prompt(prompt_key: str, user_content: str) -> str:
 import anthropic, time
 from datetime import datetime
 
-# Approximate cost per 1M tokens (check pricing page for current rates)
+# Cost per 1M tokens as of ${MODELS_AS_OF} (check pricing page for current rates)
 COSTS = {
-    "claude-opus-4-8":           {"input": 15.0,  "output": 75.0},
-    "claude-sonnet-4-6":         {"input": 3.0,   "output": 15.0},
-    "claude-haiku-4-5-20251001": {"input": 0.25,  "output": 1.25},
+    "${CLAUDE.opus.id}":   {"input": ${CLAUDE.opus.inputPrice.toFixed(2)},  "output": ${CLAUDE.opus.outputPrice.toFixed(2)}},
+    "${CLAUDE.sonnet.id}": {"input": ${CLAUDE.sonnet.inputPrice.toFixed(2)},  "output": ${CLAUDE.sonnet.outputPrice.toFixed(2)}},
+    "${CLAUDE.haiku.id}": {"input": ${CLAUDE.haiku.inputPrice.toFixed(2)},  "output": ${CLAUDE.haiku.outputPrice.toFixed(2)}},
 }
 
 def tracked_call(client, feature: str, team: str, **kwargs):

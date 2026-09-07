@@ -299,7 +299,7 @@ export default function Lesson11() {
               <div style={{ backgroundColor: '#f3e5f5', padding: '1.5rem', borderRadius: '8px', borderLeft: '4px solid #9c27b0' }}>
                 <h5 style={{ marginTop: 0 }}>2. Reasoning Models</h5>
                 <p style={{ fontSize: '0.9rem' }}>
-                  AI that can think through complex multi-step problems. Less hallucinating, more accuracy on hard math/logic problems. Reasoning is now built into frontier models like GPT-5.5, Gemini 3.5 (Deep Think), and Claude Opus 4.8.
+                  AI that can think through complex multi-step problems. Less hallucinating, more accuracy on hard math/logic problems. Reasoning is now built into frontier models like GPT-5.6, Gemini 3.1 Pro (Deep Think), and Claude Opus 5.
                 </p>
               </div>
 

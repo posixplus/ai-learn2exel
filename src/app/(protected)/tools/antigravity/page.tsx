@@ -32,7 +32,7 @@ export default function AntigravityPage() {
             Announced at Google I/O 2026, <strong>Antigravity</strong> is Google&apos;s standalone, agent-first
             development platform. Instead of autocompleting line by line, you describe a task in plain
             language and autonomous agents plan it, edit across multiple files, and <em>actually run and test
-            the app</em> before handing it back. It is built on Gemini 3.5, and a signature feature is the
+            the app</em> before handing it back. It runs on the Gemini family (3.1 Pro and 3.8 Flash at the time of writing), and a signature feature is the
             <strong> Browser Subagent</strong>: Antigravity spins up a real Chrome window, clicks through your
             app, takes screenshots, and fixes what is broken - without you ever opening DevTools.
           </p>
@@ -42,8 +42,9 @@ export default function AntigravityPage() {
           {[
             { label: 'Made by', value: 'Google' },
             { label: 'Type', value: 'Agent-first IDE' },
-            { label: 'Free tier', value: 'Public preview' },
-            { label: 'Powered by', value: 'Gemini 3.5' },
+            { label: 'Free tier', value: 'Yes, weekly agent quotas' },
+            { label: 'Powered by', value: 'Gemini 3.1 Pro / 3.8 Flash' },
+            { label: 'Paid', value: 'Google AI Pro $19.99/mo' },
             { label: 'Platform', value: 'Mac, Win, Linux' },
             { label: 'Get it', value: 'antigravity.google' },
           ].map(f => (
@@ -60,8 +61,11 @@ export default function AntigravityPage() {
             Google&apos;s old browser IDE, <strong>Project IDX</strong>, became <strong>Firebase Studio</strong>
             (April 2025), which is now winding down - Google points users toward <strong>Google AI Studio</strong>
             (for prompting/prototyping with Gemini) and <strong>Antigravity</strong> (the agent-first IDE for
-            building real apps). If you want autonomous agents writing and testing code, Antigravity is the
-            current tool.
+            building real apps). The standalone <strong>Antigravity CLI</strong> replaced Gemini CLI in June 2026,
+            so terminal workflows live here too. If you want autonomous agents writing and testing code,
+            Antigravity is the current tool. Heads up: Google has tightened the free quotas several times since
+            launch, so budget for the Google AI Pro plan ($19.99/mo; Ultra tiers at $99.99 and $199.99) if you use
+            it daily.
           </p>
         </div>
 

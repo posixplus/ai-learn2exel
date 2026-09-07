@@ -6,6 +6,7 @@ import HandsOn from '@/components/lesson/HandsOn'
 import QuickRef from '@/components/lesson/QuickRef'
 import LessonNav from '@/components/lesson/LessonNav'
 import Footer from '@/components/layout/Footer'
+import { CLAUDE, OPENAI, GEMINI, MODELS_AS_OF, ctxStr } from '@/data/models'
 
 export default function Lesson6() {
   return (
@@ -118,7 +119,7 @@ export default function Lesson6() {
             </p>
 
             <Callout type="info">
-              <strong>Current context windows:</strong> Claude (Sonnet 4.6 / Opus 4.8) ~200K-1M tokens, GPT-5.5 ~1M tokens, Gemini 3.5 ~2M tokens. One token ≈ 4 characters, so a 200K window holds roughly 800,000 characters of text. (These numbers keep growing - always check the current docs.)
+              <strong>Current context windows (as of {MODELS_AS_OF}):</strong> Claude ({CLAUDE.sonnet.short} / {CLAUDE.opus.short}) {ctxStr(CLAUDE.sonnet.context)} tokens ({CLAUDE.haiku.short} is {ctxStr(CLAUDE.haiku.context)}), {OPENAI.flagship.short} ~{ctxStr(OPENAI.flagship.context)}, {GEMINI.pro.short} ~{ctxStr(GEMINI.pro.context)}. One token ≈ 4 characters, so a 200K window holds roughly 800,000 characters of text. (These numbers keep growing - always check the current docs.)
             </Callout>
 
             <h4>The Problem: Long Conversations</h4>

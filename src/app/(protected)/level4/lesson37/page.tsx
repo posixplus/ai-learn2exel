@@ -138,7 +138,7 @@ Return JSON only:
   "conciseness": N, "overall": N, "reasoning": "one sentence"}}"""
 
     r = client.messages.create(
-        model="claude-opus-4-8",   # use a strong model as judge
+        model="claude-opus-5",   # use a strong model as judge
         max_tokens=256,
         messages=[{"role": "user", "content": prompt}]
     )

@@ -40,7 +40,7 @@ export default function ClaudeCodePage() {
             { label: 'Interface', value: 'Terminal (CLI)' },
             { label: 'Requires', value: 'Claude Pro or API' },
             { label: 'Platform', value: 'Mac, Linux, WSL' },
-            { label: 'Model', value: 'Claude Opus 4.8 / Sonnet 4.6' },
+            { label: 'Model', value: 'Claude Opus 5 / Sonnet 5' },
             { label: 'Install via', value: 'npm (Node.js)' },
           ].map(f => (
             <div key={f.label} style={{ background: 'white', border: '1px solid #E5E7EB', borderRadius: 10, padding: '1rem', textAlign: 'center' }}>

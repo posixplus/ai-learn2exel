@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import { CLAUDE, CLAUDE_TOP_TWO, IDE_MODEL_SET, GEMINI, MODELS_AS_OF } from '@/data/models'
 
 // ── Shared comparison data for all AI coding tools ───────────────────────────
 interface ToolRow {
@@ -11,11 +12,11 @@ interface ToolRow {
 }
 
 const TOOLS: ToolRow[] = [
-  { slug: 'github-copilot', name: 'GitHub Copilot', type: 'IDE extension', pricing: 'Free tier; Pro ~$10/mo', bestFor: 'AI in your existing editor', models: 'GPT-5.5, Claude Sonnet 4.6, Gemini 3.5' },
-  { slug: 'cursor', name: 'Cursor', type: 'AI IDE (VS Code fork)', pricing: 'Hobby free; Pro $20/mo', bestFor: 'All-round AI editor + agent', models: 'GPT-5.5, Claude Opus 4.8 / Sonnet 4.6' },
+  { slug: 'github-copilot', name: 'GitHub Copilot', type: 'IDE extension', pricing: 'Free tier; Pro ~$10/mo', bestFor: 'AI in your existing editor', models: IDE_MODEL_SET },
+  { slug: 'cursor', name: 'Cursor', type: 'AI IDE (VS Code fork)', pricing: 'Hobby free; Pro $20/mo', bestFor: 'All-round AI editor + agent', models: `GPT-5.6, Claude ${CLAUDE_TOP_TWO}` },
   { slug: 'windsurf', name: 'Windsurf', type: 'AI IDE (VS Code fork)', pricing: 'Free tier; paid plans', bestFor: 'Agentic flows (Cascade)', models: 'Frontier models + own' },
-  { slug: 'antigravity', name: 'Google Antigravity', type: 'Agent-first IDE', pricing: 'Free public preview', bestFor: 'Autonomous build + browser test', models: 'Gemini 3.5' },
-  { slug: 'claude-code-cli', name: 'Claude Code (CLI)', type: 'Terminal agent', pricing: 'Claude sub or API', bestFor: 'Agentic coding in the terminal', models: 'Claude Opus 4.8 / Sonnet 4.6 / Haiku 4.5' },
+  { slug: 'antigravity', name: 'Google Antigravity', type: 'Agent-first IDE', pricing: 'Free tier; Google AI Pro $19.99/mo', bestFor: 'Autonomous build + browser test', models: `${GEMINI.pro.short} / ${GEMINI.flash.short} (agent-first)` },
+  { slug: 'claude-code-cli', name: 'Claude Code (CLI)', type: 'Terminal agent', pricing: 'Claude sub or API', bestFor: 'Agentic coding in the terminal', models: `Claude ${CLAUDE_TOP_TWO} / ${CLAUDE.haiku.short}` },
   { slug: 'vscode-ai', name: 'VS Code + AI ext', type: 'Editor + extensions', pricing: 'Free options exist', bestFor: 'Keep VS Code, add AI', models: 'Depends on extension' },
 ]
 
@@ -38,7 +39,7 @@ export default function ToolGuideExtras({ current, troubleshooting, lessons }: T
       {/* Comparison table */}
       <div style={cardStyle}>
         <h2 style={{ marginTop: 0, fontSize: '1.3rem' }}>⚖️ Which Coding Tool Should I Pick?</h2>
-        <p style={{ color: '#6B7280', fontSize: '.9rem', marginTop: 0 }}>The current tool is highlighted. There is no single winner - pick by how you like to work.</p>
+        <p style={{ color: '#6B7280', fontSize: '.9rem', marginTop: 0 }}>The current tool is highlighted. There is no single winner - pick by how you like to work. Models and pricing as of {MODELS_AS_OF}.</p>
         <div style={{ overflowX: 'auto' }}>
           <table style={{ borderCollapse: 'collapse', width: '100%', minWidth: 720 }}>
             <thead>

@@ -277,7 +277,7 @@ export default function ClaudeCodeCheatSheet() {
               <CmdRow cmd="/context" desc="Usage + optimization tips" />
               <CmdRow cmd="/compact [focus]" desc="Compress with focus" />
               <div style={S.row}><span style={{ fontSize: '.78rem', color: '#374151', fontWeight: 600 }}>Auto-compact</span><span style={S.desc}>~95% capacity (thrash detection: 3×)</span></div>
-              <div style={S.row}><span style={{ fontSize: '.78rem', color: '#374151', fontWeight: 600 }}>1M context</span><span style={S.desc}>Opus 4.6 (Max/Team/Ent)</span></div>
+              <div style={S.row}><span style={{ fontSize: '.78rem', color: '#374151', fontWeight: 600 }}>1M context</span><span style={S.desc}>Opus 5 / Sonnet 5 (all paid plans)</span></div>
               <div style={S.row}><span style={{ fontSize: '.78rem', color: '#374151', fontWeight: 600 }}>CLAUDE.md</span><span style={S.desc}>Survives compaction!</span></div>
 
               <Subhead>Session Power Moves</Subhead>

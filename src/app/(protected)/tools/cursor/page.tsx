@@ -66,7 +66,7 @@ export default function CursorPage() {
             </div>
             <div>
               <div style={{ fontWeight: 700, marginBottom: '.4rem' }}>Step 4 - Choose Your AI Model</div>
-              <p style={{ margin: 0, color: '#4B5563' }}>Cursor Settings → Models. You can use GPT-5.5, Claude Opus 4.8 / Sonnet 4.6, Gemini 3.5, or Cursor&apos;s own fast model. You can also add your own API keys (OpenAI, Anthropic).</p>
+              <p style={{ margin: 0, color: '#4B5563' }}>Cursor Settings → Models. You can use GPT-5.6, Claude Opus 5 / Sonnet 5, Gemini 3.8 Flash, or Cursor&apos;s own fast model. You can also add your own API keys (OpenAI, Anthropic).</p>
             </div>
           </div>
         </div>

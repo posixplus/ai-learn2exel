@@ -53,7 +53,7 @@ def analyse_image(image_path: str, question: str) -> str:
     media_type = media_types.get(ext, "image/jpeg")
 
     response = client.messages.create(
-        model="claude-opus-4-8",
+        model="claude-opus-5",
         max_tokens=1024,
         messages=[{
             "role": "user",
@@ -83,7 +83,7 @@ print(analyse_image("diagram.png",
           <h2>Sending an Image: URL</h2>
           <pre className="code-block">{`# Faster - no need to download the image first
 response = client.messages.create(
-    model="claude-opus-4-8",
+    model="claude-opus-5",
     max_tokens=512,
     messages=[{
         "role": "user",
@@ -114,7 +114,7 @@ def analyse_pdf(pdf_path: str, question: str) -> str:
         pdf_data = base64.standard_b64encode(f.read()).decode("utf-8")
 
     response = client.messages.create(
-        model="claude-opus-4-8",
+        model="claude-opus-5",
         max_tokens=2048,
         messages=[{
             "role": "user",
@@ -157,7 +157,7 @@ export async function POST(req: Request) {
   const base64 = Buffer.from(buffer).toString('base64')
 
   const response = await client.messages.create({
-    model: 'claude-opus-4-8',
+    model: 'claude-opus-5',
     max_tokens: 1024,
     messages: [{
       role: 'user',
