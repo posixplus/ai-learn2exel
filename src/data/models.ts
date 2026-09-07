@@ -11,7 +11,7 @@
  * pricing page on the date below.
  */
 
-export const MODELS_AS_OF = 'September 2026'
+export const MODELS_AS_OF = 'September 7, 2026'
 
 export interface ModelInfo {
   /** Marketing name, e.g. "Claude Opus 5" */

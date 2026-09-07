@@ -1,5 +1,6 @@
 'use client'
 import Link from 'next/link'
+import { MODELS_AS_OF } from '@/data/models'
 
 export default function Footer() {
   return (
@@ -18,6 +19,7 @@ export default function Footer() {
 
       <p className="footer-note">
         This course is free to share. AI capabilities change rapidly - always verify important information.
+        <br />Models, pricing and tool details last refreshed {MODELS_AS_OF}.
       </p>
     </footer>
   )
