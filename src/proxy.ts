@@ -1,5 +1,5 @@
 /**
- * Next.js Middleware - runs on every request before the page renders.
+ * Next.js Proxy (formerly middleware) - runs on every request before the page renders.
  * - Sets a persistent visitor-id cookie on first visit
  * - Redirects /login to home
  */
@@ -7,7 +7,7 @@
 import { NextResponse } from 'next/server'
 import type { NextRequest } from 'next/server'
 
-export async function middleware(request: NextRequest) {
+export async function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl
 
   // Redirect /login to home - no login needed

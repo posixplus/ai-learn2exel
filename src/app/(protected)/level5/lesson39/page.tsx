@@ -129,7 +129,7 @@ function handlePaymentStatus(status: PaymentStatus) {
               <li>Write a JSDoc comment for <code>createUser(email, name, role)</code> - accept the completion</li>
               <li>Write only the function signature for <code>getUserById</code> - see what you get</li>
               <li>Write the first CRUD function fully, then write just signatures for the rest - the AI should follow the pattern</li>
-              <li>Add error handling by typing <code>// throw custom error if</code> and see what it suggests</li>
+              <li>Add error handling by typing <code>{"// throw custom error if"}</code> and see what it suggests</li>
             </ol>
           </div>
         </section>
