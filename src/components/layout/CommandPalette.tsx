@@ -15,7 +15,7 @@ const TOOL_ITEMS: Item[] = [
   { title: 'Claude Code Cheat Sheet', subtitle: 'Tool', href: '/tools/claude-cheatsheet' },
   { title: 'Google Antigravity', subtitle: 'Setup guide', href: '/tools/antigravity' },
   { title: 'Cursor', subtitle: 'Setup guide', href: '/tools/cursor' },
-  { title: 'Windsurf', subtitle: 'Setup guide', href: '/tools/windsurf' },
+  { title: 'Devin Desktop (Windsurf)', subtitle: 'Setup guide', href: '/tools/windsurf' },
   { title: 'GitHub Copilot', subtitle: 'Setup guide', href: '/tools/github-copilot' },
   { title: 'Claude Code CLI', subtitle: 'Setup guide', href: '/tools/claude-code-cli' },
   { title: 'VS Code + AI Extensions', subtitle: 'Setup guide', href: '/tools/vscode-ai' },

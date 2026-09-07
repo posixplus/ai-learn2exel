@@ -38,10 +38,10 @@ export default function ClaudeCodePage() {
           {[
             { label: 'Made by', value: 'Anthropic' },
             { label: 'Interface', value: 'Terminal (CLI)' },
-            { label: 'Requires', value: 'Claude Pro or API' },
-            { label: 'Platform', value: 'Mac, Linux, WSL' },
+            { label: 'Requires', value: 'Claude Pro/Max/Team or API' },
+            { label: 'Platform', value: 'Mac, Windows, Linux' },
             { label: 'Model', value: 'Claude Opus 5 / Sonnet 5' },
-            { label: 'Install via', value: 'npm (Node.js)' },
+            { label: 'Install via', value: 'Native installer (no Node)' },
           ].map(f => (
             <div key={f.label} style={{ background: 'white', border: '1px solid #E5E7EB', borderRadius: 10, padding: '1rem', textAlign: 'center' }}>
               <div style={{ fontSize: '.78rem', color: '#9CA3AF', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '.05em', marginBottom: '.25rem' }}>{f.label}</div>
@@ -54,9 +54,9 @@ export default function ClaudeCodePage() {
           <h2 style={{ marginTop: 0, fontSize: '1.3rem' }}>⚡ Install & Setup</h2>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
             {[
-              { step: '1', title: 'Install Node.js', desc: 'Claude Code requires Node.js 18+. Download from nodejs.org or run: brew install node (Mac).' },
-              { step: '2', title: 'Install Claude Code', desc: 'Run in terminal: npm install -g @anthropic-ai/claude-code' },
-              { step: '3', title: 'Authenticate', desc: 'Run: claude - on first launch it opens your browser to sign in with your Anthropic account. Requires Claude Pro ($20/month) or an API key (pay-per-use, very affordable for coding tasks).' },
+              { step: '1', title: 'Install Claude Code', desc: 'Mac/Linux: curl -fsSL https://claude.ai/install.sh | bash. Windows PowerShell: irm https://claude.ai/install.ps1 | iex. No Node.js needed; the native installer auto-updates. Homebrew (brew install --cask claude-code) and WinGet also work.' },
+              { step: '2', title: 'Verify', desc: 'Open a new terminal and run: claude --version. (The old npm install -g @anthropic-ai/claude-code still works but is deprecated.)' },
+              { step: '3', title: 'Authenticate', desc: 'Run: claude - on first launch it opens your browser to sign in with your Anthropic account. Requires a Claude Pro ($20/month), Max, or Team subscription, or an API key (pay-per-use, very affordable for coding tasks).' },
               { step: '4', title: 'Verify installation', desc: 'Run: claude --version - you should see the version number. Then cd into any project and run: claude' },
             ].map(s => (
               <div key={s.step} style={{ display: 'flex', gap: '1rem' }}>
@@ -69,7 +69,7 @@ export default function ClaudeCodePage() {
             ))}
           </div>
 
-          <CommandBlock label="# Install and launch" command={`npm install -g @anthropic-ai/claude-code\ncd my-project\nclaude`} />
+          <CommandBlock label="# Install and launch" command={`curl -fsSL https://claude.ai/install.sh | bash\ncd my-project\nclaude`} />
         </div>
 
         <div style={{ background: 'white', border: '1px solid #E5E7EB', borderRadius: 12, padding: '2rem', marginBottom: '1.5rem' }}>
@@ -142,7 +142,7 @@ export default function ClaudeCodePage() {
         <ToolResources links={[
           { label: 'Product page', href: 'https://claude.com/product/claude-code', note: 'What it is + how to install' },
           { label: 'Documentation', href: 'https://code.claude.com/docs', note: 'Commands, CLAUDE.md, MCP, agents' },
-          { label: 'npm package', href: 'https://www.npmjs.com/package/@anthropic-ai/claude-code', note: 'npm i -g @anthropic-ai/claude-code' },
+          { label: 'Install guide', href: 'https://code.claude.com/docs/en/setup', note: 'Native installer for Mac, Windows, Linux' },
           { label: 'GitHub repo', href: 'https://github.com/anthropics/claude-code', note: 'Issues + source' },
           { label: 'Pricing', href: 'https://claude.com/pricing', note: 'Subscription + API rates' },
         ]} />

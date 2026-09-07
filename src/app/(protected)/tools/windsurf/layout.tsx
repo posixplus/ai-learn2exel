@@ -2,8 +2,8 @@ import type { Metadata } from 'next'
 import { toolMetadata } from '@/lib/seo'
 
 export const metadata: Metadata = toolMetadata(
-  "Windsurf Setup Guide",
-  "Set up Windsurf and its Cascade agentic AI - full codebase indexing and autonomous multi-file tasks.",
+  "Devin Desktop (Windsurf) Setup Guide",
+  "Set up Devin Desktop (formerly Windsurf) and its Devin Local agent - full codebase indexing and autonomous multi-file tasks.",
   "/tools/windsurf",
 )
 

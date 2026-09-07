@@ -12,11 +12,11 @@ interface ToolRow {
 }
 
 const TOOLS: ToolRow[] = [
-  { slug: 'github-copilot', name: 'GitHub Copilot', type: 'IDE extension', pricing: 'Free tier; Pro ~$10/mo', bestFor: 'AI in your existing editor', models: IDE_MODEL_SET },
+  { slug: 'github-copilot', name: 'GitHub Copilot', type: 'IDE extension', pricing: 'Free tier; Pro $10/mo', bestFor: 'AI in your existing editor', models: IDE_MODEL_SET },
   { slug: 'cursor', name: 'Cursor', type: 'AI IDE (VS Code fork)', pricing: 'Hobby free; Pro $20/mo', bestFor: 'All-round AI editor + agent', models: `GPT-5.6, Claude ${CLAUDE_TOP_TWO}` },
-  { slug: 'windsurf', name: 'Windsurf', type: 'AI IDE (VS Code fork)', pricing: 'Free tier; paid plans', bestFor: 'Agentic flows (Cascade)', models: 'Frontier models + own' },
+  { slug: 'windsurf', name: 'Devin Desktop (ex-Windsurf)', type: 'AI IDE (VS Code fork)', pricing: 'Free tier; Pro $20/mo', bestFor: 'Local + cloud agents in one place', models: 'SWE-1.6 (own) + Claude / GPT / Gemini' },
   { slug: 'antigravity', name: 'Google Antigravity', type: 'Agent-first IDE', pricing: 'Free tier; Google AI Pro $19.99/mo', bestFor: 'Autonomous build + browser test', models: `${GEMINI.pro.short} / ${GEMINI.flash.short} (agent-first)` },
-  { slug: 'claude-code-cli', name: 'Claude Code (CLI)', type: 'Terminal agent', pricing: 'Claude sub or API', bestFor: 'Agentic coding in the terminal', models: `Claude ${CLAUDE_TOP_TWO} / ${CLAUDE.haiku.short}` },
+  { slug: 'claude-code-cli', name: 'Claude Code (CLI)', type: 'Terminal agent', pricing: 'Claude Pro/Max or API', bestFor: 'Agentic coding in the terminal', models: `Claude ${CLAUDE_TOP_TWO} / ${CLAUDE.haiku.short}` },
   { slug: 'vscode-ai', name: 'VS Code + AI ext', type: 'Editor + extensions', pricing: 'Free options exist', bestFor: 'Keep VS Code, add AI', models: 'Depends on extension' },
 ]
 

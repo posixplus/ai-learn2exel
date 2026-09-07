@@ -190,7 +190,7 @@ export const LEVELS: LevelMeta[] = [
     badge: '🟣 Level 5 · Copilot Track',
     navLabel: 'Level 5 - AI Coding Tools',
     cardTitle: 'AI-Powered Developer',
-    cardDesc: 'GitHub Copilot, Claude Code, Cursor, and Windsurf - master AI coding tools for inline completion, debugging, testing, refactoring, git workflows, and agentic coding.',
+    cardDesc: 'GitHub Copilot, Claude Code, Cursor, and Devin Desktop (Windsurf) - master AI coding tools for inline completion, debugging, testing, refactoring, git workflows, and agentic coding.',
     hoursLabel: '⏱ ~7 hours · 10 lessons + capstone',
     featured: true,
     startStyle: 'accent',

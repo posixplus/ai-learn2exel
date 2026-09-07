@@ -38,7 +38,7 @@ export default function CursorPage() {
             { label: 'Made by', value: 'Anysphere' },
             { label: 'Based on', value: 'VS Code' },
             { label: 'Free tier', value: 'Hobby (limited)' },
-            { label: 'Pro plan', value: '$20/month' },
+            { label: 'Pro plan', value: '$20/mo (Pro+ $60, Ultra $200)' },
             { label: 'Platform', value: 'Mac, Win, Linux' },
             { label: 'Website', value: 'cursor.com' },
           ].map(f => (
@@ -62,7 +62,7 @@ export default function CursorPage() {
             </div>
             <div>
               <div style={{ fontWeight: 700, marginBottom: '.4rem' }}>Step 3 - Sign In</div>
-              <p style={{ margin: 0, color: '#4B5563' }}>Sign up at cursor.com. The Hobby tier gives you 2,000 completions/month + limited Composer and Chat. Pro ($20/mo) removes limits.</p>
+              <p style={{ margin: 0, color: '#4B5563' }}>Sign up at cursor.com. The Hobby tier gives you about 2,000 completions/month plus a handful of agent requests. Pro ($20/mo) includes unlimited Auto-mode requests and a $20 monthly credit pool for hand-picked frontier models; Pro+ ($60) and Ultra ($200) scale that pool. Heavy use of Opus-class models can burn the pool fast, so watch Settings → Billing.</p>
             </div>
             <div>
               <div style={{ fontWeight: 700, marginBottom: '.4rem' }}>Step 4 - Choose Your AI Model</div>
@@ -169,7 +169,7 @@ export default function CursorPage() {
         <ToolResources links={[
           { label: 'Download Cursor', href: 'https://cursor.com', note: 'Mac, Windows, Linux' },
           { label: 'Documentation', href: 'https://cursor.com/docs', note: 'Agent, rules, MCP, skills, CLI' },
-          { label: 'Pricing', href: 'https://cursor.com/pricing', note: 'Hobby (free), Pro, Business' },
+          { label: 'Pricing', href: 'https://cursor.com/pricing', note: 'Hobby (free), Pro, Pro+, Ultra, Teams' },
           { label: 'Changelog', href: 'https://cursor.com/changelog', note: "What's new each release" },
           { label: 'Community forum', href: 'https://forum.cursor.com', note: 'Q&A, tips, and bug reports' },
         ]} />

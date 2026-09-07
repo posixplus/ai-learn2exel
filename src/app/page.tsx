@@ -294,7 +294,7 @@ export default function HomePage() {
               { icon: '🐙', title: 'GitHub Copilot', desc: 'Install in VS Code or JetBrains. Slash commands, inline edits, Copilot Workspace.', href: '/tools/github-copilot' },
               { icon: '🖥️', title: 'Claude Code (CLI)', desc: 'Terminal-native agentic coding. Install, CLAUDE.md setup, and agentic tasks.', href: '/tools/claude-code-cli' },
               { icon: '⚡', title: 'Cursor', desc: 'AI code editor (VS Code fork). Composer, Cmd+K inline edits, @codebase chat.', href: '/tools/cursor' },
-              { icon: '🌊', title: 'Windsurf', desc: 'Cascade agentic AI IDE. Full codebase indexing, autonomous multi-file tasks.', href: '/tools/windsurf' },
+              { icon: '🌊', title: 'Devin Desktop', desc: 'Formerly Windsurf. Agentic AI IDE with full codebase indexing and autonomous multi-file tasks.', href: '/tools/windsurf' },
               { icon: '🔵', title: 'VS Code + AI Extensions', desc: 'Add Copilot, Claude, or Codeium to your existing VS Code setup.', href: '/tools/vscode-ai' },
             ].map(f => (
               <Link key={f.title} href={f.href} style={{ background: 'var(--color-card)', border: '1px solid var(--color-border)', borderRadius: 'var(--radius-md)', padding: '1.25rem', textDecoration: 'none', color: 'inherit', display: 'block' }}>

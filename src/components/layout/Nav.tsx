@@ -21,7 +21,7 @@ const TOOL_GROUPS = [
     label: 'AI Coding Tools - Setup Guide',
     items: [
       { title: '🪐 Google Antigravity', href: '/tools/antigravity' },
-      { title: '🌊 Windsurf', href: '/tools/windsurf' },
+      { title: '🌊 Devin Desktop (Windsurf)', href: '/tools/windsurf' },
       { title: '🖱️ Cursor', href: '/tools/cursor' },
       { title: '💻 VS Code + AI Extensions', href: '/tools/vscode-ai' },
       { title: '🤖 GitHub Copilot', href: '/tools/github-copilot' },

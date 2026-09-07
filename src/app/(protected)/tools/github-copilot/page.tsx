@@ -22,7 +22,7 @@ export default function GithubCopilotPage() {
             <div>
               <div style={{ display: 'flex', gap: '.5rem', marginBottom: '.4rem' }}>
                 <span style={{ background: '#EEF2FF', color: '#4F46E5', border: '1px solid #C7D2FE', borderRadius: '999px', padding: '.2rem .75rem', fontSize: '.78rem', fontWeight: 600 }}>AI Coding Assistant</span>
-                <span style={{ background: '#FEF3C7', color: '#92400E', border: '1px solid #FDE68A', borderRadius: '999px', padding: '.2rem .75rem', fontSize: '.78rem', fontWeight: 600 }}>$10/month · Free for Students</span>
+                <span style={{ background: '#FEF3C7', color: '#92400E', border: '1px solid #FDE68A', borderRadius: '999px', padding: '.2rem .75rem', fontSize: '.78rem', fontWeight: 600 }}>Free tier · Pro $10/month</span>
               </div>
               <h1 style={{ margin: 0, fontSize: '2rem', fontWeight: 800 }}>GitHub Copilot</h1>
               <p style={{ margin: '.25rem 0 0', color: '#6B7280', fontSize: '1rem' }}>by GitHub (Microsoft) - the most widely used AI coding assistant</p>
@@ -36,9 +36,9 @@ export default function GithubCopilotPage() {
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(160px, 1fr))', gap: '1rem', marginBottom: '2.5rem' }}>
           {[
             { label: 'Made by', value: 'GitHub / Microsoft' },
-            { label: 'Individual', value: '$10/month' },
+            { label: 'Pro', value: '$10/mo (Pro+ $39, Max $100)' },
             { label: 'Business', value: '$19/user/month' },
-            { label: 'Free tier', value: 'Students & OSS' },
+            { label: 'Free tier', value: 'Yes; students get Pro free' },
             { label: 'Works in', value: 'VS Code, JetBrains, Vim' },
             { label: 'Powered by', value: 'GPT-5.6, Claude, Gemini' },
           ].map(f => (
@@ -53,7 +53,7 @@ export default function GithubCopilotPage() {
           <h2 style={{ marginTop: 0, fontSize: '1.3rem' }}>⚡ Install & Setup (VS Code)</h2>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
             {[
-              { step: '1', title: 'Get a Copilot subscription', desc: 'Go to github.com/features/copilot → Start free trial (30 days free). Students: apply at github.com/education for free access.' },
+              { step: '1', title: 'Pick a plan', desc: 'Go to github.com/features/copilot. The Free plan (about 2,000 completions and 50 agent requests a month) needs no card. Pro is $10/mo; Pro+ ($39) and Max ($100) add bigger AI Credit allowances for heavy agent use. Students and teachers get Pro free via github.com/education.' },
               { step: '2', title: 'Install the extensions', desc: 'VS Code Extensions → search "GitHub Copilot" → install it. Then search "GitHub Copilot Chat" and install that too (separate extension).' },
               { step: '3', title: 'Sign in with GitHub', desc: 'VS Code will prompt you to sign in with GitHub. Authorize in the browser. Your subscription activates automatically.' },
               { step: '4', title: 'Configure your model', desc: 'Copilot Settings → Model → choose GPT-5.6, Claude Sonnet 5, or Gemini 3.8 Flash. You can switch per task.' },
@@ -161,7 +161,7 @@ export default function GithubCopilotPage() {
         <ToolResources links={[
           { label: 'Copilot home', href: 'https://github.com/features/copilot', note: 'Overview + sign up' },
           { label: 'Documentation', href: 'https://docs.github.com/copilot', note: 'VS Code, JetBrains, CLI, chat' },
-          { label: 'Plans & pricing', href: 'https://github.com/features/copilot/plans', note: 'Free, Pro, Business, Enterprise' },
+          { label: 'Plans & pricing', href: 'https://github.com/features/copilot/plans', note: 'Free, Pro, Pro+, Max, Business, Enterprise (AI Credits billing since June 2026)' },
           { label: 'VS Code extension', href: 'https://marketplace.visualstudio.com/items?itemName=GitHub.copilot', note: 'Install in VS Code' },
           { label: 'Changelog', href: 'https://github.blog/changelog/label/copilot/', note: 'Copilot product updates' },
         ]} />

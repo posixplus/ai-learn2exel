@@ -25,7 +25,7 @@ export default function VscodeAiPage() {
                 <span style={{ background: '#F0FDF4', color: '#16A34A', border: '1px solid #BBF7D0', borderRadius: '999px', padding: '.2rem .75rem', fontSize: '.78rem', fontWeight: 600 }}>Free (editor)</span>
               </div>
               <h1 style={{ margin: 0, fontSize: '2rem', fontWeight: 800 }}>VS Code + AI Extensions</h1>
-              <p style={{ margin: '.25rem 0 0', color: '#6B7280', fontSize: '1rem' }}>Add powerful AI to the world's most popular editor - Copilot, Claude, or Codeium</p>
+              <p style={{ margin: '.25rem 0 0', color: '#6B7280', fontSize: '1rem' }}>Add powerful AI to the world's most popular editor - Copilot, Claude, or the Windsurf plugin</p>
             </div>
           </div>
           <p style={{ fontSize: '1.05rem', color: '#374151', lineHeight: 1.7 }}>
@@ -38,7 +38,7 @@ export default function VscodeAiPage() {
           {[
             { icon: '🐙', name: 'GitHub Copilot', price: '$10/month', best: 'Best all-around; deep GitHub + VS Code integration', badge: 'Most Popular' },
             { icon: '🟣', name: 'Claude for VS Code', price: 'Free (uses Claude account)', best: 'Best reasoning and long-context code tasks', badge: 'Best for Analysis' },
-            { icon: '🟢', name: 'Codeium', price: 'Free forever', best: 'Best completely free option; fast completions', badge: 'Best Free' },
+            { icon: '🟢', name: 'Windsurf plugin (ex-Codeium)', price: 'Free tier', best: 'Best no-card option; unlimited tab completions', badge: 'Best Free' },
           ].map(o => (
             <div key={o.name} style={{ background: 'white', border: '1px solid #E5E7EB', borderRadius: 12, padding: '1.25rem' }}>
               <div style={{ fontSize: '2rem', marginBottom: '.5rem' }}>{o.icon}</div>
@@ -71,12 +71,12 @@ export default function VscodeAiPage() {
         </div>
 
         <div style={{ background: 'white', border: '1px solid #E5E7EB', borderRadius: 12, padding: '2rem', marginBottom: '1.5rem' }}>
-          <h2 style={{ marginTop: 0, fontSize: '1.3rem' }}>⚡ Install & Setup - Codeium (Free)</h2>
+          <h2 style={{ marginTop: 0, fontSize: '1.3rem' }}>⚡ Install & Setup - Windsurf plugin (Free)</h2>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
             {[
-              { step: '1', title: 'Install Codeium Extension', desc: 'Extensions panel → search "Codeium" → Install. Codeium is free forever - no subscription needed.' },
-              { step: '2', title: 'Create Free Account', desc: 'Click the Codeium icon in the status bar → Sign in → create account at codeium.com. Takes 30 seconds.' },
-              { step: '3', title: 'Start Coding', desc: 'Inline completions activate immediately. Open Codeium Chat with Cmd+Shift+A for the chat panel.' },
+              { step: '1', title: 'Install the Windsurf plugin', desc: 'Extensions panel → search "Windsurf" (the extension ID is still Codeium.codeium) → Install. The free tier needs no subscription.' },
+              { step: '2', title: 'Create Free Account', desc: 'Click the Windsurf icon in the status bar → Sign in → create a free Cognition (Devin) account. Takes 30 seconds.' },
+              { step: '3', title: 'Start Coding', desc: 'Inline completions activate immediately. Open the chat panel from the status-bar icon.' },
             ].map(s => (
               <div key={s.step} style={{ display: 'flex', gap: '1rem' }}>
                 <div style={{ width: 28, height: 28, borderRadius: '50%', background: '#16A34A', color: 'white', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 700, fontSize: '.85rem', flexShrink: 0, marginTop: 2 }}>{s.step}</div>
@@ -136,7 +136,7 @@ export default function VscodeAiPage() {
             <li>Install both "GitHub Copilot" and "GitHub Copilot Chat" - they are separate extensions</li>
             <li>Copilot is free for verified students and open-source maintainers (check github.com/education)</li>
             <li>Use <strong>@workspace</strong> in chat to ask questions about your entire project, not just the open file</li>
-            <li>Codeium has no rate limits and no credit card - ideal for learners who don't want to pay yet</li>
+            <li>The Windsurf plugin's free tier has unlimited completions and no credit card - ideal for learners who don't want to pay yet (agent use is quota-limited)</li>
           </ul>
         </div>
 
