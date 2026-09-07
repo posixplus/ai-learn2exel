@@ -4,7 +4,7 @@
 // To add a lesson or a level, edit ONLY this file (plus the lesson page itself).
 // ─────────────────────────────────────────────────────────────────────────────
 
-export type LevelId = 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9
+export type LevelId = 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10
 export type StartStyle = 'primary' | 'secondary' | 'accent'
 
 export interface LessonMeta {
@@ -20,7 +20,7 @@ export interface LessonMeta {
 export interface LevelMeta {
   level: LevelId
   slug: string            // 'level0'
-  accent: string          // css token suffix: 'l0' … 'l6'
+  accent: string          // css token suffix: 'l0' … 'l10'
   icon: string            // nav/megamenu icon
   badge: string           // home card pill, e.g. '🟢 Level 0 · Foundations'
   navLabel: string        // megamenu column heading
@@ -313,6 +313,36 @@ export const LEVELS: LevelMeta[] = [
       lesson(9, 78, 'BMAD Part 3 - Build a Small App', 'BMAD: Build an App', 55),
       lesson(9, 79, 'LID - Linked Intent Development', 'LID', 45),
       lesson(9, 80, 'Best Practices & Anti-Patterns', 'Best Practices', 40),
+    ],
+  },
+  {
+    level: 10,
+    slug: 'level10',
+    accent: 'l10',
+    icon: '⚙️',
+    badge: '⚙️ Level 10 · Agentic AI Engineer',
+    navLabel: 'Level 10 - Agentic AI Engineer',
+    cardTitle: 'Agentic AI Engineer',
+    cardDesc: 'Build one production-grade agent from an empty folder to a deployed, observable, evaluated system. Dayflow is a personal ops agent (inbox, calendar, tasks) built layer by layer: the raw loop, the Claude Agent SDK, permissions, security, evals, tracing, reliability, MCP, and Day 2 operations. Python inline, TypeScript mirror in the companion repo.',
+    hoursLabel: '⏱ ~14 hours · 12 lessons + capstone',
+    featured: true,
+    startStyle: 'accent',
+    startLabel: 'Start Level 10 →',
+    capstoneText: 'Level 10 Capstone: Ship Dayflow + Day 2',
+    capstoneDuration: '150 min',
+    lessons: [
+      lesson(10, 81, 'The Agent Loop From Scratch', 'The Agent Loop', 60),
+      lesson(10, 82, 'Tool Design as API Design', 'Tool Design', 60),
+      lesson(10, 83, 'State, Checkpoints & Resumability', 'State & Checkpoints', 70),
+      lesson(10, 84, 'Migrating to the Claude Agent SDK', 'Claude Agent SDK', 70),
+      lesson(10, 85, 'Orchestration: When One Agent Is Enough', 'Orchestration', 60),
+      lesson(10, 86, 'Permissions & Human in the Loop', 'Permissions & HITL', 60),
+      lesson(10, 87, 'Connecting Real Google (OAuth)', 'Real Google (OAuth)', 70),
+      lesson(10, 88, 'Security: Injection, Exfil & Least Privilege', 'Security', 70),
+      lesson(10, 89, 'Evals for Agents', 'Evals for Agents', 75),
+      lesson(10, 90, 'Observability & Cost', 'Observability & Cost', 60),
+      lesson(10, 91, 'Reliability Engineering', 'Reliability', 60),
+      lesson(10, 92, 'Expose Dayflow as an MCP Server', 'Dayflow as MCP', 60),
     ],
   },
 ]

@@ -2,7 +2,7 @@
 import { useState } from 'react'
 
 interface LevelFeedbackProps {
-  level: 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9
+  level: 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10
   levelTitle: string
 }
 
@@ -17,6 +17,7 @@ const LEVEL_COLORS: Record<number, { bg: string; border: string; accent: string 
   7: { bg: '#EEF2FF', border: '#C7D2FE', accent: '#4F46E5' },
   8: { bg: '#ECFEFF', border: '#A5F3FC', accent: '#0891B2' },
   9: { bg: '#F7FEE7', border: '#D9F99D', accent: '#65A30D' },
+  10: { bg: '#F1F5F9', border: '#CBD5E1', accent: '#475569' },
 }
 
 export default function LevelFeedback({ level, levelTitle }: LevelFeedbackProps) {

@@ -44,6 +44,9 @@
   --color-l9: #65A30D;
   --color-l9-light: #F7FEE7;
   --color-l9-border: #D9F99D;
+  --color-l10: #475569;
+  --color-l10-light: #F1F5F9;
+  --color-l10-border: #CBD5E1;
   --color-success: #10B981;
   --color-warning: #F59E0B;
   --color-danger: #EF4444;
@@ -95,7 +98,7 @@
   --color-l0-light: #0C2A22; --color-l1-light: #1E1635; --color-l2-light: #2A2008;
   --color-l3-light: #0A2622; --color-l4-light: #14233F; --color-l5-light: #1E1635;
   --color-l6-light: #2A1320; --color-l7-light: #1A1840; --color-l8-light: #082A30;
-  --color-l9-light: #1E2A08;
+  --color-l9-light: #1E2A08; --color-l10-light: #1E293B;
   --color-hands-on-bg: #2A1E0C; --color-hands-on-border: #7C4A1E; --color-hands-on-accent: #FB923C;
   --color-tip-bg: #0C2A1A; --color-tip-border: #1E5A3A;
   --color-callout-bg: #14233F; --color-callout-border: #2A4A7F;
@@ -506,6 +509,7 @@ blockquote {
 .level-badge.l7 { background: var(--color-l7-light); color: var(--color-l7); border: 1px solid var(--color-l7-border); }
 .level-badge.l8 { background: var(--color-l8-light); color: var(--color-l8); border: 1px solid var(--color-l8-border); }
 .level-badge.l9 { background: var(--color-l9-light); color: var(--color-l9); border: 1px solid var(--color-l9-border); }
+.level-badge.l10 { background: var(--color-l10-light); color: var(--color-l10); border: 1px solid var(--color-l10-border); }
 
 /* ── Login Page ──────────────────────────────────────────── */
 .login-page { min-height: 100vh; display: flex; align-items: center; justify-content: center; background: linear-gradient(160deg, #F8FAFF, #EFF6FF 50%, #F5F3FF); padding: 1.5rem; }
@@ -560,7 +564,7 @@ footer { background: var(--color-surface); border-top: 1px solid var(--color-bor
 .stat-label { font-size: 0.78rem; color: var(--color-text-muted); text-transform: uppercase; letter-spacing: 0.06em; }
 
 /* Capstone section wrappers (l0–l5 colour accents) */
-.l0-section, .l1-section, .l2-section, .l3-section, .l4-section, .l5-section, .l6-section, .l7-section, .l8-section, .l9-section {
+.l0-section, .l1-section, .l2-section, .l3-section, .l4-section, .l5-section, .l6-section, .l7-section, .l8-section, .l9-section, .l10-section {
   background: var(--color-card); border: 1px solid var(--color-border);
   border-radius: var(--radius-lg); padding: 2rem; margin-bottom: 1.75rem;
 }
@@ -574,6 +578,7 @@ footer { background: var(--color-surface); border-top: 1px solid var(--color-bor
 .l7-section { border-left: 4px solid var(--color-l7); }
 .l8-section { border-left: 4px solid var(--color-l8); }
 .l9-section { border-left: 4px solid var(--color-l9); }
+.l10-section { border-left: 4px solid var(--color-l10); }
 
 /* Level-0 capstone race cards */
 .race-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 1rem; margin-top: 1rem; }
@@ -592,11 +597,13 @@ footer { background: var(--color-surface); border-top: 1px solid var(--color-bor
 .capstone-hero.l7 { background: linear-gradient(135deg, var(--color-l7-light), #E0E7FF); }
 .capstone-hero.l8 { background: linear-gradient(135deg, var(--color-l8-light), #CFFAFE); }
 .capstone-hero.l9 { background: linear-gradient(135deg, var(--color-l9-light), #ECFCCB); }
+.capstone-hero.l10 { background: linear-gradient(135deg, var(--color-l10-light), #E2E8F0); }
 .lesson-level-tag.l5 { background: var(--color-l5-light); color: var(--color-l5); }
 .lesson-level-tag.l6 { background: var(--color-l6-light); color: var(--color-l6); }
 .lesson-level-tag.l7 { background: var(--color-l7-light); color: var(--color-l7); }
 .lesson-level-tag.l8 { background: var(--color-l8-light); color: var(--color-l8); }
 .lesson-level-tag.l9 { background: var(--color-l9-light); color: var(--color-l9); }
+.lesson-level-tag.l10 { background: var(--color-l10-light); color: var(--color-l10); }
 .capstone-badge { display: inline-flex; align-items: center; gap: 0.4rem; font-size: 0.78rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.07em; padding: 0.3rem 0.8rem; border-radius: var(--radius-full); background: var(--color-card); color: var(--color-warning); border: 1px solid #FDE68A; margin-bottom: 1rem; }
 
 /* ── Responsive ──────────────────────────────────────────── */
