@@ -5,7 +5,7 @@ import Link from 'next/link'
 import { useProgress } from '@/contexts/ProgressContext'
 import { useVisitorName } from './WelcomeModal'
 import WelcomeModal from './WelcomeModal'
-import { LEVELS } from '@/data/course'
+import { LEVELS, publishedLessons, capstonePublished } from '@/data/course'
 
 const TOOL_GROUPS = [
   {
@@ -76,7 +76,7 @@ export default function Nav() {
                     <div className="nav-dd-label" style={{ display: 'flex', alignItems: 'center', gap: '0.3rem' }}>
                       <span>{lvl.icon}</span>{lvl.navLabel}
                     </div>
-                    {lvl.lessons.map((lesson) => (
+                    {publishedLessons(lvl).map((lesson) => (
                       <Link key={lesson.href} href={lesson.href} className="nav-dropdown-item">
                         <span style={{ fontWeight: 600, marginRight: '0.4rem', minWidth: '1.4rem', display: 'inline-block' }}>
                           {lesson.number}
@@ -84,12 +84,12 @@ export default function Nav() {
                         {lesson.title}
                       </Link>
                     ))}
-                    <Link href={`/${lvl.slug}/capstone`} className="nav-dropdown-item">
+                    {capstonePublished(lvl) && <Link href={`/${lvl.slug}/capstone`} className="nav-dropdown-item">
                       <span style={{ fontWeight: 600, marginRight: '0.4rem', minWidth: '1.4rem', display: 'inline-block' }}>
                         C
                       </span>
                       Capstone
-                    </Link>
+                    </Link>}
                     {li < LEVELS.length - 1 && <div className="nav-dd-divider" />}
                   </div>
                 ))}

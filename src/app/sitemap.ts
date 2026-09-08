@@ -1,12 +1,12 @@
 import type { MetadataRoute } from 'next'
-import { LEVELS, ALL_LESSONS } from '@/data/course'
+import { LEVELS, ALL_LESSONS, capstonePublished } from '@/data/course'
 
 const BASE = 'https://learn2exel.com'
 
 // Derived from the single course data source so the sitemap never drifts.
 const LESSON_PATHS = [
   ...ALL_LESSONS.map(l => `level${l.level}/lesson${l.number}`),
-  ...LEVELS.map(lvl => `${lvl.slug}/capstone`),
+  ...LEVELS.filter(capstonePublished).map(lvl => `${lvl.slug}/capstone`),
 ]
 
 const TOOLS = [

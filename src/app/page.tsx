@@ -4,7 +4,7 @@ import Link from 'next/link'
 import { useProgress } from '@/contexts/ProgressContext'
 import { useVisitorName } from '@/components/layout/WelcomeModal'
 import { useState, useEffect } from 'react'
-import { LEVELS, TOTAL_LESSONS } from '@/data/course'
+import { LEVELS, TOTAL_LESSONS, publishedLessons, capstonePublished } from '@/data/course'
 
 const PROFESSIONS = [
   { id: 'teacher',    icon: '👩‍🏫', label: 'Teacher / Educator' },
@@ -212,8 +212,9 @@ export default function HomePage() {
             const accentVar = `var(--color-${lvl.accent})`
             const checkColor = lvl.featured ? accentVar : 'var(--color-success)'
             const capstoneColor = lvl.featured ? accentVar : 'var(--color-warning)'
-            const startHref = lvl.lessons[0].href
-            const doneCount = lvl.lessons.filter(l => isComplete(l.id)).length
+            const pub = publishedLessons(lvl)
+            const startHref = pub[0]?.href ?? '/'
+            const doneCount = pub.filter(l => isComplete(l.id)).length
             return (
               <div key={lvl.level} style={{ border: '1px solid var(--color-border)', borderLeft: `4px solid ${accentVar}`, borderRadius: 'var(--radius-md)', background: 'var(--color-card)', overflow: 'hidden', boxShadow: 'var(--shadow-sm)' }}>
                 {/* Header row (click to toggle) */}
@@ -227,7 +228,7 @@ export default function HomePage() {
                     <span className={`level-badge ${lvl.accent}`} style={{ marginBottom: 0, flexShrink: 0 }}>{lvl.badge}</span>
                     <span style={{ fontWeight: 700, fontSize: '.92rem', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{lvl.cardTitle}</span>
                     <span style={{ fontSize: '.74rem', color: doneCount > 0 ? 'var(--color-success)' : 'var(--color-text-subtle)', marginLeft: 'auto', whiteSpace: 'nowrap', flexShrink: 0 }}>
-                      {doneCount > 0 ? `${doneCount}/${lvl.lessons.length} done` : `${lvl.lessons.length} lessons`}
+                      {doneCount > 0 ? `${doneCount}/${pub.length} done` : pub.length < lvl.lessons.length ? `${pub.length} of ${lvl.lessons.length} lessons live` : `${lvl.lessons.length} lessons`}
                     </span>
                   </button>
                   <Link href={startHref} style={{ flexShrink: 0, padding: '.4rem .8rem', background: accentVar, color: 'white', borderRadius: 'var(--radius-sm)', fontWeight: 600, fontSize: '.78rem', textDecoration: 'none', whiteSpace: 'nowrap' }}>Start →</Link>
@@ -240,6 +241,13 @@ export default function HomePage() {
                     <p style={{ fontSize: '.78rem', color: 'var(--color-text-subtle)', margin: '0 0 .5rem' }}>{lvl.hoursLabel}</p>
                     {lvl.lessons.map(l => {
                       const done = isComplete(l.id)
+                      if (!l.published) return (
+                        <div key={l.id} style={{ display: 'flex', alignItems: 'center', gap: '.7rem', padding: '.4rem 0', borderBottom: '1px solid var(--color-border)', fontSize: '.85rem', color: 'var(--color-text-subtle)' }}>
+                          <span style={{ width: 22, height: 22, borderRadius: '50%', border: '1px dashed var(--color-border)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '.7rem', fontWeight: 700, flexShrink: 0 }}>{l.number}</span>
+                          <span style={{ flex: 1 }}>{l.title}</span>
+                          <span style={{ fontSize: '.72rem', textTransform: 'uppercase', letterSpacing: '.04em' }}>coming soon</span>
+                        </div>
+                      )
                       return (
                         <Link key={l.id} href={l.href} style={{ display: 'flex', alignItems: 'center', gap: '.7rem', padding: '.4rem 0', borderBottom: '1px solid var(--color-border)', fontSize: '.85rem', color: 'var(--color-text)', textDecoration: 'none' }}>
                           <span style={{ width: 22, height: 22, borderRadius: '50%', background: done ? checkColor : 'var(--color-surface)', border: `1px solid ${done ? checkColor : 'var(--color-border)'}`, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '.7rem', fontWeight: 700, color: done ? 'white' : 'var(--color-text-muted)', flexShrink: 0 }}>
@@ -250,9 +258,9 @@ export default function HomePage() {
                         </Link>
                       )
                     })}
-                    <Link href={`/${lvl.slug}/capstone`} style={{ display: 'flex', alignItems: 'center', gap: '.7rem', padding: '.45rem 0', fontSize: '.85rem', color: capstoneColor, fontWeight: 600, textDecoration: 'none' }}>
+                    {capstonePublished(lvl) && <Link href={`/${lvl.slug}/capstone`} style={{ display: 'flex', alignItems: 'center', gap: '.7rem', padding: '.45rem 0', fontSize: '.85rem', color: capstoneColor, fontWeight: 600, textDecoration: 'none' }}>
                       <span style={{ fontSize: '1rem' }}>🏆</span> {lvl.capstoneText} <span style={{ marginLeft: 'auto', fontSize: '.76rem', color: 'var(--color-text-subtle)' }}>{lvl.capstoneDuration}</span>
-                    </Link>
+                    </Link>}
                   </div>
                 )}
               </div>

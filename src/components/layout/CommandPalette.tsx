@@ -2,7 +2,7 @@
 
 import { useEffect, useMemo, useRef, useState } from 'react'
 import { useRouter } from 'next/navigation'
-import { LEVELS, ALL_LESSONS } from '@/data/course'
+import { LEVELS, ALL_LESSONS, capstonePublished } from '@/data/course'
 
 type Item = { title: string; subtitle: string; href: string }
 
@@ -28,7 +28,7 @@ const TOOL_ITEMS: Item[] = [
 
 const INDEX: Item[] = [
   ...ALL_LESSONS.map(l => ({ title: l.title, subtitle: `Lesson ${l.number} · Level ${l.level}`, href: l.href })),
-  ...LEVELS.map(lvl => ({ title: lvl.capstoneText, subtitle: `Capstone · Level ${lvl.level}`, href: `/${lvl.slug}/capstone` })),
+  ...LEVELS.filter(capstonePublished).map(lvl => ({ title: lvl.capstoneText, subtitle: `Capstone · Level ${lvl.level}`, href: `/${lvl.slug}/capstone` })),
   ...TOOL_ITEMS,
 ]
 

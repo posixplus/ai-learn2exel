@@ -2,7 +2,7 @@
 
 import Link from 'next/link'
 import { useProgress } from '@/contexts/ProgressContext'
-import { getLevel, type LevelId } from '@/data/course'
+import { getLevel, publishedLessons, capstonePublished, type LevelId } from '@/data/course'
 
 interface SidebarProps {
   level: LevelId
@@ -11,7 +11,9 @@ interface SidebarProps {
 
 export default function Sidebar({ level, currentLessonId }: SidebarProps) {
   const { completed } = useProgress()
-  const lessons = getLevel(level)?.lessons ?? []
+  const lvl = getLevel(level)
+  const lessons = lvl ? publishedLessons(lvl) : []
+  const showCapstone = lvl ? capstonePublished(lvl) : true
 
   return (
     <aside className="lesson-sidebar">
@@ -35,14 +37,14 @@ export default function Sidebar({ level, currentLessonId }: SidebarProps) {
         )
       })}
 
-      <div className="sidebar-divider"></div>
+      {showCapstone && <div className="sidebar-divider"></div>}
 
-      <Link
+      {showCapstone && <Link
         href={`/level${level}/capstone`}
         className={`sidebar-capstone ${currentLessonId.includes('capstone') ? 'active' : ''}`}
       >
         🏆 Capstone
-      </Link>
+      </Link>}
     </aside>
   )
 }

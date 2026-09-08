@@ -15,6 +15,7 @@ export interface LessonMeta {
   shortTitle: string // condensed title (sidebar)
   duration: number  // minutes
   href: string
+  published: boolean // false = outline exists but content is not written; hidden from nav/sidebar/sitemap
 }
 
 export interface LevelMeta {
@@ -32,6 +33,7 @@ export interface LevelMeta {
   startLabel: string
   capstoneText: string    // capstone link label on the home card
   capstoneDuration: string
+  capstonePublished?: boolean // default true
   lessons: LessonMeta[]
 }
 
@@ -42,6 +44,7 @@ function lesson(
   title: string,
   shortTitle: string,
   duration: number,
+  published = true,
 ): LessonMeta {
   return {
     id: `l${level}-${number}`,
@@ -51,6 +54,7 @@ function lesson(
     shortTitle,
     duration,
     href: `/level${level}/lesson${number}`,
+    published,
   }
 }
 
@@ -330,27 +334,34 @@ export const LEVELS: LevelMeta[] = [
     startLabel: 'Start Level 10 →',
     capstoneText: 'Level 10 Capstone: Ship Dayflow + Day 2',
     capstoneDuration: '150 min',
+    capstonePublished: false,
     lessons: [
       lesson(10, 81, 'The Agent Loop From Scratch', 'The Agent Loop', 60),
-      lesson(10, 82, 'Tool Design as API Design', 'Tool Design', 60),
-      lesson(10, 83, 'State, Checkpoints & Resumability', 'State & Checkpoints', 70),
-      lesson(10, 84, 'Migrating to the Claude Agent SDK', 'Claude Agent SDK', 70),
-      lesson(10, 85, 'Orchestration: When One Agent Is Enough', 'Orchestration', 60),
-      lesson(10, 86, 'Permissions & Human in the Loop', 'Permissions & HITL', 60),
-      lesson(10, 87, 'Connecting Real Google (OAuth)', 'Real Google (OAuth)', 70),
-      lesson(10, 88, 'Security: Injection, Exfil & Least Privilege', 'Security', 70),
-      lesson(10, 89, 'Evals for Agents', 'Evals for Agents', 75),
-      lesson(10, 90, 'Observability & Cost', 'Observability & Cost', 60),
-      lesson(10, 91, 'Reliability Engineering', 'Reliability', 60),
-      lesson(10, 92, 'Expose Dayflow as an MCP Server', 'Dayflow as MCP', 60),
+      lesson(10, 82, 'Tool Design as API Design', 'Tool Design', 60, false),
+      lesson(10, 83, 'State, Checkpoints & Resumability', 'State & Checkpoints', 70, false),
+      lesson(10, 84, 'Migrating to the Claude Agent SDK', 'Claude Agent SDK', 70, false),
+      lesson(10, 85, 'Orchestration: When One Agent Is Enough', 'Orchestration', 60, false),
+      lesson(10, 86, 'Permissions & Human in the Loop', 'Permissions & HITL', 60, false),
+      lesson(10, 87, 'Connecting Real Google (OAuth)', 'Real Google (OAuth)', 70, false),
+      lesson(10, 88, 'Security: Injection, Exfil & Least Privilege', 'Security', 70, false),
+      lesson(10, 89, 'Evals for Agents', 'Evals for Agents', 75, false),
+      lesson(10, 90, 'Observability & Cost', 'Observability & Cost', 60, false),
+      lesson(10, 91, 'Reliability Engineering', 'Reliability', 60, false),
+      lesson(10, 92, 'Expose Dayflow as an MCP Server', 'Dayflow as MCP', 60, false),
     ],
   },
 ]
 
 // ── Derived helpers ──────────────────────────────────────────────────────────
 
-/** Every lesson across every level, in order (capstones excluded). */
-export const ALL_LESSONS: LessonMeta[] = LEVELS.flatMap(l => l.lessons)
+/** Every PUBLISHED lesson across every level, in order (capstones excluded). */
+export const ALL_LESSONS: LessonMeta[] = LEVELS.flatMap(l => l.lessons.filter(x => x.published))
+
+/** Published lessons for one level. */
+export const publishedLessons = (lvl: LevelMeta): LessonMeta[] => lvl.lessons.filter(x => x.published)
+
+/** Whether a level's capstone is written and linkable. */
+export const capstonePublished = (lvl: LevelMeta): boolean => lvl.capstonePublished !== false
 
 /** Total teachable lessons - capstones are NOT counted toward progress. */
 export const TOTAL_LESSONS = ALL_LESSONS.length
